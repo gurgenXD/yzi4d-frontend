@@ -1,8 +1,15 @@
-import './globals.css'
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
+import '../../public/scss/style.scss'
 
-const inter = Inter({ subsets: ['latin'] })
+import type { Metadata } from 'next'
+
+import Footer from './components/Footer'
+import Header from './components/Header'
+import Head from './components/Head'
+import OffCanvas from './components/OffCanvas'
+import Calculator from './components/Calculator'
+import ScrollToTop from './components/ScrollToTop'
+import ImportCustomJS from './components/ImportCustomJS'
+import CallToAction from './components/CallToAction'
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -15,8 +22,22 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="ru" className="h-100">
+      <Head />
+      <body className="d-flex flex-column h-100">
+        <Header />
+        <OffCanvas />
+
+        {children}
+
+        <CallToAction />
+
+        <Footer />
+        <Calculator />
+        <ScrollToTop />
+
+        <ImportCustomJS />
+      </body>
     </html>
   )
 }
