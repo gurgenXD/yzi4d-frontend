@@ -9,16 +9,14 @@ type SearchParams = {
 
 
 async function getSpecialists(
-    searchParams: SearchParams
+    searchParams: URLSearchParams
 ) {
-    const strSearchParams = new URLSearchParams(searchParams).toString()
-
     const specialists = await fetch(
-        `http://127.0.0.1:8080/api/v1/specialists?${strSearchParams}`,
+        `http://127.0.0.1:8080/api/v1/specialists?${searchParams.toString()}`,
         {
             next: {
-                revalidate: 3600
-            },
+                revalidate: 0
+            }
         }
     ).then(
         (res) => res.json()
@@ -27,59 +25,82 @@ async function getSpecialists(
     return specialists
 }
 
+async function getSpecializations() {
+    const specializations = await fetch(
+        `http://127.0.0.1:8080/api/v1/specialists/specializations`,
+        {
+            next: {
+                revalidate: 0
+            }
+        }
+    ).then(
+        (res) => res.json()
+    )
+
+    return specializations
+}
+
+
+function getPagingUrl(page: string, searchParams: URLSearchParams) {
+    searchParams.set("page", page)
+    return searchParams.toString()
+}
+
 
 export default async function Specialists({ searchParams }: { searchParams: SearchParams }) {
-    const { data, paging } = await getSpecialists(searchParams)
+
+    const urlSearchParams = new URLSearchParams(searchParams)
+    const { data, paging } = await getSpecialists(urlSearchParams)
+    const specializations = await getSpecializations()
 
     return (
         <main role="main" className="flex-shrink-0">
             <div className="overflow-hidden">
                 <div className="container pt-4 pt-lg-5">
                     <ol className="breadcrumb">
-                        <li className="breadcrumb-item"><a href="index.html">Главная</a></li>
+                        <li className="breadcrumb-item"><a href="/">Главная</a></li>
                         <li className="breadcrumb-item active">Cпециалисты</li>
                     </ol>
 
                     <h1 className="mb-4">Cпециалисты</h1>
 
                     <div className="bg-white rounded-3 shadow p-3 mb-md-5 mb-4">
-                        <form>
-                            <div className="form-check mb-3">
-                                <input className="form-check-input" type="checkbox" defaultValue="" id="HasOnline" />
+                        <form action="/specialists" method="get">
+                            <div className="form-check form-check-inline mb-3">
+                                <input className="form-check-input" type="checkbox" name="can_online" defaultValue="on" id="HasOnline" defaultChecked={(searchParams.can_online) ? true : false} />
                                 <label className="form-check-label fs-8" htmlFor="HasOnline">Онлайн консультация</label>
+                            </div>
+                            <div className="form-check form-check-inline mb-3">
+                                <input className="form-check-input" type="checkbox" name="can_adult" defaultValue="on" id="HasAdult" defaultChecked={(searchParams.can_adult) ? true : false} />
+                                <label className="form-check-label fs-8" htmlFor="HasAdult">Принимает взрослых</label>
+                            </div>
+                            <div className="form-check form-check-inline mb-3">
+                                <input className="form-check-input" type="checkbox" name="can_child" defaultValue="on" id="HasChild" defaultChecked={(searchParams.can_child) ? true : false} />
+                                <label className="form-check-label fs-8" htmlFor="HasChild">Принимает детей</label>
                             </div>
 
                             <div className="row align-items-end g-3">
                                 <div className="col-lg col-md-6">
-                                    <input type="text" className="form-control form-control-sm" id="" defaultValue="" placeholder="Фамилия или имя врача" />
+                                    <input type="text" className="form-control form-control-sm" id="" name="search_query" defaultValue={(searchParams.search_query) ? searchParams.search_query : ""} placeholder="Фамилия или имя врача" />
                                 </div>
 
                                 <div className="col-lg col-md-6">
-                                    <select className="form-select form-select-sm" id="" defaultValue="all">
-                                        <option value={"all"}>Все специальности</option>
-                                        <option>Акушер-гинеколог</option>
-                                        <option>Аллерголог-иммунолог</option>
-                                        <option>Ангиохирург</option>
-                                        <option>Андролог</option>
-                                        <option>Анестезиолог-реаниматолог</option>
-                                        <option>Вертебролог</option>
-                                        <option>Гастроэнтеролог</option>
-                                        <option>Гематолог</option>
-                                        <option>Генетик</option>
-                                        <option>Дерматовенеролог</option>
-                                        <option>Дет. травматолог-ортопед</option>
-                                        <option>Детский аллерголог-иммунолог</option>
+                                    <select className="form-select form-select-sm" id="" name="specialization_id" defaultValue={(searchParams.specialization_id) ? searchParams.specialization_id : ""}>
+                                        <option value={0}>Все специальности</option>
+                                        {specializations.map((specialization: any) => (
+                                            <option value={specialization.id}>{specialization.name}</option>
+                                        ))}
                                     </select>
                                 </div>
 
-                                <div className="col-lg col-md-6">
+                                {/* <div className="col-lg col-md-6">
                                     <select className="form-select form-select-sm" id="" defaultValue="all">
                                         <option value={"all"}>Все города</option>
                                         <option>Пятигорск</option>
                                         <option>Ессентуки</option>
                                         <option>Минеральные Воды</option>
                                     </select>
-                                </div>
+                                </div> */}
 
                                 <div className="col-lg-auto col-md-6">
                                     <button className="btn btn-danger btn-sm w-100 text-nowrap" type="submit">Найти врача</button>
@@ -95,13 +116,13 @@ export default async function Specialists({ searchParams }: { searchParams: Sear
                                     <div className="ratio ratio-5x6 overflow-hidden rounded-3 flex-shrink-0">
                                         {
                                             (specialist.photo)
-                                                ? <div className="doctor-card-img" style={{ backgroundImage: "url('/img/dynamic-img/doctor-card-img_6.jpg')" }}></div>
+                                                ? <div className="doctor-card-img" style={{ backgroundImage: "url('" + specialist.photo + "')" }}></div>
                                                 : <div className="doctor-card-img" style={{ backgroundImage: "url('/img/doctor-no-photo.jpg')" }}></div>
                                         }
                                     </div>
 
                                     <div>
-                                        <a href="doctor.html" className="doctor-card-title stretched-link d-block link-secondary fw-semibold">
+                                        <a href={"/specialists/" + specialist.id} className="doctor-card-title stretched-link d-block link-secondary fw-semibold">
                                             {specialist.surname}
                                             <br />
                                             {specialist.name} {specialist.patronymic}
@@ -109,9 +130,9 @@ export default async function Specialists({ searchParams }: { searchParams: Sear
 
                                         <div className="doctor-card-job text-muted mb-1">
                                             {specialist.specializations.map(
-                                                (specialization: any) => (specialization.name)).join(" / ")}
+                                                (spec: any) => (spec.name)).join(" / ")}
                                         </div>
-                                        <div className="doctor-card-exp text-muted mb-1">Стаж 12 лет</div>
+                                        <div className="doctor-card-exp text-muted mb-1">Стаж {specialist.experience}</div>
 
                                         <div className="d-flex flex-wrap pt-2">
                                             {specialist.titles.map((title: any) => (
@@ -130,7 +151,9 @@ export default async function Specialists({ searchParams }: { searchParams: Sear
                             <ul className="pagination justify-content-center justify-content-sm-end">
                                 {(paging.has_prev) ?
                                     <li className="page-item" key="prev-page">
-                                        <a className="page-link" href="#">
+                                        <a className="page-link" href={
+                                            "/specialists?" + getPagingUrl((paging.current_page - 1).toString(), urlSearchParams)
+                                        }>
                                             <span className="icon">
                                                 {/* <?xml version="1.0" encoding="UTF-8"?> */}
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 174.29 320.01">
@@ -152,7 +175,9 @@ export default async function Specialists({ searchParams }: { searchParams: Sear
                                                 }
 
                                                 <li className={"page-item" + ((page == paging.current_page) ? " active" : "")
-                                                } key={page}><a className="page-link" href="#">{page}</a></li>
+                                                } key={page}><a className="page-link" href={
+                                                    "/specialists?" + getPagingUrl(page.toString(), urlSearchParams)
+                                                }>{page}</a></li>
 
                                                 {(page == paging.current_page + 1 && page + 2 <= paging.total_pages) ?
                                                     <li className="page-item disabled" key="dis-post"><a className="page-link" href="#">...</a></li>
@@ -166,7 +191,9 @@ export default async function Specialists({ searchParams }: { searchParams: Sear
 
                                 {(paging.has_next) ?
                                     <li className="page-item" key="next-page">
-                                        <a className="page-link" href="#">
+                                        <a className="page-link" href={
+                                            "/specialists?" + getPagingUrl((paging.current_page + 1).toString(), urlSearchParams)
+                                        }>
                                             <span className="icon">
                                                 {/* <?xml version="1.0" encoding="UTF-8"?> */}
                                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 174.29 320.01">
