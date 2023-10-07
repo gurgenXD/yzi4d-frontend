@@ -1,4 +1,16 @@
-export default function Header() {
+export async function getCategories() {
+    const categories = await fetch(
+        `${process.env.YZI4D_HOST}/services/categories?catalog_page=services`,
+        { next: { revalidate: Number(process.env.CACHE_LIFETIME) } }
+    ).then((res) => res.json())
+
+    return categories
+}
+
+
+export default async function Header() {
+    const categories = await getCategories()
+
     return (
         <div>
             <div className="d-none d-lg-block bg-light-blue">
@@ -33,7 +45,7 @@ export default function Header() {
                             </ul>
                         </div>
 
-                        <a href="" title="" className="btn btn-secondary d-flex align-items-center btn-sm rounded-0 ms-auto">
+                        <a href="" title="" className="bvi-open bvi-hide btn btn-secondary d-flex align-items-center btn-sm rounded-0 ms-auto">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 11.98" height="14px" className="me-2">
                                 <path
                                     d="M14.54,4.34c-.97-1.62-3.17-4.34-7.04-4.34S1.43,2.72,.46,4.34C-.15,5.35-.15,6.63,.46,7.65c.97,1.62,3.18,4.34,7.04,4.34s6.07-2.72,7.04-4.34c.61-1.02,.61-2.29,0-3.31Zm-1.06,2.64c-.83,1.39-2.72,3.73-5.98,3.73S2.36,8.37,1.53,6.98c-.36-.61-.36-1.36,0-1.97,.83-1.39,2.72-3.73,5.98-3.73s5.15,2.34,5.98,3.73c.36,.61,.36,1.36,0,1.97Z" />
@@ -64,7 +76,7 @@ export default function Header() {
 
                         <div className="row align-items-center d-none d-lg-flex ms-auto">
                             <div className="col-auto">
-                                <a className="profile-link link-secondary text-nowrap spaced-link fs-7" href="login.html">
+                                <a className="profile-link link-secondary text-nowrap spaced-link fs-7" href="https://lk.yzi4d.ru" target="_blank">
                                     <span className="icon me-2">
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 14">
                                             <path
@@ -154,9 +166,9 @@ export default function Header() {
                                 </div>
                             </div> */}
 
-                            <div className="col-auto">
+                            {/* <div className="col-auto">
                                 <a href="appointment.html" className="btn btn-danger">Записаться</a>
-                            </div>
+                            </div> */}
                         </div>
 
                         <button
@@ -180,7 +192,7 @@ export default function Header() {
                                 </li>
 
                                 <li className="nav-item dropdown">
-                                    <a className="nav-link dropdown-toggle" href="services-startpoint.html" role="button" aria-expanded="false">
+                                    <a className="nav-link dropdown-toggle" href="#" role="button" aria-expanded="false">
                                         Услуги
 
                                         <span className="caret ms-2">
@@ -192,11 +204,9 @@ export default function Header() {
                                     </a>
 
                                     <ul className="dropdown-menu">
-                                        <li><a className="dropdown-item" href="services-category.html">УЗИ</a></li>
-                                        <li><a className="dropdown-item" href="services-category.html">МРТ</a></li>
-                                        <li><a className="dropdown-item" href="services-category.html">Хирургия</a></li>
-                                        <li><a className="dropdown-item" href="services-category.html">Рентгенология</a></li>
-                                        <li><a className="dropdown-item" href="services-category.html">Компьютерная томография</a></li>
+                                        {categories.map((category: any) => (
+                                            <li><a className="dropdown-item" href={"/services/" + category.id}>{category.name}</a></li>
+                                        ))}
                                     </ul>
                                 </li>
 
@@ -208,7 +218,7 @@ export default function Header() {
                                     <a className="nav-link" href="sales.html">Спецпредложения</a>
                                 </li>
 
-                                <li className="nav-item dropdown">
+                                {/* <li className="nav-item dropdown">
                                     <a className="nav-link dropdown-toggle" href="about.html" role="button" aria-expanded="false">
                                         Отделения и центры
 
@@ -222,14 +232,14 @@ export default function Header() {
                                     <ul className="dropdown-menu">
                                         <li><a className="dropdown-item" href="department.html">Центр кардионефрологии</a></li>
                                     </ul>
-                                </li>
+                                </li> */}
 
                                 <li className="nav-item">
                                     <a className="nav-link" href="contacts.html">Контакты</a>
                                 </li>
                             </ul>
 
-                            <div className="search">
+                            {/* <div className="search">
                                 <div className="search-form-wrap">
                                     <form className="search-form">
                                         <input type="text" className="form-control search-form-input" id="autoComplete" placeholder="Найти..." />
@@ -238,19 +248,19 @@ export default function Header() {
                                 </div>
 
                                 <button type="button" className="search-toggle">
-                                    {/* <?xml version="1.0" encoding="UTF-8"?> */}
+                                    <?xml version="1.0" encoding="UTF-8"?>
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" className="search-hide-icon">
                                         <path
                                             d="M10.59,9L17.67,1.92c.44-.44,.44-1.15,0-1.59s-1.15-.44-1.59,0h0l-7.08,7.08L1.92,.33C1.48-.11,.77-.11,.33,.33-.11,.77-.11,1.48,.33,1.92l7.08,7.08L.33,16.08c-.44,.44-.44,1.15,0,1.59,.44,.44,1.15,.44,1.59,0l7.08-7.08,7.08,7.08c.44,.44,1.15,.44,1.59,0,.44-.44,.44-1.15,0-1.59l-7.08-7.08h0Z" />
                                     </svg>
 
-                                    {/* <?xml version="1.0" encoding="UTF-8"?> */}
+                                    <?xml version="1.0" encoding="UTF-8"?>
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" className="search-show-icon">
                                         <path
                                             d="M17.67,16.08l-3.48-3.49c2.61-3.48,1.9-8.42-1.59-11.03S4.18-.33,1.57,3.16C-1.04,6.64-.33,11.58,3.16,14.19c2.8,2.09,6.64,2.09,9.44,0l3.49,3.49c.44,.44,1.15,.44,1.59,0,.44-.44,.44-1.15,0-1.59h0Zm-9.76-2.57c-3.1,0-5.61-2.51-5.61-5.61S4.81,2.3,7.91,2.3s5.61,2.51,5.61,5.61c0,3.09-2.51,5.6-5.61,5.61h0Z" />
                                     </svg>
                                 </button>
-                            </div>
+                            </div> */}
 
                             {/* <div className="search">
                                 <div className="search-wrap">
@@ -278,8 +288,8 @@ export default function Header() {
                             </div> */}
                         </div>
                     </div>
-                </nav>
-            </div>
-        </div>
+                </nav >
+            </div >
+        </div >
     )
 }

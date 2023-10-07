@@ -33,7 +33,7 @@ export default function RootLayout({
         {/* <CallToAction /> */}
 
         <Footer />
-        <Calculator />
+        {/* <Calculator /> */}
         <ScrollToTop />
 
         <ImportCustomJS />

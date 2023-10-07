@@ -58,33 +58,33 @@ export function ScrollToTop() {
 
 // ПОКАЗАТЬ / СКРЫТЬ СТРОКУ ПОИСКА В ШАПКЕ
 
-export function searchToggle() {
-  const searchToggle = document.querySelector(".search-toggle"),
-    searchBox = document.querySelector(".search");
+// export function searchToggle() {
+//   const searchToggle = document.querySelector(".search-toggle"),
+//     searchBox = document.querySelector(".search");
 
-  searchToggle.onclick = function (event) {
-    event.preventDefault();
-    searchBox.classList.toggle("show");
-  };
-}
+//   searchToggle.onclick = function (event) {
+//     event.preventDefault();
+//     searchBox.classList.toggle("show");
+//   };
+// }
 
 // ПОКАЗАТЬ / СКРЫТЬ КАЛЬКУЛЯТОР
 
-export function calcToggle() {
-  const calcOpen = document.querySelector(".calc-btn"),
-    calcClose = document.querySelector(".calc__close"),
-    calc = document.querySelector(".calc");
+// export function calcToggle() {
+//   const calcOpen = document.querySelector(".calc-btn"),
+//     calcClose = document.querySelector(".calc__close"),
+//     calc = document.querySelector(".calc");
 
-  calcOpen.onclick = function (event) {
-    event.preventDefault();
-    calc.classList.add("active");
-  };
+//   calcOpen.onclick = function (event) {
+//     event.preventDefault();
+//     calc.classList.add("active");
+//   };
 
-  calcClose.onclick = function (event) {
-    event.preventDefault();
-    calc.classList.remove("active");
-  };
-}
+//   calcClose.onclick = function (event) {
+//     event.preventDefault();
+//     calc.classList.remove("active");
+//   };
+// }
 
 // ПЛАВНОЕ РАСКРЫТИЕ МЕНЮ В САЙДБАРЕ
 

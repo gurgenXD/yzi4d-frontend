@@ -1,5 +1,6 @@
 // @ts-nocheck
 
+
 //СМАХИВАТЕЛЬ МОБИЛЬНОГО МЕНЮ
 
 import Xwiper from "xwiper";
@@ -365,8 +366,8 @@ flsFunctions.isWebp();
 flsFunctions.FocusTabbing();
 flsFunctions.ScrollToTop();
 flsFunctions.dropdownHover();
-flsFunctions.searchToggle();
-flsFunctions.calcToggle();
+// flsFunctions.searchToggle();
+// flsFunctions.calcToggle();
 flsFunctions.sidebar();
 flsFunctions.mobileScrollActive();
 flsFunctions.formWizard();
