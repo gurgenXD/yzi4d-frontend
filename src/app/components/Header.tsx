@@ -1,6 +1,6 @@
 export async function getCategories() {
     const categories = await fetch(
-        `${process.env.YZI4D_HOST}/services/categories?catalog_page=services`,
+        `${process.env.YZI4D_HOST}/catalog/services/categories`,
         { next: { revalidate: Number(process.env.CACHE_LIFETIME) } }
     ).then((res) => res.json())
 
@@ -205,7 +205,7 @@ export default async function Header() {
 
                                     <ul className="dropdown-menu">
                                         {categories.map((category: any) => (
-                                            <li><a className="dropdown-item" href={"/services/categories/" + category.id}>{category.name}</a></li>
+                                            <li><a className="dropdown-item" href={"/catalog/services/categories/" + category.id}>{category.name}</a></li>
                                         ))}
                                     </ul>
                                 </li>

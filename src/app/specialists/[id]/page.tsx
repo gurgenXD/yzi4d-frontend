@@ -1,22 +1,25 @@
 import ServiceBlock from "@/app/components/ServiceBlock"
 import Pagination from "@/app/components/Pagination"
+import NotFound from "@/app/not-found"
 
 async function getSpecialist(id: string) {
-    const specialist = await fetch(
+    const res = await fetch(
         `${process.env.YZI4D_HOST}/specialists/${id}`,
         { next: { revalidate: Number(process.env.CACHE_LIFETIME) } }
-    ).then((res) => res.json())
+    )
 
-    return specialist
+    const errorCodeSpec = res.ok ? false : res.status
+    return { errorCodeSpec, specialist: await res.json() }
 }
 
 async function getSpecialistServices(id: string, searchParams: URLSearchParams) {
-    const specialist = await fetch(
+    const res = await fetch(
         `${process.env.YZI4D_HOST}/specialists/${id}/services?${searchParams.toString()}`,
         { next: { revalidate: Number(process.env.CACHE_LIFETIME) } }
-    ).then((res) => res.json())
+    )
 
-    return specialist
+    const errorCodeServ = res.ok ? false : res.status
+    return { errorCodeServ, services: await res.json() }
 }
 
 
@@ -26,8 +29,12 @@ export default async function Specialist(
 ) {
 
     const urlSearchParams = new URLSearchParams(searchParams)
-    const specialist = await getSpecialist(params.id)
-    const { data, paging } = await getSpecialistServices(params.id, urlSearchParams)
+
+    const { errorCodeSpec, specialist } = await getSpecialist(params.id)
+    if (errorCodeSpec) { return <NotFound /> }
+
+    const { errorCodeServ, services: { data, paging } } = await getSpecialistServices(params.id, urlSearchParams)
+    if (errorCodeServ) { return <NotFound /> }
 
     return <main role="main" className="flex-shrink-0">
         <div className="overflow-hidden">
@@ -35,7 +42,7 @@ export default async function Specialist(
                 <ol className="breadcrumb">
                     <li className="breadcrumb-item"><a href="/">Главная</a></li>
                     <li className="breadcrumb-item"><a href="/specialists">Cпециалисты</a></li>
-                    <li className="breadcrumb-item active">Гамдуллаев Кямран Дашдамирович</li>
+                    <li className="breadcrumb-item active">{specialist.surname} {specialist.name} {specialist.patronymic}</li>
                 </ol>
 
                 <div className="doc-hero position-relative">
@@ -75,10 +82,11 @@ export default async function Specialist(
                             </div>
 
                             <div className="doc-hero-text">
-                                {specialist.description.split("\n").map((line: string) => (
-                                    <div>{line}</div>
+                                {specialist.description.split("\n").map((row: string) => (
+                                    <div>{row}<br /></div>
                                 ))}
                             </div>
+                            <br />
 
                             {(specialist.can_child) ?
                                 <div className="d-flex align-items-start pt-2 mb-3">

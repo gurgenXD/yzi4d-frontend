@@ -1,9 +1,9 @@
-export default function ServiceBlock({ service }: any) {
+export default function ServiceBlock({ service }: { service: any }) {
     return (
         <div className="service-item position-relative">
             <div className="row gx-lg-6">
                 <div className="col-md mb-3 my-md-auto">
-                    <a href={"/services/" + service.id} className="service-item-title stretched-link link-secondary d-block fw-bold">
+                    <a href={"/catalog/services/categories/" + service.category_id + "/items/" + service.id} className="service-item-title stretched-link link-secondary d-block fw-bold">
                         {service.name}
                     </a>
 
