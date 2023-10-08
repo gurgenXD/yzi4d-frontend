@@ -2,14 +2,14 @@ import '../../public/scss/style.scss'
 
 import type { Metadata } from 'next'
 
-import Footer from './components/Footer'
-import Header from './components/Header'
-import Head from './components/Head'
-import OffCanvas from './components/OffCanvas'
-import Calculator from './components/Calculator'
-import ScrollToTop from './components/ScrollToTop'
-import ImportCustomJS from './components/ImportCustomJS'
-import CallToAction from './components/CallToAction'
+import Footer from '@/app/components/Footer'
+import Header from '@/app/components/Header'
+import Head from '@/app/components/Head'
+import OffCanvas from '@/app/components/OffCanvas'
+import Calculator from '@/app/components/Calculator'
+import ScrollToTop from '@/app/components/ScrollToTop'
+import ImportCustomJS from '@/app/components/ImportCustomJS'
+import CallToAction from '@/app/components/CallToAction'
 
 export const metadata: Metadata = {
   title: 'Create Next App',

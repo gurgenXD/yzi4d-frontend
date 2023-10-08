@@ -1,4 +1,4 @@
-import ImportMapJS from "../components/ImportMapJs"
+import ImportMapJS from "@/app/components/ImportMapJs"
 
 export default function Contacts() {
     return (

@@ -205,7 +205,7 @@ export default async function Header() {
 
                                     <ul className="dropdown-menu">
                                         {categories.map((category: any) => (
-                                            <li><a className="dropdown-item" href={"/services/" + category.id}>{category.name}</a></li>
+                                            <li><a className="dropdown-item" href={"/services/categories/" + category.id}>{category.name}</a></li>
                                         ))}
                                     </ul>
                                 </li>

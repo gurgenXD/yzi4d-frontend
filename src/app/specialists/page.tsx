@@ -1,4 +1,4 @@
-import Pagination from "../components/Pagination"
+import Pagination from "@/app/components/Pagination"
 
 type SearchParams = {
     page: string,
