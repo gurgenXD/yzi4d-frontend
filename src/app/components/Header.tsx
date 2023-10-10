@@ -214,10 +214,10 @@ export default async function Header() {
                                     <a className="nav-link" href="analyses-startpoint.html">Анализы</a>
                                 </li>
 
-                                <li className="nav-item">
+                                {/*<li className="nav-item">
                                     <a className="nav-link" href="sales.html">Спецпредложения</a>
                                 </li>
-
+                                */}
                                 {/* <li className="nav-item dropdown">
                                     <a className="nav-link dropdown-toggle" href="about.html" role="button" aria-expanded="false">
                                         Отделения и центры
