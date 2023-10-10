@@ -6,10 +6,10 @@ export default function OffCanvas() {
                 <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div className="offcanvas-body">
-                <form className="search-form mb-3">
+                {/*<form className="search-form mb-3">
                     <input type="text" className="form-control search-form-input" placeholder="Найти..." />
                     <button type="submit" className="btn btn-primary search-form-btn">Найти</button>
-                </form>
+                </form>*/}
 
                 <div className="sidebar">
                     <ul className="nav">
@@ -26,7 +26,7 @@ export default function OffCanvas() {
                             </a>
                         </li>
 
-                        {/* <li className="nav-item">
+                        <li className="nav-item">
                             <a className="nav-link" href="login.html">
                                 <span className="icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 14">
@@ -37,9 +37,9 @@ export default function OffCanvas() {
 
                                 Войти
                             </a>
-                        </li> */}
+                        </li>
 
-                        <li className="nav-item">
+                        {/*<li className="nav-item">
                             <a className="nav-link" href="#">
                                 <span className="icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14">
@@ -50,7 +50,7 @@ export default function OffCanvas() {
 
                                 Записаться
                             </a>
-                        </li>
+                        </li>*/}
 
                         <li className="nav-item">
                             <a className="nav-link" href="profile-visits.html">
@@ -65,7 +65,7 @@ export default function OffCanvas() {
                             </a>
                         </li>
 
-                        <li className="nav-item">
+                        {/*<li className="nav-item">
                             <a className="nav-link" href="profile-analyses.html">
                                 <span className="icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 298.67 512">
@@ -89,7 +89,7 @@ export default function OffCanvas() {
 
                                 Сменить пароль
                             </a>
-                        </li>
+                        </li>*/}
 
                         <li className="nav-item">
                             <a className="nav-link" href="#">
@@ -139,7 +139,7 @@ export default function OffCanvas() {
                             <a className="nav-link" href="analyses-startpoint.html">Анализы</a>
                         </li>
 
-                        <li className="nav-item">
+                        {/*<li className="nav-item">
                             <a className="nav-link" href="sales.html">Спецпредложения</a>
                         </li>
 
@@ -158,7 +158,7 @@ export default function OffCanvas() {
                             <ul className="submenu collapse">
                                 <li><a className="nav-link" href="department.html">Центр кардионефрологии</a></li>
                             </ul>
-                        </li>
+                        </li> */}
 
                         <li className="nav-item">
                             <a className="nav-link" href="contacts.html">Контакты</a>

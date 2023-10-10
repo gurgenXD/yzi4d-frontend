@@ -20,7 +20,7 @@ export default function Footer() {
                                 Личный кабинет
                             </a>
 
-                            <a href="" className="btn btn-danger btn-sm">Записаться</a>
+                             {/* <a href="" className="btn btn-danger btn-sm">Записаться</a> */}
                         </div>
                     </div>
                 </div>
@@ -38,19 +38,19 @@ export default function Footer() {
                             </div>
 
                             <div className="d-flex mb-3 mb-lg-0">
-                                <a href="#" target="_blank" className="social-link">
+                                <a href="https://t.me/tg4dpolyclinic" target="_blank" className="social-link">
                                     <img src="/img/dynamic-img/tg-icon.svg" alt="" />
                                 </a>
 
-                                <a href="#" target="_blank" className="social-link">
+                                <a href="https://vk.com/4dpolyclinic" target="_blank" className="social-link">
                                     <img src="/img/dynamic-img/vk-icon.svg" alt="" />
                                 </a>
 
-                                <a href="#" target="_blank" className="social-link">
+                                <a href="https://www.youtube.com/@4dpolyclinic" target="_blank" className="social-link">
                                     <img src="/img/dynamic-img/yt-icon.svg" alt="" />
                                 </a>
 
-                                <a href="#" target="_blank" className="social-link">
+                                <a href="https://ok.ru/group/52475215151320" target="_blank" className="social-link">
                                     <img src="/img/dynamic-img/odn-icon.svg" alt="" />
                                 </a>
                             </div>
@@ -62,15 +62,15 @@ export default function Footer() {
                             <li className="me-4 mb-1"><a href="doctors.html" className="link-secondary spaced-link">Специалисты</a></li>
                             <li className="me-4 mb-1"><a href="services-startpoint.html" className="link-secondary spaced-link">Услуги</a></li>
                             <li className="me-4 mb-1"><a href="analyses-startpoint.html" className="link-secondary spaced-link">Анализы</a></li>
-                            <li className="me-4 mb-1"><a href="content.html" className="link-secondary spaced-link">Пациентам</a></li>
-                            <li className="me-4 mb-1"><a href="content.html" className="link-secondary spaced-link">О нас</a></li>
+                           {/* <li className="me-4 mb-1"><a href="content.html" className="link-secondary spaced-link">Пациентам</a></li>
+                            <li className="me-4 mb-1"><a href="content.html" className="link-secondary spaced-link">О нас</a></li> */}
                             <li className="me-4 mb-1"><a href="contacts.html" className="link-secondary spaced-link">Контакты</a></li>
                         </ul>
 
                         <ul className="list-unstyled footer-text mb-0">
                             <li className="mb-1"><a href="#" className="link-secondary">Лицензия №ЛО41-01126-23/00343065</a></li>
                             <li className="text-muted">Имеются противопоказания. Необходима консультация специалиста</li>
-                            <li className="text-muted">© 2022&nbsp; 4Д Поликлиника</li>
+                            <li className="text-muted">© 2023&nbsp; 4Д Поликлиника</li>
                         </ul>
                     </div>
                 </div>
