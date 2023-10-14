@@ -1,15 +1,25 @@
-export async function getCategories() {
+export async function getCategories(catalogType: string) {
     const categories = await fetch(
-        `${process.env.YZI4D_HOST}/catalog/services/categories`,
+        `${process.env.YZI4D_HOST}/catalog/${catalogType}/categories`,
         { next: { revalidate: Number(process.env.CACHE_LIFETIME) } }
     ).then((res) => res.json())
 
     return categories
 }
 
+export async function getOffices() {
+    const offices = await fetch(
+        `${process.env.YZI4D_HOST}/contacts/offices`,
+        { next: { revalidate: Number(process.env.CACHE_LIFETIME) } }
+    ).then((res) => res.json())
+
+    return offices
+}
+
 
 export default async function Header() {
-    const categories = await getCategories()
+    const categories = await getCategories("services")
+    const offices = await getOffices()
 
     return (
         <div>
@@ -17,7 +27,7 @@ export default async function Header() {
                 <div className="container">
                     <div className="d-flex">
                         <div className="dropdown">
-                            <a className="dropdown-toggle link-secondary fs-7 py-2" href="contacts.html" role="button" aria-expanded="false">
+                            <a className="dropdown-toggle link-secondary fs-7 py-2" href="/contacts" role="button" aria-expanded="false">
                                 <span className="icon me-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 11">
                                         <path
@@ -38,10 +48,9 @@ export default async function Header() {
                             </a>
 
                             <ul className="dropdown-menu">
-                                <li><a className="dropdown-item fs-8" href="branch.html">г. Пятигорск, ул. Кузнечная, 26</a></li>
-                                <li><a className="dropdown-item fs-8" href="branch.html">г. Пятигорск, пр. Калинина, 107</a></li>
-                                <li><a className="dropdown-item fs-8" href="branch.html">г. Ессентуки, ул. Володарского, 25/2</a></li>
-                                <li><a className="dropdown-item fs-8" href="branch.html">г. Минеральные Воды, пр. XXII Партсъезда, 32А</a></li>
+                                {offices.map((office: string) => (
+                                    <li key={office}><a className="dropdown-item fs-8" href="#">{office}</a></li>
+                                ))}
                             </ul>
                         </div>
 
@@ -63,10 +72,10 @@ export default async function Header() {
                 <div className="container">
                     <div className="d-flex align-items-center py-2 pt-lg-4 pb-lg-3">
                         <div className="d-flex align-items-end">
-                            <a href="index.html" title="" className="d-flex me-3 me-lg-5"><img className="logo-header" src="/img/logo.svg" alt="" /></a>
+                            <a href="/" title="" className="d-flex me-3 me-lg-5"><img className="logo-header" src="/img/logo.svg" alt="" /></a>
 
                             <div>
-                                <a href="tel:+79283012171" title="" className="phone-header link-secondary fw-extrabold d-flex mb-1">+7 (928) 301-21-71</a>
+                                <a href="tel:+79288284001" title="" className="phone-header link-secondary fw-extrabold d-flex mb-1">+7 (928) 828-40-01</a>
                                 <div className="schedule d-flex">
                                     <span className="text-white bg-danger px-1 me-1">без выходных</span>
                                     с 7:00 до 20:00
@@ -235,7 +244,7 @@ export default async function Header() {
                                 </li> */}
 
                                 <li className="nav-item">
-                                    <a className="nav-link" href="contacts.html">Контакты</a>
+                                    <a className="nav-link" href="/contacts">Контакты</a>
                                 </li>
                             </ul>
 

@@ -20,7 +20,7 @@ export default function Footer() {
                                 Личный кабинет
                             </a>
 
-                             {/* <a href="" className="btn btn-danger btn-sm">Записаться</a> */}
+                            {/* <a href="" className="btn btn-danger btn-sm">Записаться</a> */}
                         </div>
                     </div>
                 </div>
@@ -29,7 +29,7 @@ export default function Footer() {
                     <div className="col-lg-auto">
                         <div className="d-sm-flex flex-lg-column align-items-center align-items-lg-start mb-2 mb-lg-0">
                             <div className="me-5 me-lg-0 mb-3 mb-lg-4">
-                                <a href="tel:+79283012171" title="" className="phone-footer link-secondary fw-extrabold d-flex mb-1">+7 (928) 301-21-71</a>
+                                <a href="tel:+79288284001" title="" className="phone-footer link-secondary fw-extrabold d-flex mb-1">+7 (928) 828-40-01</a>
 
                                 <div className="schedule d-flex">
                                     <span className="text-white bg-danger px-1 me-1">без выходных</span>
@@ -62,7 +62,7 @@ export default function Footer() {
                             <li className="me-4 mb-1"><a href="doctors.html" className="link-secondary spaced-link">Специалисты</a></li>
                             <li className="me-4 mb-1"><a href="services-startpoint.html" className="link-secondary spaced-link">Услуги</a></li>
                             <li className="me-4 mb-1"><a href="analyses-startpoint.html" className="link-secondary spaced-link">Анализы</a></li>
-                           {/* <li className="me-4 mb-1"><a href="content.html" className="link-secondary spaced-link">Пациентам</a></li>
+                            {/* <li className="me-4 mb-1"><a href="content.html" className="link-secondary spaced-link">Пациентам</a></li>
                             <li className="me-4 mb-1"><a href="content.html" className="link-secondary spaced-link">О нас</a></li> */}
                             <li className="me-4 mb-1"><a href="contacts.html" className="link-secondary spaced-link">Контакты</a></li>
                         </ul>

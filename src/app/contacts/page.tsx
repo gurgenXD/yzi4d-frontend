@@ -73,7 +73,7 @@ export default function Contacts() {
 
                                             <div className="mb-2 mb-md-3">
                                                 <div className="address-title text-muted">Телефон:</div>
-                                                <a href="tel:+79283012171" title="" className="address-value link-secondary">+7 (928) 301-21-71</a>
+                                                <a href="tel:+79288284001" title="" className="address-value link-secondary">+7 (928) 828-40-01</a>
                                             </div>
 
                                             <div className="mb-2 mb-md-3">
@@ -119,7 +119,7 @@ export default function Contacts() {
 
                                             <div className="mb-2 mb-md-3">
                                                 <div className="address-title text-muted">Телефон:</div>
-                                                <a href="tel:+79283012171" title="" className="address-value link-secondary">+7 (928) 301-21-71</a>
+                                                <a href="tel:+79288284001" title="" className="address-value link-secondary">+7 (928) 828-40-01</a>
                                             </div>
 
                                             <div className="mb-2 mb-md-3">
@@ -155,7 +155,7 @@ export default function Contacts() {
 
                                             <div className="mb-2 mb-md-3">
                                                 <div className="address-title text-muted">Телефон:</div>
-                                                <a href="tel:+79283012171" title="" className="address-value link-secondary">+7 (928) 301-21-71</a>
+                                                <a href="tel:+79288284001" title="" className="address-value link-secondary">+7 (928) 828-40-01</a>
                                             </div>
 
                                             <div className="mb-2 mb-md-3">
@@ -191,7 +191,7 @@ export default function Contacts() {
 
                                             <div className="mb-2 mb-md-3">
                                                 <div className="address-title text-muted">Телефон:</div>
-                                                <a href="tel:+79283012171" title="" className="address-value link-secondary">+7 (928) 301-21-71</a>
+                                                <a href="tel:+79288284001" title="" className="address-value link-secondary">+7 (928) 828-40-01</a>
                                             </div>
 
                                             <div className="mb-2 mb-md-3">

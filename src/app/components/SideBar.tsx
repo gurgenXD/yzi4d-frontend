@@ -3,7 +3,7 @@ import { getCategories } from "@/app/components/Header"
 
 
 export default async function SideBar({ category_id }: { category_id: string }) {
-    const categories = await getCategories()
+    const categories = await getCategories("services")
 
     return (
         <div className="col-xxl-3 col-xl-4">

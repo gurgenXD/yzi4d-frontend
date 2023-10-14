@@ -95,7 +95,7 @@ export default async function Specialist(
                                     </div>
                                     <p className="text-secondary mb-0">
                                         Возможен приём детей. Уточните в колл-центре:
-                                        <a href="tel:+79283012171" className="fw-semibold text-nowrap"> +7 (928) 301-21-71</a>
+                                        <a href="tel:+79288284001" className="fw-semibold text-nowrap"> +7 (928) 828-40-01</a>
                                     </p>
                                 </div>
                                 : null

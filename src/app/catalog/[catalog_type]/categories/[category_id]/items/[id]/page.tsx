@@ -19,8 +19,6 @@ export default async function Service(
     const { errorCode, service } = await getService(params.id, params.category_id, params.catalog_type)
     if (errorCode) { return <NotFound /> }
 
-    console.log(service)
-
     return (
         <main role="main" className="flex-shrink-0">
             <div className="overflow-hidden">
