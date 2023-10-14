@@ -2,8 +2,8 @@ import { getCategories } from "@/app/components/Header"
 
 
 
-export default async function SideBar({ category_id }: { category_id: string }) {
-    const categories = await getCategories("services")
+export default async function SideBar({ category_id, catalog_type }: { category_id: string, catalog_type: string }) {
+    const categories = await getCategories(catalog_type)
 
     return (
         <div className="col-xxl-3 col-xl-4">
@@ -25,7 +25,7 @@ export default async function SideBar({ category_id }: { category_id: string }) 
                             <ul className="nav">
                                 {categories.map((category: any) => (
                                     <li key={category.id} className="nav-item has-submenu">
-                                        <a className={"nav-link" + ((category.id == category_id) ? " active" : "")} href={"/catalog/services/categories/" + category.id}>
+                                        <a className={"nav-link" + ((category.id == category_id) ? " active" : "")} href={"/catalog/" + catalog_type + "/categories/" + category.id}>
                                             {category.name}
 
                                             {/* <span className="caret">

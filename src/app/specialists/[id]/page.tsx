@@ -459,7 +459,7 @@ export default async function Specialist(
 
                     <div>
                         {data.map((service: any) => (
-                            <ServiceBlock service={service} />
+                            <ServiceBlock service={service} catalog_type="services" />
                         ))}
                     </div>
 

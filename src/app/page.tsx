@@ -1,5 +1,6 @@
 import { getSpecialists } from "@/app/specialists/page"
-import SpecialistBlock from "./components/SpecialistBlock"
+import SpecialistBlock from "@/app/components/SpecialistBlock"
+import ContactsBlock from "@/app/components/ContactsBlock"
 
 
 export async function getCategories(catalogType: string) {
@@ -60,7 +61,7 @@ export default async function Home() {
                               <div>
                                 <div className="d-flex flex-wrap mb-2 mb-md-3 mb-xxl-4">
                                   <div className="sale-banner-badge bg-danger text-white fw-semibold px-2 px-lg-3 py-1 mb-1">Выгода 20%</div>
-                                  <div className="sale-banner-date bg-light-blue fw-semibold px-2 px-lg-3 py-1 mb-1">25 августа - 25 сентября</div>
+                                  <div className="sale-banner-date bg-light-blue fw-semibold px-2 px-lg-3 py-1 mb-1">25 октября - 25 декабря</div>
                                 </div>
 
                                 <a href="#" className="sale-banner-title stretched-link d-block link-secondary fw-black mb-0">Биохимия крови</a>
@@ -103,7 +104,7 @@ export default async function Home() {
                               <div>
                                 <div className="d-flex flex-wrap mb-2 mb-md-3 mb-xxl-4">
                                   <div className="sale-banner-badge bg-danger text-white fw-semibold px-2 px-lg-3 py-1 mb-1">Выгода 50%</div>
-                                  <div className="sale-banner-date bg-light-blue fw-semibold px-2 px-lg-3 py-1 mb-1">Все выходные сентября</div>
+                                  <div className="sale-banner-date bg-light-blue fw-semibold px-2 px-lg-3 py-1 mb-1">Все выходные октября</div>
                                 </div>
 
                                 <a href="#" className="sale-banner-title stretched-link d-block link-secondary fw-black mb-0">Здоровье щитовидной железы</a>
@@ -365,207 +366,7 @@ export default async function Home() {
           <div className="container">
             <h2 className="mb-lg-4 mb-2">Наши филиалы</h2>
 
-            <div className="nav-mobile-scroll fw-semibold mb-4">
-              <div className="linebar" id="adresses-tab" role="tablist">
-                <ul className="nav">
-                  <li className="nav-item">
-                    <a
-                      className="nav-link active"
-                      href="#"
-                      id="adresses-1-tab"
-                      data-bs-toggle="pill"
-                      data-bs-target="#adresses-1"
-                      role="tab"
-                      aria-controls="adresses-1"
-                      aria-selected="true">
-                      Пятигорск
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a
-                      className="nav-link"
-                      href="#"
-                      id="adresses-2-tab"
-                      data-bs-toggle="pill"
-                      data-bs-target="#adresses-2"
-                      role="tab"
-                      aria-controls="adresses-2"
-                      aria-selected="false">
-                      Ессентуки
-                    </a>
-                  </li>
-                  <li className="nav-item">
-                    <a
-                      className="nav-link"
-                      href="#"
-                      id="adresses-3-tab"
-                      data-bs-toggle="pill"
-                      data-bs-target="#adresses-3"
-                      role="tab"
-                      aria-controls="adresses-3"
-                      aria-selected="false">
-                      Минеральные Воды
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-
-            <div className="tab-content" id="adresses-tabContent">
-              <div className="tab-pane fade show active" id="adresses-1" role="tabpanel" aria-labelledby="adresses-1-tab" tabIndex={0}>
-                <div className="bg-white shadow rounded-3 overflow-hidden mb-5">
-                  <div className="row g-0">
-                    <div className="col-lg-4 address-card-caption">
-                      <div className="h-100 d-flex flex-column p-3 p-sm-4 p-md-5 p-lg-4 p-xl-5">
-                        <h3 className="address-card-title mb-3"><a href="branch.html" className="link-secondary">4Д на Кузнечной</a></h3>
-
-                        <div className="mb-2 mb-md-3">
-                          <div className="address-title text-muted">Адрес:</div>
-                          <div className="address-value">г. Пятигорск, ул. Кузнечная, 26</div>
-                        </div>
-
-                        <div className="mb-2 mb-md-3">
-                          <div className="address-title text-muted">Телефон:</div>
-                          <a href="tel:+79283012171" title="" className="address-value link-secondary">+7 (928) 301-21-71</a>
-                        </div>
-
-                        <div className="mb-2 mb-md-3">
-                          <div className="address-title text-muted">Время работы:</div>
-                          <div className="address-value">пн-вс 8:00 - 20:00</div>
-                        </div>
-
-                        <div className="mb-2 mb-md-3">
-                          <div className="address-title text-muted">Электронная почта:</div>
-                          <a href="mailto:klinika@yzi4d.ru" title="" className="address-value link-secondary">klinika@yzi4d.ru</a>
-                        </div>
-
-                        <div className="pt-3 mt-auto">
-                          <div className="mb-2">
-                            <div className="address-title text-muted">Главный врач:</div>
-                            <div className="address-value">В.Ю. Рушниченко</div>
-                          </div>
-
-                          <div className="mb-2">
-                            <div className="address-title text-muted">Принимает:</div>
-                            <div className="address-value">вт 10:00 - 12:00</div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="col-lg-8">
-                      <div className="map" id="Map1"></div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="bg-white shadow rounded-3 overflow-hidden mb-5">
-                  <div className="row g-0">
-                    <div className="col-lg-4 address-card-caption">
-                      <div className="h-100 d-flex flex-column p-3 p-sm-4 p-md-5 p-lg-4 p-xl-5">
-                        <h3 className="address-card-title mb-3"><a href="branch.html" className="link-secondary">4Д на Калинина</a></h3>
-
-                        <div className="mb-2 mb-md-3">
-                          <div className="address-title text-muted">Адрес:</div>
-                          <div className="address-value">г. Пятигорск, пр. Калинина, 107</div>
-                        </div>
-
-                        <div className="mb-2 mb-md-3">
-                          <div className="address-title text-muted">Телефон:</div>
-                          <a href="tel:+79283012171" title="" className="address-value link-secondary">+7 (928) 301-21-71</a>
-                        </div>
-
-                        <div className="mb-2 mb-md-3">
-                          <div className="address-title text-muted">Время работы:</div>
-                          <div className="address-value">пн-вс 8:00 - 20:00</div>
-                        </div>
-
-                        <div className="mb-2 mb-md-3">
-                          <div className="address-title text-muted">Электронная почта:</div>
-                          <a href="mailto:klinika@yzi4d.ru" title="" className="address-value link-secondary">klinika@yzi4d.ru</a>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="col-lg-8">
-                      <div className="map" id="Map2"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="tab-pane fade" id="adresses-2" role="tabpanel" aria-labelledby="adresses-2-tab" tabIndex={0}>
-                <div className="bg-white shadow rounded-3 overflow-hidden mb-5">
-                  <div className="row g-0">
-                    <div className="col-lg-4 address-card-caption">
-                      <div className="h-100 d-flex flex-column p-3 p-sm-4 p-md-5 p-lg-4 p-xl-5">
-                        <h3 className="address-card-title mb-3"><a href="branch.html" className="link-secondary">4Д на Володарского</a></h3>
-
-                        <div className="mb-2 mb-md-3">
-                          <div className="address-title text-muted">Адрес:</div>
-                          <div className="address-value">г. Ессентуки, ул. Володарского, 25/2</div>
-                        </div>
-
-                        <div className="mb-2 mb-md-3">
-                          <div className="address-title text-muted">Телефон:</div>
-                          <a href="tel:+79283012171" title="" className="address-value link-secondary">+7 (928) 301-21-71</a>
-                        </div>
-
-                        <div className="mb-2 mb-md-3">
-                          <div className="address-title text-muted">Время работы:</div>
-                          <div className="address-value">пн-вс 8:00 - 20:00</div>
-                        </div>
-
-                        <div className="mb-2 mb-md-3">
-                          <div className="address-title text-muted">Электронная почта:</div>
-                          <a href="mailto:klinika@yzi4d.ru" title="" className="address-value link-secondary">klinika@yzi4d.ru</a>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="col-lg-8">
-                      <div className="map" id="Map3"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="tab-pane fade" id="adresses-3" role="tabpanel" aria-labelledby="adresses-3-tab" tabIndex={0}>
-                <div className="bg-white shadow rounded-3 overflow-hidden mb-5">
-                  <div className="row g-0">
-                    <div className="col-lg-4 address-card-caption">
-                      <div className="h-100 d-flex flex-column p-3 p-sm-4 p-md-5 p-lg-4 p-xl-5">
-                        <h3 className="address-card-title mb-3"><a href="branch.html" className="link-secondary">4Д на XXII Партсъезда</a></h3>
-
-                        <div className="mb-2 mb-md-3">
-                          <div className="address-title text-muted">Адрес:</div>
-                          <div className="address-value">г. Минеральные Воды, пр. XXII Партсъезда, 32А</div>
-                        </div>
-
-                        <div className="mb-2 mb-md-3">
-                          <div className="address-title text-muted">Телефон:</div>
-                          <a href="tel:+79283012171" title="" className="address-value link-secondary">+7 (928) 301-21-71</a>
-                        </div>
-
-                        <div className="mb-2 mb-md-3">
-                          <div className="address-title text-muted">Время работы:</div>
-                          <div className="address-value">пн-вс 8:00 - 20:00</div>
-                        </div>
-
-                        <div className="mb-2 mb-md-3">
-                          <div className="address-title text-muted">Электронная почта:</div>
-                          <a href="mailto:klinika@yzi4d.ru" title="" className="address-value link-secondary">klinika@yzi4d.ru</a>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div className="col-lg-8">
-                      <div className="map" id="Map4"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <ContactsBlock />
           </div>
         </section>
 
@@ -709,25 +510,9 @@ export default async function Home() {
                       <div className="rate-item-score fw-bold text-danger me-3">4.8</div>
 
                       <div>
-                        <a href="#" target="_blank" className="rate-item-title stretched-link link-secondary d-block fw-bold">Яндекс</a>
+                        <a href="https://yandex.ru/maps/org/4d_poliklinika/1154946954/reviews/?ll=43.070356%2C44.048861&z=15" target="_blank" className="rate-item-title stretched-link link-secondary d-block fw-bold">Яндекс</a>
 
-                        <div className="rate-item-count text-muted">385 отзывов</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="swiper-slide">
-                    <div className="rate-item bg-white rounded-3 shadow-sm d-flex align-items-center p-sm-4 p-3">
-                      <div className="rate-item-img">
-                        <img src="/img/yandex.svg" alt="" />
-                      </div>
-
-                      <div className="rate-item-score fw-bold text-danger me-3">4.8</div>
-
-                      <div>
-                        <a href="#" target="_blank" className="rate-item-title stretched-link link-secondary d-block fw-bold">Яндекс</a>
-
-                        <div className="rate-item-count text-muted">385 отзывов</div>
+                        <div className="rate-item-count text-muted">861 отзыв</div>
                       </div>
                     </div>
                   </div>
@@ -738,28 +523,12 @@ export default async function Home() {
                         <img src="/img/2gis.svg" alt="" />
                       </div>
 
-                      <div className="rate-item-score fw-bold text-danger me-3">4.6</div>
+                      <div className="rate-item-score fw-bold text-danger me-3">4.5</div>
 
                       <div>
-                        <a href="#" target="_blank" className="rate-item-title stretched-link link-secondary d-block fw-bold">2ГИС</a>
+                        <a href="https://2gis.ru/pyatigorsk/inside/12526272118936823/firm/12526164744605496/tab/reviews?m=43.06884%2C44.048142%2F19.41" target="_blank" className="rate-item-title stretched-link link-secondary d-block fw-bold">2ГИС</a>
 
-                        <div className="rate-item-count text-muted">148 отзывов</div>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div className="swiper-slide">
-                    <div className="rate-item bg-white rounded-3 shadow-sm d-flex align-items-center p-sm-4 p-3">
-                      <div className="rate-item-img">
-                        <img src="/img/sber.svg" alt="" />
-                      </div>
-
-                      <div className="rate-item-score fw-bold text-danger me-3">4.2</div>
-
-                      <div>
-                        <a href="#" target="_blank" className="rate-item-title stretched-link link-secondary d-block fw-bold">Сбер Здоровье</a>
-
-                        <div className="rate-item-count text-muted">59 отзывов</div>
+                        <div className="rate-item-count text-muted">162 отзыва</div>
                       </div>
                     </div>
                   </div>
@@ -770,12 +539,28 @@ export default async function Home() {
                         <img src="/img/prodoctorov.svg" alt="" />
                       </div>
 
+                      <div className="rate-item-score fw-bold text-danger me-3">4.2</div>
+
+                      <div>
+                        <a href="https://prodoctorov.ru/pyatigorsk/lpu/24199-klinika-innovacionnoy-mediciny-4d/#rating" target="_blank" className="rate-item-title stretched-link link-secondary d-block fw-bold">ПроДокторов</a>
+
+                        <div className="rate-item-count text-muted">287 отзывов</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="swiper-slide">
+                    <div className="rate-item bg-white rounded-3 shadow-sm d-flex align-items-center p-sm-4 p-3">
+                      <div className="rate-item-img">
+                        <img src="/img/doctu.svg" alt="" />
+                      </div>
+
                       <div className="rate-item-score fw-bold text-danger me-3">4.7</div>
 
                       <div>
-                        <a href="#" target="_blank" className="rate-item-title stretched-link link-secondary d-block fw-bold">ПроДокторов</a>
+                        <a href="https://doctu.ru/pyatigorsk/clinic/poliklinika-4d-1/reviews" target="_blank" className="rate-item-title stretched-link link-secondary d-block fw-bold">Докту</a>
 
-                        <div className="rate-item-count text-muted">76 отзывов</div>
+                        <div className="rate-item-count text-muted">101 отзыв</div>
                       </div>
                     </div>
                   </div>

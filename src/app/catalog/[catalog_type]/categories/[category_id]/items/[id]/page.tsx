@@ -25,7 +25,7 @@ export default async function Service(
                 <div className="container pt-4 pt-lg-5 pb-5">
                     <ol className="breadcrumb">
                         <li className="breadcrumb-item"><a href="/">Главная</a></li>
-                        <li className="breadcrumb-item">Услуги</li>
+                        <li className="breadcrumb-item">{(params.catalog_type == "services") ? "Услуги" : "Анализы"}</li>
                         <li className="breadcrumb-item"><a href={"/catalog/" + params.catalog_type + "/categories/" + service.category_id}>{service.category_name}</a></li>
                         <li className="breadcrumb-item active">{service.name}</li>
                     </ol>
@@ -174,7 +174,7 @@ export default async function Service(
 
                 <div className="container mb-5">
                     <div className="row">
-                        <SideBar category_id={params.category_id} />
+                        <SideBar category_id={params.category_id} catalog_type={params.catalog_type} />
 
                         <div className="col-xxl-9 col-xl-8">
                             <div className="bg-white rounded-3 shadow px-3 pb-3 px-md-4 pt-md-2 pb-md-4 px-lg-5 pt-lg-3 pb-lg-5">

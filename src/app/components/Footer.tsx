@@ -9,7 +9,7 @@ export default function Footer() {
 
                     <div className="col-md-auto mb-3">
                         <div className="d-flex flex-wrap align-items-center">
-                            <a className="profile-link link-secondary text-nowrap spaced-link fs-7 me-4" href="login.html">
+                            <a className="profile-link link-secondary text-nowrap spaced-link fs-7 me-4" href="https://lk.yzi4d.ru" target="_blank">
                                 <span className="icon me-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 14">
                                         <path
@@ -59,18 +59,18 @@ export default function Footer() {
 
                     <div className="col-lg">
                         <ul className="list-unstyled d-flex flex-wrap footer-links pb-2 mb-3">
-                            <li className="me-4 mb-1"><a href="doctors.html" className="link-secondary spaced-link">Специалисты</a></li>
+                            <li className="me-4 mb-1"><a href="/specialists" className="link-secondary spaced-link">Специалисты</a></li>
                             <li className="me-4 mb-1"><a href="services-startpoint.html" className="link-secondary spaced-link">Услуги</a></li>
                             <li className="me-4 mb-1"><a href="analyses-startpoint.html" className="link-secondary spaced-link">Анализы</a></li>
                             {/* <li className="me-4 mb-1"><a href="content.html" className="link-secondary spaced-link">Пациентам</a></li>
                             <li className="me-4 mb-1"><a href="content.html" className="link-secondary spaced-link">О нас</a></li> */}
-                            <li className="me-4 mb-1"><a href="contacts.html" className="link-secondary spaced-link">Контакты</a></li>
+                            <li className="me-4 mb-1"><a href="/contacts" className="link-secondary spaced-link">Контакты</a></li>
                         </ul>
 
                         <ul className="list-unstyled footer-text mb-0">
-                            <li className="mb-1"><a href="#" className="link-secondary">Лицензия №ЛО41-01126-23/00343065</a></li>
+                            <li className="mb-1"><a href="https://cloud.yzi4d.ru/s/Ba4Yn4df46EMXZQ" target="_blank" className="link-secondary">Лицензия №ЛО41-01126-23/00343065</a></li>
                             <li className="text-muted">Имеются противопоказания. Необходима консультация специалиста</li>
-                            <li className="text-muted">© 2023&nbsp; 4Д Поликлиника</li>
+                            <li className="text-muted">© {new Date().getFullYear()} 4Д Поликлиника</li>
                         </ul>
                     </div>
                 </div>

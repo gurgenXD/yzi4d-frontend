@@ -54,7 +54,7 @@ export default async function Header() {
                             </ul>
                         </div>
 
-                        <a href="" title="" className="bvi-open bvi-hide btn btn-secondary d-flex align-items-center btn-sm rounded-0 ms-auto">
+                        {/* <a href="" title="" className="bvi-open bvi-hide btn btn-secondary d-flex align-items-center btn-sm rounded-0 ms-auto">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 11.98" height="14px" className="me-2">
                                 <path
                                     d="M14.54,4.34c-.97-1.62-3.17-4.34-7.04-4.34S1.43,2.72,.46,4.34C-.15,5.35-.15,6.63,.46,7.65c.97,1.62,3.18,4.34,7.04,4.34s6.07-2.72,7.04-4.34c.61-1.02,.61-2.29,0-3.31Zm-1.06,2.64c-.83,1.39-2.72,3.73-5.98,3.73S2.36,8.37,1.53,6.98c-.36-.61-.36-1.36,0-1.97,.83-1.39,2.72-3.73,5.98-3.73s5.15,2.34,5.98,3.73c.36,.61,.36,1.36,0,1.97Z" />
@@ -63,7 +63,7 @@ export default async function Header() {
                             </svg>
 
                             Версия для слабовидящих
-                        </a>
+                        </a> */}
                     </div>
                 </div>
             </div>
@@ -220,7 +220,7 @@ export default async function Header() {
                                 </li>
 
                                 <li className="nav-item">
-                                    <a className="nav-link" href="analyses-startpoint.html">Анализы</a>
+                                    <a className="nav-link" href={"/catalog/analyzes/categories/" + 1}>Анализы</a>
                                 </li>
 
                                 {/*<li className="nav-item">

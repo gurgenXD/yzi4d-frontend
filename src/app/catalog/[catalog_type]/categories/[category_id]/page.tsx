@@ -29,12 +29,12 @@ export default async function Services(
                 <div className="container pt-4 pt-lg-5">
                     <ol className="breadcrumb">
                         <li className="breadcrumb-item"><a href="/">Главная</a></li>
-                        <li className="breadcrumb-item">Услуги</li>
+                        <li className="breadcrumb-item">{(params.catalog_type == "services") ? "Услуги" : "Анализы"}</li>
                         <li className="breadcrumb-item active">{data[0].category_name}</li>
                     </ol>
 
                     <div className="d-flex flex-wrap align-items-center mb-2">
-                        <h1 className="mb-3 pe-4 me-auto">Услуги</h1>
+                        <h1 className="mb-3 pe-4 me-auto">{(params.catalog_type == "services") ? "Услуги" : "Анализы"}</h1>
 
                         <button
                             className="d-xl-none btn btn-outline-secondary btn-sm btn-icon text-nowrap mb-3"
@@ -58,12 +58,12 @@ export default async function Services(
                     </div>
 
                     <div className="row">
-                        <SideBar category_id={params.category_id} />
+                        <SideBar category_id={params.category_id} catalog_type={params.catalog_type} />
 
                         <div className="col-xxl-9 col-xl-8">
                             <div>
                                 {data.map((service: any) => (
-                                    <ServiceBlock service={service} />
+                                    <ServiceBlock service={service} catalog_type={params.catalog_type} />
                                 ))}
                             </div>
 
