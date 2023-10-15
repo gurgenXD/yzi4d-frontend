@@ -24,9 +24,7 @@ export default function Head() {
             <link rel="preload" href="/fonts/Roboto-Regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
 
             {/* Версия для слабовидящих. */}
-            <link rel="stylesheet" href="/blind/css/bvi.min.css" type="text/css"></link>
-
-            <title>@@title</title>
+            {/* <link rel="stylesheet" href="/blind/css/bvi.min.css" type="text/css"></link> */}
         </head>
     )
 }

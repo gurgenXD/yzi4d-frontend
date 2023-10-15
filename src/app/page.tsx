@@ -1,16 +1,13 @@
 import { getSpecialists } from "@/app/specialists/page"
+import { getCategories } from "@/app/components/Header"
 import SpecialistBlock from "@/app/components/SpecialistBlock"
 import ContactsBlock from "@/app/components/ContactsBlock"
+import Image from 'next/image'
 
 
-export async function getCategories(catalogType: string) {
-  const categories = await fetch(
-    `${process.env.YZI4D_HOST}/catalog/${catalogType}/categories  `,
-    { next: { revalidate: Number(process.env.CACHE_LIFETIME) } }
-  ).then((res) => res.json())
-
-  return categories
-}
+export const metadata = {
+  title: "Главная - Поликлиника Узи4Д",
+};
 
 
 export default async function Home() {
@@ -192,10 +189,10 @@ export default async function Home() {
               <div className="col-lg">
                 <div className="tab-content" id="services-tabContent">
                   {categories.map((category: any) => (
-                    <div className={"tab-pane fade" + (category.id == categories[0].id ? " show active" : "")} id={"services-" + category.id} role="tabpanel" aria-labelledby={"services-" + category.id + "-tab"} tabIndex={0}>
+                    <div key={category.id} className={"tab-pane fade" + (category.id == categories[0].id ? " show active" : "")} id={"services-" + category.id} role="tabpanel" aria-labelledby={"services-" + category.id + "-tab"} tabIndex={0}>
                       <div className="row g-xxl-4 g-3">
                         {category.services.map((service: any) => (
-                          <div className="col-xl-4 col-md-6">
+                          <div key={service.id} className="col-xl-4 col-md-6">
                             <div
                               className="card h-100 d-flex flex-column position-relative rounded-3 pt-3 pt-sm-4 pb-sm-2 px-3 px-sm-4"
                               style={{ backgroundImage: "url('/img/service-bg-icon_1.svg')" }}>
@@ -257,7 +254,7 @@ export default async function Home() {
               <div className="swiper">
                 <div className="swiper-wrapper">
                   {specialists.data.map((specialist: any) => (
-                    <div className="swiper-slide">
+                    <div key={specialist.id} className="swiper-slide">
                       <SpecialistBlock specialist={specialist} />
                     </div>
                   ))}

@@ -1,6 +1,8 @@
+import Image from 'next/image'
+
 export default function CallToAction() {
     return (
-        <section className="py-lg-6 py-5">
+        <section className="py-lg-6 py-5 d-none">
             <div className="container">
                 <div className="cta bg-light-blue rounded-3 p-3 p-sm-5 p-lg-0">
                     <div className="row flex-column flex-md-row gy-4 gy-sm-5 gy-md-0 gx-xl-0">

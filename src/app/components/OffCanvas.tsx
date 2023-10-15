@@ -1,4 +1,11 @@
-export default function OffCanvas() {
+import Image from 'next/image'
+import { getCategories, getOffices } from "@/app/components/Header"
+
+
+export default async function OffCanvas() {
+    const categories = await getCategories("services")
+    const offices = await getOffices()
+
     return (
         <div className="offcanvas offcanvas-end" tabIndex={-1} id="Offcanvas" aria-labelledby="OffcanvasLabel">
             <div className="offcanvas-header pb-1">
@@ -117,7 +124,7 @@ export default function OffCanvas() {
                         </li>
 
                         <li className="nav-item has-submenu">
-                            <a className="nav-link" href="#">
+                            <a className="nav-link active" href={"/catalog/services/categories/" + categories[0].id}>
                                 Услуги
 
                                 <span className="caret">
@@ -128,15 +135,15 @@ export default function OffCanvas() {
                                 </span>
                             </a>
 
-                            <ul className="submenu collapse">
-                                <li><a className="nav-link" href="services-category.html">УЗИ</a></li>
-                                <li><a className="nav-link" href="services-category.html">МРТ</a></li>
-                                <li><a className="nav-link" href="services-category.html">Хирургия</a></li>
+                            <ul className="submenu collapse show">
+                                {categories.map((category: any) => (
+                                    <li key={category.id}><a className="nav-link" href={"/catalog/services/categories/" + category.id}>{category.name}</a></li>
+                                ))}
                             </ul>
                         </li>
 
                         <li className="nav-item">
-                            <a className="nav-link" href="analyses-startpoint.html">Анализы</a>
+                            <a className="nav-link" href={"/catalog/analyzes/categories/" + 1}>Анализы</a>
                         </li>
 
                         {/*<li className="nav-item">
@@ -171,7 +178,7 @@ export default function OffCanvas() {
                 <div className="sidebar">
                     <ul className="nav">
                         <li className="nav-item has-submenu">
-                            <a className="nav-link" href="#">
+                            <a className="nav-link active" href="#">
                                 <span className="icon">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 11">
                                         <path
@@ -191,11 +198,10 @@ export default function OffCanvas() {
                                 </span>
                             </a>
 
-                            <ul className="submenu collapse">
-                                <li><a className="nav-link" href="branch.html">г. Пятигорск, ул. Кузнечная, 26</a></li>
-                                <li><a className="nav-link" href="branch.html">г. Пятигорск, пр. Калинина, 107</a></li>
-                                <li><a className="nav-link" href="branch.html">г. Ессентуки, ул. Володарского, 25/2</a></li>
-                                <li><a className="nav-link" href="branch.html">г. Минеральные Воды, пр. XXII Партсъезда, 32А</a></li>
+                            <ul className="submenu collapse show">
+                                {offices.map((office: string) => (
+                                    <li key={office}><a className="nav-link" href="#">{office}</a></li>
+                                ))}
                             </ul>
                         </li>
                     </ul>

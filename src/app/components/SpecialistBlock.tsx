@@ -24,7 +24,7 @@ export default function SpecialistBlock({ specialist }: { specialist: any }) {
 
                 <div className="d-flex flex-wrap pt-2">
                     {specialist.titles.map((title: any) => (
-                        <div className="doctor-card-achieve bg-danger text-white px-1">{title.name}</div>
+                        <div key={title.name} className="doctor-card-achieve bg-danger text-white px-1">{title.name}</div>
                     ))}
                 </div>
             </div>

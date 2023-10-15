@@ -1,6 +1,6 @@
 export default function Calculator() {
   return (
-    <div>
+    <div className="d-none">
       <a href="#" title="Открыть калькулятор" className="calc-btn text-center position-fixed">
         <div className="calc-btn__container position-relative rounded-3">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13.52 16" height="26px">

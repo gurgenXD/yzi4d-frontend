@@ -1,3 +1,6 @@
+import Image from 'next/image'
+
+
 export default function NotFound() {
     return (
         <main role="main" className="flex-shrink-0">

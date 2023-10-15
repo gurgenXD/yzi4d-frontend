@@ -30,6 +30,11 @@ async function getSpecializations() {
 }
 
 
+export const metadata = {
+    title: "Специалисты - Поликлиника Узи4Д",
+};
+
+
 export default async function Specialists({ searchParams }: { searchParams: SearchParams }) {
 
     const urlSearchParams = new URLSearchParams(searchParams)
@@ -71,7 +76,7 @@ export default async function Specialists({ searchParams }: { searchParams: Sear
                                     <select className="form-select form-select-sm" id="" name="specialization_id" defaultValue={(searchParams.specialization_id) ? searchParams.specialization_id : ""}>
                                         <option value={0}>Все специальности</option>
                                         {specializations.map((specialization: any) => (
-                                            <option value={specialization.id}>{specialization.name}</option>
+                                            <option key={specialization.id} value={specialization.id}>{specialization.name}</option>
                                         ))}
                                     </select>
                                 </div>
@@ -94,7 +99,7 @@ export default async function Specialists({ searchParams }: { searchParams: Sear
 
                     <div className="row gy-4 gy-md-5">
                         {data.map((specialist: any) => (
-                            <div className="col-lg-3 col-md-4">
+                            <div key={specialist.id} className="col-lg-3 col-md-4">
                                 <SpecialistBlock specialist={specialist} />
                             </div>
                         ))}

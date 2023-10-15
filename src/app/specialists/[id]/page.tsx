@@ -1,6 +1,8 @@
 import ServiceBlock from "@/app/components/ServiceBlock"
 import Pagination from "@/app/components/Pagination"
 import NotFound from "@/app/not-found"
+import Image from 'next/image'
+
 
 async function getSpecialist(id: string) {
     const res = await fetch(
@@ -23,6 +25,16 @@ async function getSpecialistServices(id: string, searchParams: URLSearchParams) 
 }
 
 
+export async function generateMetadata(
+    { params }: { params: { id: string } }
+) {
+    const { errorCodeSpec, specialist } = await getSpecialist(params.id)
+    if (errorCodeSpec) { return <NotFound /> }
+
+    return {
+        title: `${specialist.surname} ${specialist.name} ${specialist.patronymic} - Поликлиника Узи4Д`,
+    }
+}
 
 export default async function Specialist(
     { params, searchParams }: { params: { id: string }, searchParams: { page: string } }
@@ -63,7 +75,7 @@ export default async function Specialist(
 
                             <div className="row g-2 g-lg-3 mb-4">
                                 {specialist.specializations.map((specialization: any) => (
-                                    <div className="col-auto">
+                                    <div key={specialization.id} className="col-auto">
                                         <div className="doc-hero-badge bg-light-blue text-secondary rounded-pill">{specialization.name}</div>
                                     </div>
                                 ))}
@@ -74,7 +86,7 @@ export default async function Specialist(
 
                                 <div className="row align-items-start g-2 mb-2">
                                     {specialist.titles.map((title: any) => (
-                                        <div className="col-auto">
+                                        <div key={title.name} className="col-auto">
                                             <div className="bg-danger text-white fs-10 px-1">{title.name}</div>
                                         </div>
                                     ))}
@@ -83,7 +95,7 @@ export default async function Specialist(
 
                             <div className="doc-hero-text">
                                 {specialist.description.split("\n").map((row: string) => (
-                                    <div>{row}<br /></div>
+                                    <div key={row}>{row}<br /></div>
                                 ))}
                             </div>
                             <br />
@@ -309,7 +321,7 @@ export default async function Specialist(
                                     <h2 className="fs-3 mb-md-4 mb-3">Сертификаты</h2>
 
                                     {specialist.certificates.map((certificate: any) => (
-                                        <div className="position-relative d-flex align-items-center mb-3">
+                                        <div key={certificate.id} className="position-relative d-flex align-items-center mb-3">
                                             <div
                                                 className="license-thumb flex-shrink-0 ratio ratio-1x1 me-md-4 me-3"
                                                 style={{ backgroundImage: "url('" + certificate.path + "')" }}></div>
@@ -459,7 +471,7 @@ export default async function Specialist(
 
                     <div>
                         {data.map((service: any) => (
-                            <ServiceBlock service={service} catalog_type="services" />
+                            <ServiceBlock key={service.id} service={service} catalog_type="services" />
                         ))}
                     </div>
 

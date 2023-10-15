@@ -61,6 +61,7 @@ body:not(.user-is-tabbing) input:focus,
 body:not(.user-is-tabbing) select:focus,
 body:not(.user-is-tabbing) textarea:focus {
   outline: none !important;
+  appearance: none;
   -webkit-appearance: none;
   box-shadow: none !important;
 }
@@ -623,7 +624,7 @@ ul {
   z-index: 3;
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: flex-end;
   top: 0;
   bottom: 0;
   right: 0;

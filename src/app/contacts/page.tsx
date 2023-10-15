@@ -1,5 +1,10 @@
 import ContactsBlock from "@/app/components/ContactsBlock"
 
+export const metadata = {
+    title: "Контакты - Поликлиника Узи4Д",
+};
+
+
 export default function Contacts() {
     return (
         <main role="main" className="flex-shrink-0">

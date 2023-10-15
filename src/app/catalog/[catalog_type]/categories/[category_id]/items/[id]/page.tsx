@@ -11,6 +11,17 @@ async function getService(id: string, category_id: string, catalog_type: string)
     return { errorCode, service: await res.json() }
 }
 
+export async function generateMetadata(
+    { params }: { params: { id: string, category_id: string, catalog_type: string } }
+) {
+    const { errorCode, service } = await getService(params.id, params.category_id, params.catalog_type)
+    if (errorCode) { return <NotFound /> }
+
+    return {
+        title: `${service.name} - Поликлиника Узи4Д`,
+    }
+}
+
 
 export default async function Service(
     { params }: { params: { id: string, category_id: string, catalog_type: string } }
@@ -181,7 +192,7 @@ export default async function Service(
                                 <div className="nav-mobile-scroll fw-semibold border-bottom mb-3 pb-lg-1">
                                     <div className="linebar" id="service-tab" role="tablist">
                                         <ul className="nav">
-                                            <li key="description" className="nav-item">
+                                            <li className="nav-item">
                                                 <a
                                                     className="nav-link active"
                                                     href="#"
@@ -220,7 +231,7 @@ export default async function Service(
                                                     Противопоказания
                                                 </a>
                                             </li> */}
-                                            <li key="preparation" className="nav-item">
+                                            <li className="nav-item">
                                                 <a
                                                     className="nav-link"
                                                     href="#"
@@ -241,7 +252,7 @@ export default async function Service(
                                     <div className="tab-pane fade show active" id="service-1" role="tabpanel" aria-labelledby="service-1-tab" tabIndex={0}>
                                         <div className="article article-sm">
                                             <div>{service.description.split("\n").map((row: string) => (
-                                                <div>{row}<br /></div>
+                                                <div key={row}>{row}<br /></div>
                                             ))}</div>
                                         </div>
                                     </div>
@@ -271,7 +282,7 @@ export default async function Service(
                                     <div className="tab-pane fade" id="service-4" role="tabpanel" aria-labelledby="service-4-tab" tabIndex={0}>
                                         <div className="article article-sm">
                                             <div>{service.preparation.split("\n").map((row: string) => (
-                                                <div>{row}<br /></div>
+                                                <div key={row}>{row}<br /></div>
                                             ))}</div>
                                         </div>
                                     </div>

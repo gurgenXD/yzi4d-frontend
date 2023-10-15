@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export async function getCategories(catalogType: string) {
     const categories = await fetch(
         `${process.env.YZI4D_HOST}/catalog/${catalogType}/categories`,
@@ -201,7 +203,7 @@ export default async function Header() {
                                 </li>
 
                                 <li className="nav-item dropdown">
-                                    <a className="nav-link dropdown-toggle" href="#" role="button" aria-expanded="false">
+                                    <a className="nav-link dropdown-toggle" href={"/catalog/services/categories/" + categories[0].id} role="button" aria-expanded="false">
                                         Услуги
 
                                         <span className="caret ms-2">
@@ -214,7 +216,7 @@ export default async function Header() {
 
                                     <ul className="dropdown-menu">
                                         {categories.map((category: any) => (
-                                            <li><a className="dropdown-item" href={"/catalog/services/categories/" + category.id}>{category.name}</a></li>
+                                            <li key={category.id}><a className="dropdown-item" href={"/catalog/services/categories/" + category.id}>{category.name}</a></li>
                                         ))}
                                     </ul>
                                 </li>
@@ -248,7 +250,7 @@ export default async function Header() {
                                 </li>
                             </ul>
 
-                            {/* <div className="search">
+                            <div className="search d-none">
                                 <div className="search-form-wrap">
                                     <form className="search-form">
                                         <input type="text" className="form-control search-form-input" id="autoComplete" placeholder="Найти..." />
@@ -257,19 +259,19 @@ export default async function Header() {
                                 </div>
 
                                 <button type="button" className="search-toggle">
-                                    <?xml version="1.0" encoding="UTF-8"?>
+                                    {/* <?xml version="1.0" encoding="UTF-8"?> */}
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" className="search-hide-icon">
                                         <path
                                             d="M10.59,9L17.67,1.92c.44-.44,.44-1.15,0-1.59s-1.15-.44-1.59,0h0l-7.08,7.08L1.92,.33C1.48-.11,.77-.11,.33,.33-.11,.77-.11,1.48,.33,1.92l7.08,7.08L.33,16.08c-.44,.44-.44,1.15,0,1.59,.44,.44,1.15,.44,1.59,0l7.08-7.08,7.08,7.08c.44,.44,1.15,.44,1.59,0,.44-.44,.44-1.15,0-1.59l-7.08-7.08h0Z" />
                                     </svg>
 
-                                    <?xml version="1.0" encoding="UTF-8"?>
+                                    {/* <?xml version="1.0" encoding="UTF-8"?> */}
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" className="search-show-icon">
                                         <path
                                             d="M17.67,16.08l-3.48-3.49c2.61-3.48,1.9-8.42-1.59-11.03S4.18-.33,1.57,3.16C-1.04,6.64-.33,11.58,3.16,14.19c2.8,2.09,6.64,2.09,9.44,0l3.49,3.49c.44,.44,1.15,.44,1.59,0,.44-.44,.44-1.15,0-1.59h0Zm-9.76-2.57c-3.1,0-5.61-2.51-5.61-5.61S4.81,2.3,7.91,2.3s5.61,2.51,5.61,5.61c0,3.09-2.51,5.6-5.61,5.61h0Z" />
                                     </svg>
                                 </button>
-                            </div> */}
+                            </div>
 
                             {/* <div className="search">
                                 <div className="search-wrap">

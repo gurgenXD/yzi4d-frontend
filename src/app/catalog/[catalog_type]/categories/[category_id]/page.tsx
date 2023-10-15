@@ -12,6 +12,19 @@ async function getServices(categoryID: string, catalog_type: string, searchParam
     return { errorCode, services: await res.json() }
 }
 
+export async function generateMetadata(
+    { params }: { params: { catalog_type: string, category_id: string } }
+) {
+    const { errorCode, services: { data, paging } } = await getServices(
+        params.category_id, params.catalog_type, new URLSearchParams({})
+    )
+    if (errorCode) { return <NotFound /> }
+
+    return {
+        title: `${data[0].category_name} - Поликлиника Узи4Д`,
+    }
+}
+
 
 export default async function Services(
     { params, searchParams }: { params: { catalog_type: string, category_id: string }, searchParams: { page: string } }
@@ -63,7 +76,7 @@ export default async function Services(
                         <div className="col-xxl-9 col-xl-8">
                             <div>
                                 {data.map((service: any) => (
-                                    <ServiceBlock service={service} catalog_type={params.catalog_type} />
+                                    <ServiceBlock key={service.id} service={service} catalog_type={params.catalog_type} />
                                 ))}
                             </div>
 

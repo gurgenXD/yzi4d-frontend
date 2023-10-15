@@ -1,4 +1,4 @@
-import ImportMapJS from "@/app/components/ImportMapJs"
+import Script from 'next/script'
 
 export default async function ContactsBlock() {
 
@@ -242,8 +242,8 @@ export default async function ContactsBlock() {
                 </div>
             </div>
 
-            <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=3b2b3d29-dd30-4d85-b6e8-eb15867d9469" type="text/javascript"></script>
-            <ImportMapJS />
+            <Script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=3b2b3d29-dd30-4d85-b6e8-eb15867d9469" type="text/javascript" />
+            <Script src="/js/maps.js" type="text/javascript" />
         </>
     )
 }

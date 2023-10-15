@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export default function Footer() {
     return (
         <footer className="footer bg-light-blue mt-auto py-lg-6 py-5">
@@ -60,8 +62,8 @@ export default function Footer() {
                     <div className="col-lg">
                         <ul className="list-unstyled d-flex flex-wrap footer-links pb-2 mb-3">
                             <li className="me-4 mb-1"><a href="/specialists" className="link-secondary spaced-link">Специалисты</a></li>
-                            <li className="me-4 mb-1"><a href="services-startpoint.html" className="link-secondary spaced-link">Услуги</a></li>
-                            <li className="me-4 mb-1"><a href="analyses-startpoint.html" className="link-secondary spaced-link">Анализы</a></li>
+                            <li className="me-4 mb-1"><a href={"/catalog/services/categories/" + 9} className="link-secondary spaced-link">Услуги</a></li>
+                            <li className="me-4 mb-1"><a href={"/catalog/analyzes/categories/" + 1} className="link-secondary spaced-link">Анализы</a></li>
                             {/* <li className="me-4 mb-1"><a href="content.html" className="link-secondary spaced-link">Пациентам</a></li>
                             <li className="me-4 mb-1"><a href="content.html" className="link-secondary spaced-link">О нас</a></li> */}
                             <li className="me-4 mb-1"><a href="/contacts" className="link-secondary spaced-link">Контакты</a></li>

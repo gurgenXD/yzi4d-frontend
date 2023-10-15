@@ -1,5 +1,8 @@
 'use client'
 
+import Image from 'next/image'
+
+
 export default function Error() {
     return (
         <main role="main" className="flex-shrink-0">
