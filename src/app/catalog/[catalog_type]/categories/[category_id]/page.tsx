@@ -6,7 +6,6 @@ import SideBar from "@/app/components/SideBar"
 async function getServices(categoryID: string, catalog_type: string, searchParams: URLSearchParams) {
     const res = await fetch(
         `${process.env.YZI4D_HOST}/catalog/${catalog_type}/categories/${categoryID}?${searchParams.toString()}`,
-        { next: { revalidate: Number(process.env.CACHE_LIFETIME) } }
     )
     const errorCode = res.ok ? false : res.status
     return { errorCode, services: await res.json() }

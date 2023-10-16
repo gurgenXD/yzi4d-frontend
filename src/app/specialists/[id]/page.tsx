@@ -7,7 +7,6 @@ import Image from 'next/image'
 async function getSpecialist(id: string) {
     const res = await fetch(
         `${process.env.YZI4D_HOST}/specialists/${id}`,
-        { next: { revalidate: Number(process.env.CACHE_LIFETIME) } }
     )
 
     const errorCodeSpec = res.ok ? false : res.status
@@ -17,7 +16,6 @@ async function getSpecialist(id: string) {
 async function getSpecialistServices(id: string, searchParams: URLSearchParams) {
     const res = await fetch(
         `${process.env.YZI4D_HOST}/specialists/${id}/services?${searchParams.toString()}`,
-        { next: { revalidate: Number(process.env.CACHE_LIFETIME) } }
     )
 
     const errorCodeServ = res.ok ? false : res.status
