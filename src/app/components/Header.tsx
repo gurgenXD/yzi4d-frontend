@@ -2,7 +2,7 @@ import Image from 'next/image'
 
 export async function getCategories(catalogType: string) {
     const categories = await fetch(
-        `${process.env.YZI4D_HOST}/catalog/${catalogType}/categories`,
+        `${process.env.YZI4D_HOST}/catalog/${catalogType}/categories`, {cache: 'no-store'},
     ).then((res) => res.json())
 
     return categories
@@ -10,7 +10,7 @@ export async function getCategories(catalogType: string) {
 
 export async function getOffices() {
     const offices = await fetch(
-        `${process.env.YZI4D_HOST}/contacts/offices`,
+        `${process.env.YZI4D_HOST}/contacts/offices`, {cache: 'no-store'},
     ).then((res) => res.json())
 
     return offices

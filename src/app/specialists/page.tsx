@@ -13,7 +13,7 @@ type SearchParams = {
 
 export async function getSpecialists(searchParams: URLSearchParams) {
     const specialists = await fetch(
-        `${process.env.YZI4D_HOST}/specialists?${searchParams.toString()}`,
+        `${process.env.YZI4D_HOST}/specialists?${searchParams.toString()}`, {cache: 'no-store'},
     ).then((res) => res.json())
 
     return specialists
@@ -21,7 +21,7 @@ export async function getSpecialists(searchParams: URLSearchParams) {
 
 async function getSpecializations() {
     const specializations = await fetch(
-        `${process.env.YZI4D_HOST}/specialists/specializations`,
+        `${process.env.YZI4D_HOST}/specialists/specializations`, {cache: 'no-store'},
     ).then((res) => res.json())
 
     return specializations
