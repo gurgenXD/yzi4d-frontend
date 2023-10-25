@@ -474,7 +474,7 @@ export default async function Home() {
         <section className="rates-slider overflow-hidden py-lg-6 py-5">
           <div className="container">
             <div className="d-flex flex-wrap align-items-center mb-4">
-              <h2 className="mb-0">Рейтинги независмых сервисов</h2>
+              <h2 className="mb-0">Рейтинги независимых сервисов</h2>
 
               <div className="d-none d-lg-flex ms-auto">
                 <div className="swiper-button-prev me-2 sbp-3">
@@ -558,6 +558,22 @@ export default async function Home() {
                         <a href="https://doctu.ru/pyatigorsk/clinic/poliklinika-4d-1/reviews" target="_blank" className="rate-item-title stretched-link link-secondary d-block fw-bold">Докту</a>
 
                         <div className="rate-item-count text-muted">101 отзыв</div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="swiper-slide">
+                    <div className="rate-item bg-white rounded-3 shadow-sm d-flex align-items-center p-sm-4 p-3">
+                      {/* <div className="rate-item-img">
+                        <img src="/img/prodoctorov.svg" alt="" />
+                      </div> */}
+
+                      <div className="rate-item-score fw-bold text-danger me-3">4.2</div>
+
+                      <div>
+                        <a href="https://napopravku.ru/pyatigorsk/clinics/poliklinika-4d/" target="_blank" className="rate-item-title stretched-link link-secondary d-block fw-bold">НаПоправку</a>
+
+                        <div className="rate-item-count text-muted">26 отзывов</div>
                       </div>
                     </div>
                   </div>
