@@ -564,9 +564,9 @@ export default async function Home() {
 
                   <div className="swiper-slide">
                     <div className="rate-item bg-white rounded-3 shadow-sm d-flex align-items-center p-sm-4 p-3">
-                      {/* <div className="rate-item-img">
-                        <img src="/img/prodoctorov.svg" alt="" />
-                      </div> */}
+                      <div className="rate-item-img">
+                        <img src="/img/na-popravku.svg" alt="" />
+                      </div>
 
                       <div className="rate-item-score fw-bold text-danger me-3">4.2</div>
 

@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 async function getSpecialist(id: string) {
     const res = await fetch(
-        `${process.env.YZI4D_HOST}/specialists/${id}`, {cache: 'no-store'},
+        `${process.env.YZI4D_HOST}/specialists/${id}`, { cache: 'no-store' },
     )
 
     const errorCodeSpec = res.ok ? false : res.status
@@ -15,7 +15,7 @@ async function getSpecialist(id: string) {
 
 async function getSpecialistServices(id: string, searchParams: URLSearchParams) {
     const res = await fetch(
-        `${process.env.YZI4D_HOST}/specialists/${id}/services?${searchParams.toString()}`, {cache: 'no-store'},
+        `${process.env.YZI4D_HOST}/specialists/${id}/services?${searchParams.toString()}`, { cache: 'no-store' },
     )
 
     const errorCodeServ = res.ok ? false : res.status
@@ -67,8 +67,8 @@ export default async function Specialist(
 
                         <div className="col-md-8">
                             <h1 className="doc-hero-name fw-extrabold mb-3">
-                                {specialist.surname} {specialist.name}
-                                <span className="doc-hero-surname d-block text-uppercase fw-black">{specialist.patronymic}</span>
+                                {specialist.name} {specialist.patronymic}
+                                <span className="doc-hero-surname d-block text-uppercase fw-black">{specialist.surname}</span>
                             </h1>
 
                             <div className="row g-2 g-lg-3 mb-4">
@@ -80,7 +80,7 @@ export default async function Specialist(
                             </div>
 
                             <div className="mb-4">
-                                <div className="fw-semibold mb-2">Стаж: {specialist.experience}</div>
+                                {/* <div className="fw-semibold mb-2">Стаж: {specialist.experience}</div> */}
 
                                 <div className="row align-items-start g-2 mb-2">
                                     {specialist.titles.map((title: any) => (

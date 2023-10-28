@@ -13,7 +13,7 @@ type SearchParams = {
 
 export async function getSpecialists(searchParams: URLSearchParams) {
     const specialists = await fetch(
-        `${process.env.YZI4D_HOST}/specialists?${searchParams.toString()}`, {cache: 'no-store'},
+        `${process.env.YZI4D_HOST}/specialists?${searchParams.toString()}`, { cache: 'no-store' },
     ).then((res) => res.json())
 
     return specialists
@@ -21,7 +21,7 @@ export async function getSpecialists(searchParams: URLSearchParams) {
 
 async function getSpecializations() {
     const specializations = await fetch(
-        `${process.env.YZI4D_HOST}/specialists/specializations`, {cache: 'no-store'},
+        `${process.env.YZI4D_HOST}/specialists/specializations`, { cache: 'no-store' },
     ).then((res) => res.json())
 
     return specializations
@@ -54,7 +54,7 @@ export default async function Specialists({ searchParams }: { searchParams: Sear
                         <form action="/specialists" method="get">
                             <div className="form-check form-check-inline mb-3">
                                 <input className="form-check-input" type="checkbox" name="can_online" defaultValue="on" id="HasOnline" defaultChecked={(searchParams.can_online) ? true : false} />
-                                <label className="form-check-label fs-8" htmlFor="HasOnline">Онлайн консультация</label>
+                                <label className="form-check-label fs-8" htmlFor="HasOnline">Онлайн-консультация</label>
                             </div>
                             <div className="form-check form-check-inline mb-3">
                                 <input className="form-check-input" type="checkbox" name="can_adult" defaultValue="on" id="HasAdult" defaultChecked={(searchParams.can_adult) ? true : false} />

@@ -70,7 +70,7 @@ export default function Footer() {
                         </ul>
 
                         <ul className="list-unstyled footer-text mb-0">
-                            <li className="mb-1"><a href="https://cloud.yzi4d.ru/s/Ba4Yn4df46EMXZQ" target="_blank" className="link-secondary">Лицензия №ЛО41-01126-23/00343065</a></li>
+                            <li className="mb-1"><a href="https://cloud.yzi4d.ru/s/Qf7z6FMB2iByCNC" target="_blank" className="link-secondary">Лицензия №ЛО41-01126-23/00343065</a></li>
                             <li className="text-muted">Имеются противопоказания. Необходима консультация специалиста</li>
                             <li className="text-muted">© {new Date().getFullYear()} 4Д Поликлиника</li>
                         </ul>
