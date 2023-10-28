@@ -3,7 +3,7 @@ import NotFound from "@/app/not-found"
 
 async function getService(id: string, category_id: string, catalog_type: string) {
     const res = await fetch(
-        `${process.env.YZI4D_HOST}/catalog/${catalog_type}/categories/${category_id}/items/${id}`, {cache: 'no-store'},
+        `${process.env.YZI4D_HOST}/catalog/${catalog_type}/categories/${category_id}/items/${id}`, { cache: 'no-store' },
     )
 
     const errorCode = res.ok ? false : res.status
@@ -78,7 +78,7 @@ export default async function Service(
                                         </div> --> */}
 
                                         <div className="me-3">
-                                            <div className="fs-3 text-secondary fw-black lh-1">{service.price.toLocaleString()} ₽</div>
+                                            <div className="fs-3 text-secondary fw-black lh-1">{service.price.toLocaleString("ru")} ₽</div>
                                         </div>
 
                                         {/* <button className="btn btn-to-calc spaced-link mb-1">

@@ -199,7 +199,7 @@ export default async function Home() {
                               <a href={"/catalog/services/categories/" + category.id + "/items/" + service.id} className="card-title stretched-link d-block text-secondary fw-bold mb-2">{service.name}</a>
 
                               <p className="card-text mb-3">{service.short_description}</p>
-                              <div className="card-price text-secondary fw-extrabold mt-auto mb-3">от {service.price.toLocaleString()} ₽</div>
+                              <div className="card-price text-secondary fw-extrabold mt-auto mb-3">от {service.price.toLocaleString("ru")} ₽</div>
                             </div>
                           </div>
                         ))}

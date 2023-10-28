@@ -17,7 +17,7 @@ export default function ServiceBlock({ service, catalog_type }: { service: any, 
                 <div className="col-12 col-md-auto">
                     <div className="service-item-price h-100 d-flex flex-wrap flex-md-column align-items-end">
                         <div className="pe-3 pe-md-0 pb-3 mb-md-auto me-auto me-md-0">
-                            <div className="current-price text-secondary fw-black lh-1">{service.price.toLocaleString()} ₽</div>
+                            <div className="current-price text-secondary fw-black lh-1">{service.price.toLocaleString("ru")} ₽</div>
                             {/* <div className="old-price text-decoration-line-through text-disabled lh-1 mb-1">4 700 ₽</div>
                         <div className="current-price text-danger fw-black lh-1">4 000 ₽</div> */}
                         </div>
