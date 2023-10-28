@@ -10,5 +10,5 @@ export default function Bvi() {
         new isvek.Bvi()
     }, []);
 
-    return <></>
+    return null
 }
