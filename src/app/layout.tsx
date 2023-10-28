@@ -38,7 +38,7 @@ export default function RootLayout({
 
         <Script src="/js/bootstrap.js" type="text/javascript" />
         <Script src="/js/app.js" type="text/javascript" />
-        {/* <Script src="/blind/js/bvi.min.js" type="text/javascript" /> */}
+        <Script src="/blind/js/bvi.js" type="text/javascript" />
       </body>
     </html>
   )

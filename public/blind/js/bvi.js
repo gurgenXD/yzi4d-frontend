@@ -5,9 +5,10 @@
   */
 (function (global, factory) {
   typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-  typeof define === 'function' && define.amd ? define(factory) :
-  (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.isvek = factory());
-}(this, (function () { 'use strict';
+    typeof define === 'function' && define.amd ? define(factory) :
+      (global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.isvek = factory());
+}(this, (function () {
+  'use strict';
 
   function ownKeys(object, enumerableOnly) {
     var keys = Object.keys(object);
@@ -125,7 +126,7 @@
         if (it) o = it;
         var i = 0;
 
-        var F = function () {};
+        var F = function () { };
 
         return {
           s: F,
@@ -149,8 +150,8 @@
     }
 
     var normalCompletion = true,
-        didErr = false,
-        err;
+      didErr = false,
+      err;
     return {
       s: function () {
         it = it.call(o);
@@ -174,7 +175,7 @@
     };
   }
 
-  var runtime = {exports: {}};
+  var runtime = { exports: {} };
 
   (function (module) {
     var runtime = function (exports) {
@@ -254,11 +255,11 @@
       // objects. For full spec compliance, you may wish to configure your
       // minifier not to mangle the names of these two functions.
 
-      function Generator() {}
+      function Generator() { }
 
-      function GeneratorFunction() {}
+      function GeneratorFunction() { }
 
-      function GeneratorFunctionPrototype() {} // This is a polyfill for %IteratorPrototype% for environments that
+      function GeneratorFunctionPrototype() { } // This is a polyfill for %IteratorPrototype% for environments that
       // don't natively support it.
 
 
@@ -293,8 +294,8 @@
       exports.isGeneratorFunction = function (genFun) {
         var ctor = typeof genFun === "function" && genFun.constructor;
         return ctor ? ctor === GeneratorFunction || // For the native GeneratorFunction constructor, the best we can
-        // do is to check its .name property.
-        (ctor.displayName || ctor.name) === "GeneratorFunction" : false;
+          // do is to check its .name property.
+          (ctor.displayName || ctor.name) === "GeneratorFunction" : false;
       };
 
       exports.mark = function (genFun) {
@@ -361,20 +362,20 @@
           }
 
           return previousPromise = // If enqueue has been called before, then we want to wait until
-          // all previous Promises have been resolved before calling invoke,
-          // so that results are always delivered in the correct order. If
-          // enqueue has not been called before, then it is important to
-          // call invoke immediately, without waiting on a callback to fire,
-          // so that the async generator function has the opportunity to do
-          // any necessary setup in a predictable way. This predictability
-          // is why the Promise constructor synchronously invokes its
-          // executor callback, and why async functions synchronously
-          // execute code before the first await. Since we implement simple
-          // async functions in terms of async generators, it is especially
-          // important to get this right, even though it requires care.
-          previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, // Avoid propagating failures to Promises returned by later
-          // invocations of the iterator.
-          callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg();
+            // all previous Promises have been resolved before calling invoke,
+            // so that results are always delivered in the correct order. If
+            // enqueue has not been called before, then it is important to
+            // call invoke immediately, without waiting on a callback to fire,
+            // so that the async generator function has the opportunity to do
+            // any necessary setup in a predictable way. This predictability
+            // is why the Promise constructor synchronously invokes its
+            // executor callback, and why async functions synchronously
+            // execute code before the first await. Since we implement simple
+            // async functions in terms of async generators, it is especially
+            // important to get this right, even though it requires care.
+            previousPromise ? previousPromise.then(callInvokeWithMethodAndArg, // Avoid propagating failures to Promises returned by later
+              // invocations of the iterator.
+              callInvokeWithMethodAndArg) : callInvokeWithMethodAndArg();
         } // Define the unified helper method that is used to implement .next,
         // .throw, and .return (see defineIteratorMethods).
 
@@ -394,9 +395,9 @@
         if (PromiseImpl === void 0) PromiseImpl = Promise;
         var iter = new AsyncIterator(wrap(innerFn, outerFn, self, tryLocsList), PromiseImpl);
         return exports.isGeneratorFunction(outerFn) ? iter // If outerFn is a generator, return the full iterator.
-        : iter.next().then(function (result) {
-          return result.done ? result.value : iter.next();
-        });
+          : iter.next().then(function (result) {
+            return result.done ? result.value : iter.next();
+          });
       };
 
       function makeInvokeMethod(innerFn, self, context) {
@@ -647,19 +648,19 @@
 
           if (!isNaN(iterable.length)) {
             var i = -1,
-                next = function next() {
-              while (++i < iterable.length) {
-                if (hasOwn.call(iterable, i)) {
-                  next.value = iterable[i];
-                  next.done = false;
-                  return next;
+              next = function next() {
+                while (++i < iterable.length) {
+                  if (hasOwn.call(iterable, i)) {
+                    next.value = iterable[i];
+                    next.done = false;
+                    return next;
+                  }
                 }
-              }
 
-              next.value = undefined$1;
-              next.done = true;
-              return next;
-            };
+                next.value = undefined$1;
+                next.done = true;
+                return next;
+              };
 
             return next.next = next;
           }
@@ -869,10 +870,10 @@
 
       return exports;
     }( // If this script is executing as a CommonJS module, use module.exports
-    // as the regeneratorRuntime namespace. Otherwise create a new empty
-    // object. Either way, the resulting object will be used to initialize
-    // the regeneratorRuntime variable at the top of this file.
-    module.exports );
+      // as the regeneratorRuntime namespace. Otherwise create a new empty
+      // object. Either way, the resulting object will be used to initialize
+      // the regeneratorRuntime variable at the top of this file.
+      module.exports);
 
     try {
       regeneratorRuntime = runtime;
@@ -913,7 +914,7 @@
         writable: true,
         value: function prepend() {
           var argArr = Array.prototype.slice.call(arguments),
-              docFrag = document.createDocumentFragment();
+            docFrag = document.createDocumentFragment();
           argArr.forEach(function (argItem) {
             var isNode = argItem instanceof Node;
             docFrag.appendChild(isNode ? argItem : document.createTextNode(String(argItem)));
@@ -1386,7 +1387,7 @@
 
         var activeLink = function activeLink(element) {
           var _iterator = _createForOfIteratorHelper(element.parentNode.children),
-              _step;
+            _step;
 
           try {
             for (_iterator.s(); !(_step = _iterator.n()).done;) {
@@ -2067,3 +2068,5 @@
 
 })));
 //# sourceMappingURL=bvi.js.map
+
+new isvek.Bvi();

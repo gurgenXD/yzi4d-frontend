@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import Bvi from '@/app/components/Bvi'
+import BlindBlock from '@/app/components/BlindBlock'
 
 export async function getCategories(catalogType: string) {
     const categories = await fetch(
@@ -55,7 +55,7 @@ export default async function Header() {
                             </ul>
                         </div>
 
-                        <Bvi />
+                        <BlindBlock />
                     </div>
                 </div>
             </div>
