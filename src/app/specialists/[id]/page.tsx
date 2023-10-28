@@ -226,7 +226,7 @@ export default async function Specialist(
                                             </a>
                                         </li>
 
-                                        {/* <li className="nav-item">
+                                        <li className="nav-item">
                                             <a
                                                 className="nav-link"
                                                 href="#"
@@ -236,9 +236,9 @@ export default async function Specialist(
                                                 role="tab"
                                                 aria-controls="DocInfo-2"
                                                 aria-selected="true">
-                                                Деятельность
+                                                Опыт
                                             </a>
-                                        </li> */}
+                                        </li>
 
                                         <li className="nav-item">
                                             <a
@@ -254,7 +254,7 @@ export default async function Specialist(
                                             </a>
                                         </li>
 
-                                        {/* <li className="nav-item">
+                                        <li className="nav-item">
                                             <a
                                                 className="nav-link"
                                                 href="#"
@@ -266,9 +266,9 @@ export default async function Specialist(
                                                 aria-selected="true">
                                                 Отзывы
                                             </a>
-                                        </li> */}
+                                        </li>
 
-                                        {/* <li className="nav-item">
+                                        <li className="nav-item">
                                             <a
                                                 className="nav-link"
                                                 href="#"
@@ -280,7 +280,7 @@ export default async function Specialist(
                                                 aria-selected="true">
                                                 Фото и видео
                                             </a>
-                                        </li> */}
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -302,18 +302,18 @@ export default async function Specialist(
                                     </div>
                                 </div>
 
-                                {/* <div className="tab-pane fade" id="DocInfo-2" role="tabpanel" aria-labelledby="DocInfo-2-tab" tabIndex={0}>
-                                    <h2 className="fs-3 mb-md-4 mb-3">Деятельность</h2>
+                                <div className="tab-pane fade" id="DocInfo-2" role="tabpanel" aria-labelledby="DocInfo-2-tab" tabIndex={0}>
+                                    <h2 className="fs-3 mb-md-4 mb-3">Опыт</h2>
 
                                     <div className="article article-sm">
-                                        <ul>
+                                        {/* <ul>
                                             <li>
                                                 После окончания университета работает по своей основной специальности, хирургом-онкологом, в Саратовском онкологическом
                                                 диспансере.
                                             </li>
-                                        </ul>
+                                        </ul> */}
                                     </div>
-                                </div> */}
+                                </div>
 
                                 <div className="tab-pane fade" id="DocInfo-3" role="tabpanel" aria-labelledby="DocInfo-3-tab" tabIndex={0}>
                                     <h2 className="fs-3 mb-md-4 mb-3">Сертификаты</h2>
@@ -330,11 +330,11 @@ export default async function Specialist(
                                     ))}
                                 </div>
 
-                                {/* <div className="tab-pane fade" id="DocInfo-4" role="tabpanel" aria-labelledby="DocInfo-4-tab" tabIndex={0}>
+                                <div className="tab-pane fade" id="DocInfo-4" role="tabpanel" aria-labelledby="DocInfo-4-tab" tabIndex={0}>
                                     <h2 className="fs-3 mb-md-4 mb-3">Отзывы</h2>
 
                                     <div className="row g-md-4 g-3">
-                                        <div className="col-xl-4 col-md-6">
+                                        {/* <div className="col-xl-4 col-md-6">
                                             <div className="gallery-item position-relative">
                                                 <div
                                                     className="bg-img ratio ratio-16x9 position-relative rounded-3"
@@ -381,15 +381,15 @@ export default async function Specialist(
                                                     Удаление атеромы на голове
                                                 </a>
                                             </div>
-                                        </div>
+                                        </div> */}
                                     </div>
-                                </div> */}
+                                </div>
 
-                                {/* <div className="tab-pane fade" id="DocInfo-5" role="tabpanel" aria-labelledby="DocInfo-5-tab" tabIndex={0}>
+                                <div className="tab-pane fade" id="DocInfo-5" role="tabpanel" aria-labelledby="DocInfo-5-tab" tabIndex={0}>
                                     <h2 className="fs-3 mb-md-4 mb-3">Фото и видео</h2>
 
                                     <div className="row g-md-4 g-3">
-                                        <div className="col-xl-4 col-md-6">
+                                        {/* <div className="col-xl-4 col-md-6">
                                             <div className="gallery-item position-relative">
                                                 <div
                                                     className="bg-img ratio ratio-16x9 position-relative rounded-3"
@@ -454,9 +454,9 @@ export default async function Specialist(
                                                     </a>
                                                 </div>
                                             </div>
-                                        </div>
+                                        </div> */}
                                     </div>
-                                </div> */}
+                                </div>
                             </div>
                         </div>
                     </div>
