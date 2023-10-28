@@ -27,8 +27,8 @@ export default function Head() {
 
             {/* Версия для слабовидящих. */}
             {/* <link rel="stylesheet" href="/blind/css/bvi.min.css" type="text/css"></link> */}
-            <Script src="https://lidrekon.ru/slep/js/jquery.js" />
-            <Script src="https://lidrekon.ru/slep/js/uhpv-full.min.js" />
+            <Script src="blind-lindekon/jquery.min.js" type="text/javascript" />
+            <Script src="blind-lindekon/uhpv-full.min.js" type="text/javascript" />
         </head>
     )
 }
