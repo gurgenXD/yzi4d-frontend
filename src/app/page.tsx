@@ -6,7 +6,7 @@ import Image from 'next/image'
 
 
 export const metadata = {
-  title: "Главная - Поликлиника Узи4Д",
+  title: "Главная - Поликлиника УЗИ 4Д",
 };
 
 

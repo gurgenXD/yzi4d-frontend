@@ -13,7 +13,7 @@ import Script from 'next/script'
 
 
 export const metadata: Metadata = {
-  title: 'Поликлиника Узи4Д',
+  title: 'Поликлиника УЗИ 4Д',
 }
 
 export default function RootLayout({
@@ -38,7 +38,7 @@ export default function RootLayout({
 
         <Script src="/js/bootstrap.js" type="text/javascript" />
         <Script src="/js/app.js" type="text/javascript" />
-        <Script src="/blind/js/bvi.min.js" type="text/javascript" />
+        {/* <Script src="/blind/js/bvi.min.js" type="text/javascript" /> */}
       </body>
     </html>
   )

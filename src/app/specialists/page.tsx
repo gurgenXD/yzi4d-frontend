@@ -29,7 +29,7 @@ async function getSpecializations() {
 
 
 export const metadata = {
-    title: "Специалисты - Поликлиника Узи4Д",
+    title: "Специалисты - Поликлиника УЗИ 4Д",
 };
 
 

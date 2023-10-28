@@ -1,7 +1,7 @@
 import ContactsBlock from "@/app/components/ContactsBlock"
 
 export const metadata = {
-    title: "Контакты - Поликлиника Узи4Д",
+    title: "Контакты - Поликлиника УЗИ 4Д",
 };
 
 

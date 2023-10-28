@@ -17,7 +17,7 @@ export async function generateMetadata(
     if (errorCode) { return <NotFound /> }
 
     return {
-        title: `${service.name} - Поликлиника Узи4Д`,
+        title: `${service.name} - Поликлиника УЗИ 4Д`,
     }
 }
 

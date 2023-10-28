@@ -30,7 +30,7 @@ export async function generateMetadata(
     if (errorCodeSpec) { return <NotFound /> }
 
     return {
-        title: `${specialist.surname} ${specialist.name} ${specialist.patronymic} - Поликлиника Узи4Д`,
+        title: `${specialist.surname} ${specialist.name} ${specialist.patronymic} - Поликлиника УЗИ 4Д`,
     }
 }
 
