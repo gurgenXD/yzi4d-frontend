@@ -1,8 +1,8 @@
 import { getCategories } from "@/app/components/Header"
-import ContactsBlock from "@/app/components/ContactsBlock"
 import SpecialistSlider from "@/app/components/home/SpecialistSlider"
 import ServicesMain from "@/app/components/home/ServicesMain"
 import Image from 'next/image'
+import ContactsMain from "./components/home/ContactsMain"
 
 
 export const metadata = {
@@ -240,13 +240,7 @@ export default async function Home() {
           </div>
         </section>
 
-        <section className="pt-lg-6 pt-5 pb-lg-3">
-          <div className="container">
-            <h2 className="mb-lg-4 mb-2">Наши филиалы</h2>
-
-            <ContactsBlock />
-          </div>
-        </section>
+        <ContactsMain />
 
         <section className="py-lg-6 py-5">
           <div className="container">
@@ -340,9 +334,9 @@ export default async function Home() {
                   </div>
 
                   <div className="my-auto">
-                    <h3 className="feature-title fw-extrabold text-secondary mb-2">10 лет опыта</h3>
+                    <h3 className="feature-title fw-extrabold text-secondary mb-2">Более 12 лет опыта</h3>
                     <div className="feature-text text-muted">
-                      Мы работаем для своих пациентов уже 10 лет, с каждым новым годом накапливаем всё больше опыта, что позволяет нам всё время улучшать
+                      Мы работаем для своих пациентов уже более 12 лет, с каждым новым годом накапливаем всё больше опыта, что позволяет нам всё время улучшать
                       качество наших услуг.
                     </div>
                   </div>
@@ -390,7 +384,7 @@ export default async function Home() {
                       <div>
                         <a href="https://yandex.ru/maps/org/4d_poliklinika/1154946954/reviews/?ll=43.070356%2C44.048861&z=15" target="_blank" className="rate-item-title stretched-link link-secondary d-block fw-bold">Яндекс</a>
 
-                        <div className="rate-item-count text-muted">861 отзыв</div>
+                        <div className="rate-item-count text-muted">872 отзыва</div>
                       </div>
                     </div>
                   </div>
@@ -401,7 +395,7 @@ export default async function Home() {
                         <img src="/img/2gis.svg" alt="" />
                       </div>
 
-                      <div className="rate-item-score fw-bold text-danger me-3">4.5</div>
+                      <div className="rate-item-score fw-bold text-danger me-3">4.4</div>
 
                       <div>
                         <a href="https://2gis.ru/pyatigorsk/inside/12526272118936823/firm/12526164744605496/tab/reviews?m=43.06884%2C44.048142%2F19.41" target="_blank" className="rate-item-title stretched-link link-secondary d-block fw-bold">2ГИС</a>
@@ -438,7 +432,7 @@ export default async function Home() {
                       <div>
                         <a href="https://doctu.ru/pyatigorsk/clinic/poliklinika-4d-1/reviews" target="_blank" className="rate-item-title stretched-link link-secondary d-block fw-bold">Докту</a>
 
-                        <div className="rate-item-count text-muted">101 отзыв</div>
+                        <div className="rate-item-count text-muted">104 отзыва</div>
                       </div>
                     </div>
                   </div>
@@ -454,7 +448,7 @@ export default async function Home() {
                       <div>
                         <a href="https://napopravku.ru/pyatigorsk/clinics/poliklinika-4d/" target="_blank" className="rate-item-title stretched-link link-secondary d-block fw-bold">НаПоправку</a>
 
-                        <div className="rate-item-count text-muted">26 отзывов</div>
+                        <div className="rate-item-count text-muted">27 отзывов</div>
                       </div>
                     </div>
                   </div>

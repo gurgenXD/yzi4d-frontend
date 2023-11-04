@@ -19,7 +19,7 @@ export default function ServicesMain() {
                 <div className="d-flex flex-wrap align-items-baseline justify-content-between mb-lg-3">
                     <h2 className="mb-2 me-5">Услуги</h2>
 
-                    <a href="/catalog/services/categories/1" className="link-more spaced-link fw-semibold d-flex align-items-center flex-nowrap mb-2">
+                    <a href="/catalog/services/categories/21" className="link-more spaced-link fw-semibold d-flex align-items-center flex-nowrap mb-2">
                         Все услуги
 
                         <span className="icon ms-2">
