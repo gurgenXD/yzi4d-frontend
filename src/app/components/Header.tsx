@@ -3,7 +3,7 @@ import BlindBlock from '@/app/components/BlindBlock'
 
 export async function getCategories(catalogType: string) {
     const categories = await fetch(
-        `${process.env.YZI4D_HOST}/catalog/${catalogType}/categories`, { cache: 'no-store' },
+        `${process.env.NEXT_PUBLIC_YZI4D_HOST}/catalog/${catalogType}/categories`, { cache: 'no-store' },
     ).then((res) => res.json())
 
     return categories
@@ -11,7 +11,7 @@ export async function getCategories(catalogType: string) {
 
 export async function getOffices() {
     const offices = await fetch(
-        `${process.env.YZI4D_HOST}/contacts/offices`, { cache: 'no-store' },
+        `${process.env.NEXT_PUBLIC_YZI4D_HOST}/contacts/offices`, { cache: 'no-store' },
     ).then((res) => res.json())
 
     return offices

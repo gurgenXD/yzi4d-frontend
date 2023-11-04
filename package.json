@@ -22,7 +22,7 @@
     "next": "13.5.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "swiper": "8.4.2",
+    "swiper": "^8.4.2",
     "typescript": "5.2.2",
     "xwiper": "2.2.1"
   },

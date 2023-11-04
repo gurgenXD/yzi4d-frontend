@@ -3,7 +3,7 @@ import NotFound from "@/app/not-found"
 
 async function getService(id: string, category_id: string, catalog_type: string) {
     const res = await fetch(
-        `${process.env.YZI4D_HOST}/catalog/${catalog_type}/categories/${category_id}/items/${id}`, { cache: 'no-store' },
+        `${process.env.NEXT_PUBLIC_YZI4D_HOST}/catalog/${catalog_type}/categories/${category_id}/items/${id}`, { cache: 'no-store' },
     )
 
     const errorCode = res.ok ? false : res.status
