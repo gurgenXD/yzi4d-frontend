@@ -1,14 +1,7 @@
 import SideBar from "@/app/components/SideBar"
 import NotFound from "@/app/not-found"
+import { getService } from "@/requests"
 
-async function getService(id: string, category_id: string, catalog_type: string) {
-    const res = await fetch(
-        `${process.env.NEXT_PUBLIC_YZI4D_HOST}/catalog/${catalog_type}/categories/${category_id}/items/${id}`, { cache: 'no-store' },
-    )
-
-    const errorCode = res.ok ? false : res.status
-    return { errorCode, service: await res.json() }
-}
 
 export async function generateMetadata(
     { params }: { params: { id: string, category_id: string, catalog_type: string } }
@@ -47,7 +40,7 @@ export default async function Service(
                         data-bs-target="#offcanvasFilters"
                         aria-controls="offcanvasFilters">
                         <span className="icon me-2">
-                            {/* <?xml version="1.0" encoding="UTF-8"?> */}
+
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 356.17">
                                 <path
                                     d="M489.74,155.83H22.26c-12.29,0-22.26,9.97-22.26,22.26s9.97,22.26,22.26,22.26H489.74c12.29,0,22.26-9.97,22.26-22.26,0-12.29-9.97-22.26-22.26-22.26Z" />

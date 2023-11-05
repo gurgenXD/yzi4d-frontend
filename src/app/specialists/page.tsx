@@ -1,5 +1,6 @@
 import Pagination from "@/app/components/Pagination"
 import SpecialistBlock from "@/app/components/common/SpecialistBlock"
+import { getSpecialists, getSpecializations } from "@/requests"
 
 type SearchParams = {
     page: string,
@@ -11,26 +12,9 @@ type SearchParams = {
 }
 
 
-export async function getSpecialists(searchParams: URLSearchParams) {
-    const specialists = await fetch(
-        `${process.env.NEXT_PUBLIC_YZI4D_HOST}/specialists?${searchParams.toString()}`, { cache: 'no-store' },
-    ).then((res) => res.json())
-
-    return specialists
-}
-
-async function getSpecializations() {
-    const specializations = await fetch(
-        `${process.env.NEXT_PUBLIC_YZI4D_HOST}/specialists/specializations`, { cache: 'no-store' },
-    ).then((res) => res.json())
-
-    return specializations
-}
-
-
-// export const metadata = {
-//     title: "Специалисты - Поликлиника УЗИ 4Д",
-// };
+export const metadata = {
+    title: "Специалисты - Поликлиника УЗИ 4Д",
+};
 
 
 export default async function Specialists({ searchParams }: { searchParams: SearchParams }) {

@@ -2,14 +2,8 @@ import Pagination from "@/app/components/Pagination"
 import ServiceBlock from "@/app/components/ServiceBlock"
 import NotFound from "@/app/not-found"
 import SideBar from "@/app/components/SideBar"
+import { getServices } from "@/requests"
 
-async function getServices(categoryID: string, catalog_type: string, searchParams: URLSearchParams) {
-    const res = await fetch(
-        `${process.env.NEXT_PUBLIC_YZI4D_HOST}/catalog/${catalog_type}/categories/${categoryID}?${searchParams.toString()}`, { cache: 'no-store' },
-    )
-    const errorCode = res.ok ? false : res.status
-    return { errorCode, services: await res.json() }
-}
 
 export async function generateMetadata(
     { params }: { params: { catalog_type: string, category_id: string } }
@@ -55,7 +49,7 @@ export default async function Services(
                             data-bs-target="#offcanvasFilters"
                             aria-controls="offcanvasFilters">
                             <span className="icon me-2">
-                                {/* <?xml version="1.0" encoding="UTF-8"?> */}
+
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 356.17">
                                     <path
                                         d="M489.74,155.83H22.26c-12.29,0-22.26,9.97-22.26,22.26s9.97,22.26,22.26,22.26H489.74c12.29,0,22.26-9.97,22.26-22.26,0-12.29-9.97-22.26-22.26-22.26Z" />

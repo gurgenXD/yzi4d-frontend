@@ -2,25 +2,7 @@ import ServiceBlock from "@/app/components/ServiceBlock"
 import Pagination from "@/app/components/Pagination"
 import NotFound from "@/app/not-found"
 import Image from 'next/image'
-
-
-async function getSpecialist(id: string) {
-    const res = await fetch(
-        `${process.env.NEXT_PUBLIC_YZI4D_HOST}/specialists/${id}`, { cache: 'no-store' },
-    )
-
-    const errorCodeSpec = res.ok ? false : res.status
-    return { errorCodeSpec, specialist: await res.json() }
-}
-
-async function getSpecialistServices(id: string, searchParams: URLSearchParams) {
-    const res = await fetch(
-        `${process.env.NEXT_PUBLIC_YZI4D_HOST}/specialists/${id}/services?${searchParams.toString()}`, { cache: 'no-store' },
-    )
-
-    const errorCodeServ = res.ok ? false : res.status
-    return { errorCodeServ, services: await res.json() }
-}
+import { getSpecialist, getSpecialistServices } from "@/requests"
 
 
 export async function generateMetadata(

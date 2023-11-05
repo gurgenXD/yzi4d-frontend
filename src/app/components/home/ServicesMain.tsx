@@ -6,10 +6,12 @@ import { useState, useEffect } from 'react'
 
 export default function ServicesMain() {
     const [categories, setCategories] = useState([{ "id": 1, "name": "Загрузка...", "services": [] }])
+    const [category, setCategy] = useState({ "id": 1 })
 
     useEffect(() => {
         (async () => {
             setCategories(await getCategories("main"))
+            setCategy((await getCategories("services"))[0])
         })()
     }, [])
 
@@ -19,7 +21,7 @@ export default function ServicesMain() {
                 <div className="d-flex flex-wrap align-items-baseline justify-content-between mb-lg-3">
                     <h2 className="mb-2 me-5">Услуги</h2>
 
-                    <a href="/catalog/services/categories/21" className="link-more spaced-link fw-semibold d-flex align-items-center flex-nowrap mb-2">
+                    <a href={"/catalog/services/categories/" + category.id} className="link-more spaced-link fw-semibold d-flex align-items-center flex-nowrap mb-2">
                         Все услуги
 
                         <span className="icon ms-2">

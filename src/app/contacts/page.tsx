@@ -1,4 +1,4 @@
-import ContactsBlock from "@/app/components/ContactsBlock"
+import ContactsBlock from "@/app/components/common/ContactsBlock"
 
 export const metadata = {
     title: "Контакты - Поликлиника УЗИ 4Д",

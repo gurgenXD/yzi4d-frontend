@@ -1,8 +1,7 @@
-import { getCategories } from "@/app/components/Header"
 import SpecialistSlider from "@/app/components/home/SpecialistSlider"
 import ServicesMain from "@/app/components/home/ServicesMain"
 import Image from 'next/image'
-import ContactsMain from "./components/home/ContactsMain"
+import ContactsBlock from "@/app/components/common/ContactsBlock"
 
 
 export const metadata = {
@@ -11,8 +10,6 @@ export const metadata = {
 
 
 export default async function Home() {
-  const categories = await getCategories("main")
-
   return (
     <main role="main" className="flex-shrink-0">
       <div className="overflow-hidden">
@@ -25,7 +22,6 @@ export default async function Home() {
                     <div className="swiper-pagination me-3"></div>
 
                     <div className="swiper-button-prev me-2 sbp-1">
-                      {/* <?xml version="1.0" encoding="UTF-8"?> */}
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 174.29 320.01">
                         <path
                           d="M67.08,167.55c-4.17-4.16-4.18-10.91-.02-15.08,0,0,.01-.01,.02-.02L164.91,54.64c12.5-12.49,12.51-32.76,.01-45.26-12.49-12.5-32.76-12.51-45.26-.01L21.83,107.2c-29.1,29.18-29.1,76.42,0,105.6l97.83,97.83c12.5,12.49,32.76,12.49,45.26-.01,12.49-12.5,12.49-32.76-.01-45.26l-97.83-97.81Z" />
@@ -33,7 +29,6 @@ export default async function Home() {
                     </div>
 
                     <div className="swiper-button-next sbn-1">
-                      {/* <?xml version="1.0" encoding="UTF-8"?> */}
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 174.29 320.01">
                         <path
                           d="M152.46,107.2L54.63,9.37c-12.5-12.49-32.76-12.49-45.26,.01-12.49,12.5-12.49,32.76,.01,45.26l97.83,97.81c4.17,4.16,4.18,10.91,.02,15.08,0,0-.01,.01-.02,.02L9.38,265.37c-12.5,12.49-12.51,32.76-.01,45.26s32.76,12.51,45.26,.01l97.83-97.83c29.1-29.18,29.1-76.42,0-105.6Z" />
@@ -240,7 +235,14 @@ export default async function Home() {
           </div>
         </section>
 
-        <ContactsMain />
+        <section className="pt-lg-6 pt-5 pb-lg-3">
+          <div className="container">
+            <h2 className="mb-lg-4 mb-2">Наши филиалы</h2>
+
+            <ContactsBlock />
+
+          </div>
+        </section >
 
         <section className="py-lg-6 py-5">
           <div className="container">
@@ -353,7 +355,6 @@ export default async function Home() {
 
               <div className="d-none d-lg-flex ms-auto">
                 <div className="swiper-button-prev me-2 sbp-3">
-                  {/* <?xml version="1.0" encoding="UTF-8"?> */}
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 174.29 320.01">
                     <path
                       d="M67.08,167.55c-4.17-4.16-4.18-10.91-.02-15.08,0,0,.01-.01,.02-.02L164.91,54.64c12.5-12.49,12.51-32.76,.01-45.26-12.49-12.5-32.76-12.51-45.26-.01L21.83,107.2c-29.1,29.18-29.1,76.42,0,105.6l97.83,97.83c12.5,12.49,32.76,12.49,45.26-.01,12.49-12.5,12.49-32.76-.01-45.26l-97.83-97.81Z" />
@@ -361,7 +362,6 @@ export default async function Home() {
                 </div>
 
                 <div className="swiper-button-next sbn-3">
-                  {/* <?xml version="1.0" encoding="UTF-8"?> */}
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 174.29 320.01">
                     <path
                       d="M152.46,107.2L54.63,9.37c-12.5-12.49-32.76-12.49-45.26,.01-12.49,12.5-12.49,32.76,.01,45.26l97.83,97.81c4.17,4.16,4.18,10.91,.02,15.08,0,0-.01,.01-.02,.02L9.38,265.37c-12.5,12.49-12.51,32.76-.01,45.26s32.76,12.51,45.26,.01l97.83-97.83c29.1-29.18,29.1-76.42,0-105.6Z" />
