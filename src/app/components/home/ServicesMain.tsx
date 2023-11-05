@@ -1,6 +1,6 @@
 'use client'
 
-import { getCategories } from "@/app/components/Header"
+import { getCategories } from "@/requests"
 import { useState, useEffect } from 'react'
 
 

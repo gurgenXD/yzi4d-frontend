@@ -1,22 +1,6 @@
 import Image from 'next/image'
 import BlindBlock from '@/app/components/BlindBlock'
-
-export async function getCategories(catalogType: string) {
-    const categories = await fetch(
-        `${process.env.NEXT_PUBLIC_YZI4D_HOST}/catalog/${catalogType}/categories`, { cache: 'no-store' },
-    ).then((res) => res.json())
-
-    return categories
-}
-
-export async function getOffices() {
-    const offices = await fetch(
-        `${process.env.NEXT_PUBLIC_YZI4D_HOST}/contacts/offices`, { cache: 'no-store' },
-    ).then((res) => res.json())
-
-    return offices
-}
-
+import { getCategories, getOffices } from '@/requests'
 
 export default async function Header() {
     const categories = await getCategories("services")

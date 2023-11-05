@@ -1,4 +1,4 @@
-import { getCategories } from "@/app/components/Header"
+import { getCategories } from "@/requests"
 
 
 

@@ -1,5 +1,3 @@
-// @ts-nocheck
-
 // КАРТЫ ФИЛИАЛОВ
 
 let map1 = document.getElementById("Map1");
