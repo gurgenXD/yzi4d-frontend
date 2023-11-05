@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { getCategories, getOffices } from "@/requests"
+import { getCategories, getOffices } from "@/requests/server"
 
 
 export default async function OffCanvas() {

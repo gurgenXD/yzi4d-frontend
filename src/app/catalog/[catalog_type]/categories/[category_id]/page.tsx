@@ -2,7 +2,7 @@ import Pagination from "@/app/components/Pagination"
 import ServiceBlock from "@/app/components/ServiceBlock"
 import NotFound from "@/app/not-found"
 import SideBar from "@/app/components/SideBar"
-import { getServices } from "@/requests"
+import { getServices } from "@/requests/server"
 
 
 export async function generateMetadata(

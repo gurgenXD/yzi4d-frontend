@@ -1,6 +1,6 @@
 import Pagination from "@/app/components/Pagination"
 import SpecialistBlock from "@/app/components/common/SpecialistBlock"
-import { getSpecialists, getSpecializations } from "@/requests"
+import { getSpecialists, getSpecializations } from "@/requests/server"
 
 type SearchParams = {
     page: string,

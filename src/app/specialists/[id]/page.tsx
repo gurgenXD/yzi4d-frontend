@@ -2,7 +2,7 @@ import ServiceBlock from "@/app/components/ServiceBlock"
 import Pagination from "@/app/components/Pagination"
 import NotFound from "@/app/not-found"
 import Image from 'next/image'
-import { getSpecialist, getSpecialistServices } from "@/requests"
+import { getSpecialist, getSpecialistServices } from "@/requests/server"
 
 
 export async function generateMetadata(

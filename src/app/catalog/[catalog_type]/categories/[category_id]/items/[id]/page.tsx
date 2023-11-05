@@ -1,6 +1,6 @@
 import SideBar from "@/app/components/SideBar"
 import NotFound from "@/app/not-found"
-import { getService } from "@/requests"
+import { getService } from "@/requests/server"
 
 
 export async function generateMetadata(

@@ -1,4 +1,4 @@
-import { getCategories } from "@/requests"
+import { getCategories } from "@/requests/server"
 
 
 

@@ -1,27 +1,9 @@
-import useSWR from 'swr'
-
-
 export async function getSpecialists(searchParams: URLSearchParams) {
     const specialists = await fetch(
         `${process.env.NEXT_PUBLIC_YZI4D_HOST}/specialists?${searchParams.toString()}`, { cache: 'no-store' },
     ).then((res) => res.json())
 
     return specialists
-}
-
-
-export function getShuffledSpecialists() {
-    const fetcher = async (url: any) => await fetch(url).then(res => res.json())
-    const { data, error, isLoading } = useSWR(
-        `${process.env.NEXT_PUBLIC_YZI4D_HOST}/specialists/shuffled`,
-        fetcher
-    )
-
-    return {
-        specialists: data,
-        isLoading,
-        isError: error,
-    }
 }
 
 

@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import BlindBlock from '@/app/components/BlindBlock'
-import { getCategories, getOffices } from '@/requests'
+import { getCategories, getOffices } from '@/requests/server'
 
 export default async function Header() {
     const categories = await getCategories("services")

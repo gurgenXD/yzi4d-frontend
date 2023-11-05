@@ -1,32 +1,17 @@
 'use client'
 
-import { getShuffledSpecialists } from "@/requests"
+import { getMainSpecialists } from "@/requests/client"
 import SpecialistBlock from "@/app/components/common/SpecialistBlock"
+import { Placeholder, PlaceholderError } from "@/app/components/common/Placeholder"
 import { Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 
 export default function SpecialistSlider() {
-    const { specialists, isLoading, isError } = getShuffledSpecialists()
+    const { specialists, isLoading, isError } = getMainSpecialists()
 
-    if (isError) return (
-        <p className="placeholder-glow">
-            <span
-                className="col-12 placeholder rounded-3"
-                style={{ height: 200, backgroundColor: "#e1f4fc", textAlign: "center", paddingTop: 90 }}>
-                Ошибка при загрузке данных
-            </span>
-        </p>
-    )
-
-    if (isLoading) return (
-        <p className="placeholder-glow">
-            <span
-                className="col-12 placeholder rounded-3"
-                style={{ height: 200, backgroundColor: "#e1f4fc" }}>
-            </span>
-        </p>
-    )
+    if (isLoading) return <Placeholder />
+    if (isError) return <PlaceholderError />
 
     return (
         <Swiper
