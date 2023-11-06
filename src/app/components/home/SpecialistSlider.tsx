@@ -1,6 +1,6 @@
 'use client'
 
-import { getMainSpecialists } from "@/requests/client"
+import { useGetMainSpecialists } from "@/requests/client"
 import SpecialistBlock from "@/app/components/common/SpecialistBlock"
 import { Placeholder, PlaceholderError } from "@/app/components/common/Placeholder"
 import { Navigation } from 'swiper/modules'
@@ -8,7 +8,7 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 
 
 export default function SpecialistSlider() {
-    const { specialists, isLoading, isError } = getMainSpecialists()
+    const { specialists, isLoading, isError } = useGetMainSpecialists()
 
     if (isLoading) return <Placeholder />
     if (isError) return <PlaceholderError />

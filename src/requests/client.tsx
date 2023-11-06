@@ -2,7 +2,7 @@
 import useSWR from 'swr'
 
 
-export function getMainSpecialists() {
+export function useGetMainSpecialists() {
     const fetcher = async (url: any) => await fetch(url).then(res => res.json())
     const { data, error, isLoading } = useSWR(
         `${process.env.NEXT_PUBLIC_YZI4D_HOST}/specialists/shuffled`,
@@ -13,7 +13,7 @@ export function getMainSpecialists() {
 }
 
 
-export function getMainCategories(catalogType: string) {
+export function useGetMainCategories(catalogType: string) {
     const fetcher = async (url: any) => await fetch(url).then(res => res.json())
     const { data, error, isLoading } = useSWR(
         `${process.env.NEXT_PUBLIC_YZI4D_HOST}/catalog/${catalogType}/categories`,
