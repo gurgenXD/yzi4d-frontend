@@ -1,11 +1,11 @@
 'use client'
 
-import { getMainCategories } from "@/requests/client"
+import { useGetMainCategories } from "@/requests/client"
 import { Placeholder, PlaceholderError } from "@/app/components/common/Placeholder"
 
 
 export default function ServicesMain() {
-    const { categories, isLoading, isError } = getMainCategories("main")
+    const { categories, isLoading, isError } = useGetMainCategories("main")
 
     if (isLoading) return <Placeholder />
     if (isError) return <PlaceholderError />
