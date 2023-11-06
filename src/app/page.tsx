@@ -17,7 +17,7 @@ export default async function Home() {
           <div className="row gy-5">
             <div className="col-xl-8 col-xxl-9">
               <div className="position-relative main-slider">
-                <div className="main-slider-control d-none d-lg-block">
+                {/* <div className="main-slider-control d-none d-lg-block">
                   <div className="main-slider-control-wrap d-flex justify-content-end align-items-center px-3 py-2">
                     <div className="swiper-pagination me-3"></div>
 
@@ -35,7 +35,7 @@ export default async function Home() {
                       </svg>
                     </div>
                   </div>
-                </div>
+                </div> */}
 
                 <div className="swiper">
                   <div className="swiper-wrapper">
@@ -82,7 +82,7 @@ export default async function Home() {
                       </div>
                     </div>
 
-                    <div className="swiper-slide">
+                    {/* <div className="swiper-slide">
                       <div className="sale-banner bg-white position-relative">
                         <div className="row flex-column flex-md-row gx-0">
                           <div className="col-12 col-md-auto">
@@ -115,7 +115,7 @@ export default async function Home() {
                           </div>
                         </div>
                       </div>
-                    </div>
+                    </div> */}
 
                   </div>
                 </div>
@@ -137,22 +137,22 @@ export default async function Home() {
         </div>
 
         <section className="py-lg-6 py-5">
-            <div className="container">
-                <div className="d-flex flex-wrap align-items-baseline justify-content-between mb-lg-3">
-                    <h2 className="mb-2 me-5">Услуги</h2>
+          <div className="container">
+            <div className="d-flex flex-wrap align-items-baseline justify-content-between mb-lg-3">
+              <h2 className="mb-2 me-5">Услуги</h2>
 
-                    <a href="/catalog/services/categories/1" className="link-more spaced-link fw-semibold d-flex align-items-center flex-nowrap mb-2">
-                        Все услуги
+              <a href="/catalog/services/categories/1" className="link-more spaced-link fw-semibold d-flex align-items-center flex-nowrap mb-2">
+                Все услуги
 
-                        <span className="icon ms-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 311.13 277.34">
-                                <path
-                                    d="M289.3,85.87L212.8,9.37c-12.5-12.49-32.76-12.49-45.26,.01s-12.49,32.76,.01,45.26h0l52.03,52.03H32C14.33,106.67,0,121,0,138.67s14.33,32,32,32H219.58l-52.03,52.03c-12.5,12.49-12.51,32.76-.01,45.26,12.49,12.5,32.76,12.51,45.26,.01l76.5-76.5c29.1-29.18,29.1-76.42,0-105.6Z" />
-                            </svg>
-                        </span>
-                    </a>
-                </div>
-                <ServicesMain />
+                <span className="icon ms-2">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 311.13 277.34">
+                    <path
+                      d="M289.3,85.87L212.8,9.37c-12.5-12.49-32.76-12.49-45.26,.01s-12.49,32.76,.01,45.26h0l52.03,52.03H32C14.33,106.67,0,121,0,138.67s14.33,32,32,32H219.58l-52.03,52.03c-12.5,12.49-12.51,32.76-.01,45.26,12.49,12.5,32.76,12.51,45.26,.01l76.5-76.5c29.1-29.18,29.1-76.42,0-105.6Z" />
+                  </svg>
+                </span>
+              </a>
+            </div>
+            <ServicesMain />
           </div>
         </section>
 
