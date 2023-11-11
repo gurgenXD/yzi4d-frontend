@@ -74,7 +74,7 @@ export default async function Specialist(
                             </div>
 
                             <div className="doc-hero-text">
-                                {specialist.description.split("\n").map((row: string) => (
+                                {specialist.short_description.split("\n").map((row: string) => (
                                     <div key={row}>{row}<br /></div>
                                 ))}
                             </div>
@@ -288,12 +288,11 @@ export default async function Specialist(
                                     <h2 className="fs-3 mb-md-4 mb-3">Опыт</h2>
 
                                     <div className="article article-sm">
-                                        {/* <ul>
-                                            <li>
-                                                После окончания университета работает по своей основной специальности, хирургом-онкологом, в Саратовском онкологическом
-                                                диспансере.
-                                            </li>
-                                        </ul> */}
+                                        <ul>
+                                            {specialist.description.split("\n").map((row: string) => (
+                                                <li key={row}>{row}</li>
+                                            ))}
+                                        </ul>
                                     </div>
                                 </div>
 
