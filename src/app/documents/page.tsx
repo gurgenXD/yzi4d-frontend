@@ -22,7 +22,7 @@ export default async function Documents() {
                             <h1 className="mb-4">{categories[0].name}</h1>
 
                             {categories[0].documents.map((document: any) => (
-                                <div className="col-xxl-3 col-xl-4 col-md-6">
+                                <div key={document.name} className="col-xxl-3 col-xl-4 col-md-6">
                                     <div
                                         className="card h-100 d-flex flex-column position-relative rounded-3 pt-3 pt-sm-4 pb-sm-2 px-3 px-sm-4"
                                         style={{ backgroundImage: "url('/img/document-bg-icon.svg')" }}>
