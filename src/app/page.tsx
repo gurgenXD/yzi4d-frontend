@@ -2,6 +2,7 @@ import SpecialistSlider from "@/app/components/home/SpecialistSlider"
 import ServicesMain from "@/app/components/home/ServicesMain"
 import Image from 'next/image'
 import ContactsBlock from "@/app/components/common/ContactsBlock"
+import PromotionSlider from "@/app/components/home/PromotionSlider"
 
 
 export const metadata = {
@@ -16,110 +17,7 @@ export default async function Home() {
         <div className="container py-lg-6 py-5">
           <div className="row gy-5">
             <div className="col-xl-8 col-xxl-9">
-              <div className="position-relative main-slider">
-                {/* <div className="main-slider-control d-none d-lg-block">
-                  <div className="main-slider-control-wrap d-flex justify-content-end align-items-center px-3 py-2">
-                    <div className="swiper-pagination me-3"></div>
-
-                    <div className="swiper-button-prev me-2 sbp-1">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 174.29 320.01">
-                        <path
-                          d="M67.08,167.55c-4.17-4.16-4.18-10.91-.02-15.08,0,0,.01-.01,.02-.02L164.91,54.64c12.5-12.49,12.51-32.76,.01-45.26-12.49-12.5-32.76-12.51-45.26-.01L21.83,107.2c-29.1,29.18-29.1,76.42,0,105.6l97.83,97.83c12.5,12.49,32.76,12.49,45.26-.01,12.49-12.5,12.49-32.76-.01-45.26l-97.83-97.81Z" />
-                      </svg>
-                    </div>
-
-                    <div className="swiper-button-next sbn-1">
-                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 174.29 320.01">
-                        <path
-                          d="M152.46,107.2L54.63,9.37c-12.5-12.49-32.76-12.49-45.26,.01-12.49,12.5-12.49,32.76,.01,45.26l97.83,97.81c4.17,4.16,4.18,10.91,.02,15.08,0,0-.01,.01-.02,.02L9.38,265.37c-12.5,12.49-12.51,32.76-.01,45.26s32.76,12.51,45.26,.01l97.83-97.83c29.1-29.18,29.1-76.42,0-105.6Z" />
-                      </svg>
-                    </div>
-                  </div>
-                </div> */}
-
-                <div className="swiper">
-                  <div className="swiper-wrapper">
-                    <div className="swiper-slide">
-                      <div className="sale-banner bg-white position-relative">
-                        <div className="row flex-column flex-md-row gx-0">
-                          <div className="col-12 col-md-auto">
-                            <div className="sale-banner-img bg-img" style={{ backgroundImage: "url('/img/dynamic-img/main-slider-img_1.jpg')" }}></div>
-                          </div>
-
-                          <div className="col-12 col-md">
-                            <div className="sale-banner-text h-100 d-flex align-items-center px-3 px-sm-4 px-lg-5">
-                              <div>
-                                <div className="d-flex flex-wrap mb-2 mb-md-3 mb-xxl-4">
-                                  <div className="sale-banner-badge bg-danger text-white fw-semibold px-2 px-lg-3 py-1 mb-1">Выгода 20%</div>
-                                  <div className="sale-banner-date bg-light-blue fw-semibold px-2 px-lg-3 py-1 mb-1">25 октября - 25 декабря</div>
-                                </div>
-
-                                <a href="#" className="sale-banner-title stretched-link d-block link-secondary fw-black mb-0">Биохимия крови</a>
-
-                                <ul className="sale-banner-list list-unstyled mt-2 mt-md-3 mt-xxl-4">
-                                  <li>
-                                    Базовый комплекс (9 показателей) + витамин Д
-                                    <div className="fw-bold">
-                                      2600 ₽
-                                      <span className="text-decoration-line-through fw-medium ms-1">3000 ₽</span>
-                                    </div>
-                                  </li>
-
-                                  <li>
-                                    Расширенный коплекс (13 показателей)
-                                    <div className="fw-bold">
-                                      2300 ₽
-                                      <span className="text-decoration-line-through fw-medium ms-1">3000 ₽</span>
-                                    </div>
-                                  </li>
-
-                                  <li className="fw-bold text-danger">Забор крови в подарок</li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* <div className="swiper-slide">
-                      <div className="sale-banner bg-white position-relative">
-                        <div className="row flex-column flex-md-row gx-0">
-                          <div className="col-12 col-md-auto">
-                            <div className="sale-banner-img bg-img" style={{ backgroundImage: "url('/img/dynamic-img/main-slider-img_2.jpg')" }}></div>
-                          </div>
-
-                          <div className="col-12 col-md">
-                            <div className="sale-banner-text h-100 d-flex align-items-center px-3 px-sm-4 px-lg-5">
-                              <div>
-                                <div className="d-flex flex-wrap mb-2 mb-md-3 mb-xxl-4">
-                                  <div className="sale-banner-badge bg-danger text-white fw-semibold px-2 px-lg-3 py-1 mb-1">Выгода 50%</div>
-                                  <div className="sale-banner-date bg-light-blue fw-semibold px-2 px-lg-3 py-1 mb-1">Все выходные октября</div>
-                                </div>
-
-                                <a href="#" className="sale-banner-title stretched-link d-block link-secondary fw-black mb-0">Здоровье щитовидной железы</a>
-
-                                <ul className="sale-banner-list list-unstyled mt-2 mt-md-3 mt-xxl-4">
-                                  <li>
-                                    ТТГ + Т4св + АТПО
-                                    <div className="fw-bold">
-                                      2300 ₽
-                                      <span className="text-decoration-line-through fw-medium ms-1">4600 ₽</span>
-                                    </div>
-                                  </li>
-
-                                  <li className="fw-bold text-danger">Забор крови в подарок</li>
-                                </ul>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div> */}
-
-                  </div>
-                </div>
-              </div>
+              <PromotionSlider />
             </div>
 
             <div className="col-xl-4 col-xxl-3">
@@ -141,7 +39,7 @@ export default async function Home() {
             <div className="d-flex flex-wrap align-items-baseline justify-content-between mb-lg-3">
               <h2 className="mb-2 me-5">Услуги</h2>
 
-              <a href="/catalog/services/categories/9" className="link-more spaced-link fw-semibold d-flex align-items-center flex-nowrap mb-2">
+              <a href="/catalog/services/categories/-1" className="link-more spaced-link fw-semibold d-flex align-items-center flex-nowrap mb-2">
                 Все услуги
 
                 <span className="icon ms-2">

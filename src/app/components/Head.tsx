@@ -1,4 +1,4 @@
-import Script from 'next/script'
+import YandexMetrics from '@/app/components/YandexMetrics'
 
 export default function Head() {
     return (
@@ -27,6 +27,8 @@ export default function Head() {
 
             {/* Версия для слабовидящих. */}
             <link rel="stylesheet" href="/blind/css/bvi.min.css" type="text/css"></link>
+
+            <YandexMetrics />
         </head>
     )
 }

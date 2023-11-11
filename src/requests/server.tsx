@@ -63,10 +63,29 @@ export async function getCategories(catalogType: string) {
     return categories
 }
 
+
 export async function getOffices() {
     const offices = await fetch(
         `${process.env.NEXT_PUBLIC_YZI4D_HOST}/contacts/offices`, { cache: 'no-store' },
     ).then((res) => res.json())
 
     return offices
+}
+
+
+export async function getPromotions() {
+    const promotions = await fetch(
+        `${process.env.NEXT_PUBLIC_YZI4D_HOST}/promotions`, { cache: 'no-store' },
+    ).then((res) => res.json())
+
+    return promotions
+}
+
+
+export async function getDocumentsCategories() {
+    const categories = await fetch(
+        `${process.env.NEXT_PUBLIC_YZI4D_HOST}/documents`, { cache: 'no-store' },
+    ).then((res) => res.json())
+
+    return categories
 }

@@ -7,8 +7,8 @@ import { Placeholder, PlaceholderError } from "@/app/components/common/Placehold
 export default function ServicesMain() {
     const { categories, isLoading, isError } = useGetMainCategories("main")
 
-    if (isLoading) return <Placeholder />
-    if (isError) return <PlaceholderError />
+    if (isLoading) return <Placeholder height={200} />
+    if (isError) return <PlaceholderError height={200} />
 
     return (
         <div className="row gx-xl-5">
