@@ -22,3 +22,14 @@ export function useGetMainCategories(catalogType: string) {
 
     return { categories: data, isLoading, isError: error }
 }
+
+
+export function useGetMainPromotions() {
+    const fetcher = async (url: any) => await fetch(url).then(res => res.json())
+    const { data, error, isLoading } = useSWR(
+        `${process.env.NEXT_PUBLIC_YZI4D_HOST}/promotions?for_main=true`,
+        fetcher
+    )
+
+    return { promotions: data, isLoading, isError: error }
+}

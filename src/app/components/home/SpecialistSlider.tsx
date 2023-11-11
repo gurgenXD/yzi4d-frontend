@@ -10,8 +10,8 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 export default function SpecialistSlider() {
     const { specialists, isLoading, isError } = useGetMainSpecialists()
 
-    if (isLoading) return <Placeholder />
-    if (isError) return <PlaceholderError />
+    if (isLoading) return <Placeholder height={200} />
+    if (isError) return <PlaceholderError height={200} />
 
     return (
         <Swiper
