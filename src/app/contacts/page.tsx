@@ -11,7 +11,7 @@ export default function Contacts() {
             <div className="overflow-hidden">
                 <div className="container pt-4 pt-lg-5">
                     <ol className="breadcrumb">
-                        <li className="breadcrumb-item"><a href="index.html">Главная</a></li>
+                        <li className="breadcrumb-item"><a href="/">Главная</a></li>
                         <li className="breadcrumb-item active">Наши филиалы</li>
                     </ol>
 

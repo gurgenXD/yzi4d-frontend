@@ -62,15 +62,15 @@ export default function Footer() {
                     <div className="col-lg">
                         <ul className="list-unstyled d-flex flex-wrap footer-links pb-2 mb-3">
                             <li className="me-4 mb-1"><a href="/specialists" className="link-secondary spaced-link">Специалисты</a></li>
-                            <li className="me-4 mb-1"><a href={"/catalog/services/categories/" + 9} className="link-secondary spaced-link">Услуги</a></li>
-                            <li className="me-4 mb-1"><a href={"/catalog/analyzes/categories/" + 1} className="link-secondary spaced-link">Анализы</a></li>
+                            <li className="me-4 mb-1"><a href="/catalog/services/categories/-1" className="link-secondary spaced-link">Услуги</a></li>
+                            <li className="me-4 mb-1"><a href="/catalog/analyzes/categories/-1" className="link-secondary spaced-link">Анализы</a></li>
                             {/* <li className="me-4 mb-1"><a href="content.html" className="link-secondary spaced-link">Пациентам</a></li>
                             <li className="me-4 mb-1"><a href="content.html" className="link-secondary spaced-link">О нас</a></li> */}
                             <li className="me-4 mb-1"><a href="/contacts" className="link-secondary spaced-link">Контакты</a></li>
                         </ul>
 
                         <ul className="list-unstyled footer-text mb-0">
-                            <li className="mb-1"><a href="https://cloud.yzi4d.ru/s/Qf7z6FMB2iByCNC" target="_blank" className="link-secondary">Лицензия №Л041-01197-26/00325284</a></li>
+                            <li className="mb-1"><a href="/documents" className="link-secondary">Документы и лицензии</a></li>
                             <li className="text-muted">Имеются противопоказания. Необходима консультация специалиста</li>
                             <li className="text-muted">© {new Date().getFullYear()} 4Д Поликлиника</li>
                         </ul>
