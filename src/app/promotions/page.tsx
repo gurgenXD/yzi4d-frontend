@@ -21,7 +21,7 @@ export default async function Promotions() {
                     <h1 className="mb-4">Спецпредложения</h1>
 
                     {promotions.map((promotion: any) => (
-                        <PromotionBlock promotion={promotion} />
+                        <PromotionBlock key={promotion.id} promotion={promotion} />
                     ))}
                 </div>
             </div>
