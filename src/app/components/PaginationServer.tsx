@@ -6,7 +6,6 @@ function getPagingUrl(page: string, searchParams: URLSearchParams) {
 
 export default function Pagination({ url, paging, urlSearchParams }: any) {
     return (
-
         <div className="pt-5">
             {(paging.total_pages > 1) ?
                 <ul className="pagination justify-content-center justify-content-sm-end">

@@ -1,4 +1,4 @@
-import SideBar from "@/app/components/SideBar"
+import SideBar from "@/app/components/catalog/SideBar"
 import NotFound from "@/app/not-found"
 import { getService } from "@/requests/server"
 

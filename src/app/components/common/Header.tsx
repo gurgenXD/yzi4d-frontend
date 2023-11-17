@@ -1,13 +1,12 @@
 import Image from 'next/image'
 import BlindBlock from '@/app/components/BlindBlock'
-import { getCategories, getOffices } from '@/requests/server'
+import HeaderCategoriesBlock from '@/app/components/common/HeaderCategoriesBlock'
+import HeaderOfficesBlock from './HeaderOfficesBlock'
+
 
 export default async function Header() {
-    const categories = await getCategories("services")
-    const offices = await getOffices()
-
     return (
-        <div>
+        <>
             <div className="d-none d-lg-block bg-light-blue">
                 <div className="container">
                     <div className="d-flex">
@@ -33,9 +32,7 @@ export default async function Header() {
                             </a>
 
                             <ul className="dropdown-menu">
-                                {offices.map((office: string) => (
-                                    <li key={office}><a className="dropdown-item fs-8" href="#">{office}</a></li>
-                                ))}
+                                <HeaderOfficesBlock />
                             </ul>
                         </div>
 
@@ -177,7 +174,7 @@ export default async function Header() {
                                 </li>
 
                                 <li className="nav-item dropdown">
-                                    <a className="nav-link dropdown-toggle" href={"/catalog/services/categories/" + categories[0].id} role="button" aria-expanded="false">
+                                    <a className="nav-link dropdown-toggle" href="#" role="button" aria-expanded="false">
                                         Услуги
 
                                         <span className="caret ms-2">
@@ -187,12 +184,7 @@ export default async function Header() {
                                             </svg>
                                         </span>
                                     </a>
-
-                                    <ul className="dropdown-menu">
-                                        {categories.map((category: any) => (
-                                            <li key={category.id}><a className="dropdown-item" href={"/catalog/services/categories/" + category.id}>{category.name}</a></li>
-                                        ))}
-                                    </ul>
+                                    <ul className="dropdown-menu"><HeaderCategoriesBlock /></ul>
                                 </li>
 
                                 <li className="nav-item">
@@ -274,7 +266,7 @@ export default async function Header() {
                         </div>
                     </div>
                 </nav >
-            </div >
-        </div >
+            </div>
+        </>
     )
 }

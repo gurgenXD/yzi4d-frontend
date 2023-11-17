@@ -1,8 +1,7 @@
-import ServiceBlock from "@/app/components/ServiceBlock"
-import Pagination from "@/app/components/Pagination"
 import NotFound from "@/app/not-found"
 import Image from 'next/image'
-import { getSpecialist, getSpecialistServices } from "@/requests/server"
+import { getSpecialist } from "@/requests/server"
+import SpecialistServiceBlock from "@/app/components/specialists/SpecialistServiceBlock"
 
 
 export async function generateMetadata(
@@ -17,16 +16,11 @@ export async function generateMetadata(
 }
 
 export default async function Specialist(
-    { params, searchParams }: { params: { id: string }, searchParams: { page: string } }
+    { params }: { params: { id: string } }
 ) {
-
-    const urlSearchParams = new URLSearchParams(searchParams)
 
     const { errorCodeSpec, specialist } = await getSpecialist(params.id)
     if (errorCodeSpec) { return <NotFound /> }
-
-    const { errorCodeServ, services: { data, paging } } = await getSpecialistServices(params.id, urlSearchParams)
-    if (errorCodeServ) { return <NotFound /> }
 
     return <main role="main" className="flex-shrink-0">
         <div className="overflow-hidden">
@@ -444,23 +438,7 @@ export default async function Specialist(
                 </div>
             </div>
 
-            <div className="container">
-                <div className="bg-white rounded-3 shadow p-3 p-md-4 p-lg-5">
-                    <h2 className="fs-3 mb-4">Услуги врача</h2>
-
-                    <div>
-                        {data.map((service: any) => (
-                            <ServiceBlock key={service.id} service={service} catalog_type="services" />
-                        ))}
-                    </div>
-
-                    {/* <div className="text-center pt-5">
-                        <a href="#" className="btn btn-outline-secondary">Показать ещё</a>
-                    </div> */}
-
-                </div>
-                <Pagination url={"/specialists/" + params.id} paging={paging} urlSearchParams={urlSearchParams} />
-            </div>
+            <SpecialistServiceBlock specialist_id={params.id} />
 
             <section className="cards-slider py-5 py-lg-6">
                 {/* <div className="container">

@@ -1,11 +1,10 @@
 import Image from 'next/image'
-import { getCategories, getOffices } from "@/requests/server"
+
+import HeaderCategoriesBlock from '@/app/components/common/HeaderCategoriesBlock'
+import HeaderOfficesBlock from '@/app/components/common/HeaderOfficesBlock'
 
 
 export default async function OffCanvas() {
-    const categories = await getCategories("services")
-    const offices = await getOffices()
-
     return (
         <div className="offcanvas offcanvas-end" tabIndex={-1} id="Offcanvas" aria-labelledby="OffcanvasLabel">
             <div className="offcanvas-header pb-1">
@@ -124,7 +123,7 @@ export default async function OffCanvas() {
                         </li>
 
                         <li className="nav-item has-submenu">
-                            <a className="nav-link active" href={"/catalog/services/categories/" + categories[0].id}>
+                            <a className="nav-link active" href="#">
                                 Услуги
 
                                 <span className="caret">
@@ -136,9 +135,7 @@ export default async function OffCanvas() {
                             </a>
 
                             <ul className="submenu collapse show">
-                                {categories.map((category: any) => (
-                                    <li key={category.id}><a className="nav-link" href={"/catalog/services/categories/" + category.id}>{category.name}</a></li>
-                                ))}
+                                <HeaderCategoriesBlock />
                             </ul>
                         </li>
 
@@ -201,9 +198,7 @@ export default async function OffCanvas() {
                             </a>
 
                             <ul className="submenu collapse show">
-                                {offices.map((office: string) => (
-                                    <li key={office}><a className="nav-link" href="#">{office}</a></li>
-                                ))}
+                                <HeaderOfficesBlock />
                             </ul>
                         </li>
                     </ul>

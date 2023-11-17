@@ -1,7 +1,9 @@
+'use client'
+
 import Script from 'next/script'
 
-export default async function ContactsBlock() {
 
+export default function ContactsBlock() {
     return (
         <>
             <div className="nav-mobile-scroll fw-semibold mb-4">

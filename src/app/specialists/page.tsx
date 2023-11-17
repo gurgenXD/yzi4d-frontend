@@ -1,4 +1,4 @@
-import Pagination from "@/app/components/Pagination"
+import Pagination from "@/app/components/PaginationServer"
 import SpecialistBlock from "@/app/components/common/SpecialistBlock"
 import { getSpecialists, getSpecializations } from "@/requests/server"
 

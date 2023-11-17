@@ -3,7 +3,7 @@ import '../../public/scss/style.scss'
 import type { Metadata } from 'next'
 
 import Footer from '@/app/components/Footer'
-import Header from '@/app/components/Header'
+import Header from '@/app/components/common/Header'
 import Head from '@/app/components/Head'
 import OffCanvas from '@/app/components/OffCanvas'
 import Calculator from '@/app/components/Calculator'

@@ -1,15 +1,14 @@
-import Pagination from "@/app/components/Pagination"
-import ServiceBlock from "@/app/components/ServiceBlock"
 import NotFound from "@/app/not-found"
-import SideBar from "@/app/components/SideBar"
+import SideBar from "@/app/components/catalog/SideBar"
 import { getServices } from "@/requests/server"
+import ServicesBlock from "@/app/components/catalog/ServicesBlock"
 
 
 export async function generateMetadata(
     { params }: { params: { catalog_type: string, category_id: string } }
 ) {
     const { errorCode, services: { data, paging } } = await getServices(
-        params.category_id, params.catalog_type, new URLSearchParams({})
+        params.category_id, params.catalog_type
     )
     if (errorCode) { return <NotFound /> }
 
@@ -20,12 +19,10 @@ export async function generateMetadata(
 
 
 export default async function Services(
-    { params, searchParams }: { params: { catalog_type: string, category_id: string }, searchParams: { page: string } }
+    { params }: { params: { catalog_type: string, category_id: string } }
 ) {
-    const urlSearchParams = new URLSearchParams(searchParams)
-
     const { errorCode, services: { data, paging } } = await getServices(
-        params.category_id, params.catalog_type, urlSearchParams
+        params.category_id, params.catalog_type
     )
     if (errorCode) { return <NotFound /> }
 
@@ -65,15 +62,8 @@ export default async function Services(
 
                     <div className="row">
                         <SideBar category_id={params.category_id} catalog_type={params.catalog_type} />
-
                         <div className="col-xxl-9 col-xl-8">
-                            <div>
-                                {data.map((service: any) => (
-                                    <ServiceBlock key={service.id} service={service} catalog_type={params.catalog_type} />
-                                ))}
-                            </div>
-
-                            <Pagination url={"/catalog/" + params.catalog_type + "/categories/" + params.category_id} paging={paging} urlSearchParams={urlSearchParams} />
+                            <ServicesBlock catalog_type={params.catalog_type} category_id={params.category_id} />
                         </div>
                     </div>
                 </div>

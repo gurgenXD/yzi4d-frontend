@@ -1,9 +1,16 @@
-import { getCategories } from "@/requests/server"
+'use client'
+
+
+import { useGetCategories } from "@/requests/client"
+import { Placeholder, PlaceholderError } from "@/app/components/common/Placeholder"
 
 
 
-export default async function SideBar({ category_id, catalog_type }: { category_id: string, catalog_type: string }) {
-    const categories = await getCategories(catalog_type)
+export default function SideBar({ category_id, catalog_type }: { category_id: string, catalog_type: string }) {
+    const { categories, isLoading, isError } = useGetCategories(catalog_type)
+
+    if (isLoading) return <div className="col-xxl-3 col-xl-4"><Placeholder height={500} /></div>
+    if (isError) return <div className="col-xxl-3 col-xl-4"><PlaceholderError height={500} /></div>
 
     return (
         <div className="col-xxl-3 col-xl-4">

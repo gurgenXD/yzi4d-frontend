@@ -36,9 +36,9 @@ export async function getSpecialistServices(id: string, searchParams: URLSearchP
 }
 
 
-export async function getServices(categoryID: string, catalog_type: string, searchParams: URLSearchParams) {
+export async function getServices(category_id: string, catalog_type: string) {
     const res = await fetch(
-        `${process.env.NEXT_PUBLIC_YZI4D_HOST}/catalog/${catalog_type}/categories/${categoryID}?${searchParams.toString()}`, { cache: 'no-store' },
+        `${process.env.NEXT_PUBLIC_YZI4D_HOST}/catalog/${catalog_type}/categories/${category_id}`, { cache: 'no-store' },
     )
     const errorCode = res.ok ? false : res.status
     return { errorCode, services: await res.json() }
@@ -55,9 +55,9 @@ export async function getService(id: string, category_id: string, catalog_type: 
 }
 
 
-export async function getCategories(catalogType: string) {
+export async function getCategories(catalog_type: string) {
     const categories = await fetch(
-        `${process.env.NEXT_PUBLIC_YZI4D_HOST}/catalog/${catalogType}/categories`, { cache: 'no-store' },
+        `${process.env.NEXT_PUBLIC_YZI4D_HOST}/catalog/${catalog_type}/categories`, { cache: 'no-store' },
     ).then((res) => res.json())
 
     return categories
