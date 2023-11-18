@@ -1,4 +1,4 @@
-import SideBar from "@/app/components/catalog/SideBar"
+import CatalogSidebar from "@/app/components/catalog/CatalogSidebar"
 import NotFound from "@/app/not-found"
 import { getService } from "@/requests/server"
 
@@ -177,7 +177,7 @@ export default async function Service(
 
                 <div className="container mb-5">
                     <div className="row">
-                        <SideBar category_id={params.category_id} catalog_type={params.catalog_type} />
+                        <CatalogSidebar category_id={params.category_id} catalog_type={params.catalog_type} />
 
                         <div className="col-xxl-9 col-xl-8">
                             <div className="bg-white rounded-3 shadow px-3 pb-3 px-md-4 pt-md-2 pb-md-4 px-lg-5 pt-lg-3 pb-lg-5">

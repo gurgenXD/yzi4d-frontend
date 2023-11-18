@@ -1,4 +1,4 @@
-import ContactsBlock from "@/app/components/common/ContactsBlock"
+import CommonContacts from "@/app/components/common/CommonContacts"
 
 export const metadata = {
     title: "Контакты - Поликлиника УЗИ 4Д",
@@ -17,7 +17,7 @@ export default function Contacts() {
 
                     <h1 className="mb-4">Наши филиалы</h1>
 
-                    <ContactsBlock />
+                    <CommonContacts />
 
                 </div>
             </div>

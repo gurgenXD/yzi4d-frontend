@@ -1,4 +1,4 @@
-export default function ServiceBlock({ service, catalog_type }: { service: any, catalog_type: string }) {
+export default function CommonService({ service, catalog_type }: { service: any, catalog_type: string }) {
     return (
         <div className="service-item position-relative">
             <div className="row gx-lg-6">

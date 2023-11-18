@@ -1,14 +1,13 @@
 'use client'
 
 import { useGetCategories } from '@/requests/client'
-import { Placeholder, PlaceholderError } from "@/app/components/common/Placeholder"
+import { Placeholder } from "@/app/components/common/Placeholder"
 
 
-export default function HeaderCategoriesBlock() {
+export default function HeaderCategories() {
     const { categories, isLoading, isError } = useGetCategories("services")
 
-    if (isLoading) return <Placeholder height={300} />
-    if (isError) return <PlaceholderError height={300} />
+    if (isLoading || isError) return <Placeholder columns={[{ col: 12, count: 1, height: 300 }]} isError={isError} />
 
     return (
         <>

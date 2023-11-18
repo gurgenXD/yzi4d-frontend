@@ -1,5 +1,5 @@
 import { getPromotions } from "@/requests/server";
-import PromotionBlock from "@/app/components/common/PromotionBlock";
+import CommonPromotion from "@/app/components/common/CommonPromotion";
 
 export const metadata = {
     title: "Спецпредложения - Поликлиника УЗИ 4Д",
@@ -21,7 +21,7 @@ export default async function Promotions() {
                     <h1 className="mb-4">Спецпредложения</h1>
 
                     {promotions.map((promotion: any) => (
-                        <PromotionBlock key={promotion.id} promotion={promotion} />
+                        <CommonPromotion key={promotion.id} promotion={promotion} />
                     ))}
                 </div>
             </div>

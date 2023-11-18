@@ -1,16 +1,13 @@
 'use client'
 
-
 import { useGetCategories } from "@/requests/client"
-import { Placeholder, PlaceholderError } from "@/app/components/common/Placeholder"
+import { Placeholder } from "@/app/components/common/Placeholder"
 
 
-
-export default function SideBar({ category_id, catalog_type }: { category_id: string, catalog_type: string }) {
+export default function CatalogSidebar({ category_id, catalog_type }: { category_id: string, catalog_type: string }) {
     const { categories, isLoading, isError } = useGetCategories(catalog_type)
 
-    if (isLoading) return <div className="col-xxl-3 col-xl-4"><Placeholder height={500} /></div>
-    if (isError) return <div className="col-xxl-3 col-xl-4"><PlaceholderError height={500} /></div>
+    if (isLoading || isError) return <div className="col-xxl-3 col-xl-4"><Placeholder columns={[{ col: 12, count: 1, height: 300 }]} isError={isError} /></div>
 
     return (
         <div className="col-xxl-3 col-xl-4">

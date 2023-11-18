@@ -1,14 +1,13 @@
 'use client'
 
 import { useGetOffices } from '@/requests/client'
-import { Placeholder, PlaceholderError } from "@/app/components/common/Placeholder"
+import { Placeholder } from "@/app/components/common/Placeholder"
 
 
-export default function HeaderOfficesBlock() {
+export default function HeaderOffices() {
     const { offices, isLoading, isError } = useGetOffices()
 
-    if (isLoading) return <Placeholder height={100} />
-    if (isError) return <PlaceholderError height={100} />
+    if (isLoading || isError) return <Placeholder columns={[{ col: 12, count: 1, height: 100 }]} isError={isError} />
 
     return (
         <>

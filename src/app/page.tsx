@@ -1,8 +1,8 @@
-import SpecialistSlider from "@/app/components/home/SpecialistSlider"
-import ServicesMain from "@/app/components/home/ServicesMain"
+import HomeSpecialists from "@/app/components/home/HomeSpecialists"
+import HomeServices from "@/app/components/home/HomeServices"
 import Image from 'next/image'
-import ContactsBlock from "@/app/components/common/ContactsBlock"
-import PromotionSlider from "@/app/components/home/PromotionSlider"
+import CommonContacts from "@/app/components/common/CommonContacts"
+import HomePromotions from "@/app/components/home/HomePromotions"
 
 
 export const metadata = {
@@ -17,7 +17,7 @@ export default async function Home() {
         <div className="container py-lg-6 py-5">
           <div className="row gy-5">
             <div className="col-xl-8 col-xxl-9">
-              <PromotionSlider />
+              <HomePromotions />
             </div>
 
             <div className="col-xl-4 col-xxl-3">
@@ -50,7 +50,7 @@ export default async function Home() {
                 </span>
               </a>
             </div>
-            <ServicesMain />
+            <HomeServices />
           </div>
         </section>
 
@@ -93,7 +93,7 @@ export default async function Home() {
             </div>
 
             <div className="position-relative">
-              <SpecialistSlider />
+              <HomeSpecialists />
             </div>
           </div>
         </section >
@@ -197,7 +197,7 @@ export default async function Home() {
           <div className="container">
             <h2 className="mb-lg-4 mb-2">Наши филиалы</h2>
 
-            <ContactsBlock />
+            <CommonContacts />
 
           </div>
         </section >

@@ -1,5 +1,5 @@
 import Pagination from "@/app/components/PaginationServer"
-import SpecialistBlock from "@/app/components/common/SpecialistBlock"
+import CommonSpecialist from "@/app/components/common/CommonSpecialist"
 import { getSpecialists, getSpecializations } from "@/requests/server"
 
 type SearchParams = {
@@ -82,7 +82,7 @@ export default async function Specialists({ searchParams }: { searchParams: Sear
                     <div className="row gy-4 gy-md-5">
                         {data.map((specialist: any) => (
                             <div key={specialist.id} className="col-lg-3 col-md-4">
-                                <SpecialistBlock specialist={specialist} />
+                                <CommonSpecialist specialist={specialist} />
                             </div>
                         ))}
                     </div >

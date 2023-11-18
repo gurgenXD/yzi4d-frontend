@@ -1,7 +1,7 @@
 import NotFound from "@/app/not-found"
 import Image from 'next/image'
 import { getSpecialist } from "@/requests/server"
-import SpecialistServiceBlock from "@/app/components/specialists/SpecialistServiceBlock"
+import SpecialistServices from "@/app/components/specialists/SpecialistServices"
 
 
 export async function generateMetadata(
@@ -438,7 +438,7 @@ export default async function Specialist(
                 </div>
             </div>
 
-            <SpecialistServiceBlock specialist_id={params.id} />
+            <SpecialistServices specialist_id={params.id} />
 
             <section className="cards-slider py-5 py-lg-6">
                 {/* <div className="container">

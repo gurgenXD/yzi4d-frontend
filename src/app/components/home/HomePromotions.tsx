@@ -1,17 +1,16 @@
 'use client'
 
-import { Placeholder, PlaceholderError } from "@/app/components/common/Placeholder"
+import { Placeholder } from "@/app/components/common/Placeholder"
 import { Navigation, Pagination, Autoplay } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import PromotionBlock from "@/app/components/common/PromotionBlock"
+import CommonPromotion from "@/app/components/common/CommonPromotion"
 import { useGetMainPromotions } from "@/requests/client";
 
 
-export default function PromotionSlider() {
+export default function HomePromotions() {
     const { promotions, isLoading, isError } = useGetMainPromotions()
 
-    if (isLoading) return <Placeholder height={480} />
-    if (isError) return <PlaceholderError height={480} />
+    if (isLoading || isError) return <Placeholder columns={[{ col: 12, count: 1, height: 520 }]} isError={isError} />
 
     return (
         <div className="position-relative main-slider">
@@ -73,7 +72,7 @@ export default function PromotionSlider() {
                 <div className="swiper-wrapper">
                     {promotions.map((promotion: any) => (
                         <SwiperSlide key={promotion.id} className="swiper-slide">
-                            <PromotionBlock promotion={promotion} />
+                            <CommonPromotion promotion={promotion} />
                         </SwiperSlide>
                     ))}
                 </div>

@@ -1,18 +1,17 @@
 'use client'
 
 import { useGetSpecialistServices } from "@/requests/client"
-import { Placeholder, PlaceholderError } from "@/app/components/common/Placeholder"
+import { Placeholder } from "@/app/components/common/Placeholder"
 import Pagination from "@/app/components/common/Pagination"
-import ServiceBlock from "@/app/components/common/ServiceBlock"
+import CommonService from "@/app/components/common/CommonService"
 import { useState } from "react"
 
 
-export default function SpecialistServiceBlock({ specialist_id }: { specialist_id: string }) {
+export default function SpecialistServices({ specialist_id }: { specialist_id: string }) {
     const [pageIndex, setPageIndex] = useState(1);
     const { services, isLoading, isError } = useGetSpecialistServices(specialist_id, pageIndex)
 
-    if (isLoading) return <div className="container"><Placeholder height={400} /></div>
-    if (isError) return <div className="container"><PlaceholderError height={400} /></div>
+    if (isLoading || isError) return <div className="container"><Placeholder columns={[{ col: 12, count: 1, height: 400 }]} isError={isError} /></div>
 
     return (
         <div className="container">
@@ -21,7 +20,7 @@ export default function SpecialistServiceBlock({ specialist_id }: { specialist_i
 
                 <div>
                     {services.data.map((service: any) => (
-                        <ServiceBlock key={service.id} service={service} catalog_type="services" />
+                        <CommonService key={service.id} service={service} catalog_type="services" />
                     ))}
                 </div>
 

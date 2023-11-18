@@ -1,17 +1,25 @@
 'use client'
 
 import { useGetMainSpecialists } from "@/requests/client"
-import SpecialistBlock from "@/app/components/common/SpecialistBlock"
-import { Placeholder, PlaceholderError } from "@/app/components/common/Placeholder"
+import CommonSpecialist from "@/app/components/common/CommonSpecialist"
+import { Placeholder } from "@/app/components/common/Placeholder"
 import { Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
 
-export default function SpecialistSlider() {
+export default function HomeSpecialists() {
     const { specialists, isLoading, isError } = useGetMainSpecialists()
 
-    if (isLoading) return <Placeholder height={200} />
-    if (isError) return <PlaceholderError height={200} />
+    if (isLoading || isError) return <>
+        <Placeholder columns={
+            [
+                { col: 3, count: 1, height: 300 },
+                { col: 3, count: 1, height: 300 },
+                { col: 3, count: 1, height: 300 },
+                { col: 3, count: 1, height: 300 },
+            ]
+        } isError={isError} />
+    </>
 
     return (
         <Swiper
@@ -51,7 +59,7 @@ export default function SpecialistSlider() {
             <div className="swiper-wrapper">
                 {specialists.map((specialist: any) => (
                     <SwiperSlide key={specialist.id} className="swiper-slide">
-                        <SpecialistBlock specialist={specialist} />
+                        <CommonSpecialist specialist={specialist} />
                     </SwiperSlide>
                 ))}
             </div>

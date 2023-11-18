@@ -1,7 +1,7 @@
 import NotFound from "@/app/not-found"
-import SideBar from "@/app/components/catalog/SideBar"
+import CatalogSidebar from "@/app/components/catalog/CatalogSidebar"
 import { getServices } from "@/requests/server"
-import ServicesBlock from "@/app/components/catalog/ServicesBlock"
+import CatalogServices from "@/app/components/catalog/CatalogServices"
 
 
 export async function generateMetadata(
@@ -61,9 +61,9 @@ export default async function Services(
                     </div>
 
                     <div className="row">
-                        <SideBar category_id={params.category_id} catalog_type={params.catalog_type} />
+                        <CatalogSidebar category_id={params.category_id} catalog_type={params.catalog_type} />
                         <div className="col-xxl-9 col-xl-8">
-                            <ServicesBlock catalog_type={params.catalog_type} category_id={params.category_id} />
+                            <CatalogServices catalog_type={params.catalog_type} category_id={params.category_id} />
                         </div>
                     </div>
                 </div>

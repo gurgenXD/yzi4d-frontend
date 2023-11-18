@@ -3,7 +3,7 @@
 import Script from 'next/script'
 
 
-export default function ContactsBlock() {
+export default function CommonContacts() {
     return (
         <>
             <div className="nav-mobile-scroll fw-semibold mb-4">

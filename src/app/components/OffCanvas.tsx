@@ -1,7 +1,7 @@
 import Image from 'next/image'
 
-import HeaderCategoriesBlock from '@/app/components/common/HeaderCategoriesBlock'
-import HeaderOfficesBlock from '@/app/components/common/HeaderOfficesBlock'
+import HeaderCategories from '@/app/components/HeaderCategories'
+import HeaderOffices from '@/app/components/HeaderOffices'
 
 
 export default async function OffCanvas() {
@@ -135,7 +135,7 @@ export default async function OffCanvas() {
                             </a>
 
                             <ul className="submenu collapse show">
-                                <HeaderCategoriesBlock />
+                                <HeaderCategories />
                             </ul>
                         </li>
 
@@ -198,7 +198,7 @@ export default async function OffCanvas() {
                             </a>
 
                             <ul className="submenu collapse show">
-                                <HeaderOfficesBlock />
+                                <HeaderOffices />
                             </ul>
                         </li>
                     </ul>

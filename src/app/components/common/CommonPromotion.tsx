@@ -1,4 +1,4 @@
-export default function PromotionBlock({ promotion }: { promotion: any }) {
+export default function CommonPromotion({ promotion }: { promotion: any }) {
     return (
         <div className="sale-banner bg-white position-relative">
             <div className="row flex-column flex-md-row gx-0">

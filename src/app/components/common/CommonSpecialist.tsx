@@ -1,4 +1,4 @@
-export default function SpecialistBlock({ specialist }: { specialist: any }) {
+export default function CommonSpecialist({ specialist }: { specialist: any }) {
     return (
         <div className="doctor-card d-flex h-100 position-relative">
             <div className="ratio ratio-5x6 overflow-hidden rounded-3 flex-shrink-0">
