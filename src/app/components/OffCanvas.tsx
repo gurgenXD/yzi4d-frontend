@@ -1,6 +1,5 @@
 import Image from 'next/image'
 
-import HeaderCategories from '@/app/components/HeaderCategories'
 import HeaderOffices from '@/app/components/HeaderOffices'
 
 
@@ -122,25 +121,12 @@ export default async function OffCanvas() {
                             <a className="nav-link" href="/specialists">Специалисты</a>
                         </li>
 
-                        <li className="nav-item has-submenu">
-                            <a className="nav-link active" href="#">
-                                Услуги
-
-                                <span className="caret">
-                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88.07 52.25">
-                                        <path
-                                            d="M49.75,49.82c-3.29,3.25-8.58,3.24-11.85-.03L2.46,14.34C-.82,11.06-.82,5.74,2.46,2.46,5.74-.82,11.06-.82,14.34,2.46l29.7,29.7L73.73,2.46c3.28-3.28,8.6-3.28,11.88,0,3.28,3.28,3.28,8.6,0,11.88,0,0-24.32,24.07-35.86,35.48h0Z" />
-                                    </svg>
-                                </span>
-                            </a>
-
-                            <ul className="submenu collapse show">
-                                <HeaderCategories />
-                            </ul>
+                        <li className="nav-item">
+                            <a className="nav-link" href="/catalog/services/categories">Услуги</a>
                         </li>
 
                         <li className="nav-item">
-                            <a className="nav-link" href="/catalog/analyzes/categories/-1">Анализы</a>
+                            <a className="nav-link" href="/catalog/analyzes/categories">Анализы</a>
                         </li>
 
                         <li className="nav-item">

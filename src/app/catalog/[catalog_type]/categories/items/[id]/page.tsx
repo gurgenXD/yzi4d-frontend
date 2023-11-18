@@ -1,12 +1,11 @@
-import CatalogSidebar from "@/app/components/catalog/CatalogSidebar"
 import NotFound from "@/app/not-found"
 import { getService } from "@/requests/server"
 
 
 export async function generateMetadata(
-    { params }: { params: { id: string, category_id: string, catalog_type: string } }
+    { params }: { params: { id: string, catalog_type: string } }
 ) {
-    const { errorCode, service } = await getService(params.id, params.category_id, params.catalog_type)
+    const { errorCode, service } = await getService(params.id, params.catalog_type)
     if (errorCode) { return <NotFound /> }
 
     return {
@@ -16,10 +15,9 @@ export async function generateMetadata(
 
 
 export default async function Service(
-    { params }: { params: { id: string, category_id: string, catalog_type: string } }
+    { params }: { params: { id: string, catalog_type: string } }
 ) {
-
-    const { errorCode, service } = await getService(params.id, params.category_id, params.catalog_type)
+    const { errorCode, service } = await getService(params.id, params.catalog_type)
     if (errorCode) { return <NotFound /> }
 
     return (
@@ -28,8 +26,8 @@ export default async function Service(
                 <div className="container pt-4 pt-lg-5 pb-5">
                     <ol className="breadcrumb">
                         <li className="breadcrumb-item"><a href="/">Главная</a></li>
-                        <li className="breadcrumb-item">{(params.catalog_type == "services") ? "Услуги" : "Анализы"}</li>
-                        <li className="breadcrumb-item"><a href={"/catalog/" + params.catalog_type + "/categories/" + service.category_id}>{service.category_name}</a></li>
+                        <li className="breadcrumb-item"><a href={`/catalog/${params.catalog_type}/categories`}>{(params.catalog_type == "services") ? "Услуги" : "Анализы"}</a></li>
+                        <li className="breadcrumb-item">{service.category_name}</li>
                         <li className="breadcrumb-item active">{service.name}</li>
                     </ol>
 
@@ -177,9 +175,7 @@ export default async function Service(
 
                 <div className="container mb-5">
                     <div className="row">
-                        <CatalogSidebar category_id={params.category_id} catalog_type={params.catalog_type} />
-
-                        <div className="col-xxl-9 col-xl-8">
+                        <div className="col-12">
                             <div className="bg-white rounded-3 shadow px-3 pb-3 px-md-4 pt-md-2 pb-md-4 px-lg-5 pt-lg-3 pb-lg-5">
                                 <div className="nav-mobile-scroll fw-semibold border-bottom mb-3 pb-lg-1">
                                     <div className="linebar" id="service-tab" role="tablist">

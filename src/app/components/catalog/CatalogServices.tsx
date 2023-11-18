@@ -1,26 +1,41 @@
 'use client'
 
-import { useGetServices } from "@/requests/client"
+import CatalogSidebar from "@/app/components/catalog/CatalogSidebar"
+import { useGetServices, useGetCategories } from "@/requests/client"
 import { Placeholder } from "@/app/components/common/Placeholder"
 import Pagination from "@/app/components/common/Pagination"
 import CommonService from "@/app/components/common/CommonService"
 import { useState } from "react"
 
 
-export default function CatalogServices({ catalog_type, category_id }: { catalog_type: string, category_id: string }) {
+export default function CatalogServices({ catalogType, searchQuery }: { catalogType: string, searchQuery: string }) {
+    const [categoryId, setCategoryId] = useState("-1");
     const [pageIndex, setPageIndex] = useState(1);
-    const { services, isLoading, isError } = useGetServices(category_id, catalog_type, pageIndex)
 
-    if (isLoading || isError) return <><Placeholder columns={[{ col: 12, count: 10, height: 90 }]} isError={isError} /><div className="pt-5"></div></>
+    const { categories, isLoading: isCategoriesLoading, isError: isCategoriesError } = useGetCategories(categoryId, setCategoryId, catalogType, searchQuery)
+    const { services, isLoading: isServicesLoading, isError: isServicesError } = useGetServices(
+        categoryId, catalogType, searchQuery, pageIndex,
+    )
+
+    if ((isServicesLoading || isCategoriesLoading) || (isServicesError || isCategoriesError)) {
+        return (
+            <div className="container pt-4 pt-lg-5">
+                <Placeholder columns={[{ col: 12, count: 1, height: 600 }]} isError={isServicesError} />
+            </div>
+        )
+    }
 
     return (
-        <>
-            <div>
-                {services.data.map((service: any) => (
-                    <CommonService key={service.id} service={service} catalog_type={catalog_type} />
-                ))}
+        <div className="row">
+            <CatalogSidebar categories={categories} categoryId={categoryId} setCategoryId={setCategoryId} />
+            <div className="col-xxl-9 col-xl-8">
+                <div>
+                    {services.data.map((service: any) => (
+                        <CommonService key={service.id} service={service} catalogType={catalogType} />
+                    ))}
+                </div>
+                <Pagination pageIndex={pageIndex} setPageIndex={setPageIndex} paging={services.paging} />
             </div>
-            <Pagination pageIndex={pageIndex} setPageIndex={setPageIndex} paging={services.paging} />
-        </>
+        </div>
     )
 }

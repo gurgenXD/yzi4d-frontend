@@ -62,8 +62,8 @@ export default function Footer() {
                     <div className="col-lg">
                         <ul className="list-unstyled d-flex flex-wrap footer-links pb-2 mb-3">
                             <li className="me-4 mb-1"><a href="/specialists" className="link-secondary spaced-link">Специалисты</a></li>
-                            <li className="me-4 mb-1"><a href="/catalog/services/categories/-1" className="link-secondary spaced-link">Услуги</a></li>
-                            <li className="me-4 mb-1"><a href="/catalog/analyzes/categories/-1" className="link-secondary spaced-link">Анализы</a></li>
+                            <li className="me-4 mb-1"><a href="/catalog/services/categories" className="link-secondary spaced-link">Услуги</a></li>
+                            <li className="me-4 mb-1"><a href="/catalog/analyzes/categories" className="link-secondary spaced-link">Анализы</a></li>
                             <li className="me-4 mb-1"><a href="/promotions" className="link-secondary spaced-link">Спецпредложения</a></li>
                             {/* <li className="me-4 mb-1"><a href="content.html" className="link-secondary spaced-link">Пациентам</a></li>
                             <li className="me-4 mb-1"><a href="content.html" className="link-secondary spaced-link">О нас</a></li> */}

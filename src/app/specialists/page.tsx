@@ -73,7 +73,7 @@ export default async function Specialists({ searchParams }: { searchParams: Sear
                                 </div> */}
 
                                 <div className="col-lg-auto col-md-6">
-                                    <button className="btn btn-danger btn-sm w-100 text-nowrap" type="submit">Найти врача</button>
+                                    <button className="btn btn-danger btn-sm w-100 text-nowrap" type="submit">Поиск</button>
                                 </div>
                             </div>
                         </form>

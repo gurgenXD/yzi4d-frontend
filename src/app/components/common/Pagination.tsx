@@ -5,7 +5,6 @@ function getPagingUrl(page: string, searchParams: URLSearchParams) {
 
 
 export default function Pagination({ pageIndex, setPageIndex, paging }: any) {
-    setPageIndex(paging.current_page)
     const pageSet = new Set([pageIndex - 1, pageIndex, pageIndex + 1, 1, paging.total_pages])
 
     return (
@@ -28,15 +27,15 @@ export default function Pagination({ pageIndex, setPageIndex, paging }: any) {
                     }
                     {
                         Array.from({ length: paging.total_pages }, (_, i) => i + 1).map((page, _) =>
-                            <>
+                            <div key={page}>
                                 {(pageSet.has(page)) ?
-                                    <>
+                                    <div className="d-flex">
                                         {(page == pageIndex - 1 && page - 2 >= 1) ?
                                             <li className="page-item disabled" key="dis-pre"><button className="page-link">...</button></li>
                                             : null
                                         }
 
-                                        <li className={"page-item" + ((page == pageIndex) ? " active" : "")} key={page}>
+                                        <li className={`page-item ${((page == pageIndex) ? "active" : "")}`} key={page}>
                                             <button className="page-link" onClick={() => setPageIndex(page)}>{page}</button>
                                         </li>
 
@@ -44,10 +43,10 @@ export default function Pagination({ pageIndex, setPageIndex, paging }: any) {
                                             <li className="page-item disabled" key="dis-post"><button className="page-link">...</button></li>
                                             : null
                                         }
-                                    </>
+                                    </div>
                                     : null
                                 }
-                            </>
+                            </div>
                         )
                     }
 

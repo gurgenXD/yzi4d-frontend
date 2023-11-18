@@ -20,7 +20,7 @@ export default function SpecialistServices({ specialist_id }: { specialist_id: s
 
                 <div>
                     {services.data.map((service: any) => (
-                        <CommonService key={service.id} service={service} catalog_type="services" />
+                        <CommonService key={service.id} service={service} catalogType="services" />
                     ))}
                 </div>
 

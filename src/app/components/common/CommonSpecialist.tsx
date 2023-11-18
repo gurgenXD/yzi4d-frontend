@@ -4,13 +4,13 @@ export default function CommonSpecialist({ specialist }: { specialist: any }) {
             <div className="ratio ratio-5x6 overflow-hidden rounded-3 flex-shrink-0">
                 {
                     (specialist.photo)
-                        ? <div className="doctor-card-img" style={{ backgroundImage: "url('" + specialist.photo + "')" }}></div>
+                        ? <div className="doctor-card-img" style={{ backgroundImage: `url('${specialist.photo}')` }}></div>
                         : <div className="doctor-card-img" style={{ backgroundImage: "url('/img/doctor-no-photo.jpg')" }}></div>
                 }
             </div>
 
             <div>
-                <a href={"/specialists/" + specialist.id} className="doctor-card-title stretched-link d-block link-secondary fw-semibold">
+                <a href={`/specialists/${specialist.id}`} className="doctor-card-title stretched-link d-block link-secondary fw-semibold">
                     {specialist.surname}
                     <br />
                     {specialist.name} {specialist.patronymic}

@@ -1,14 +1,4 @@
-'use client'
-
-import { useGetCategories } from "@/requests/client"
-import { Placeholder } from "@/app/components/common/Placeholder"
-
-
-export default function CatalogSidebar({ category_id, catalog_type }: { category_id: string, catalog_type: string }) {
-    const { categories, isLoading, isError } = useGetCategories(catalog_type)
-
-    if (isLoading || isError) return <div className="col-xxl-3 col-xl-4"><Placeholder columns={[{ col: 12, count: 1, height: 300 }]} isError={isError} /></div>
-
+export default function CatalogSidebar({ categories, categoryId, setCategoryId }: { categories: any, categoryId: string, setCategoryId: any }) {
     return (
         <div className="col-xxl-3 col-xl-4">
             <div className="offcanvas-xl offcanvas-start bg-white" tabIndex={-1} id="offcanvasFilters" aria-labelledby="offcanvasFiltersLabel">
@@ -29,7 +19,7 @@ export default function CatalogSidebar({ category_id, catalog_type }: { category
                             <ul className="nav">
                                 {categories.map((category: any) => (
                                     <li key={category.id} className="nav-item has-submenu">
-                                        <a className={"nav-link" + ((category.id == category_id) ? " active" : "")} href={"/catalog/" + catalog_type + "/categories/" + category.id}>
+                                        <a className={`nav-link ${(category.id == categoryId) ? "active" : ""}`} onClick={() => setCategoryId(category.id)}>
                                             {category.name}
 
                                             {/* <span className="caret">

@@ -1,9 +1,9 @@
-export default function CommonService({ service, catalog_type }: { service: any, catalog_type: string }) {
+export default function CommonService({ service, catalogType }: { service: any, catalogType: string }) {
     return (
         <div className="service-item position-relative">
             <div className="row gx-lg-6">
                 <div className="col-md mb-3 my-md-auto">
-                    <a href={"/catalog/" + catalog_type + "/categories/" + service.category_id + "/items/" + service.id} className="service-item-title stretched-link link-secondary d-block fw-bold">
+                    <a href={`/catalog/${catalogType}/categories/items/${service.id}`} className="service-item-title stretched-link link-secondary d-block fw-bold">
                         {service.name}
                     </a>
 

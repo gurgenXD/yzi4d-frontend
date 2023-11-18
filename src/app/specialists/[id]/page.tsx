@@ -36,7 +36,7 @@ export default async function Specialist(
                         <div className="col-md-4">
                             {
                                 (specialist.photo)
-                                    ? <div className="doc-hero-img rounded-3 ratio ratio-5x6" style={{ backgroundImage: "url('" + specialist.photo + "')" }}></div>
+                                    ? <div className="doc-hero-img rounded-3 ratio ratio-5x6" style={{ backgroundImage: `url('${specialist.photo}')` }}></div>
                                     : <div className="doc-hero-img rounded-3 ratio ratio-5x6" style={{ backgroundImage: "url('/img/doctor-no-photo.jpg')" }}></div>
                             }
                         </div>
@@ -297,7 +297,7 @@ export default async function Specialist(
                                         <div key={certificate.id} className="position-relative d-flex align-items-center mb-3">
                                             <div
                                                 className="license-thumb flex-shrink-0 ratio ratio-1x1 me-md-4 me-3"
-                                                style={{ backgroundImage: "url('" + certificate.path + "')" }}></div>
+                                                style={{ backgroundImage: `url('${certificate.path}')` }}></div>
                                             <a href={certificate.page} data-fancybox="certificate-gallery" className="stretched-link link-secondary license-name">
                                                 {certificate.name}
                                             </a>

@@ -3,7 +3,7 @@ export default function CommonPromotion({ promotion }: { promotion: any }) {
         <div className="sale-banner bg-white position-relative">
             <div className="row flex-column flex-md-row gx-0">
                 <div className="col-12 col-md-auto">
-                    <div className="sale-banner-img bg-img" style={{ backgroundImage: "url('" + promotion.photo + "')" }}></div>
+                    <div className="sale-banner-img bg-img" style={{ backgroundImage: `url('${promotion.photo}')` }}></div>
                 </div>
 
                 <div className="col-12 col-md">

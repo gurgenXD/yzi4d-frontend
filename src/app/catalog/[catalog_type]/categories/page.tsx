@@ -1,30 +1,19 @@
-import NotFound from "@/app/not-found"
-import CatalogSidebar from "@/app/components/catalog/CatalogSidebar"
-import { getServices } from "@/requests/server"
+'use client'
+
 import CatalogServices from "@/app/components/catalog/CatalogServices"
+import { useState } from "react"
 
 
-export async function generateMetadata(
-    { params }: { params: { catalog_type: string, category_id: string } }
-) {
-    const { errorCode, services: { data, paging } } = await getServices(
-        params.category_id, params.catalog_type
-    )
-    if (errorCode) { return <NotFound /> }
-
-    return {
-        title: `${data[0].category_name} - Поликлиника УЗИ 4Д`,
-    }
-}
+// export function generateMetadata({ params }: { params: { catalog_type: string } }) {
+//     return {
+//         title: `${(params.catalog_type == "services") ? "Услуги" : "Анализы"} - Поликлиника УЗИ 4Д`,
+//     }
+// }
 
 
-export default async function Services(
-    { params }: { params: { catalog_type: string, category_id: string } }
-) {
-    const { errorCode, services: { data, paging } } = await getServices(
-        params.category_id, params.catalog_type
-    )
-    if (errorCode) { return <NotFound /> }
+export default function Services({ params }: { params: { catalog_type: string } }) {
+    const [searchQuery, setSearchQuery] = useState("");
+    const catalogTypeName = (params.catalog_type == "services") ? "Услуги" : "Анализы"
 
     return (
         <main role="main" className="flex-shrink-0">
@@ -32,12 +21,12 @@ export default async function Services(
                 <div className="container pt-4 pt-lg-5">
                     <ol className="breadcrumb">
                         <li className="breadcrumb-item"><a href="/">Главная</a></li>
-                        <li className="breadcrumb-item">{(params.catalog_type == "services") ? "Услуги" : "Анализы"}</li>
-                        <li className="breadcrumb-item active">{data[0].category_name}</li>
+                        <li className="breadcrumb-item">{catalogTypeName}</li>
+                        {/* <li className="breadcrumb-item active">{services.data[0].category_name}</li> */}
                     </ol>
 
                     <div className="d-flex flex-wrap align-items-center mb-2">
-                        <h1 className="mb-3 pe-4 me-auto">{(params.catalog_type == "services") ? "Услуги" : "Анализы"}</h1>
+                        <h1 className="mb-3 pe-4 me-auto">{catalogTypeName}</h1>
 
                         <button
                             className="d-xl-none btn btn-outline-secondary btn-sm btn-icon text-nowrap mb-3"
@@ -60,12 +49,22 @@ export default async function Services(
                         </button>
                     </div>
 
-                    <div className="row">
-                        <CatalogSidebar category_id={params.category_id} catalog_type={params.catalog_type} />
-                        <div className="col-xxl-9 col-xl-8">
-                            <CatalogServices catalog_type={params.catalog_type} category_id={params.category_id} />
-                        </div>
+                    <div className="bg-white rounded-3 shadow p-3 mb-md-5 mb-4">
+                        <form>
+                            <div className="row align-items-end g-3">
+                                <div className="col-lg col-md-6">
+                                    <input type="text" className="form-control form-control-sm"
+                                        onChange={(e) => { setSearchQuery(e.target.value) }}
+                                        id="" name="search_query" placeholder="Введите запрос" />
+                                </div>
+
+                                <div className="col-lg-auto col-md-6">
+                                    <button className="btn btn-danger btn-sm w-100 text-nowrap">Поиск</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
+                    <CatalogServices catalogType={params.catalog_type} searchQuery={searchQuery} />
                 </div>
             </div>
         </main >

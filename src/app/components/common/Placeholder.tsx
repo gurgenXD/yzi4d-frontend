@@ -3,11 +3,12 @@ export function Placeholder({ isError, columns }: {
 }) {
     return (
         <div className="row">
-            {columns.map(({ col, count, height }) => (
-                <div className={`col-${col} placeholder-glow`}>
-                    {Array.from(Array(count).keys()).map((_) => (
-                        <div className={`col-12 placeholder rounded-3 ${count > 1 ? " mb-3" : ""}`}
-                            style={{ height: height, backgroundColor: "#ddd", textAlign: "center", paddingTop: isError ? height / 2 : 0 }}>
+            {columns.map(({ col, count, height }, index) => (
+                <div key={index} className={`col-${col} placeholder-glow`}>
+                    {Array.from(Array(count).keys()).map((x) => (
+                        <div key={x} className={`col-12 placeholder rounded-3 ${count > 1 ? " mb-3" : ""}`}
+                            style={{ height: height, backgroundColor: "#f7fbfe", textAlign: "center", paddingTop: height / 2 - 10 }}>
+                            <div className="spinner-border text-primary" role="status"><span className="sr-only"></span></div>
                             {isError ? "Ошибка при загрузке данных" : null}
                         </div>
                     ))}

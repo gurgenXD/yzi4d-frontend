@@ -45,9 +45,9 @@ export async function getServices(category_id: string, catalog_type: string) {
 }
 
 
-export async function getService(id: string, category_id: string, catalog_type: string) {
+export async function getService(id: string, catalog_type: string) {
     const res = await fetch(
-        `${process.env.NEXT_PUBLIC_YZI4D_HOST}/catalog/${catalog_type}/categories/${category_id}/items/${id}`, { cache: 'no-store' },
+        `${process.env.NEXT_PUBLIC_YZI4D_HOST}/catalog/${catalog_type}/categories/-1/items/${id}`, { cache: 'no-store' },
     )
 
     const errorCode = res.ok ? false : res.status
