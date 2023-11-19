@@ -1,18 +1,14 @@
-'use client'
-
-import CatalogServices from "@/app/components/catalog/CatalogServices"
-import { useState } from "react"
+import CatalogServicesWrapper from "@/app/components/catalog/CatalogServiceWrapper";
 
 
-// export function generateMetadata({ params }: { params: { catalog_type: string } }) {
-//     return {
-//         title: `${(params.catalog_type == "services") ? "Услуги" : "Анализы"} - Поликлиника УЗИ 4Д`,
-//     }
-// }
+export function generateMetadata({ params }: { params: { catalog_type: string } }) {
+    return {
+        title: `${(params.catalog_type == "services") ? "Услуги" : "Анализы"} - Поликлиника УЗИ 4Д`,
+    }
+}
 
 
 export default function Services({ params }: { params: { catalog_type: string } }) {
-    const [searchQuery, setSearchQuery] = useState("");
     const catalogTypeName = (params.catalog_type == "services") ? "Услуги" : "Анализы"
 
     return (
@@ -22,7 +18,6 @@ export default function Services({ params }: { params: { catalog_type: string } 
                     <ol className="breadcrumb">
                         <li className="breadcrumb-item"><a href="/">Главная</a></li>
                         <li className="breadcrumb-item">{catalogTypeName}</li>
-                        {/* <li className="breadcrumb-item active">{services.data[0].category_name}</li> */}
                     </ol>
 
                     <div className="d-flex flex-wrap align-items-center mb-2">
@@ -49,22 +44,7 @@ export default function Services({ params }: { params: { catalog_type: string } 
                         </button>
                     </div>
 
-                    <div className="bg-white rounded-3 shadow p-3 mb-md-5 mb-4">
-                        <form>
-                            <div className="row align-items-end g-3">
-                                <div className="col-lg col-md-6">
-                                    <input type="text" className="form-control form-control-sm"
-                                        onChange={(e) => { setSearchQuery(e.target.value) }}
-                                        id="" name="search_query" placeholder="Введите запрос" />
-                                </div>
-
-                                <div className="col-lg-auto col-md-6">
-                                    <button className="btn btn-danger btn-sm w-100 text-nowrap">Поиск</button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                    <CatalogServices catalogType={params.catalog_type} searchQuery={searchQuery} />
+                    <CatalogServicesWrapper catalogType={params.catalog_type} />
                 </div>
             </div>
         </main >
