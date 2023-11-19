@@ -2,7 +2,7 @@
 
 import CatalogSidebar from "@/app/components/catalog/CatalogSidebar"
 import { useGetServices, useGetCategories } from "@/requests/client"
-import { Placeholder } from "@/app/components/common/Placeholder"
+import { PlaceholderLoading, PlaceholderError, PlaceholderNotFound } from "@/app/components/common/Placeholder"
 import Pagination from "@/app/components/common/Pagination"
 import CommonService from "@/app/components/common/CommonService"
 import { useState } from "react"
@@ -17,11 +17,20 @@ export default function CatalogServices({ catalogType, searchQuery }: { catalogT
         categoryId, catalogType, searchQuery, pageIndex,
     )
 
-    if ((isServicesLoading || isCategoriesLoading) || (isServicesError || isCategoriesError)) {
+    if (isServicesLoading || isCategoriesLoading) return (
+        <div className="container pt-4 pt-lg-5">
+            <PlaceholderLoading height={500} isLoading={isServicesLoading || isCategoriesLoading} />
+        </div >
+    )
+    if (isServicesError || isCategoriesError) return (
+        <div className="container pt-4 pt-lg-5">
+            <PlaceholderError height={500} isError={isServicesError || isCategoriesError} />
+        </div >
+    )
+
+    if (!services.data.length) {
         return (
-            <div className="container pt-4 pt-lg-5">
-                <Placeholder columns={[{ col: 12, count: 1, height: 600 }]} isError={isServicesError} />
-            </div>
+            <div className="container pt-4 pt-lg-5"><PlaceholderNotFound height={100} /></div >
         )
     }
 

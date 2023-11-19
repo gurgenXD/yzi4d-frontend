@@ -1,22 +1,14 @@
 'use client'
 
 import { useGetMainCategories } from "@/requests/client"
-import { Placeholder } from "@/app/components/common/Placeholder"
+import { PlaceholderLoading, PlaceholderError } from "@/app/components/common/Placeholder"
 
 
 export default function HomeServices() {
     const { categories, isLoading, isError } = useGetMainCategories("main")
 
-    if (isLoading || isError) return <>
-        <Placeholder columns={
-            [
-                { col: 3, count: 1, height: 200 },
-                { col: 3, count: 2, height: 140 },
-                { col: 3, count: 2, height: 140 },
-                { col: 3, count: 2, height: 140 },
-            ]
-        } isError={isError} />
-    </>
+    if (isLoading) return <PlaceholderLoading height={200} isLoading={isLoading} />
+    if (isError) return <PlaceholderError height={200} isError={isError} />
 
     return (
         <div className="row gx-xl-5">

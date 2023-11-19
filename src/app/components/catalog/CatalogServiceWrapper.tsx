@@ -7,7 +7,7 @@ import { useState } from "react"
 export default function CatalogServicesWrapper({ catalogType }: { catalogType: string }) {
     const [searchQuery, setSearchQuery] = useState("");
 
-    const onSubmitHander = (event: React.FormEvent) => {
+    const onSubmitHander = (event: any) => {
         event.preventDefault()
         setSearchQuery(event.target.search_query.value)
     }

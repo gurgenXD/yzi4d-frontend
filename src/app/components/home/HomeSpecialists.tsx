@@ -2,7 +2,7 @@
 
 import { useGetMainSpecialists } from "@/requests/client"
 import CommonSpecialist from "@/app/components/common/CommonSpecialist"
-import { Placeholder } from "@/app/components/common/Placeholder"
+import { PlaceholderLoading, PlaceholderError } from "@/app/components/common/Placeholder"
 import { Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
@@ -10,16 +10,8 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 export default function HomeSpecialists() {
     const { specialists, isLoading, isError } = useGetMainSpecialists()
 
-    if (isLoading || isError) return <>
-        <Placeholder columns={
-            [
-                { col: 3, count: 1, height: 300 },
-                { col: 3, count: 1, height: 300 },
-                { col: 3, count: 1, height: 300 },
-                { col: 3, count: 1, height: 300 },
-            ]
-        } isError={isError} />
-    </>
+    if (isLoading) return <PlaceholderLoading height={300} isLoading={isLoading} />
+    if (isError) return <PlaceholderError height={300} isError={isError} />
 
     return (
         <Swiper

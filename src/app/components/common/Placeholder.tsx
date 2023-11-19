@@ -1,19 +1,44 @@
-export function Placeholder({ isError, columns }: {
-    isError: boolean, columns: { col: number, count: number, height: number }[]
-}) {
+export function PlaceholderLoading({ height, isLoading }: { height: number, isLoading: boolean }) {
     return (
         <div className="row">
-            {columns.map(({ col, count, height }, index) => (
-                <div key={index} className={`col-${col} placeholder-glow`}>
-                    {Array.from(Array(count).keys()).map((x) => (
-                        <div key={x} className={`col-12 placeholder rounded-3 ${count > 1 ? " mb-3" : ""}`}
-                            style={{ height: height, backgroundColor: "#f7fbfe", textAlign: "center", paddingTop: height / 2 - 10 }}>
-                            <div className="spinner-border text-primary" role="status"><span className="sr-only"></span></div>
-                            {isError ? "Ошибка при загрузке данных" : null}
-                        </div>
-                    ))}
+            <div className="col-12 placeholder-glow">
+                <div className="placeholder rounded-3 d-flex justify-content-center"
+                    style={{ height: height, backgroundColor: "#f7fbfe", textAlign: "center", paddingTop: height / 2 - 10 }}>
+                    {isLoading
+                        ? <div className="spinner-border text-primary" role="status"><span className="sr-only"></span></div>
+                        : null
+                    }
                 </div>
-            ))}
+            </div>
+        </div>
+    )
+}
+
+export function PlaceholderError({ height, isError }: { height: number, isError: boolean }) {
+    return (
+        <div className="row">
+            <div className="col-12 placeholder-glow">
+                <div className="placeholder rounded-3 d-flex justify-content-center"
+                    style={{ height: height, backgroundColor: "#f7fbfe", textAlign: "center", paddingTop: height / 2 - 10 }}>
+                    {isError
+                        ? <div>Ошибка при загрузке данных</div>
+                        : null
+                    }
+                </div>
+            </div>
+        </div>
+    )
+}
+
+export function PlaceholderNotFound({ height }: { height: number }) {
+    return (
+        <div className="row">
+            <div className="col-12">
+                <div className="rounded-3 d-flex justify-content-center"
+                    style={{ height: height, backgroundColor: "#f7fbfe", textAlign: "center", paddingTop: height / 2 - 10 }}>
+                    <div>По Вашему запросу ничего не найдено</div>
+                </div>
+            </div>
         </div>
     )
 }

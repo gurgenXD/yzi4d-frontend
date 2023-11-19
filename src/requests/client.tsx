@@ -72,7 +72,12 @@ export function useGetCategories(categoryId: string, setCategoryId: any, catalog
     const { data, error, isLoading } = useSWR(
         `${process.env.NEXT_PUBLIC_YZI4D_HOST}/catalog/${catalog_type}/categories?search_query=${search_query}`,
         fetcher,
-        { onSuccess: (data, _, __) => { setCategoryId(categoryId in data ? categoryId : (data ? data[0].id : "-1")) } }
+        {
+            onSuccess: (data, _, __) => {
+                const categoryIds = data ? data.map((obj: any) => obj.id) : []
+                setCategoryId(categoryIds.includes(categoryId) ? categoryId : (categoryIds.length ? categoryIds[0] : "-1"))
+            }
+        }
     )
 
     return { categories: data, isLoading, isError: error }

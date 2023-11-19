@@ -1,7 +1,7 @@
 'use client'
 
 import { useGetSpecialistServices } from "@/requests/client"
-import { Placeholder } from "@/app/components/common/Placeholder"
+import { PlaceholderLoading, PlaceholderError } from "@/app/components/common/Placeholder"
 import Pagination from "@/app/components/common/Pagination"
 import CommonService from "@/app/components/common/CommonService"
 import { useState } from "react"
@@ -11,7 +11,12 @@ export default function SpecialistServices({ specialist_id }: { specialist_id: s
     const [pageIndex, setPageIndex] = useState(1);
     const { services, isLoading, isError } = useGetSpecialistServices(specialist_id, pageIndex)
 
-    if (isLoading || isError) return <div className="container"><Placeholder columns={[{ col: 12, count: 1, height: 400 }]} isError={isError} /></div>
+    if (isLoading) return (
+        <div className="container"><PlaceholderLoading height={400} isLoading={isLoading} /></div >
+    )
+    if (isError) return (
+        <div className="container"><PlaceholderError height={400} isError={isError} /></div>
+    )
 
     return (
         <div className="container">
