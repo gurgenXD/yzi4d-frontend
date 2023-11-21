@@ -11,10 +11,10 @@ export default async function OffCanvas() {
                 <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div className="offcanvas-body">
-                {/*<form className="search-form mb-3">
-                    <input type="text" className="form-control search-form-input" placeholder="Найти..." />
+                <form className="search-form mb-3">
+                    <input type="text" className="form-control search-form-input" placeholder="Введите запрос" />
                     <button type="submit" className="btn btn-primary search-form-btn">Найти</button>
-                </form>*/}
+                </form>
 
                 <div className="sidebar">
                     <ul className="nav">

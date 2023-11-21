@@ -213,21 +213,26 @@ export default async function Header() {
                                 </li>
                             </ul>
 
-                            <div className="search d-none">
+                            <div className="search">
                                 <div className="search-form-wrap">
                                     <form className="search-form">
-                                        <input type="text" className="form-control search-form-input" id="autoComplete" placeholder="Найти..." />
+                                        <div className="autoComplete_wrapper" role="combobox" aria-owns="autoComplete_list_1" aria-haspopup="true" aria-expanded="false">
+                                            <input type="text" className="form-control search-form-input" id="autoComplete" placeholder="Введите запрос" />
+                                            <ul id="autoComplete_list_1" role="listbox">
+                                                <li id="autoComplete_result_0" role="option">asasd</li>
+                                                <li id="autoComplete_result_1" role="option">asasd</li>
+                                                <li id="autoComplete_result_2" role="option">asasd</li>
+                                            </ul>
+                                        </div>
                                         <button type="submit" className="btn btn-primary search-form-btn">Найти</button>
                                     </form>
                                 </div>
 
                                 <button type="button" className="search-toggle">
-
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" className="search-hide-icon">
                                         <path
                                             d="M10.59,9L17.67,1.92c.44-.44,.44-1.15,0-1.59s-1.15-.44-1.59,0h0l-7.08,7.08L1.92,.33C1.48-.11,.77-.11,.33,.33-.11,.77-.11,1.48,.33,1.92l7.08,7.08L.33,16.08c-.44,.44-.44,1.15,0,1.59,.44,.44,1.15,.44,1.59,0l7.08-7.08,7.08,7.08c.44,.44,1.15,.44,1.59,0,.44-.44,.44-1.15,0-1.59l-7.08-7.08h0Z" />
                                     </svg>
-
 
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" className="search-show-icon">
                                         <path
@@ -235,31 +240,6 @@ export default async function Header() {
                                     </svg>
                                 </button>
                             </div>
-
-                            {/* <div className="search">
-                                <div className="search-wrap">
-                                    <div className="search-form-container">
-                                        <form className="search-form">
-                                            <input type="text" className="form-control search-form-input" placeholder="Найти..." />
-                                            <button type="submit" className="btn btn-primary search-form-btn">Найти</button>
-                                        </form>
-                                    </div>
-
-                                    <div className="search-toggle">
-                                        <button type="button" className="search-toggle-btn">
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" height="18px" className="search__close">
-                                                <path
-                                                    d="M301.25,256L502.62,54.64c12.5-12.5,12.5-32.77,0-45.27-12.5-12.5-32.77-12.5-45.27,0h0L256,210.75,54.64,9.38C42.14-3.13,21.87-3.13,9.38,9.38s-12.5,32.77,0,45.27L210.75,256,9.38,457.36c-12.5,12.5-12.5,32.77,0,45.27s32.77,12.5,45.27,0l201.36-201.38,201.36,201.38c12.5,12.5,32.77,12.5,45.27,0,12.5-12.5,12.5-32.77,0-45.27l-201.38-201.36Z" />
-                                            </svg>
-
-                                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511.96 512" height="18px" className="search__open">
-                                                <path
-                                                    d="M502.61,457.5l-99.1-99.14c74.15-99.09,53.93-239.53-45.16-313.67S118.83-9.25,44.69,89.84C-29.46,188.93-9.25,329.37,89.84,403.52c79.6,59.56,188.92,59.56,268.52,0l99.14,99.14c12.46,12.46,32.66,12.46,45.11,0,12.46-12.46,12.46-32.66,0-45.11v-.04Zm-277.69-73.12c-88.07,0-159.46-71.39-159.46-159.46S136.86,65.47,224.93,65.47s159.46,71.39,159.46,159.46c-.09,88.03-71.43,159.36-159.46,159.46Z" />
-                                            </svg>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div> */}
                         </div>
                     </div>
                 </nav >
