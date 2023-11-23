@@ -342,7 +342,7 @@ export default async function Home() {
                       <div>
                         <a href="https://yandex.ru/maps/org/4d_poliklinika/1154946954/reviews/?ll=43.070356%2C44.048861&z=15" target="_blank" className="rate-item-title stretched-link link-secondary d-block fw-bold">Яндекс</a>
 
-                        <div className="rate-item-count text-muted">872 отзыва</div>
+                        <div className="rate-item-count text-muted">881 отзыв</div>
                       </div>
                     </div>
                   </div>
@@ -374,7 +374,7 @@ export default async function Home() {
                       <div>
                         <a href="https://prodoctorov.ru/pyatigorsk/lpu/24199-klinika-innovacionnoy-mediciny-4d/#rating" target="_blank" className="rate-item-title stretched-link link-secondary d-block fw-bold">ПроДокторов</a>
 
-                        <div className="rate-item-count text-muted">287 отзывов</div>
+                        <div className="rate-item-count text-muted">291 отзыв</div>
                       </div>
                     </div>
                   </div>
@@ -390,7 +390,7 @@ export default async function Home() {
                       <div>
                         <a href="https://doctu.ru/pyatigorsk/clinic/poliklinika-4d-1/reviews" target="_blank" className="rate-item-title stretched-link link-secondary d-block fw-bold">Докту</a>
 
-                        <div className="rate-item-count text-muted">104 отзыва</div>
+                        <div className="rate-item-count text-muted">110 отзывов</div>
                       </div>
                     </div>
                   </div>
@@ -406,7 +406,7 @@ export default async function Home() {
                       <div>
                         <a href="https://napopravku.ru/pyatigorsk/clinics/poliklinika-4d/" target="_blank" className="rate-item-title stretched-link link-secondary d-block fw-bold">НаПоправку</a>
 
-                        <div className="rate-item-count text-muted">27 отзывов</div>
+                        <div className="rate-item-count text-muted">28 отзывов</div>
                       </div>
                     </div>
                   </div>

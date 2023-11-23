@@ -213,7 +213,7 @@ export default async function Header() {
                                 </li>
                             </ul>
 
-{/*                             <div className="search">
+                            <div className="search d-none">
                                 <div className="search-form-wrap">
                                     <form className="search-form">
                                         <div className="autoComplete_wrapper" role="combobox" aria-owns="autoComplete_list_1" aria-haspopup="true" aria-expanded="false">
@@ -239,7 +239,7 @@ export default async function Header() {
                                             d="M17.67,16.08l-3.48-3.49c2.61-3.48,1.9-8.42-1.59-11.03S4.18-.33,1.57,3.16C-1.04,6.64-.33,11.58,3.16,14.19c2.8,2.09,6.64,2.09,9.44,0l3.49,3.49c.44,.44,1.15,.44,1.59,0,.44-.44,.44-1.15,0-1.59h0Zm-9.76-2.57c-3.1,0-5.61-2.51-5.61-5.61S4.81,2.3,7.91,2.3s5.61,2.51,5.61,5.61c0,3.09-2.51,5.6-5.61,5.61h0Z" />
                                     </svg>
                                 </button>
-                            </div> */}
+                            </div>
                         </div>
                     </div>
                 </nav >
