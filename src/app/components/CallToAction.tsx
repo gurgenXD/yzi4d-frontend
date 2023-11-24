@@ -16,7 +16,7 @@ export default function CallToAction() {
                         <div className="col-xl-4 d-none d-xl-block">
                             <div className="cta-img position-relative">
                                 <div className="cta-img-wrap ps-lg-4 ps-xl-5 pe-lg-1 pe-xl-2">
-                                    <img src="/img/cta-img.png" alt="" />
+                                    <Image src="/img/cta-img.png" width={200} height={200} alt="" /> {/* пока так */}
                                 </div>
                             </div>
                         </div>

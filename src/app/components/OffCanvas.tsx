@@ -7,11 +7,11 @@ export default async function OffCanvas() {
     return (
         <div className="offcanvas offcanvas-end" tabIndex={-1} id="Offcanvas" aria-labelledby="OffcanvasLabel">
             <div className="offcanvas-header pb-1">
-                <a className="offcanvas-title" id="OffcanvasLabel" href="/"><img src="/img/logo-footer.svg" alt="" width="200px" /></a>
+                <a className="offcanvas-title" id="OffcanvasLabel" href="/"><Image src="/img/logo-footer.svg" alt="" width={280} height={25} /></a>
                 <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
             </div>
             <div className="offcanvas-body">
-{/*                 <form className="search-form mb-3">
+                {/*                 <form className="search-form mb-3">
                     <input type="text" className="form-control search-form-input" placeholder="Введите запрос" />
                     <button type="submit" className="btn btn-primary search-form-btn">Найти</button>
                 </form> */}

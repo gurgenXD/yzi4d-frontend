@@ -21,7 +21,7 @@ export default function NotFound() {
 
                         <div className="col">
                             <div className="text-end">
-                                <img src="/img/error-img.png" alt="" className="error-img" />
+                                <Image src="/img/error-img.png" alt="" className="error-img" />
                             </div>
                         </div>
                     </div>

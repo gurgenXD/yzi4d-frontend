@@ -52,7 +52,7 @@ export default async function Header() {
                 <div className="container">
                     <div className="d-flex align-items-center py-2 pt-lg-4 pb-lg-3">
                         <div className="d-flex align-items-end">
-                            <a href="/" title="" className="d-flex me-3 me-lg-5"><img className="logo-header" src="/img/logo.svg" alt="" /></a>
+                            <a href="/" title="" className="d-flex me-3 me-lg-5"><Image className="logo-header" src="/img/logo.svg" width={98} height={50} alt="" /></a>
 
                             <div>
                                 <a href="tel:+79288284001" title="" className="phone-header link-secondary fw-extrabold d-flex mb-1">+7 (928) 828-40-01</a>

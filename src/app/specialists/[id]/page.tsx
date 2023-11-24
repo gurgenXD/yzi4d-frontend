@@ -3,7 +3,6 @@ import Image from 'next/image'
 import { getSpecialist } from "@/requests/server"
 import SpecialistServices from "@/app/components/specialists/SpecialistServices"
 
-
 export async function generateMetadata(
     { params }: { params: { id: string } }
 ) {
@@ -77,7 +76,7 @@ export default async function Specialist(
                             {(specialist.can_child) ?
                                 <div className="d-flex align-items-start pt-2 mb-3">
                                     <div className="child-icon me-2">
-                                        <img src="/img/child-icon.svg" alt="" />
+                                        <Image src="/img/child-icon.svg" width={26} height={24} alt="" />
                                     </div>
                                     <p className="text-secondary mb-0">
                                         Возможен приём детей. Уточните в колл-центре:

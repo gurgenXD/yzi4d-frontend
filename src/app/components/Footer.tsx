@@ -6,7 +6,7 @@ export default function Footer() {
             <div className="container">
                 <div className="row align-items-center mb-2">
                     <div className="col-md mb-3">
-                        <a href="#" className="d-inline-block"><img src="/img/logo-footer.svg" alt="" className="logo-footer" /></a>
+                        <a href="#" className="d-inline-block"><Image src="/img/logo-footer.svg" width={334} height={30} alt="" className="logo-footer" /></a>
                     </div>
 
                     <div className="col-md-auto mb-3">
@@ -41,19 +41,19 @@ export default function Footer() {
 
                             <div className="d-flex mb-3 mb-lg-0">
                                 <a href="https://t.me/tg4dpolyclinic" target="_blank" className="social-link">
-                                    <img src="/img/dynamic-img/tg-icon.svg" alt="" />
+                                    <Image src="/img/dynamic-img/tg-icon.svg" width={16} height={16} alt="" />
                                 </a>
 
                                 <a href="https://vk.com/4dpolyclinic" target="_blank" className="social-link">
-                                    <img src="/img/dynamic-img/vk-icon.svg" alt="" />
+                                    <Image src="/img/dynamic-img/vk-icon.svg" width={16} height={16} alt="" />
                                 </a>
 
                                 <a href="https://www.youtube.com/@4dpolyclinic" target="_blank" className="social-link">
-                                    <img src="/img/dynamic-img/yt-icon.svg" alt="" />
+                                    <Image src="/img/dynamic-img/yt-icon.svg" width={16} height={16} alt="" />
                                 </a>
 
                                 <a href="https://ok.ru/group/52475215151320" target="_blank" className="social-link">
-                                    <img src="/img/dynamic-img/odn-icon.svg" alt="" />
+                                    <Image src="/img/dynamic-img/odn-icon.svg" width={16} height={16} alt="" />
                                 </a>
                             </div>
                         </div>
