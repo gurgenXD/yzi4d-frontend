@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import Search from "@/app/components/search/Search";
+import Search from "@/app/components/global/search/Search";
 
 export default function SearchWrapper() {
   const [searchQuery, setSearchQuery] = useState("");

@@ -1,5 +1,5 @@
 import { cookies } from "next/headers";
-import CookiesAccept from "@/app/components/cookies/CookiesAccept";
+import CookiesAccept from "@/app/components/global/cookies/CookiesAccept";
 import Link from "next/link";
 
 export default function Cookies() {

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import SearchWrapper from "@/app/components/search/SearchWrapper";
+import SearchWrapper from "@/app/components/global/search/SearchWrapper";
 import Link from "next/link";
 
 export default async function Navigation() {

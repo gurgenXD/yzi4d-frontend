@@ -9,7 +9,7 @@ import OffCanvas from "@/app/components/global/OffCanvas";
 import Calculator from "@/app/components/global/Calculator";
 import ScrollToTop from "@/app/components/global/ScrollToTop";
 import CallToAction from "@/app/components/global/CallToAction";
-import Cookies from "@/app/components/cookies/Cookies";
+import Cookies from "@/app/components/global/cookies/Cookies";
 import Script from "next/script";
 import Navigation from "@/app/components/global/Navigation";
 
