@@ -12,7 +12,7 @@ export default function Services({ params }: { params: { catalog_type: string } 
     const catalogTypeName = (params.catalog_type == "services") ? "Услуги" : "Анализы"
 
     return (
-        <main role="main" className="flex-shrink-0">
+        <main role="main" className="flex-shrink-0 mb-5">
             <div className="overflow-hidden">
                 <div className="container pt-4 pt-lg-5">
                     <ol className="breadcrumb">

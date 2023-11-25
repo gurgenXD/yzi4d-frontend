@@ -1,9 +1,3 @@
-function getPagingUrl(page: string, searchParams: URLSearchParams) {
-    searchParams.set("page", page)
-    return searchParams.toString()
-}
-
-
 export default function Pagination({ pageIndex, setPageIndex, paging }: any) {
     const pageSet = new Set([pageIndex - 1, pageIndex, pageIndex + 1, 1, paging.total_pages])
 

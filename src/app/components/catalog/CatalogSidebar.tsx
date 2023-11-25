@@ -1,4 +1,7 @@
-export default function CatalogSidebar({ categories, categoryId, setCategoryId }: { categories: any, categoryId: string, setCategoryId: any }) {
+export default function CatalogSidebar(
+    { categories, categoryId, setCategoryId, setPageIndex }:
+        { categories: any, categoryId: string, setCategoryId: any, setPageIndex: any }
+) {
     return (
         <div className="col-xxl-3 col-xl-4">
             <div className="offcanvas-xl offcanvas-start bg-white" tabIndex={-1} id="offcanvasFilters" aria-labelledby="offcanvasFiltersLabel">
@@ -19,7 +22,7 @@ export default function CatalogSidebar({ categories, categoryId, setCategoryId }
                             <ul className="nav">
                                 {categories.map((category: any) => (
                                     <li key={category.id} className="nav-item has-submenu">
-                                        <a className={`nav-link ${(category.id == categoryId) ? "active" : ""}`} onClick={() => setCategoryId(category.id)}>
+                                        <a className={`nav-link ${(category.id == categoryId) ? "active" : ""}`} onClick={() => { setCategoryId(category.id); setPageIndex(1) }}>
                                             {category.name}
 
                                             {/* <span className="caret">

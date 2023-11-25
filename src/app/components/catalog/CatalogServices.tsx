@@ -36,7 +36,7 @@ export default function CatalogServices({ catalogType, searchQuery }: { catalogT
 
     return (
         <div className="row">
-            <CatalogSidebar categories={categories} categoryId={categoryId} setCategoryId={setCategoryId} />
+            <CatalogSidebar categories={categories} categoryId={categoryId} setCategoryId={setCategoryId} setPageIndex={setPageIndex} />
             <div className="col-xxl-9 col-xl-8">
                 <div>
                     {services.data.map((service: any) => (

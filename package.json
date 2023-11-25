@@ -9,8 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@fancyapps/ui": "5.0.22",
-    "@tarekraafat/autocomplete.js": "10.2.7",
     "@types/node": "20.6.3",
     "@types/react": "18.2.22",
     "@types/react-dom": "18.2.7",
@@ -21,11 +19,11 @@
     "jquery": "3.7.1",
     "next": "13.5.6",
     "react": "18.2.0",
+    "react-cookie": "6.1.1",
     "react-dom": "18.2.0",
     "swiper": "11.0.3",
     "swr": "2.2.4",
-    "typescript": "5.2.2",
-    "xwiper": "2.2.1"
+    "typescript": "5.2.2"
   },
   "devDependencies": {
     "@types/bootstrap": "5.2.7",

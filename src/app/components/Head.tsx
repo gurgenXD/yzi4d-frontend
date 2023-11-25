@@ -1,4 +1,5 @@
 import Script from "next/script"
+import Image from 'next/image'
 
 
 export default function Head() {
@@ -26,9 +27,6 @@ export default function Head() {
             <link rel="preload" href="/fonts/Roboto-Light.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
             <link rel="preload" href="/fonts/Roboto-Regular.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
 
-            {/* Версия для слабовидящих. */}
-            <link rel="stylesheet" href="/blind/css/bvi.min.css" type="text/css"></link>
-
             <Script
                 id="YandexMetricsYZI4D"
                 dangerouslySetInnerHTML={{
@@ -49,7 +47,7 @@ export default function Head() {
             />
             <noscript>
                 <div>
-                    <img src="https://mc.yandex.ru/watch/95292842" style={{ position: 'absolute', left: '-9999px' }} alt="" />
+                    <Image src="https://mc.yandex.ru/watch/95292842" width={1} height={1} style={{ position: 'absolute', left: '-9999px' }} alt="" />
                 </div>
             </noscript>
         </head>

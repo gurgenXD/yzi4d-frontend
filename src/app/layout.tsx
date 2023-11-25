@@ -1,4 +1,5 @@
 import '../../public/scss/style.scss'
+import '../../public/blind/css/bvi.min.css'
 
 import type { Metadata } from 'next'
 
@@ -9,8 +10,8 @@ import OffCanvas from '@/app/components/OffCanvas'
 import Calculator from '@/app/components/Calculator'
 import ScrollToTop from '@/app/components/ScrollToTop'
 import CallToAction from '@/app/components/CallToAction'
+import Cookies from '@/app/components/cookies/Cookies'
 import Script from 'next/script'
-
 
 export const metadata: Metadata = {
   title: 'Поликлиника УЗИ 4Д',
@@ -27,6 +28,7 @@ export default function RootLayout({
       <body className="d-flex flex-column h-100">
         <Header />
         <OffCanvas />
+        <Cookies />
 
         {children}
 

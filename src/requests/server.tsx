@@ -36,40 +36,13 @@ export async function getSpecialistServices(id: string, searchParams: URLSearchP
 }
 
 
-export async function getServices(category_id: string, catalog_type: string) {
-    const res = await fetch(
-        `${process.env.NEXT_PUBLIC_YZI4D_HOST}/catalog/${catalog_type}/categories/${category_id}`, { cache: 'no-store' },
-    )
-    const errorCode = res.ok ? false : res.status
-    return { errorCode, services: await res.json() }
-}
-
-
 export async function getService(id: string, catalog_type: string) {
     const res = await fetch(
-        `${process.env.NEXT_PUBLIC_YZI4D_HOST}/catalog/${catalog_type}/categories/-1/items/${id}`, { cache: 'no-store' },
+        `${process.env.NEXT_PUBLIC_YZI4D_HOST}/catalog/${catalog_type}/services/${id}`, { cache: 'no-store' },
     )
 
     const errorCode = res.ok ? false : res.status
     return { errorCode, service: await res.json() }
-}
-
-
-export async function getCategories(catalog_type: string) {
-    const categories = await fetch(
-        `${process.env.NEXT_PUBLIC_YZI4D_HOST}/catalog/${catalog_type}/categories`, { cache: 'no-store' },
-    ).then((res) => res.json())
-
-    return categories
-}
-
-
-export async function getOffices() {
-    const offices = await fetch(
-        `${process.env.NEXT_PUBLIC_YZI4D_HOST}/contacts/offices`, { cache: 'no-store' },
-    ).then((res) => res.json())
-
-    return offices
 }
 
 

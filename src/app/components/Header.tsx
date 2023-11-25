@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import HeaderOffices from './HeaderOffices'
+import SearchWrapper from './search/SearchWrapper'
 
 
 export default async function Header() {
@@ -213,20 +214,8 @@ export default async function Header() {
                                 </li>
                             </ul>
 
-                            <div className="search d-none">
-                                <div className="search-form-wrap">
-                                    <form className="search-form">
-                                        <div className="autoComplete_wrapper" role="combobox" aria-owns="autoComplete_list_1" aria-haspopup="true" aria-expanded="false">
-                                            <input type="text" className="form-control search-form-input" id="autoComplete" placeholder="Введите запрос" />
-                                            <ul id="autoComplete_list_1" role="listbox">
-                                                <li id="autoComplete_result_0" role="option">asasd</li>
-                                                <li id="autoComplete_result_1" role="option">asasd</li>
-                                                <li id="autoComplete_result_2" role="option">asasd</li>
-                                            </ul>
-                                        </div>
-                                        <button type="submit" className="btn btn-primary search-form-btn">Найти</button>
-                                    </form>
-                                </div>
+                            <div className="search">
+                                <SearchWrapper />
 
                                 <button type="button" className="search-toggle">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18" className="search-hide-icon">

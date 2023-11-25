@@ -314,7 +314,6 @@ export default async function Specialist(
                                                     className="bg-img ratio ratio-16x9 position-relative rounded-3"
                                                     style={{ backgroundImage: "url('https://i3.ytimg.com/vi/PWv2zfJvebQ/maxresdefault.jpg')" }}>
                                                     <div className="gallery-item-play-icon">
-                                                        <?xml version="1.0" encoding="UTF-8"?>
                                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                                             <path
                                                                 d="M353.07,222.61l-124.76-68.33c-11.99-6.74-26.2-6.59-38.04,.3-11.86,6.93-18.94,19.29-18.94,33.02v136.77c0,13.74,7.08,26.09,18.94,33.02,6.04,3.52,12.69,5.29,19.31,5.29s12.8-1.64,18.62-4.91l124.95-68.44c12.2-6.87,19.5-19.33,19.5-33.32s-7.3-26.47-19.61-33.39l.02-.02ZM256,0C114.84,0,0,114.84,0,256s114.84,256,256,256,256-114.84,256-256S397.16,0,256,0Zm0,490.67c-129.39,0-234.67-105.28-234.67-234.67S126.61,21.33,256,21.33s234.67,105.28,234.67,234.67-105.28,234.67-234.67,234.67Z" />
@@ -338,7 +337,6 @@ export default async function Specialist(
                                                     className="bg-img ratio ratio-16x9 position-relative rounded-3"
                                                     style={{ backgroundImage: "url('https://i3.ytimg.com/vi/59hnfy4THR0/maxresdefault.jpg')" }}>
                                                     <div className="gallery-item-play-icon">
-                                                        <?xml version="1.0" encoding="UTF-8"?>
                                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                                             <path
                                                                 d="M353.07,222.61l-124.76-68.33c-11.99-6.74-26.2-6.59-38.04,.3-11.86,6.93-18.94,19.29-18.94,33.02v136.77c0,13.74,7.08,26.09,18.94,33.02,6.04,3.52,12.69,5.29,19.31,5.29s12.8-1.64,18.62-4.91l124.95-68.44c12.2-6.87,19.5-19.33,19.5-33.32s-7.3-26.47-19.61-33.39l.02-.02ZM256,0C114.84,0,0,114.84,0,256s114.84,256,256,256,256-114.84,256-256S397.16,0,256,0Zm0,490.67c-129.39,0-234.67-105.28-234.67-234.67S126.61,21.33,256,21.33s234.67,105.28,234.67,234.67-105.28,234.67-234.67,234.67Z" />
@@ -369,7 +367,6 @@ export default async function Specialist(
                                                     className="bg-img ratio ratio-16x9 position-relative rounded-3"
                                                     style={{ backgroundImage: "url('https://i3.ytimg.com/vi/A-q7qVkJKxo/maxresdefault.jpg')" }}>
                                                     <div className="gallery-item-play-icon">
-                                                        <?xml version="1.0" encoding="UTF-8"?>
                                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                                             <path
                                                                 d="M353.07,222.61l-124.76-68.33c-11.99-6.74-26.2-6.59-38.04,.3-11.86,6.93-18.94,19.29-18.94,33.02v136.77c0,13.74,7.08,26.09,18.94,33.02,6.04,3.52,12.69,5.29,19.31,5.29s12.8-1.64,18.62-4.91l124.95-68.44c12.2-6.87,19.5-19.33,19.5-33.32s-7.3-26.47-19.61-33.39l.02-.02ZM256,0C114.84,0,0,114.84,0,256s114.84,256,256,256,256-114.84,256-256S397.16,0,256,0Zm0,490.67c-129.39,0-234.67-105.28-234.67-234.67S126.61,21.33,256,21.33s234.67,105.28,234.67,234.67-105.28,234.67-234.67,234.67Z" />
@@ -411,7 +408,6 @@ export default async function Specialist(
                                                         className="bg-img ratio ratio-16x9 position-relative rounded-3"
                                                         style={{ backgroundImage: "url('http://i3.ytimg.com/vi/Zoo7aETBecs/hqdefault.jpg')" }}>
                                                         <div className="gallery-item-play-icon">
-                                                            <?xml version="1.0" encoding="UTF-8"?>
                                                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                                                                 <path
                                                                     d="M353.07,222.61l-124.76-68.33c-11.99-6.74-26.2-6.59-38.04,.3-11.86,6.93-18.94,19.29-18.94,33.02v136.77c0,13.74,7.08,26.09,18.94,33.02,6.04,3.52,12.69,5.29,19.31,5.29s12.8-1.64,18.62-4.91l124.95-68.44c12.2-6.87,19.5-19.33,19.5-33.32s-7.3-26.47-19.61-33.39l.02-.02ZM256,0C114.84,0,0,114.84,0,256s114.84,256,256,256,256-114.84,256-256S397.16,0,256,0Zm0,490.67c-129.39,0-234.67-105.28-234.67-234.67S126.61,21.33,256,21.33s234.67,105.28,234.67,234.67-105.28,234.67-234.67,234.67Z" />
