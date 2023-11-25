@@ -1,41 +1,46 @@
-'use client'
+"use client";
 
-import { useGetSpecialistServices } from "@/requests/client"
-import { PlaceholderLoading, PlaceholderError } from "@/app/components/common/Placeholder"
-import Pagination from "@/app/components/common/Pagination"
-import CommonService from "@/app/components/common/CommonService"
-import { useState } from "react"
-
+import { useGetSpecialistServices } from "@/requests/client";
+import { PlaceholderLoading, PlaceholderError } from "@/app/components/common/Placeholder";
+import Pagination from "@/app/components/common/Pagination";
+import CommonService from "@/app/components/common/CommonService";
+import { useState } from "react";
 
 export default function SpecialistServices({ specialist_id }: { specialist_id: string }) {
-    const [pageIndex, setPageIndex] = useState(1);
-    const { services, isLoading, isError } = useGetSpecialistServices(specialist_id, pageIndex)
+  const [pageIndex, setPageIndex] = useState(1);
+  const { services, isLoading, isError } = useGetSpecialistServices(specialist_id, pageIndex);
 
-    if (isLoading) return (
-        <div className="container"><PlaceholderLoading height={400} isLoading={isLoading} /></div >
-    )
-    if (isError) return (
-        <div className="container"><PlaceholderError height={400} isError={isError} /></div>
-    )
-
+  if (isLoading)
     return (
-        <div className="container">
-            <div className="bg-white rounded-3 shadow p-3 p-md-4 p-lg-5">
-                <h2 className="fs-3 mb-4">Услуги врача</h2>
+      <div className="container">
+        <PlaceholderLoading height={400} />
+      </div>
+    );
+  if (isError)
+    return (
+      <div className="container">
+        <PlaceholderError height={400} />
+      </div>
+    );
 
-                <div>
-                    {services.data.map((service: any) => (
-                        <CommonService key={service.id} service={service} catalogType="services" />
-                    ))}
-                </div>
+  return (
+    <div className="container">
+      <div className="bg-white rounded-3 shadow p-3 p-md-4 p-lg-5">
+        <h2 className="fs-3 mb-4">Услуги врача</h2>
 
-                {/* <div className="text-center pt-5">
-                    <a href="#" className="btn btn-outline-secondary">Показать ещё</a>
-                    </div>
-                */}
-
-            </div>
-            <Pagination pageIndex={pageIndex} setPageIndex={setPageIndex} paging={services.paging} />
+        <div>
+          {services.data.map((service: any) => (
+            <CommonService key={service.id} service={service} catalogType="services" />
+          ))}
         </div>
-    )
+
+        {/* <div className="text-center pt-5">
+          <Link href="#" className="btn btn-outline-secondary">
+            Показать ещё
+          </Link>
+        </div> */}
+      </div>
+      <Pagination pageIndex={pageIndex} setPageIndex={setPageIndex} paging={services.paging} />
+    </div>
+  );
 }

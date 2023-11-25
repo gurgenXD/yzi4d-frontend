@@ -38,6 +38,8 @@
 // Swiper
 @import "../../node_modules/swiper/swiper.scss";
 
+//Bvi
+@import "../blind/css/bvi.css";
 
 html {
   height: 100%;
@@ -96,7 +98,7 @@ body:not(.user-is-tabbing) textarea:focus {
   line-height: 1.55em;
   font-family: "Roboto";
 
-  >*:last-child {
+  > *:last-child {
     margin-bottom: 0 !important;
   }
 
@@ -392,7 +394,6 @@ ul {
     }
 
     &:hover {
-
       .caret,
       .icon {
         svg {
@@ -463,13 +464,12 @@ ul {
 }
 
 .form-floating {
-  >label {
+  > label {
     font-size: 15px;
   }
 
-  >.form-control,
-  >.form-control-plaintext {
-
+  > .form-control,
+  > .form-control-plaintext {
     &:focus,
     &:not(:placeholder-shown) {
       padding-left: 10px;
@@ -488,7 +488,7 @@ ul {
     margin-top: 1px;
   }
 
-  >* {
+  > * {
     &:hover {
       cursor: pointer;
     }
@@ -746,11 +746,11 @@ ul {
     padding: 0.25rem 0.75rem;
   }
 
-  >input {
+  > input {
     text-overflow: ellipsis;
   }
 
-  >ul {
+  > ul {
     position: absolute;
     max-height: 226px;
     left: 0;
@@ -784,7 +784,7 @@ ul {
       background-clip: padding-box;
     }
 
-    >li {
+    > li {
       padding: 0.25rem 0.75rem;
       text-align: left;
       font-size: 14px;
@@ -805,13 +805,13 @@ ul {
       }
     }
 
-    >li[aria-selected="true"] {
+    > li[aria-selected="true"] {
       background-color: $light-blue;
     }
   }
 
-  >ul[hidden],
-  >ul:empty {
+  > ul[hidden],
+  > ul:empty {
     display: block;
     opacity: 0;
     transform: scale(0);
@@ -2016,11 +2016,11 @@ ul {
 }
 
 .btn-check {
-  &:checked+.doc-radio {
+  &:checked + .doc-radio {
     background-color: $light-blue;
   }
 
-  &:checked+.service-radio {
+  &:checked + .service-radio {
     background-color: $light-blue;
     color: $secondary;
   }
@@ -2338,7 +2338,7 @@ ul {
     border-bottom: 1px solid $gray-300;
     border-radius: 0 !important;
 
-    >* {
+    > * {
       overflow-x: auto;
       scrollbar-width: none;
 
@@ -2379,7 +2379,7 @@ ul {
 
   .bg-white {
     .nav-mobile-scroll {
-      >* {
+      > * {
         &:after {
           background: linear-gradient(90deg, rgba($white, 0) 0%, rgba($white, 1) 100%);
         }
@@ -2450,7 +2450,7 @@ ul {
         font-size: 0.75rem;
       }
 
-      &> :not(caption)>*>* {
+      & > :not(caption) > * > * {
         padding: 0.25rem;
       }
     }
@@ -2778,4 +2778,8 @@ ul {
 
 .placeholder-glow {
   margin: 0;
+}
+
+.offcanvas-header .btn-close {
+  box-sizing: unset;
 }

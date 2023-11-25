@@ -1,39 +1,35 @@
-import '../../public/scss/style.scss'
-import '../../public/blind/css/bvi.min.css'
+import "../../public/scss/style.scss";
 
-import type { Metadata } from 'next'
+import type { Metadata } from "next";
 
-import Footer from '@/app/components/Footer'
-import Header from '@/app/components/Header'
-import Head from '@/app/components/Head'
-import OffCanvas from '@/app/components/OffCanvas'
-import Calculator from '@/app/components/Calculator'
-import ScrollToTop from '@/app/components/ScrollToTop'
-import CallToAction from '@/app/components/CallToAction'
-import Cookies from '@/app/components/cookies/Cookies'
-import Script from 'next/script'
+import Footer from "@/app/components/global/Footer";
+import Header from "@/app/components/global/Header";
+import Head from "@/app/components/global/Head";
+import OffCanvas from "@/app/components/global/OffCanvas";
+import Calculator from "@/app/components/global/Calculator";
+import ScrollToTop from "@/app/components/global/ScrollToTop";
+import CallToAction from "@/app/components/global/CallToAction";
+import Cookies from "@/app/components/cookies/Cookies";
+import Script from "next/script";
+import Navigation from "@/app/components/global/Navigation";
 
 export const metadata: Metadata = {
-  title: 'Поликлиника УЗИ 4Д',
-}
+  title: "Поликлиника УЗИ 4Д",
+};
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ru" className="h-100">
       <Head />
       <body className="d-flex flex-column h-100">
         <Header />
+        <Navigation />
         <OffCanvas />
         <Cookies />
 
         {children}
 
         <CallToAction />
-
         <Footer />
         <Calculator />
         <ScrollToTop />
@@ -43,5 +39,5 @@ export default function RootLayout({
         <Script src="/blind/js/bvi.js" type="text/javascript" />
       </body>
     </html>
-  )
+  );
 }
