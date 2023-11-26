@@ -1,6 +1,6 @@
 import NotFound from "@/app/not-found";
 import Image from "next/image";
-import { getSpecialist } from "@/requests/server";
+import { getSpecialist } from "@/services/specialists";
 import SpecialistServices from "@/app/components/specialists/SpecialistServices";
 import Link from "next/link";
 import ChildImg from "@/assets/child-icon.svg";
@@ -49,6 +49,7 @@ export default async function Specialist({ params }: { params: { id: string } })
                   width={410}
                   height={490}
                   style={{ objectFit: "cover" }}
+                  priority
                 />
               </div>
 
@@ -360,9 +361,9 @@ export default async function Specialist({ params }: { params: { id: string } })
 
                     <div className="article article-sm">
                       <ul>
-                        {specialist.description.split("\n").map((row: string) => (
-                          <li key={row}>{row}</li>
-                        ))}
+                        {specialist.description
+                          .split("\n")
+                          .map((row: string) => (row ? <li key={row}>{row}</li> : null))}
                       </ul>
                     </div>
                   </div>

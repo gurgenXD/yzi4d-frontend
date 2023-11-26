@@ -1,5 +1,6 @@
 import { getDocumentsCategories } from "@/requests/server";
 import Link from "next/link";
+import DocumentBgImg from "@/assets/document-bg-icon.svg";
 
 export const metadata = {
   title: "Документы - Поликлиника УЗИ 4Д",
@@ -27,7 +28,7 @@ export default async function Documents() {
                 <div key={document.name} className="col-xxl-3 col-xl-4 col-md-6">
                   <div
                     className="card h-100 d-flex flex-column position-relative rounded-3 pt-3 pt-sm-4 pb-sm-2 px-3 px-sm-4"
-                    style={{ backgroundImage: "url('/img/document-bg-icon.svg')" }}
+                    style={{ backgroundImage: `url('${DocumentBgImg.src}')` }}
                   >
                     <Link
                       href={document.link}

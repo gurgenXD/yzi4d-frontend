@@ -62,23 +62,27 @@ export default function Search({ searchQuery }: { searchQuery: string }) {
       {services.data.length ? <h5 className="px-3 py-1 m-0">Услуги</h5> : null}
       {services.data.map((service: any) => (
         <li className="px-3" key={service.id}>
-          <Link href={`/catalog/services/categories/items/${service.id}`}>{service.name}</Link>
+          <a className="d-block" href={`/catalog/services/categories/items/${service.id}`}>
+            {service.name}
+          </a>
         </li>
       ))}
 
       {analyzes.data.length ? <h5 className="px-3 py-1 m-0">Анализы</h5> : null}
       {analyzes.data.map((analyze: any) => (
         <li className="px-3" key={analyze.id}>
-          <Link href={`/catalog/analyzes/categories/items/${analyze.id}`}>{analyze.name}</Link>
+          <a className="d-block" href={`/catalog/analyzes/categories/items/${analyze.id}`}>
+            {analyze.name}
+          </a>
         </li>
       ))}
 
       {specialists.data.length ? <h5 className="px-3 py-1 m-0">Специалисты</h5> : null}
       {specialists.data.map((specialist: any) => (
         <li className="px-3" key={specialist.id}>
-          <Link href={`/specialists/${specialist.id}`}>
+          <a className="d-block" href={`/specialists/${specialist.id}`}>
             {specialist.surname} {specialist.name} {specialist.patronymic}
-          </Link>
+          </a>
         </li>
       ))}
     </ul>

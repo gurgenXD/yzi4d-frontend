@@ -3,6 +3,7 @@ import Image from "next/image";
 import HeaderOffices from "@/app/components/global/HeaderOffices";
 import Link from "next/link";
 import LogoFooterImg from "@/assets/logo-footer.svg";
+import SearchWrapper from "@/app/components/global/search/SearchWrapper";
 
 export default async function OffCanvas() {
   return (
@@ -24,18 +25,9 @@ export default async function OffCanvas() {
         ></button>
       </div>
       <div className="offcanvas-body">
-        {/* <form className="search-form mb-3">
-          <input
-            type="text"
-            className="form-control search-form-input"
-            placeholder="Введите запрос"
-          />
-          <button type="submit" className="btn btn-primary search-form-btn">
-            Поиск
-          </button>
-        </form> */}
+        <SearchWrapper />
 
-        <div className="sidebar">
+        <div className="sidebar mt-3">
           <ul className="nav">
             {/* <li className="nav-item">
               <Link className="nav-link fw-semibold" href="profile.html">

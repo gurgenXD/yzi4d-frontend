@@ -3,6 +3,7 @@
 import { useGetMainCategories } from "@/requests/client";
 import { PlaceholderLoading, PlaceholderError } from "@/app/components/common/Placeholder";
 import Link from "next/link";
+import ServiceBgImg1 from "@/assets/service-bg-icon_1.svg";
 
 export default function HomeServices() {
   const { categories, isLoading, isError } = useGetMainCategories("main");
@@ -53,7 +54,7 @@ export default function HomeServices() {
                   <div key={service.id} className="col-xl-4 col-md-6">
                     <div
                       className="card h-100 d-flex flex-column position-relative rounded-3 pt-3 pt-sm-4 pb-sm-2 px-3 px-sm-4"
-                      style={{ backgroundImage: "url('/img/service-bg-icon_1.svg')" }}
+                      style={{ backgroundImage: `url('${ServiceBgImg1.src}')` }}
                     >
                       <Link
                         href={`/catalog/services/categories/items/${service.id}`}

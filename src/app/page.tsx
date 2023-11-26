@@ -17,9 +17,20 @@ import FeatureImg4 from "@/assets/feature-img-4.svg";
 import FeatureImg5 from "@/assets/feature-img-5.svg";
 import FeatureImg6 from "@/assets/feature-img-6.svg";
 import MainOnlineImg from "@/assets/main-online-img.jpg";
+import { Metadata } from "next";
 
-export const metadata = {
+export const metadata: Metadata = {
+  metadataBase: process.env.NEXT_PUBLIC_YZI4D_HOST
+    ? new URL(process.env.NEXT_PUBLIC_YZI4D_HOST)
+    : null,
   title: "Главная - Поликлиника УЗИ 4Д",
+  openGraph: {
+    type: "website",
+    url: "https://yzi4d.ru",
+    title: "Поликлиника УЗИ 4Д",
+    description: "Сайт поликлиники УЗИ 4Д",
+    siteName: "Поликлиника УЗИ 4Д",
+  },
 };
 
 export default async function Home() {

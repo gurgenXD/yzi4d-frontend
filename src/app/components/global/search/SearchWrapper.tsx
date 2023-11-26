@@ -12,27 +12,27 @@ export default function SearchWrapper() {
   };
 
   return (
-    <div className="search-form-wrap">
-      <form className="search-form" onSubmit={onSubmitHander}>
-        <div
-          className="autoComplete_wrapper"
-          aria-owns="autoComplete_list_1"
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
-          <input
-            type="text"
-            name="search_query"
-            className="form-control search-form-input"
-            id="autoComplete"
-            placeholder="Введите запрос"
-          />
-          <Search searchQuery={searchQuery} />
-        </div>
-        <button type="submit" className="btn btn-primary search-form-btn">
-          Поиск
-        </button>
-      </form>
-    </div>
+    <form className="search-form" onSubmit={onSubmitHander}>
+      <div
+        className="autoComplete_wrapper"
+        aria-expanded="false"
+        aria-owns="autoComplete_list_1"
+        aria-haspopup="true"
+      >
+        <input
+          type="text"
+          name="search_query"
+          className="form-control search-form-input"
+          id="autoComplete"
+          placeholder="Введите запрос"
+          aria-controls="autoComplete_list_1"
+          aria-autocomplete="both"
+        />
+        <Search searchQuery={searchQuery} />
+      </div>
+      <button type="submit" className="btn btn-primary search-form-btn">
+        Поиск
+      </button>
+    </form>
   );
 }

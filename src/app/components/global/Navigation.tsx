@@ -212,7 +212,9 @@ export default async function Navigation() {
             </ul>
 
             <div className="search">
-              <SearchWrapper />
+              <div className="search-form-wrap">
+                <SearchWrapper />
+              </div>
 
               <button type="button" className="search-toggle">
                 <svg

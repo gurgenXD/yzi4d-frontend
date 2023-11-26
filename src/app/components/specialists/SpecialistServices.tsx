@@ -1,30 +1,41 @@
 "use client";
 
-import { useGetSpecialistServices } from "@/requests/client";
 import { PlaceholderLoading, PlaceholderError } from "@/app/components/common/Placeholder";
 import Pagination from "@/app/components/common/Pagination";
 import CommonService from "@/app/components/common/CommonService";
 import { useState } from "react";
+import useSWR from "swr";
+import { getSpecialistServices } from "@/services/specialists";
 
 export default function SpecialistServices({ specialist_id }: { specialist_id: string }) {
   const [pageIndex, setPageIndex] = useState(1);
-  const { services, isLoading, isError } = useGetSpecialistServices(specialist_id, pageIndex);
+
+  const {
+    data: services,
+    isLoading,
+    error,
+  } = useSWR(["specialist_services", pageIndex], async ([_, pageIndex]) => {
+    return await getSpecialistServices(specialist_id, pageIndex);
+  });
 
   if (isLoading)
     return (
       <div className="container">
-        <PlaceholderLoading height={400} />
+        <PlaceholderLoading height={510} />
       </div>
     );
-  if (isError)
+
+  if (error)
     return (
       <div className="container">
-        <PlaceholderError height={400} />
+        <PlaceholderError height={510} />
       </div>
     );
 
   return (
     <div className="container">
+      <Pagination pageIndex={pageIndex} setPageIndex={setPageIndex} paging={services.paging} />
+
       <div className="bg-white rounded-3 shadow p-3 p-md-4 p-lg-5">
         <h2 className="fs-3 mb-4">Услуги врача</h2>
 
@@ -40,7 +51,6 @@ export default function SpecialistServices({ specialist_id }: { specialist_id: s
           </Link>
         </div> */}
       </div>
-      <Pagination pageIndex={pageIndex} setPageIndex={setPageIndex} paging={services.paging} />
     </div>
   );
 }

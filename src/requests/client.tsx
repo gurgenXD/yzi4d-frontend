@@ -4,7 +4,7 @@ import useSWR from "swr";
 export function useGetMainSpecialists() {
   const fetcher = async (url: any) => await fetch(url).then((res) => res.json());
   const { data, error, isLoading } = useSWR(
-    `${process.env.NEXT_PUBLIC_YZI4D_HOST}/specialists/shuffled`,
+    `${process.env.NEXT_PUBLIC_YZI4D_API}/specialists/shuffled`,
     fetcher
   );
 
@@ -14,7 +14,7 @@ export function useGetMainSpecialists() {
 export function useGetMainCategories(catalog_type: string) {
   const fetcher = async (url: any) => await fetch(url).then((res) => res.json());
   const { data, error, isLoading } = useSWR(
-    `${process.env.NEXT_PUBLIC_YZI4D_HOST}/catalog/${catalog_type}/categories`,
+    `${process.env.NEXT_PUBLIC_YZI4D_API}/catalog/${catalog_type}/categories`,
     fetcher
   );
 
@@ -24,7 +24,7 @@ export function useGetMainCategories(catalog_type: string) {
 export function useGetMainPromotions() {
   const fetcher = async (url: any) => await fetch(url).then((res) => res.json());
   const { data, error, isLoading } = useSWR(
-    `${process.env.NEXT_PUBLIC_YZI4D_HOST}/promotions?for_main=true`,
+    `${process.env.NEXT_PUBLIC_YZI4D_API}/promotions?for_main=true`,
     fetcher
   );
 
@@ -44,17 +44,7 @@ export function useGetServices(
     (category_id ? `&category_id=${category_id}` : "") +
     (search_query ? `&search_query=${search_query}` : "");
   const { data, error, isLoading } = useSWR(
-    () => `${process.env.NEXT_PUBLIC_YZI4D_HOST}/catalog/${catalog_type}/services${params}`,
-    fetcher
-  );
-
-  return { services: data, isLoading, isError: error };
-}
-
-export function useGetSpecialistServices(id: string, page: number) {
-  const fetcher = async (url: any) => await fetch(url).then((res) => res.json());
-  const { data, error, isLoading } = useSWR(
-    `${process.env.NEXT_PUBLIC_YZI4D_HOST}/specialists/${id}/services?page=${page}`,
+    () => `${process.env.NEXT_PUBLIC_YZI4D_API}/catalog/${catalog_type}/services${params}`,
     fetcher
   );
 
@@ -64,7 +54,7 @@ export function useGetSpecialistServices(id: string, page: number) {
 export function useGetOffices() {
   const fetcher = async (url: any) => await fetch(url).then((res) => res.json());
   const { data, error, isLoading } = useSWR(
-    `${process.env.NEXT_PUBLIC_YZI4D_HOST}/contacts/offices`,
+    `${process.env.NEXT_PUBLIC_YZI4D_API}/contacts/offices`,
     fetcher
   );
 
@@ -79,7 +69,7 @@ export function useGetCategories(
 ) {
   const fetcher = async (url: any) => await fetch(url).then((res) => res.json());
   const { data, error, isLoading } = useSWR(
-    `${process.env.NEXT_PUBLIC_YZI4D_HOST}/catalog/${catalog_type}/categories?search_query=${search_query}`,
+    `${process.env.NEXT_PUBLIC_YZI4D_API}/catalog/${catalog_type}/categories?search_query=${search_query}`,
     fetcher,
     {
       onSuccess: (data, _, __) => {
@@ -97,7 +87,7 @@ export function useGetCategories(
 export function useGetSpecialists(search_query: string, page: number) {
   const fetcher = async (url: any) => await fetch(url).then((res) => res.json());
   const { data, error, isLoading } = useSWR(
-    `${process.env.NEXT_PUBLIC_YZI4D_HOST}/specialists?page=${page}&search_query=${search_query}`,
+    `${process.env.NEXT_PUBLIC_YZI4D_API}/specialists?page=${page}&search_query=${search_query}`,
     fetcher
   );
 
