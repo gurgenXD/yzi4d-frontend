@@ -13,7 +13,7 @@ const nextConfig = {
       },
       {
         protocol: "https",
-        hostname: "yzi4d.ru",
+        hostname: "swagger.yzi4d.ru",
         port: "",
         pathname: "/media/**",
       },
