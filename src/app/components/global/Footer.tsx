@@ -1,5 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
+import YtImg from "@/assets/yt-icon.svg";
+import VkImg from "@/assets/vk-icon.svg";
+import OdnImg from "@/assets/odn-icon.svg";
+import TgImg from "@/assets/tg-icon.svg";
+import LogoFooterImg from "@/assets/logo-footer.svg";
 
 export default function Footer() {
   return (
@@ -8,13 +13,7 @@ export default function Footer() {
         <div className="row align-items-center mb-2">
           <div className="col-md mb-3">
             <Link href="#" className="d-inline-block">
-              <Image
-                src="/img/logo-footer.svg"
-                width={334}
-                height={30}
-                alt=""
-                className="logo-footer"
-              />
+              <Image src={LogoFooterImg} alt="Логотип футера" className="logo-footer" />
             </Link>
           </div>
 
@@ -60,11 +59,11 @@ export default function Footer() {
 
               <div className="d-flex mb-3 mb-lg-0">
                 <Link href="https://t.me/tg4dpolyclinic" target="_blank" className="social-link">
-                  <Image src="/img/dynamic-img/tg-icon.svg" width={16} height={16} alt="" />
+                  <Image src={TgImg} alt="Телеграм" />
                 </Link>
 
                 <Link href="https://vk.com/4dpolyclinic" target="_blank" className="social-link">
-                  <Image src="/img/dynamic-img/vk-icon.svg" width={16} height={16} alt="" />
+                  <Image src={VkImg} alt="Вконтакте" />
                 </Link>
 
                 <Link
@@ -72,7 +71,7 @@ export default function Footer() {
                   target="_blank"
                   className="social-link"
                 >
-                  <Image src="/img/dynamic-img/yt-icon.svg" width={16} height={16} alt="" />
+                  <Image src={YtImg} alt="Ютуб" />
                 </Link>
 
                 <Link
@@ -80,7 +79,7 @@ export default function Footer() {
                   target="_blank"
                   className="social-link"
                 >
-                  <Image src="/img/dynamic-img/odn-icon.svg" width={16} height={16} alt="" />
+                  <Image src={OdnImg} alt="Однокласники" />
                 </Link>
               </div>
             </div>

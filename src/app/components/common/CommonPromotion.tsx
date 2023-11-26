@@ -1,14 +1,22 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export default function CommonPromotion({ promotion }: { promotion: any }) {
   return (
     <div className="sale-banner bg-white position-relative">
       <div className="row flex-column flex-md-row gx-0">
         <div className="col-12 col-md-auto">
-          <div
-            className="sale-banner-img bg-img"
-            style={{ backgroundImage: `url('${promotion.photo}')` }}
-          ></div>
+          <div className="sale-banner-img bg-img">
+            <Image
+              className="sale-banner-img bg-img"
+              src={promotion.photo}
+              alt={promotion.name}
+              width={300}
+              height={480}
+              style={{ objectFit: "cover" }}
+              priority
+            />
+          </div>
         </div>
 
         <div className="col-12 col-md">

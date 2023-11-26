@@ -1,20 +1,19 @@
 import Link from "next/link";
+import Image from "next/image";
+import DoctorNoImg from "@/assets/doctor-no-photo.jpg";
 
 export default function CommonSpecialist({ specialist }: { specialist: any }) {
   return (
     <div className="doctor-card d-flex h-100 position-relative">
       <div className="ratio ratio-5x6 overflow-hidden rounded-3 flex-shrink-0">
-        {specialist.photo ? (
-          <div
-            className="doctor-card-img"
-            style={{ backgroundImage: `url('${specialist.photo}')` }}
-          ></div>
-        ) : (
-          <div
-            className="doctor-card-img"
-            style={{ backgroundImage: "url('/img/doctor-no-photo.jpg')" }}
-          ></div>
-        )}
+        <Image
+          className="doctor-card-img"
+          src={specialist.photo ? specialist.photo : DoctorNoImg}
+          alt={`${specialist.surname} ${specialist.name} ${specialist.patronymic}`}
+          width={300}
+          height={350}
+          style={{ objectFit: "cover" }}
+        />
       </div>
 
       <div>

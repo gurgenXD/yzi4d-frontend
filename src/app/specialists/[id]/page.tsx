@@ -3,6 +3,8 @@ import Image from "next/image";
 import { getSpecialist } from "@/requests/server";
 import SpecialistServices from "@/app/components/specialists/SpecialistServices";
 import Link from "next/link";
+import ChildImg from "@/assets/child-icon.svg";
+import DoctorNoImg from "@/assets/doctor-no-photo.jpg";
 
 export async function generateMetadata({ params }: { params: { id: string } }) {
   const { errorCodeSpec, specialist } = await getSpecialist(params.id);
@@ -40,17 +42,14 @@ export default async function Specialist({ params }: { params: { id: string } })
           <div className="doc-hero position-relative">
             <div className="row gy-4 gy-md-0">
               <div className="col-md-4">
-                {specialist.photo ? (
-                  <div
-                    className="doc-hero-img rounded-3 ratio ratio-5x6"
-                    style={{ backgroundImage: `url('${specialist.photo}')` }}
-                  ></div>
-                ) : (
-                  <div
-                    className="doc-hero-img rounded-3 ratio ratio-5x6"
-                    style={{ backgroundImage: "url('/img/doctor-no-photo.jpg')" }}
-                  ></div>
-                )}
+                <Image
+                  className="doc-hero-img rounded-3 ratio ratio-5x6"
+                  src={specialist.photo ? specialist.photo : DoctorNoImg}
+                  alt={`${specialist.surname} ${specialist.name} ${specialist.patronymic}`}
+                  width={410}
+                  height={490}
+                  style={{ objectFit: "cover" }}
+                />
               </div>
 
               <div className="col-md-8">
@@ -96,7 +95,7 @@ export default async function Specialist({ params }: { params: { id: string } })
                 {specialist.can_child ? (
                   <div className="d-flex align-items-start pt-2 mb-3">
                     <div className="child-icon me-2">
-                      <Image src="/img/child-icon.svg" width={26} height={24} alt="" />
+                      <Image src={ChildImg} alt="Принимает детей" />
                     </div>
                     <p className="text-secondary mb-0">
                       Возможен приём детей. Уточните в колл-центре:

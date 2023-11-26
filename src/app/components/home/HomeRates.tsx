@@ -5,6 +5,11 @@ import Link from "next/link";
 
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import YandexImg from "@/assets/yandex.svg";
+import DoctuImg from "@/assets/doctu.svg";
+import NaPopravkuImg from "@/assets/na-popravku.svg";
+import TwoGisImg from "@/assets/2gis.svg";
+import ProdoctorovImg from "@/assets/prodoctorov.svg";
 
 export default function HomeRates() {
   return (
@@ -70,7 +75,7 @@ export default function HomeRates() {
               <SwiperSlide className="swiper-slide">
                 <div className="rate-item bg-white rounded-3 shadow-sm d-flex align-items-center p-sm-4 p-3">
                   <div className="rate-item-img">
-                    <Image src="/img/yandex.svg" width={27} height={55} alt="" />
+                    <Image src={YandexImg} alt="Яндекс" />
                   </div>
 
                   <div className="rate-item-score fw-bold text-danger me-3">4.8</div>
@@ -92,7 +97,7 @@ export default function HomeRates() {
               <SwiperSlide className="swiper-slide">
                 <div className="rate-item bg-white rounded-3 shadow-sm d-flex align-items-center p-sm-4 p-3">
                   <div className="rate-item-img">
-                    <Image src="/img/2gis.svg" width={53} height={55} alt="" />
+                    <Image src={TwoGisImg} alt="2GIS" />
                   </div>
 
                   <div className="rate-item-score fw-bold text-danger me-3">4.4</div>
@@ -114,7 +119,7 @@ export default function HomeRates() {
               <SwiperSlide className="swiper-slide">
                 <div className="rate-item bg-white rounded-3 shadow-sm d-flex align-items-center p-sm-4 p-3">
                   <div className="rate-item-img">
-                    <Image src="/img/prodoctorov.svg" width={54} height={55} alt="" />
+                    <Image src={ProdoctorovImg} alt="ПроДокторов" />
                   </div>
 
                   <div className="rate-item-score fw-bold text-danger me-3">4.2</div>
@@ -136,7 +141,7 @@ export default function HomeRates() {
               <SwiperSlide className="swiper-slide">
                 <div className="rate-item bg-white rounded-3 shadow-sm d-flex align-items-center p-sm-4 p-3">
                   <div className="rate-item-img">
-                    <Image src="/img/doctu.svg" width={50} height={55} alt="" />
+                    <Image src={DoctuImg} alt="ДокТу" />
                   </div>
 
                   <div className="rate-item-score fw-bold text-danger me-3">4.7</div>
@@ -158,7 +163,7 @@ export default function HomeRates() {
               <SwiperSlide className="swiper-slide">
                 <div className="rate-item bg-white rounded-3 shadow-sm d-flex align-items-center p-sm-4 p-3">
                   <div className="rate-item-img">
-                    <Image src="/img/na-popravku.svg" width={54} height={55} alt="" />
+                    <Image src={NaPopravkuImg} alt="На поправку" />
                   </div>
 
                   <div className="rate-item-score fw-bold text-danger me-3">4.2</div>

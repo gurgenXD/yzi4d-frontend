@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import ErrorImg from "@/assets/error-img.png";
 
 export default function NotFound() {
   return (
@@ -24,7 +25,7 @@ export default function NotFound() {
 
             <div className="col">
               <div className="text-end">
-                <Image src="/img/error-img.png" alt="" className="error-img" />
+                <Image src={ErrorImg} alt="Ошибка" className="error-img" />
               </div>
             </div>
           </div>

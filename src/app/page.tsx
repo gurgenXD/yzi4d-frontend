@@ -5,6 +5,18 @@ import CommonContacts from "@/app/components/common/CommonContacts";
 import HomePromotions from "@/app/components/home/HomePromotions";
 import HomeRates from "@/app/components/home/HomeRates";
 import Link from "next/link";
+import AboutBgImg from "@/assets/about-bg.png";
+import StatBgImg1 from "@/assets/stat-bg_1.svg";
+import StatBgImg2 from "@/assets/stat-bg_2.svg";
+import StatBgImg3 from "@/assets/stat-bg_3.svg";
+import StatBgImg4 from "@/assets/stat-bg_4.svg";
+import FeatureImg1 from "@/assets/feature-img-1.svg";
+import FeatureImg2 from "@/assets/feature-img-2.svg";
+import FeatureImg3 from "@/assets/feature-img-3.svg";
+import FeatureImg4 from "@/assets/feature-img-4.svg";
+import FeatureImg5 from "@/assets/feature-img-5.svg";
+import FeatureImg6 from "@/assets/feature-img-6.svg";
+import MainOnlineImg from "@/assets/main-online-img.jpg";
 
 export const metadata = {
   title: "Главная - Поликлиника УЗИ 4Д",
@@ -22,12 +34,17 @@ export default async function Home() {
 
             <div className="col-xl-4 col-xxl-3">
               <div className="main-banner d-flex align-content-stretch h-100 bg-white shadow rounded-3 overflow-hidden">
-                <div
-                  className="main-banner-img h-100 bg-img"
-                  style={{
-                    backgroundImage: "url('/img/dynamic-img/main-banner-img.jpg')",
-                  }}
-                ></div>
+                <div className="main-banner-img h-100 bg-img">
+                  <Image
+                    className="main-banner-img h-100 bg-img"
+                    src={MainOnlineImg}
+                    alt="Онлайн консультация"
+                    width={300}
+                    height={260}
+                    style={{ objectFit: "cover" }}
+                    priority
+                  />
+                </div>
 
                 <div className="flex-grow-1 pt-3 pb-3 px-3 p-sm-4 ps-md-5 ps-xl-4 pt-xl-5">
                   <h2 className="main-banner-title mb-2 mb-xl-2">Онлайн-консультация</h2>
@@ -107,7 +124,7 @@ export default async function Home() {
         <section className="section-about bg-light-blue py-lg-6 py-5">
           <div className="container position-relative py-2">
             <div className="section-about-img">
-              <Image src="/img/about-bg.png" width={686} height={800} alt="" />
+              <Image src={AboutBgImg} alt="Блок описания" />
             </div>
 
             <div className="row align-items-end gy-5 gy-sm-6 gy-xl-0 gx-xl-6">
@@ -127,7 +144,7 @@ export default async function Home() {
                   <div className="col-md-6">
                     <div className="stat-item h-100 bg-white d-flex align-items-center p-3 rounded-3 shadow-sm overflow-hidden">
                       <div className="stat-item-img">
-                        <Image src="/img/stat-bg_1.svg" width={25} height={38} alt="" />
+                        <Image src={StatBgImg1} alt="Направления исследований" />
                       </div>
 
                       <div className="stat-item-score fw-extrabold text-danger text-nowrap me-3">
@@ -144,7 +161,7 @@ export default async function Home() {
                   <div className="col-md-6">
                     <div className="stat-item h-100 bg-white d-flex align-items-center p-3 rounded-3 shadow-sm overflow-hidden">
                       <div className="stat-item-img">
-                        <Image src="/img/stat-bg_2.svg" width={21} height={38} alt="" />
+                        <Image src={StatBgImg2} alt="Медицинские центры" />
                       </div>
 
                       <div className="stat-item-score fw-extrabold text-danger text-nowrap me-3">
@@ -161,7 +178,7 @@ export default async function Home() {
                   <div className="col-md-6">
                     <div className="stat-item h-100 bg-white d-flex align-items-center p-3 rounded-3 shadow-sm overflow-hidden">
                       <div className="stat-item-img">
-                        <Image src="/img/stat-bg_3.svg" width={22} height={38} alt="" />
+                        <Image src={StatBgImg3} alt="Виды исследований" />
                       </div>
 
                       <div className="stat-item-score fw-extrabold text-danger text-nowrap me-3">
@@ -178,7 +195,7 @@ export default async function Home() {
                   <div className="col-md-6">
                     <div className="stat-item h-100 bg-white d-flex align-items-center p-3 rounded-3 shadow-sm overflow-hidden">
                       <div className="stat-item-img">
-                        <Image src="/img/stat-bg_4.svg" width={21} height={38} alt="" />
+                        <Image src={StatBgImg4} alt="Кфалифицированные специалисты" />
                       </div>
 
                       <div className="stat-item-score fw-extrabold text-danger text-nowrap me-3">
@@ -225,13 +242,7 @@ export default async function Home() {
               <div className="col-lg-6">
                 <div className="feature d-flex bg-white shadow rounded-3 h-100 p-3 p-sm-4">
                   <div className="me-xl-5 me-4">
-                    <Image
-                      src="/img/dynamic-img/feature-img-1.svg"
-                      width={100}
-                      height={97}
-                      alt=""
-                      className="feature-img"
-                    />
+                    <Image src={FeatureImg1} alt="Классные специалисты" className="feature-img" />
                   </div>
 
                   <div className="my-auto">
@@ -251,10 +262,8 @@ export default async function Home() {
                 <div className="feature d-flex bg-white shadow rounded-3 h-100 p-3 p-sm-4">
                   <div className="me-xl-5 me-4">
                     <Image
-                      src="/img/dynamic-img/feature-img-2.svg"
-                      width={100}
-                      height={88}
-                      alt=""
+                      src={FeatureImg2}
+                      alt="Оборудование экспертного класса"
                       className="feature-img"
                     />
                   </div>
@@ -275,13 +284,7 @@ export default async function Home() {
               <div className="col-lg-6">
                 <div className="feature d-flex bg-white shadow rounded-3 h-100 p-3 p-sm-4">
                   <div className="me-xl-5 me-4">
-                    <Image
-                      src="/img/dynamic-img/feature-img-3.svg"
-                      width={100}
-                      height={99}
-                      alt=""
-                      className="feature-img"
-                    />
+                    <Image src={FeatureImg3} alt="Всё в одном месте" className="feature-img" />
                   </div>
 
                   <div className="my-auto">
@@ -300,13 +303,7 @@ export default async function Home() {
               <div className="col-lg-6">
                 <div className="feature d-flex bg-white shadow rounded-3 h-100 p-3 p-sm-4">
                   <div className="me-xl-5 me-4">
-                    <Image
-                      src="/img/dynamic-img/feature-img-4.svg"
-                      width={100}
-                      height={101}
-                      alt=""
-                      className="feature-img"
-                    />
+                    <Image src={FeatureImg4} alt="Удобный график работы" className="feature-img" />
                   </div>
 
                   <div className="my-auto">
@@ -325,13 +322,7 @@ export default async function Home() {
               <div className="col-lg-6">
                 <div className="feature d-flex bg-white shadow rounded-3 h-100 p-3 p-sm-4">
                   <div className="me-xl-5 me-4">
-                    <Image
-                      src="/img/dynamic-img/feature-img-5.svg"
-                      width={100}
-                      height={95}
-                      alt=""
-                      className="feature-img"
-                    />
+                    <Image src={FeatureImg5} alt="Мы заботимся о вас" className="feature-img" />
                   </div>
 
                   <div className="my-auto">
@@ -349,13 +340,7 @@ export default async function Home() {
               <div className="col-lg-6">
                 <div className="feature d-flex bg-white shadow rounded-3 h-100 p-3 p-sm-4">
                   <div className="me-xl-5 me-4">
-                    <Image
-                      src="/img/dynamic-img/feature-img-6.svg"
-                      width={100}
-                      height={101}
-                      alt=""
-                      className="feature-img"
-                    />
+                    <Image src={FeatureImg6} alt="Большой опыт" className="feature-img" />
                   </div>
 
                   <div className="my-auto">

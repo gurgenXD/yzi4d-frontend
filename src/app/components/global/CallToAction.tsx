@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import CtaImg from "@/assets/cta-img.png";
 
 export default function CallToAction() {
   return (
@@ -19,7 +20,7 @@ export default function CallToAction() {
             <div className="col-xl-4 d-none d-xl-block">
               <div className="cta-img position-relative">
                 <div className="cta-img-wrap ps-lg-4 ps-xl-5 pe-lg-1 pe-xl-2">
-                  <Image src="/img/cta-img.png" width={200} height={200} alt="" /> {/* пока так */}
+                  <Image src={CtaImg} alt="Фон отзыва" />
                 </div>
               </div>
             </div>

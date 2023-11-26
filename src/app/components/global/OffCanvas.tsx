@@ -2,6 +2,7 @@ import Image from "next/image";
 
 import HeaderOffices from "@/app/components/global/HeaderOffices";
 import Link from "next/link";
+import LogoFooterImg from "@/assets/logo-footer.svg";
 
 export default async function OffCanvas() {
   return (
@@ -13,7 +14,7 @@ export default async function OffCanvas() {
     >
       <div className="offcanvas-header pb-1">
         <Link className="offcanvas-title" id="OffcanvasLabel" href="/">
-          <Image src="/img/logo-footer.svg" alt="" width={200} height={25} />
+          <Image src={LogoFooterImg} alt="Логотип футера" />
         </Link>
         <button
           type="button"

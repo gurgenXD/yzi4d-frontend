@@ -1,6 +1,7 @@
 import Image from "next/image";
 import SearchWrapper from "@/app/components/global/search/SearchWrapper";
 import Link from "next/link";
+import LogoImg from "@/assets/logo.svg";
 
 export default async function Navigation() {
   return (
@@ -9,7 +10,7 @@ export default async function Navigation() {
         <div className="d-flex align-items-center py-2 pt-lg-4 pb-lg-3">
           <div className="d-flex align-items-end">
             <Link href="/" title="" className="d-flex me-3 me-lg-5">
-              <Image className="logo-header" src="/img/logo.svg" width={98} height={50} alt="" />
+              <Image className="logo-header" src={LogoImg} alt="Логотип" />
             </Link>
 
             <div>

@@ -9,8 +9,8 @@ import { useGetMainPromotions } from "@/requests/client";
 export default function HomePromotions() {
   const { promotions, isLoading, isError } = useGetMainPromotions();
 
-  if (isLoading) return <PlaceholderLoading height={520} />;
-  if (isError) return <PlaceholderError height={520} />;
+  if (isLoading) return <PlaceholderLoading height={480} />;
+  if (isError) return <PlaceholderError height={480} />;
 
   return (
     <div className="position-relative main-slider">
@@ -51,8 +51,8 @@ export default function HomePromotions() {
         pagination={{
           el: ".swiper-pagination",
           clickable: true,
-          renderBullet: function (index, className) {
-            return '<span class="' + className + '"></span>';
+          renderBullet: function (_, className) {
+            return `<span class="${className}"></span>`;
           },
         }}
         breakpoints={{
@@ -75,12 +75,6 @@ export default function HomePromotions() {
           ))}
         </div>
       </Swiper>
-
-      <div className="swiper">
-        <div className="swiper-wrapper">
-          <div className="swiper-slide"></div>
-        </div>
-      </div>
     </div>
   );
 }
