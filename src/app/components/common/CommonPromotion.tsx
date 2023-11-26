@@ -11,8 +11,8 @@ export default function CommonPromotion({ promotion }: { promotion: any }) {
               className="sale-banner-img bg-img"
               src={promotion.photo}
               alt={promotion.name}
-              width={300}
-              height={480}
+              width={500}
+              height={680}
               style={{ objectFit: "cover" }}
               priority
             />
