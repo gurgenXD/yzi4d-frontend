@@ -191,7 +191,9 @@ export default async function OffCanvas() {
                 </span>
                 Адреса клиник
               </Link>
-              <HeaderOffices />
+              <ul className="submenu collapse show">
+                <HeaderOffices />
+              </ul>
             </li>
           </ul>
         </div>

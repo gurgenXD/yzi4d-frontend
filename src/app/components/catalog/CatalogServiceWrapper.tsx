@@ -18,7 +18,7 @@ export default function CatalogServicesWrapper({ catalogType }: { catalogType: s
           <div className="row align-items-end g-3">
             <div className="col-lg col-md-6">
               <input
-                type="text"
+                type="search"
                 className="form-control form-control-sm"
                 id=""
                 name="search_query"

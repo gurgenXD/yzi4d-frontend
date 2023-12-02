@@ -62,7 +62,7 @@ export default function Search({ searchQuery }: { searchQuery: string }) {
       {services.data.map((service: any) => (
         <li className="px-3" key={service.id}>
           <a className="d-block" href={`/catalog/services/categories/items/${service.id}`}>
-            {service.name}
+            {service.name} <span className="text-danger">({service.category_name})</span>
           </a>
         </li>
       ))}
@@ -71,7 +71,7 @@ export default function Search({ searchQuery }: { searchQuery: string }) {
       {analyzes.data.map((analyze: any) => (
         <li className="px-3" key={analyze.id}>
           <a className="d-block" href={`/catalog/analyzes/categories/items/${analyze.id}`}>
-            {analyze.name}
+            {analyze.name} <span className="text-danger">({analyze.category_name})</span>
           </a>
         </li>
       ))}
@@ -81,6 +81,10 @@ export default function Search({ searchQuery }: { searchQuery: string }) {
         <li className="px-3" key={specialist.id}>
           <a className="d-block" href={`/specialists/${specialist.id}`}>
             {specialist.surname} {specialist.name} {specialist.patronymic}
+            <span className="text-danger">
+              {" "}
+              ({specialist.specializations.map((spec: any) => spec.name).join(" / ")})
+            </span>
           </a>
         </li>
       ))}

@@ -13,20 +13,13 @@ export default function SearchWrapper() {
 
   return (
     <form className="search-form" onSubmit={onSubmitHander}>
-      <div
-        className="autoComplete_wrapper"
-        aria-expanded="false"
-        aria-owns="autoComplete_list_1"
-        aria-haspopup="true"
-      >
+      <div className="autoComplete_wrapper">
         <input
-          type="text"
+          type="search"
           name="search_query"
           className="form-control search-form-input"
           id="autoComplete"
           placeholder="Введите запрос"
-          aria-controls="autoComplete_list_1"
-          aria-autocomplete="both"
         />
         <Search searchQuery={searchQuery} />
       </div>

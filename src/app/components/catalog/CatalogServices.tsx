@@ -67,8 +67,8 @@ export default function CatalogServices({
             <CommonService key={service.id} service={service} catalogType={catalogType} />
           ))}
         </div>
-        <Pagination pageIndex={pageIndex} setPageIndex={setPageIndex} paging={services.paging} />
       </div>
+      <Pagination pageIndex={pageIndex} setPageIndex={setPageIndex} paging={services.paging} />
     </div>
   );
 }
