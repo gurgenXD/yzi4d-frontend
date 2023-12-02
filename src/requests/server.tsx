@@ -1,21 +1,3 @@
-export async function getSpecialists(searchParams: URLSearchParams) {
-  const specialists = await fetch(
-    `${process.env.NEXT_PUBLIC_YZI4D_API}/specialists?${searchParams.toString()}`,
-    { cache: "no-store" }
-  ).then((res) => res.json());
-
-  return specialists;
-}
-
-export async function getSpecializations() {
-  const specializations = await fetch(
-    `${process.env.NEXT_PUBLIC_YZI4D_API}/specialists/specializations`,
-    { cache: "no-store" }
-  ).then((res) => res.json());
-
-  return specializations;
-}
-
 export async function getService(id: string, catalog_type: string) {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_YZI4D_API}/catalog/${catalog_type}/services/${id}`,

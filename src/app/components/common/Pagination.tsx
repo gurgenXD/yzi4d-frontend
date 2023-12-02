@@ -2,7 +2,7 @@ export default function Pagination({ pageIndex, setPageIndex, paging }: any) {
   const pageSet = new Set([pageIndex - 1, pageIndex, pageIndex + 1, 1, paging.total_pages]);
 
   return (
-    <div className="pt-5">
+    <div className="py-5">
       {paging.total_pages > 1 ? (
         <ul className="pagination justify-content-center justify-content-sm-end">
           {paging.has_prev ? (
