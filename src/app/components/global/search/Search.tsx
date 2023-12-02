@@ -6,7 +6,6 @@ import {
   PlaceholderError,
   PlaceholderNotFound,
 } from "@/app/components/common/Placeholder";
-import Link from "next/link";
 
 export default function Search({ searchQuery }: { searchQuery: string }) {
   const {

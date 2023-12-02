@@ -182,7 +182,7 @@ export default async function OffCanvas() {
         <div className="sidebar">
           <ul className="nav">
             <li className="nav-item has-submenu">
-              <Link className="nav-link active" href="#">
+              <Link className="nav-link" href="#">
                 <span className="icon">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 11">
                     <path d="M5,2.75c-1.1,0-1.99,.82-1.99,1.83s.89,1.83,1.99,1.83,1.99-.82,1.99-1.83-.89-1.83-1.99-1.83Zm0,2.75c-.55,0-1-.41-1-.92s.45-.92,1-.92,1,.41,1,.92-.44,.92-1,.92Z" />
@@ -190,16 +190,8 @@ export default async function OffCanvas() {
                   </svg>
                 </span>
                 Адреса клиник
-                <span className="caret">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 88.07 52.25">
-                    <path d="M49.75,49.82c-3.29,3.25-8.58,3.24-11.85-.03L2.46,14.34C-.82,11.06-.82,5.74,2.46,2.46,5.74-.82,11.06-.82,14.34,2.46l29.7,29.7L73.73,2.46c3.28-3.28,8.6-3.28,11.88,0,3.28,3.28,3.28,8.6,0,11.88,0,0-24.32,24.07-35.86,35.48h0Z" />
-                  </svg>
-                </span>
               </Link>
-
-              <ul className="submenu collapse show">
-                <HeaderOffices />
-              </ul>
+              <HeaderOffices />
             </li>
           </ul>
         </div>
