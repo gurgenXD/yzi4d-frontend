@@ -5,7 +5,11 @@ import useSWR from "swr";
 import Pagination from "@/app/components/common/Pagination";
 import CommonSpecialist from "@/app/components/common/CommonSpecialist";
 import { getSpecialists } from "@/services/specialists";
-import { PlaceholderLoading, PlaceholderError } from "@/app/components/common/Placeholder";
+import {
+  PlaceholderLoading,
+  PlaceholderError,
+  PlaceholderNotFound,
+} from "@/app/components/common/Placeholder";
 
 export default function SpecialistsList({
   canOnline,
@@ -36,15 +40,23 @@ export default function SpecialistsList({
   if (isLoading)
     return (
       <div className="container pt-4 pt-lg-5">
-        <PlaceholderLoading height={500} />
+        <PlaceholderLoading height={100} />
       </div>
     );
   if (error)
     return (
       <div className="container pt-4 pt-lg-5">
-        <PlaceholderError height={500} />
+        <PlaceholderError height={100} />
       </div>
     );
+
+  if (!specialists.data.length) {
+    return (
+      <div className="container pt-4 pt-lg-5">
+        <PlaceholderNotFound height={100} />
+      </div>
+    );
+  }
 
   return (
     <>

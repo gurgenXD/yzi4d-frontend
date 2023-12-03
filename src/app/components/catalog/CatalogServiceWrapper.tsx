@@ -20,7 +20,7 @@ export default function CatalogServicesWrapper({ catalogType }: { catalogType: s
               <input
                 type="search"
                 className="form-control form-control-sm"
-                id=""
+                id="ServiceSearchQuery"
                 name="search_query"
                 placeholder="Введите запрос"
               />

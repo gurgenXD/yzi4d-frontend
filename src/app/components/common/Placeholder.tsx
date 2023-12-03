@@ -1,9 +1,17 @@
-export function Placeholder({ height, content }: { height: number; content: JSX.Element }) {
+export function Placeholder({
+  height,
+  content,
+  flashing,
+}: {
+  height: number;
+  content: JSX.Element;
+  flashing: boolean;
+}) {
   return (
     <div className="row">
-      <div className="col-12 placeholder-glow">
+      <div className={`col-12 ${"placeholder-glow" ? flashing : ""}`}>
         <div
-          className="placeholder rounded-3 d-flex justify-content-center"
+          className={`${"placeholder" ? flashing : ""} rounded-3 d-flex justify-content-center`}
           style={{
             height: height,
             backgroundColor: "rgba(1,1,1,0)",
@@ -21,6 +29,7 @@ export function Placeholder({ height, content }: { height: number; content: JSX.
 export function PlaceholderLoading({ height }: { height: number }) {
   return (
     <Placeholder
+      flashing={true}
       height={height}
       content={
         <div className="spinner-border text-primary" role="status">
@@ -32,9 +41,17 @@ export function PlaceholderLoading({ height }: { height: number }) {
 }
 
 export function PlaceholderError({ height }: { height: number }) {
-  return <Placeholder height={height} content={<div>Ошибка при загрузке данных</div>} />;
+  return (
+    <Placeholder flashing={true} height={height} content={<div>Ошибка при загрузке данных</div>} />
+  );
 }
 
 export function PlaceholderNotFound({ height }: { height: number }) {
-  return <Placeholder height={height} content={<div>По Вашему запросу ничего не найдено</div>} />;
+  return (
+    <Placeholder
+      flashing={false}
+      height={height}
+      content={<div>По Вашему запросу ничего не найдено</div>}
+    />
+  );
 }

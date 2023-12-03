@@ -35,13 +35,13 @@ export default function CatalogServices({
   if (isServicesLoading || isCategoriesLoading)
     return (
       <div className="container pt-4 pt-lg-5">
-        <PlaceholderLoading height={500} />
+        <PlaceholderLoading height={100} />
       </div>
     );
   if (isServicesError || isCategoriesError)
     return (
       <div className="container pt-4 pt-lg-5">
-        <PlaceholderError height={500} />
+        <PlaceholderError height={100} />
       </div>
     );
 
