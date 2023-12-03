@@ -1,13 +1,10 @@
-import { getPromotions } from "@/requests/server";
-import CommonPromotion from "@/app/components/common/CommonPromotion";
+import PromotionsWrapper from "@/app/components/promotions/PromotionsWrapper";
 
 export const metadata = {
   title: "Спецпредложения - Поликлиника УЗИ 4Д",
 };
 
 export default async function Promotions() {
-  const promotions = await getPromotions();
-
   return (
     <main role="main" className="flex-shrink-0">
       <div className="overflow-hidden">
@@ -21,9 +18,7 @@ export default async function Promotions() {
 
           <h1 className="mb-4">Спецпредложения</h1>
 
-          {promotions.map((promotion: any) => (
-            <CommonPromotion key={promotion.id} promotion={promotion} />
-          ))}
+          <PromotionsWrapper />
         </div>
       </div>
     </main>

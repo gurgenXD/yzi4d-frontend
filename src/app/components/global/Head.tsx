@@ -74,24 +74,21 @@ export default function Head() {
         crossOrigin="anonymous"
       />
 
-      <Script
-        id="YandexMetricsYZI4D"
-        dangerouslySetInnerHTML={{
-          __html: `
-                (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-                m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-                (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-      
-                ym(95292842, "init", {
-                    clickmap:true,
-                    trackLinks:true,
-                    accurateTrackBounce:true,
-                    webvisor:true,
-                    trackHash:true
-                });
-              `,
-        }}
-      />
+      <Script id="YandexMetricsYZI4D">
+        {`
+          (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+          m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+          (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+          ym(95292842, "init", {
+              clickmap:true,
+              trackLinks:true,
+              accurateTrackBounce:true,
+              webvisor:true,
+              trackHash:true
+          });
+        `}
+      </Script>
       <noscript>
         <div>
           <Image
@@ -99,7 +96,7 @@ export default function Head() {
             width={1}
             height={1}
             style={{ position: "absolute", left: "-9999px" }}
-            alt=""
+            alt="Фотка пикселя"
           />
         </div>
       </noscript>
