@@ -9,9 +9,9 @@ export function Placeholder({
 }) {
   return (
     <div className="row">
-      <div className={`col-12 ${"placeholder-glow" ? flashing : ""}`}>
+      <div className={`col-12 ${flashing ? "placeholder-glow" : ""}`}>
         <div
-          className={`${"placeholder" ? flashing : ""} rounded-3 d-flex justify-content-center`}
+          className={`${flashing ? "placeholder" : ""} rounded-3 d-flex justify-content-center`}
           style={{
             height: height,
             backgroundColor: "rgba(1,1,1,0)",
