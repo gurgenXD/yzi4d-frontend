@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+
 import ErrorImg from "@/assets/error-img.png";
 
 export default function NotFound() {
@@ -17,9 +17,9 @@ export default function NotFound() {
                   указан неверный адрес страницы.
                 </p>
 
-                <Link href="/" className="btn btn-primary">
+                <a href="/" className="btn btn-primary">
                   Перейти на главную
-                </Link>
+                </a>
               </div>
             </div>
 

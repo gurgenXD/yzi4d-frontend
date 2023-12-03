@@ -1,6 +1,6 @@
 import Image from "next/image";
 import SearchWrapper from "@/app/components/global/search/SearchWrapper";
-import Link from "next/link";
+
 import LogoImg from "@/assets/logo.svg";
 
 export default async function Navigation() {
@@ -9,18 +9,18 @@ export default async function Navigation() {
       <div className="container">
         <div className="d-flex align-items-center py-2 pt-lg-4 pb-lg-3">
           <div className="d-flex align-items-end">
-            <Link href="/" title="" className="d-flex me-3 me-lg-5">
+            <a href="/" title="" className="d-flex me-3 me-lg-5">
               <Image className="logo-header" src={LogoImg} alt="Логотип" />
-            </Link>
+            </a>
 
             <div>
-              <Link
+              <a
                 href="tel:+79288284001"
                 title=""
                 className="phone-header link-secondary fw-extrabold d-flex mb-1"
               >
                 +7 (928) 828-40-01
-              </Link>
+              </a>
               <div className="schedule d-flex">
                 <span className="text-white bg-danger px-1 me-1">без выходных</span>с 7:00 до 20:00
               </div>
@@ -29,7 +29,7 @@ export default async function Navigation() {
 
           <div className="row align-items-center d-none d-lg-flex ms-auto">
             <div className="col-auto">
-              <Link
+              <a
                 className="profile-link link-secondary text-nowrap spaced-link fs-7"
                 href="https://lk.yzi4d.ru"
                 target="_blank"
@@ -40,12 +40,12 @@ export default async function Navigation() {
                   </svg>
                 </span>
                 Личный кабинет
-              </Link>
+              </a>
             </div>
 
             {/* <div className="col-auto">
               <div className="dropdown">
-                <Link
+                <a
                   className="dropdown-toggle profile-link link-secondary fs-7 py-2"
                   href="profile.html"
                   role="button"
@@ -67,11 +67,11 @@ export default async function Navigation() {
                       <path d="M49.75,49.82c-3.29,3.25-8.58,3.24-11.85-.03L2.46,14.34C-.82,11.06-.82,5.74,2.46,2.46,5.74-.82,11.06-.82,14.34,2.46l29.7,29.7L73.73,2.46c3.28-3.28,8.6-3.28,11.88,0,3.28,3.28,3.28,8.6,0,11.88,0,0-24.32,24.07-35.86,35.48h0Z" />
                     </svg>
                   </span>
-                </Link>
+                </a>
 
                 <ul className="dropdown-menu dropdown-menu-end">
                   <li>
-                    <Link className="dropdown-item" href="profile-visits.html">
+                    <a className="dropdown-item" href="profile-visits.html">
                       <span className="icon me-2">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -81,11 +81,11 @@ export default async function Navigation() {
                         </svg>
                       </span>
                       Посещения
-                    </Link>
+                    </a>
                   </li>
 
                   <li>
-                    <Link className="dropdown-item" href="profile-analyses.html">
+                    <a className="dropdown-item" href="profile-analyses.html">
                       <span className="icon me-2">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -95,11 +95,11 @@ export default async function Navigation() {
                         </svg>
                       </span>
                       Анализы
-                    </Link>
+                    </a>
                   </li>
 
                   <li>
-                    <Link className="dropdown-item" href="profile-settings.html">
+                    <a className="dropdown-item" href="profile-settings.html">
                       <span className="icon me-2">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -109,11 +109,11 @@ export default async function Navigation() {
                         </svg>
                       </span>
                       Сменить пароль
-                    </Link>
+                    </a>
                   </li>
 
                   <li>
-                    <Link className="dropdown-item" href="#">
+                    <a className="dropdown-item" href="#">
                       <span className="icon me-2">
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
@@ -124,16 +124,16 @@ export default async function Navigation() {
                         </svg>
                       </span>
                       Выход
-                    </Link>
+                    </a>
                   </li>
                 </ul>
               </div>
             </div> */}
 
             {/* <div className="col-auto">
-              <Link href="appointment.html" className="btn btn-danger">
+              <a href="appointment.html" className="btn btn-danger">
                 Записаться
-              </Link>
+              </a>
             </div> */}
           </div>
 
@@ -155,31 +155,31 @@ export default async function Navigation() {
           <div className="collapse navbar-collapse position-relative">
             <ul className="navbar-nav ms-n3 me-auto">
               <li className="nav-item">
-                <Link className="nav-link" href="/specialists">
+                <a className="nav-link" href="/specialists">
                   Специалисты
-                </Link>
+                </a>
               </li>
 
               <li className="nav-item">
-                <Link className="nav-link" href="/catalog/services/categories">
+                <a className="nav-link" href="/catalog/services/categories">
                   Услуги
-                </Link>
+                </a>
               </li>
 
               <li className="nav-item">
-                <Link className="nav-link" href="/catalog/analyzes/categories">
+                <a className="nav-link" href="/catalog/analyzes/categories">
                   Анализы
-                </Link>
+                </a>
               </li>
 
               <li className="nav-item">
-                <Link className="nav-link" href="/promotions">
+                <a className="nav-link" href="/promotions">
                   Спецпредложения
-                </Link>
+                </a>
               </li>
 
               {/* <li className="nav-item dropdown">
-                <Link
+                <a
                   className="nav-link dropdown-toggle"
                   href="about.html"
                   role="button"
@@ -194,20 +194,20 @@ export default async function Navigation() {
                       <path d="M49.75,49.82c-3.29,3.25-8.58,3.24-11.85-.03L2.46,14.34C-.82,11.06-.82,5.74,2.46,2.46,5.74-.82,11.06-.82,14.34,2.46l29.7,29.7L73.73,2.46c3.28-3.28,8.6-3.28,11.88,0,3.28,3.28,3.28,8.6,0,11.88,0,0-24.32,24.07-35.86,35.48h0Z" />
                     </svg>
                   </span>
-                </Link>
+                </a>
                 <ul className="dropdown-menu">
                   <li>
-                    <Link className="dropdown-item" href="department.html">
+                    <a className="dropdown-item" href="department.html">
                       Центр кардионефрологии
-                    </Link>
+                    </a>
                   </li>
                 </ul>
               </li> */}
 
               <li className="nav-item">
-                <Link className="nav-link" href="/contacts">
+                <a className="nav-link" href="/contacts">
                   Контакты
-                </Link>
+                </a>
               </li>
             </ul>
 

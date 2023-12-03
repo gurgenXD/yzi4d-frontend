@@ -56,6 +56,7 @@ export default function CatalogServices({
   return (
     <div className="row">
       <CatalogSidebar
+        catalogType={catalogType}
         categories={categories}
         categoryId={categoryId}
         setCategoryId={setCategoryId}

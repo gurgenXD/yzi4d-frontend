@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 import DoctorNoImg from "@/assets/doctor-no-photo.jpg";
 
@@ -17,14 +16,14 @@ export default function CommonSpecialist({ specialist }: { specialist: any }) {
       </div>
 
       <div>
-        <Link
+        <a
           href={`/specialists/${specialist.id}`}
           className="doctor-card-title stretched-link d-block link-secondary fw-semibold"
         >
           {specialist.surname}
           <br />
           {specialist.name} {specialist.patronymic}
-        </Link>
+        </a>
 
         <div className="doctor-card-job text-muted mb-1">
           {specialist.specializations.map((spec: any) => spec.name).join(" / ")}

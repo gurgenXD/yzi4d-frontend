@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Image from "next/image";
 
 export default function CommonPromotion({ promotion }: { promotion: any }) {
@@ -31,12 +30,12 @@ export default function CommonPromotion({ promotion }: { promotion: any }) {
                 </div>
               </div>
 
-              <Link
+              <a
                 href="#"
                 className="sale-banner-title stretched-link d-block link-secondary fw-black mb-0"
               >
                 {promotion.name}
-              </Link>
+              </a>
 
               <div
                 className="product-des"

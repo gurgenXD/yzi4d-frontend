@@ -1,5 +1,4 @@
 import CommonContacts from "@/app/components/common/CommonContacts";
-import Link from "next/link";
 
 export const metadata = {
   title: "Контакты - Поликлиника УЗИ 4Д",
@@ -12,7 +11,7 @@ export default function Contacts() {
         <div className="container pt-4 pt-lg-5">
           <ol className="breadcrumb">
             <li className="breadcrumb-item">
-              <Link href="/">Главная</Link>
+              <a href="/">Главная</a>
             </li>
             <li className="breadcrumb-item active">Наши филиалы</li>
           </ol>

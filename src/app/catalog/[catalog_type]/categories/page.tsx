@@ -1,5 +1,4 @@
 import CatalogServicesWrapper from "@/app/components/catalog/CatalogServiceWrapper";
-import Link from "next/link";
 
 export function generateMetadata({ params }: { params: { catalog_type: string } }) {
   return {
@@ -16,7 +15,7 @@ export default function Services({ params }: { params: { catalog_type: string } 
         <div className="container pt-4 pt-lg-5">
           <ol className="breadcrumb">
             <li className="breadcrumb-item">
-              <Link href="/">Главная</Link>
+              <a href="/">Главная</a>
             </li>
             <li className="breadcrumb-item">{catalogTypeName}</li>
           </ol>
@@ -38,7 +37,7 @@ export default function Services({ params }: { params: { catalog_type: string } 
                   <path d="M489.74,311.65H22.26c-12.29,0-22.26,9.97-22.26,22.26s9.97,22.26,22.26,22.26H489.74c12.29,0,22.26-9.97,22.26-22.26,0-12.29-9.97-22.26-22.26-22.26Z" />
                 </svg>
               </span>
-              Каталог услуг
+              {`Каталог ${params.catalog_type == "services" ? "услуг" : "анализов"}`}
             </button>
           </div>
 

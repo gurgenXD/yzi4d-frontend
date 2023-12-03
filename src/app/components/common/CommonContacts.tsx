@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import Script from "next/script";
 
 export default function CommonContacts() {
@@ -10,7 +9,7 @@ export default function CommonContacts() {
         <div className="linebar" id="adresses-tab" role="tablist">
           <ul className="nav">
             <li className="nav-item">
-              <Link
+              <a
                 className="nav-link active"
                 href="#"
                 id="adresses-2-tab"
@@ -21,10 +20,10 @@ export default function CommonContacts() {
                 aria-selected="false"
               >
                 Ессентуки
-              </Link>
+              </a>
             </li>
             <li className="nav-item">
-              <Link
+              <a
                 className="nav-link"
                 href="#"
                 id="adresses-1-tab"
@@ -35,10 +34,10 @@ export default function CommonContacts() {
                 aria-selected="true"
               >
                 Пятигорск
-              </Link>
+              </a>
             </li>
             <li className="nav-item">
-              <Link
+              <a
                 className="nav-link"
                 href="#"
                 id="adresses-3-tab"
@@ -49,7 +48,7 @@ export default function CommonContacts() {
                 aria-selected="false"
               >
                 Минеральные Воды
-              </Link>
+              </a>
             </li>
           </ul>
         </div>
@@ -68,9 +67,9 @@ export default function CommonContacts() {
               <div className="col-lg-4 address-card-caption">
                 <div className="h-100 d-flex flex-column p-3 p-sm-4 p-md-5 p-lg-4 p-xl-5">
                   <h3 className="address-card-title mb-3">
-                    <Link href="branch.html" className="link-secondary">
+                    <a href="branch.html" className="link-secondary">
                       4Д на Кузнечной
-                    </Link>
+                    </a>
                   </h3>
 
                   <div className="mb-2 mb-md-3">
@@ -80,9 +79,9 @@ export default function CommonContacts() {
 
                   <div className="mb-2 mb-md-3">
                     <div className="address-title text-muted">Телефон:</div>
-                    <Link href="tel:+79288284001" title="" className="address-value link-secondary">
+                    <a href="tel:+79288284001" title="" className="address-value link-secondary">
                       +7 (928) 828-40-01
-                    </Link>
+                    </a>
                   </div>
 
                   <div className="mb-2 mb-md-3">
@@ -92,13 +91,13 @@ export default function CommonContacts() {
 
                   <div className="mb-2 mb-md-3">
                     <div className="address-title text-muted">Электронная почта:</div>
-                    <Link
+                    <a
                       href="mailto:klinika@yzi4d.ru"
                       title=""
                       className="address-value link-secondary"
                     >
                       klinika@yzi4d.ru
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -114,9 +113,9 @@ export default function CommonContacts() {
               <div className="col-lg-4 address-card-caption">
                 <div className="h-100 d-flex flex-column p-3 p-sm-4 p-md-5 p-lg-4 p-xl-5">
                   <h3 className="address-card-title mb-3">
-                    <Link href="branch.html" className="link-secondary">
+                    <a href="branch.html" className="link-secondary">
                       4Д на Калинина
-                    </Link>
+                    </a>
                   </h3>
 
                   <div className="mb-2 mb-md-3">
@@ -126,9 +125,9 @@ export default function CommonContacts() {
 
                   <div className="mb-2 mb-md-3">
                     <div className="address-title text-muted">Телефон:</div>
-                    <Link href="tel:+79288284001" title="" className="address-value link-secondary">
+                    <a href="tel:+79288284001" title="" className="address-value link-secondary">
                       +7 (928) 828-40-01
-                    </Link>
+                    </a>
                   </div>
 
                   <div className="mb-2 mb-md-3">
@@ -138,13 +137,13 @@ export default function CommonContacts() {
 
                   <div className="mb-2 mb-md-3">
                     <div className="address-title text-muted">Электронная почта:</div>
-                    <Link
+                    <a
                       href="mailto:klinika@yzi4d.ru"
                       title=""
                       className="address-value link-secondary"
                     >
                       klinika@yzi4d.ru
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -160,9 +159,9 @@ export default function CommonContacts() {
               <div className="col-lg-4 address-card-caption">
                 <div className="h-100 d-flex flex-column p-3 p-sm-4 p-md-5 p-lg-4 p-xl-5">
                   <h3 className="address-card-title mb-3">
-                    <Link href="branch.html" className="link-secondary">
+                    <a href="branch.html" className="link-secondary">
                       4Д на Пушкинской
-                    </Link>
+                    </a>
                   </h3>
 
                   <div className="mb-2 mb-md-3">
@@ -172,9 +171,9 @@ export default function CommonContacts() {
 
                   <div className="mb-2 mb-md-3">
                     <div className="address-title text-muted">Телефон:</div>
-                    <Link href="tel:+79288284001" title="" className="address-value link-secondary">
+                    <a href="tel:+79288284001" title="" className="address-value link-secondary">
                       +7 (928) 828-40-01
-                    </Link>
+                    </a>
                   </div>
 
                   <div className="mb-2 mb-md-3">
@@ -184,13 +183,13 @@ export default function CommonContacts() {
 
                   <div className="mb-2 mb-md-3">
                     <div className="address-title text-muted">Электронная почта:</div>
-                    <Link
+                    <a
                       href="mailto:klinika@yzi4d.ru"
                       title=""
                       className="address-value link-secondary"
                     >
                       klinika@yzi4d.ru
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -214,9 +213,9 @@ export default function CommonContacts() {
               <div className="col-lg-4 address-card-caption">
                 <div className="h-100 d-flex flex-column p-3 p-sm-4 p-md-5 p-lg-4 p-xl-5">
                   <h3 className="address-card-title mb-3">
-                    <Link href="branch.html" className="link-secondary">
+                    <a href="branch.html" className="link-secondary">
                       4Д на Володарского
-                    </Link>
+                    </a>
                   </h3>
 
                   <div className="mb-2 mb-md-3">
@@ -226,9 +225,9 @@ export default function CommonContacts() {
 
                   <div className="mb-2 mb-md-3">
                     <div className="address-title text-muted">Телефон:</div>
-                    <Link href="tel:+79288284001" title="" className="address-value link-secondary">
+                    <a href="tel:+79288284001" title="" className="address-value link-secondary">
                       +7 (928) 828-40-01
-                    </Link>
+                    </a>
                   </div>
 
                   <div className="mb-2 mb-md-3">
@@ -250,13 +249,13 @@ export default function CommonContacts() {
 
                   <div className="mb-2 mb-md-3">
                     <div className="address-title text-muted">Электронная почта:</div>
-                    <Link
+                    <a
                       href="mailto:klinika@yzi4d.ru"
                       title=""
                       className="address-value link-secondary"
                     >
                       klinika@yzi4d.ru
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -280,9 +279,9 @@ export default function CommonContacts() {
               <div className="col-lg-4 address-card-caption">
                 <div className="h-100 d-flex flex-column p-3 p-sm-4 p-md-5 p-lg-4 p-xl-5">
                   <h3 className="address-card-title mb-3">
-                    <Link href="branch.html" className="link-secondary">
+                    <a href="branch.html" className="link-secondary">
                       4Д на XXII Партсъезда
-                    </Link>
+                    </a>
                   </h3>
 
                   <div className="mb-2 mb-md-3">
@@ -294,9 +293,9 @@ export default function CommonContacts() {
 
                   <div className="mb-2 mb-md-3">
                     <div className="address-title text-muted">Телефон:</div>
-                    <Link href="tel:+79288284001" title="" className="address-value link-secondary">
+                    <a href="tel:+79288284001" title="" className="address-value link-secondary">
                       +7 (928) 828-40-01
-                    </Link>
+                    </a>
                   </div>
 
                   <div className="mb-2 mb-md-3">
@@ -306,13 +305,13 @@ export default function CommonContacts() {
 
                   <div className="mb-2 mb-md-3">
                     <div className="address-title text-muted">Электронная почта:</div>
-                    <Link
+                    <a
                       href="mailto:klinika@yzi4d.ru"
                       title=""
                       className="address-value link-secondary"
                     >
                       klinika@yzi4d.ru
-                    </Link>
+                    </a>
                   </div>
                 </div>
               </div>

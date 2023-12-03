@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export default function CommonService({
   service,
   catalogType,
@@ -11,12 +9,12 @@ export default function CommonService({
     <div className="service-item position-relative">
       <div className="row gx-lg-6">
         <div className="col-md mb-3 my-md-auto">
-          <Link
+          <a
             href={`/catalog/${catalogType}/categories/items/${service.id}`}
             className="service-item-title stretched-link link-secondary d-block fw-bold"
           >
             {service.name}
-          </Link>
+          </a>
 
           <p className="service-item-text text-muted pt-2 pt-md-1 mb-0">
             {service.short_description}
@@ -55,9 +53,9 @@ export default function CommonService({
               </div>
 
               <div>
-                <Link href="#" className="spaced-link fw-semibold">
+                <a href="#" className="spaced-link fw-semibold">
                   Записаться
-                </Link>
+                </a>
               </div>
             </div> */}
           </div>

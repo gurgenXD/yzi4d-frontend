@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+
 import ErrorImg from "@/assets/error-img.png";
 
 export default function Error() {
@@ -19,9 +19,9 @@ export default function Error() {
                   обновить страницу или вернуться позже.
                 </p>
 
-                <Link href="javascript:history.go(0)" className="btn btn-primary">
+                <a href="javascript:history.go(0)" className="btn btn-primary">
                   Перезагрузить сраницу
-                </Link>
+                </a>
               </div>
             </div>
 

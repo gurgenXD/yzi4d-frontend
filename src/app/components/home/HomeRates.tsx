@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 
 import { Navigation } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -81,13 +80,13 @@ export default function HomeRates() {
                   <div className="rate-item-score fw-bold text-danger me-3">4.8</div>
 
                   <div>
-                    <Link
+                    <a
                       href="https://yandex.ru/maps/org/4d_poliklinika/1154946954/reviews/?ll=43.070356%2C44.048861&z=15"
                       target="_blank"
                       className="rate-item-title stretched-link link-secondary d-block fw-bold"
                     >
                       Яндекс
-                    </Link>
+                    </a>
 
                     <div className="rate-item-count text-muted">881 отзыв</div>
                   </div>
@@ -103,13 +102,13 @@ export default function HomeRates() {
                   <div className="rate-item-score fw-bold text-danger me-3">4.4</div>
 
                   <div>
-                    <Link
+                    <a
                       href="https://2gis.ru/pyatigorsk/inside/12526272118936823/firm/12526164744605496/tab/reviews?m=43.06884%2C44.048142%2F19.41"
                       target="_blank"
                       className="rate-item-title stretched-link link-secondary d-block fw-bold"
                     >
                       2ГИС
-                    </Link>
+                    </a>
 
                     <div className="rate-item-count text-muted">162 отзыва</div>
                   </div>
@@ -125,13 +124,13 @@ export default function HomeRates() {
                   <div className="rate-item-score fw-bold text-danger me-3">4.2</div>
 
                   <div>
-                    <Link
+                    <a
                       href="https://prodoctorov.ru/pyatigorsk/lpu/24199-klinika-innovacionnoy-mediciny-4d/#rating"
                       target="_blank"
                       className="rate-item-title stretched-link link-secondary d-block fw-bold"
                     >
                       ПроДокторов
-                    </Link>
+                    </a>
 
                     <div className="rate-item-count text-muted">291 отзыв</div>
                   </div>
@@ -147,13 +146,13 @@ export default function HomeRates() {
                   <div className="rate-item-score fw-bold text-danger me-3">4.7</div>
 
                   <div>
-                    <Link
+                    <a
                       href="https://doctu.ru/pyatigorsk/clinic/poliklinika-4d-1/reviews"
                       target="_blank"
                       className="rate-item-title stretched-link link-secondary d-block fw-bold"
                     >
                       Докту
-                    </Link>
+                    </a>
 
                     <div className="rate-item-count text-muted">110 отзывов</div>
                   </div>
@@ -169,13 +168,13 @@ export default function HomeRates() {
                   <div className="rate-item-score fw-bold text-danger me-3">4.2</div>
 
                   <div>
-                    <Link
+                    <a
                       href="https://napopravku.ru/pyatigorsk/clinics/poliklinika-4d/"
                       target="_blank"
                       className="rate-item-title stretched-link link-secondary d-block fw-bold"
                     >
                       НаПоправку
-                    </Link>
+                    </a>
 
                     <div className="rate-item-count text-muted">28 отзывов</div>
                   </div>

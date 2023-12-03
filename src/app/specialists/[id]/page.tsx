@@ -2,7 +2,7 @@ import NotFound from "@/app/not-found";
 import Image from "next/image";
 import { getSpecialist } from "@/services/specialists";
 import SpecialistServices from "@/app/components/specialists/SpecialistServices";
-import Link from "next/link";
+
 import ChildImg from "@/assets/child-icon.svg";
 import DoctorNoImg from "@/assets/doctor-no-photo.jpg";
 
@@ -29,10 +29,10 @@ export default async function Specialist({ params }: { params: { id: string } })
         <div className="container pt-4 pt-lg-5 pb-md-7 pb-6">
           <ol className="breadcrumb">
             <li className="breadcrumb-item">
-              <Link href="/">Главная</Link>
+              <a href="/">Главная</a>
             </li>
             <li className="breadcrumb-item">
-              <Link href="/specialists">Cпециалисты</Link>
+              <a href="/specialists">Cпециалисты</a>
             </li>
             <li className="breadcrumb-item active">
               {specialist.surname} {specialist.name} {specialist.patronymic}
@@ -100,29 +100,29 @@ export default async function Specialist({ params }: { params: { id: string } })
                     </div>
                     <p className="text-secondary mb-0">
                       Возможен приём детей. Уточните в колл-центре:
-                      <Link href="tel:+79288284001" className="fw-semibold text-nowrap">
+                      <a href="tel:+79288284001" className="fw-semibold text-nowrap">
                         {" "}
                         +7 (928) 828-40-01
-                      </Link>
+                      </a>
                     </p>
                   </div>
                 ) : null}
 
                 {/* <div className="row g-3 align-items-center pt-3">
                   <div className="col-sm-auto">
-                    <Link href="#" className="btn btn-danger w-100">
+                    <a href="#" className="btn btn-danger w-100">
                       Записаться к врачу
-                    </Link>
+                    </a>
                   </div>
 
                   <div className="col-sm-auto">
-                    <Link
+                    <a
                       href="#ConsultModal"
                       data-bs-toggle="modal"
                       className="btn btn-primary w-100"
                     >
                       Онлайн консультация
-                    </Link>
+                    </a>
                   </div>
                 </div> */}
               </div>
@@ -155,12 +155,12 @@ export default async function Specialist({ params }: { params: { id: string } })
                 <div className="swiper-wrapper">
                   <div className="swiper-slide">
                     <div className="card h-100 d-flex flex-column position-relative rounded-3 pt-3 pt-sm-4 pb-sm-2 px-3 px-sm-4">
-                      <Link
+                      <a
                         href="#"
                         className="card-title stretched-link d-block text-danger fw-bold mb-2"
                       >
                         Блефаропластика под ключ
-                      </Link>
+                      </a>
 
                       <p className="card-text mb-3">Верните красоту своим глазам</p>
                       <div className="card-price text-secondary fw-extrabold mt-auto mb-3">
@@ -173,12 +173,12 @@ export default async function Specialist({ params }: { params: { id: string } })
 
                   <div className="swiper-slide">
                     <div className="card h-100 d-flex flex-column position-relative rounded-3 pt-3 pt-sm-4 pb-sm-2 px-3 px-sm-4">
-                      <Link
+                      <a
                         href="#"
                         className="card-title stretched-link d-block text-danger fw-bold mb-2"
                       >
                         Консультация в октябре
-                      </Link>
+                      </a>
 
                       <div className="card-price text-secondary fw-extrabold mt-auto mb-3">
                         Бесплатно
@@ -190,12 +190,12 @@ export default async function Specialist({ params }: { params: { id: string } })
 
                   <div className="swiper-slide">
                     <div className="card h-100 d-flex flex-column position-relative rounded-3 pt-3 pt-sm-4 pb-sm-2 px-3 px-sm-4">
-                      <Link
+                      <a
                         href="#"
                         className="card-title stretched-link d-block text-danger fw-bold mb-2"
                       >
                         Скидка 10% на повторный приём
-                      </Link>
+                      </a>
 
                       <div className="sale-badge"></div>
                     </div>
@@ -203,12 +203,12 @@ export default async function Specialist({ params }: { params: { id: string } })
 
                   <div className="swiper-slide">
                     <div className="card h-100 d-flex flex-column position-relative rounded-3 pt-3 pt-sm-4 pb-sm-2 px-3 px-sm-4">
-                      <Link
+                      <a
                         href="#"
                         className="card-title stretched-link d-block text-danger fw-bold mb-2"
                       >
                         Первый приём
-                      </Link>
+                      </a>
 
                       <div className="card-price text-secondary fw-extrabold mt-auto mb-3">
                         4 000 ₽
@@ -220,12 +220,12 @@ export default async function Specialist({ params }: { params: { id: string } })
 
                   <div className="swiper-slide">
                     <div className="card h-100 d-flex flex-column position-relative rounded-3 pt-3 pt-sm-4 pb-sm-2 px-3 px-sm-4">
-                      <Link
+                      <a
                         href="#"
                         className="card-title stretched-link d-block text-danger fw-bold mb-2"
                       >
                         Скидка пенсионерам 10%
-                      </Link>
+                      </a>
                       <p className="card-text mb-3">
                         При записи предъявите пенсионное удостоверение
                       </p>
@@ -247,7 +247,7 @@ export default async function Specialist({ params }: { params: { id: string } })
                   <div className="sidebar">
                     <ul className="nav" id="DocInfo-tab" role="tablist" aria-orientation="vertical">
                       <li className="nav-item">
-                        <Link
+                        <a
                           className="nav-link active"
                           href="#"
                           id="DocInfo-1-tab"
@@ -258,11 +258,11 @@ export default async function Specialist({ params }: { params: { id: string } })
                           aria-selected="true"
                         >
                           Образование
-                        </Link>
+                        </a>
                       </li>
 
                       <li className="nav-item">
-                        <Link
+                        <a
                           className="nav-link"
                           href="#"
                           id="DocInfo-2-tab"
@@ -273,11 +273,11 @@ export default async function Specialist({ params }: { params: { id: string } })
                           aria-selected="true"
                         >
                           Опыт
-                        </Link>
+                        </a>
                       </li>
 
                       <li className="nav-item">
-                        <Link
+                        <a
                           className="nav-link"
                           href="#"
                           id="DocInfo-3-tab"
@@ -288,11 +288,11 @@ export default async function Specialist({ params }: { params: { id: string } })
                           aria-selected="true"
                         >
                           Сертификаты
-                        </Link>
+                        </a>
                       </li>
 
                       <li className="nav-item">
-                        <Link
+                        <a
                           className="nav-link"
                           href="#"
                           id="DocInfo-4-tab"
@@ -303,11 +303,11 @@ export default async function Specialist({ params }: { params: { id: string } })
                           aria-selected="true"
                         >
                           Отзывы
-                        </Link>
+                        </a>
                       </li>
 
                       <li className="nav-item">
-                        <Link
+                        <a
                           className="nav-link"
                           href="#"
                           id="DocInfo-5-tab"
@@ -318,7 +318,7 @@ export default async function Specialist({ params }: { params: { id: string } })
                           aria-selected="true"
                         >
                           Фото и видео
-                        </Link>
+                        </a>
                       </li>
                     </ul>
                   </div>
@@ -386,13 +386,13 @@ export default async function Specialist({ params }: { params: { id: string } })
                           className="license-thumb flex-shrink-0 ratio ratio-1x1 me-md-4 me-3"
                           style={{ backgroundImage: `url('${certificate.path}')` }}
                         ></div>
-                        <Link
+                        <a
                           href={certificate.page}
                           data-fancybox="certificate-gallery"
                           className="stretched-link link-secondary license-name"
                         >
                           {certificate.name}
-                        </Link>
+                        </a>
                       </div>
                     ))}
                   </div>
@@ -423,14 +423,14 @@ export default async function Specialist({ params }: { params: { id: string } })
                             </div>
                           </div>
 
-                          <Link
+                          <a
                             data-fancybox="doc-feedback-gallery"
                             data-caption="Отзыв о бариатрической операции"
                             href="https://youtu.be/PWv2zfJvebQ"
                             className="stretched-link d-inline-block link-secondary fs-8 pt-2"
                           >
                             Отзыв о бариатрической операции
-                          </Link>
+                          </a>
                         </div>
                       </div>
 
@@ -450,7 +450,7 @@ export default async function Specialist({ params }: { params: { id: string } })
                             </div>
                           </div>
 
-                          <Link
+                          <a
                             data-fancybox="doc-feedback-gallery"
                             data-caption="Удаление атеромы на
                                голове"
@@ -458,7 +458,7 @@ export default async function Specialist({ params }: { params: { id: string } })
                             className="stretched-link d-inline-block link-secondary fs-8 pt-2"
                           >
                             Удаление атеромы на голове
-                          </Link>
+                          </a>
                         </div>
                       </div> */}
                     </div>
@@ -490,7 +490,7 @@ export default async function Specialist({ params }: { params: { id: string } })
                             </div>
                           </div>
 
-                          <Link
+                          <a
                             data-fancybox="doc-media-gallery"
                             data-caption="Процесс
                                лазерного
@@ -499,7 +499,7 @@ export default async function Specialist({ params }: { params: { id: string } })
                             className="stretched-link d-inline-block link-secondary fs-8 pt-2"
                           >
                             Процесс лазерного лечения варикоза (ЭВЛК) / Без боли
-                          </Link>
+                          </a>
                         </div>
                       </div>
 
@@ -511,7 +511,7 @@ export default async function Specialist({ params }: { params: { id: string } })
                               backgroundImage: "url('/img/dynamic-img/doc-gallery-img-md-1.jpg')",
                             }}
                           >
-                            <Link
+                            <a
                               data-fancybox="doc-media-gallery"
                               data-caption="Результат
                                операции по маммопластике (22 сентября 2022)"
@@ -519,7 +519,7 @@ export default async function Specialist({ params }: { params: { id: string } })
                               className="stretched-link d-inline-block link-secondary fs-8 pt-2"
                             >
                               Результат операции по маммопластике (22 сентября 2022)
-                            </Link>
+                            </a>
                           </div>
                         </div>
 
@@ -539,14 +539,14 @@ export default async function Specialist({ params }: { params: { id: string } })
                               </div>
                             </div>
 
-                            <Link
+                            <a
                               data-fancybox="doc-media-gallery"
                               data-caption="Интервью для канала Россия 24"
                               href="https://youtu.be/Zoo7aETBecs"
                               className="stretched-link d-inline-block link-secondary fs-8 pt-2"
                             >
                               Интервью для канала Россия 24
-                            </Link>
+                            </a>
                           </div>
                         </div>
                       </div> */}
@@ -588,12 +588,12 @@ export default async function Specialist({ params }: { params: { id: string } })
                       className="card h-100 d-flex flex-column position-relative rounded-3 pt-3 pt-sm-4 pb-sm-2 px-3 px-sm-4"
                       style={{ backgroundImage: "url('/img/service-bg-icon_1.svg')" }}
                     >
-                      <Link
+                      <a
                         href="#"
                         className="card-title stretched-link d-block text-secondary fw-bold mb-2"
                       >
                         УЗИ брюшной полости
-                      </Link>
+                      </a>
 
                       <p className="card-text mb-3">
                         Исследование желчного пузыря, поджелудочной железы, селезёнки и кишечника
@@ -609,12 +609,12 @@ export default async function Specialist({ params }: { params: { id: string } })
                       className="card h-100 d-flex flex-column position-relative rounded-3 pt-3 pt-sm-4 pb-sm-2 px-3 px-sm-4"
                       style={{ backgroundImage: "url('/img/service-bg-icon_1.svg')" }}
                     >
-                      <Link
+                      <a
                         href="#"
                         className="card-title stretched-link d-block text-secondary fw-bold mb-2"
                       >
                         УЗИ сердца
-                      </Link>
+                      </a>
 
                       <p className="card-text mb-3">
                         Показывает полную структуру сердца. Например, размеры и целостность камер
@@ -631,12 +631,12 @@ export default async function Specialist({ params }: { params: { id: string } })
                       className="card h-100 d-flex flex-column position-relative rounded-3 pt-3 pt-sm-4 pb-sm-2 px-3 px-sm-4"
                       style={{ backgroundImage: "url('/img/service-bg-icon_1.svg')" }}
                     >
-                      <Link
+                      <a
                         href="#"
                         className="card-title stretched-link d-block text-secondary fw-bold mb-2"
                       >
                         УЗИ почек
-                      </Link>
+                      </a>
 
                       <p className="card-text mb-3">
                         Выявление воспалительных процессов, патологий, повреждений тканей
@@ -652,12 +652,12 @@ export default async function Specialist({ params }: { params: { id: string } })
                       className="card h-100 d-flex flex-column position-relative rounded-3 pt-3 pt-sm-4 pb-sm-2 px-3 px-sm-4"
                       style={{ backgroundImage: "url('/img/service-bg-icon_1.svg')" }}
                     >
-                      <Link
+                      <a
                         href="#"
                         className="card-title stretched-link d-block text-secondary fw-bold mb-2"
                       >
                         УЗИ плода 4D
-                      </Link>
+                      </a>
 
                       <p className="card-text mb-3">
                         Позволяет получить полную информацию о развитии плода и течении беременности
@@ -673,12 +673,12 @@ export default async function Specialist({ params }: { params: { id: string } })
                       className="card h-100 d-flex flex-column position-relative rounded-3 pt-3 pt-sm-4 pb-sm-2 px-3 px-sm-4"
                       style={{ backgroundImage: "url('/img/service-bg-icon_2.svg')" }}
                     >
-                      <Link
+                      <a
                         href="#"
                         className="card-title stretched-link d-block text-secondary fw-bold mb-2"
                       >
                         Гастроэнтеролог
-                      </Link>
+                      </a>
 
                       <p className="card-text mb-3">
                         Диагностика, профилактика и лечение заболеваний желудочно-кишечного тракта и

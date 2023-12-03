@@ -1,6 +1,5 @@
 import { cookies } from "next/headers";
 import CookiesAccept from "@/app/components/global/cookies/CookiesAccept";
-import Link from "next/link";
 
 export default function Cookies() {
   const cookieStore = cookies();
@@ -16,7 +15,7 @@ export default function Cookies() {
           <div className="fs-8">
             Этот веб-сайт использует cookies, чтобы улучшить ваш пользовательский опыт. Посмотрите
             нашу
-            <Link href="/documents"> политику конфиденциальности</Link>, чтобы узнать больше.
+            <a href="/documents"> политику конфиденциальности</a>, чтобы узнать больше.
           </div>
         </div>
 

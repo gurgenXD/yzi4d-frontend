@@ -1,4 +1,3 @@
-import Link from "next/link";
 import SpecialistsWrapper from "@/app/components/specialists/SpecialistsWrapper";
 
 export const metadata = {
@@ -12,7 +11,7 @@ export default async function Specialists() {
         <div className="container pt-4 pt-lg-5">
           <ol className="breadcrumb">
             <li className="breadcrumb-item">
-              <Link href="/">Главная</Link>
+              <a href="/">Главная</a>
             </li>
             <li className="breadcrumb-item active">Cпециалисты</li>
           </ol>

@@ -1,5 +1,4 @@
 import HeaderOffices from "@/app/components/global/HeaderOffices";
-import Link from "next/link";
 
 export default async function Header() {
   return (
@@ -7,7 +6,7 @@ export default async function Header() {
       <div className="container">
         <div className="d-flex">
           <div className="dropdown">
-            <Link
+            <a
               className="dropdown-toggle link-secondary fs-7 py-2"
               href="/contacts"
               role="button"
@@ -25,14 +24,14 @@ export default async function Header() {
                   <path d="M49.75,49.82c-3.29,3.25-8.58,3.24-11.85-.03L2.46,14.34C-.82,11.06-.82,5.74,2.46,2.46,5.74-.82,11.06-.82,14.34,2.46l29.7,29.7L73.73,2.46c3.28-3.28,8.6-3.28,11.88,0,3.28,3.28,3.28,8.6,0,11.88,0,0-24.32,24.07-35.86,35.48h0Z" />
                 </svg>
               </span>
-            </Link>
+            </a>
 
             <ul className="dropdown-menu">
               <HeaderOffices />
             </ul>
           </div>
 
-          <Link
+          <a
             href=""
             title=""
             id="specialButton"
@@ -48,7 +47,7 @@ export default async function Header() {
               <path d="M7.5,2.78c-1.73,0-3.12,1.44-3.12,3.21s1.4,3.21,3.12,3.21,3.12-1.44,3.12-3.21c0-1.77-1.4-3.2-3.12-3.21Zm0,5.13c-1.03,0-1.88-.86-1.88-1.93s.84-1.92,1.88-1.92,1.88,.86,1.88,1.92-.84,1.93-1.88,1.93Z" />
             </svg>
             Версия для слабовидящих
-          </Link>
+          </a>
         </div>
       </div>
     </div>

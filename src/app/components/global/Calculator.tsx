@@ -1,9 +1,7 @@
-import Link from "next/link";
-
 export default function Calculator() {
   return (
     <div className="d-none">
-      <Link href="#" title="Открыть калькулятор" className="calc-btn text-center position-fixed">
+      <a href="#" title="Открыть калькулятор" className="calc-btn text-center position-fixed">
         <div className="calc-btn__container position-relative rounded-3">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13.52 16" height="26px">
             <path d="M12.73,0H.8C.32,0,0,.32,0,.8V15.2c0,.48,.32,.8,.8,.8H12.73c.48,0,.8-.32,.8-.8V.8c0-.48-.32-.8-.8-.8ZM3.98,14.4H1.59v-1.6H3.98v1.6Zm0-3.2H1.59v-1.6H3.98v1.6Zm0-3.2H1.59v-1.6H3.98v1.6Zm3.98,6.4h-2.38v-1.6h2.38v1.6Zm0-3.2h-2.38v-1.6h2.38v1.6Zm0-3.2h-2.38v-1.6h2.38v1.6Zm3.98,6.4h-2.39v-1.6h2.39v1.6Zm0-3.2h-2.39v-1.6h2.39v1.6Zm0-3.2h-2.39v-1.6h2.39v1.6Zm0-3.2H1.59V1.6H11.93v3.2Z" />
@@ -11,18 +9,18 @@ export default function Calculator() {
 
           <span className="calc-btn__badge">7</span>
         </div>
-      </Link>
+      </a>
 
       <div className="calc bg-white rounded-3 overflow-hidden shadow-lg">
         <div className="calc__dialog">
           <div className="d-flex justify-content-between align-items-center bg-light-blue">
             <h3 className="fs-6 lh-1 py-3 ps-3 mb-0">Калькулятор стоимости</h3>
 
-            <Link href="#" title="Закрыть калькулятор" className="calc__close p-3">
+            <a href="#" title="Закрыть калькулятор" className="calc__close p-3">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" height="14px">
                 <path d="M301.25,256L502.62,54.64c12.5-12.5,12.5-32.77,0-45.27-12.5-12.5-32.77-12.5-45.27,0h0L256,210.75,54.64,9.38C42.14-3.13,21.87-3.13,9.38,9.38s-12.5,32.77,0,45.27L210.75,256,9.38,457.36c-12.5,12.5-12.5,32.77,0,45.27s32.77,12.5,45.27,0l201.36-201.38,201.36,201.38c12.5,12.5,32.77,12.5,45.27,0,12.5-12.5,12.5-32.77,0-45.27l-201.38-201.36Z" />
               </svg>
-            </Link>
+            </a>
           </div>
 
           <div className="calc__body px-3 pt-3">
@@ -49,9 +47,9 @@ export default function Calculator() {
               <tbody>
                 <tr className="calc-item">
                   <td className="calc-item__name fs-10">
-                    <Link href="analyse.html">
+                    <a href="analyse.html">
                       Профилактика заболеваний сердца и сосудов и их осложнений
-                    </Link>
+                    </a>
                   </td>
 
                   <td className="calc-item__price fs-8 text-nowrap fw-extrabold">
@@ -59,7 +57,7 @@ export default function Calculator() {
                   </td>
 
                   <td className="calc-item__remove">
-                    <Link href="#" title="Удалить">
+                    <a href="#" title="Удалить">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 426.67 512"
@@ -70,13 +68,13 @@ export default function Calculator() {
                         <path d="M170.67,384c11.78,0,21.33-9.55,21.33-21.33V234.67c0-11.78-9.55-21.33-21.33-21.33s-21.33,9.55-21.33,21.33v128c0,11.78,9.55,21.33,21.33,21.33Z" />
                         <path d="M256,384c11.78,0,21.33-9.55,21.33-21.33V234.67c0-11.78-9.55-21.33-21.33-21.33s-21.33,9.55-21.33,21.33v128c0,11.78,9.55,21.33,21.33,21.33Z" />
                       </svg>
-                    </Link>
+                    </a>
                   </td>
                 </tr>
 
                 <tr className="calc-item">
                   <td className="calc-item__name fs-10">
-                    <Link href="analyse.html">Липидный профиль: расширенный</Link>
+                    <a href="analyse.html">Липидный профиль: расширенный</a>
                   </td>
 
                   <td className="calc-item__price fs-8 text-nowrap fw-extrabold">
@@ -84,7 +82,7 @@ export default function Calculator() {
                   </td>
 
                   <td className="calc-item__remove">
-                    <Link href="#" title="Удалить">
+                    <a href="#" title="Удалить">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 426.67 512"
@@ -95,16 +93,16 @@ export default function Calculator() {
                         <path d="M170.67,384c11.78,0,21.33-9.55,21.33-21.33V234.67c0-11.78-9.55-21.33-21.33-21.33s-21.33,9.55-21.33,21.33v128c0,11.78,9.55,21.33,21.33,21.33Z" />
                         <path d="M256,384c11.78,0,21.33-9.55,21.33-21.33V234.67c0-11.78-9.55-21.33-21.33-21.33s-21.33,9.55-21.33,21.33v128c0,11.78,9.55,21.33,21.33,21.33Z" />
                       </svg>
-                    </Link>
+                    </a>
                   </td>
                 </tr>
 
                 <tr className="calc-item">
                   <td className="calc-item__name fs-10">
-                    <Link href="analyse.html">
+                    <a href="analyse.html">
                       Не-ЛПВП холестерин натощак, мини-профиль (Non-HDL Cholesterol Profile,
                       fasting)
-                    </Link>
+                    </a>
                   </td>
 
                   <td className="calc-item__price fs-8 text-nowrap fw-extrabold">
@@ -112,7 +110,7 @@ export default function Calculator() {
                   </td>
 
                   <td className="calc-item__remove">
-                    <Link href="#" title="Удалить">
+                    <a href="#" title="Удалить">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 426.67 512"
@@ -123,13 +121,13 @@ export default function Calculator() {
                         <path d="M170.67,384c11.78,0,21.33-9.55,21.33-21.33V234.67c0-11.78-9.55-21.33-21.33-21.33s-21.33,9.55-21.33,21.33v128c0,11.78,9.55,21.33,21.33,21.33Z" />
                         <path d="M256,384c11.78,0,21.33-9.55,21.33-21.33V234.67c0-11.78-9.55-21.33-21.33-21.33s-21.33,9.55-21.33,21.33v128c0,11.78,9.55,21.33,21.33,21.33Z" />
                       </svg>
-                    </Link>
+                    </a>
                   </td>
                 </tr>
 
                 <tr className="calc-item">
                   <td className="calc-item__name fs-10">
-                    <Link href="analyse.html">ПУльтразвуковая диагностика беременности</Link>
+                    <a href="analyse.html">ПУльтразвуковая диагностика беременности</a>
                   </td>
 
                   <td className="calc-item__price fs-8 text-nowrap fw-extrabold">
@@ -137,7 +135,7 @@ export default function Calculator() {
                   </td>
 
                   <td className="calc-item__remove">
-                    <Link href="#" title="Удалить">
+                    <a href="#" title="Удалить">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 426.67 512"
@@ -148,16 +146,16 @@ export default function Calculator() {
                         <path d="M170.67,384c11.78,0,21.33-9.55,21.33-21.33V234.67c0-11.78-9.55-21.33-21.33-21.33s-21.33,9.55-21.33,21.33v128c0,11.78,9.55,21.33,21.33,21.33Z" />
                         <path d="M256,384c11.78,0,21.33-9.55,21.33-21.33V234.67c0-11.78-9.55-21.33-21.33-21.33s-21.33,9.55-21.33,21.33v128c0,11.78,9.55,21.33,21.33,21.33Z" />
                       </svg>
-                    </Link>
+                    </a>
                   </td>
                 </tr>
 
                 <tr className="calc-item">
                   <td className="calc-item__name fs-10">
-                    <Link href="analyse.html">
+                    <a href="analyse.html">
                       Скрининговое УЗИ 1-го триместра беременности и расчет риска в программе
                       Астрайя (11 - 13 недель 6 дней)
-                    </Link>
+                    </a>
                   </td>
 
                   <td className="calc-item__price fs-8 text-nowrap fw-extrabold">
@@ -165,7 +163,7 @@ export default function Calculator() {
                   </td>
 
                   <td className="calc-item__remove">
-                    <Link href="#" title="Удалить">
+                    <a href="#" title="Удалить">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 426.67 512"
@@ -176,15 +174,15 @@ export default function Calculator() {
                         <path d="M170.67,384c11.78,0,21.33-9.55,21.33-21.33V234.67c0-11.78-9.55-21.33-21.33-21.33s-21.33,9.55-21.33,21.33v128c0,11.78,9.55,21.33,21.33,21.33Z" />
                         <path d="M256,384c11.78,0,21.33-9.55,21.33-21.33V234.67c0-11.78-9.55-21.33-21.33-21.33s-21.33,9.55-21.33,21.33v128c0,11.78,9.55,21.33,21.33,21.33Z" />
                       </svg>
-                    </Link>
+                    </a>
                   </td>
                 </tr>
 
                 <tr className="calc-item">
                   <td className="calc-item__name fs-10">
-                    <Link href="analyse.html">
+                    <a href="analyse.html">
                       Профилактика заболеваний сердца и сосудов и их осложнений
-                    </Link>
+                    </a>
                   </td>
 
                   <td className="calc-item__price fs-8 text-nowrap fw-extrabold">
@@ -192,7 +190,7 @@ export default function Calculator() {
                   </td>
 
                   <td className="calc-item__remove">
-                    <Link href="#" title="Удалить">
+                    <a href="#" title="Удалить">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 426.67 512"
@@ -203,15 +201,15 @@ export default function Calculator() {
                         <path d="M170.67,384c11.78,0,21.33-9.55,21.33-21.33V234.67c0-11.78-9.55-21.33-21.33-21.33s-21.33,9.55-21.33,21.33v128c0,11.78,9.55,21.33,21.33,21.33Z" />
                         <path d="M256,384c11.78,0,21.33-9.55,21.33-21.33V234.67c0-11.78-9.55-21.33-21.33-21.33s-21.33,9.55-21.33,21.33v128c0,11.78,9.55,21.33,21.33,21.33Z" />
                       </svg>
-                    </Link>
+                    </a>
                   </td>
                 </tr>
 
                 <tr className="calc-item">
                   <td className="calc-item__name fs-10">
-                    <Link href="analyse.html">
+                    <a href="analyse.html">
                       Скрининговое УЗИ 1-го триместра беременности (11-13 недель 6 дней)
-                    </Link>
+                    </a>
                   </td>
 
                   <td className="calc-item__price fs-8 text-nowrap fw-extrabold">
@@ -219,7 +217,7 @@ export default function Calculator() {
                   </td>
 
                   <td className="calc-item__remove">
-                    <Link href="#" title="Удалить">
+                    <a href="#" title="Удалить">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 426.67 512"
@@ -230,15 +228,15 @@ export default function Calculator() {
                         <path d="M170.67,384c11.78,0,21.33-9.55,21.33-21.33V234.67c0-11.78-9.55-21.33-21.33-21.33s-21.33,9.55-21.33,21.33v128c0,11.78,9.55,21.33,21.33,21.33Z" />
                         <path d="M256,384c11.78,0,21.33-9.55,21.33-21.33V234.67c0-11.78-9.55-21.33-21.33-21.33s-21.33,9.55-21.33,21.33v128c0,11.78,9.55,21.33,21.33,21.33Z" />
                       </svg>
-                    </Link>
+                    </a>
                   </td>
                 </tr>
 
                 <tr className="calc-item">
                   <td className="calc-item__name fs-10">
-                    <Link href="analyse.html">
+                    <a href="analyse.html">
                       Профилактика заболеваний сердца и сосудов и их осложнений
-                    </Link>
+                    </a>
                   </td>
 
                   <td className="calc-item__price fs-8 text-nowrap fw-extrabold">
@@ -246,7 +244,7 @@ export default function Calculator() {
                   </td>
 
                   <td className="calc-item__remove">
-                    <Link href="#" title="Удалить">
+                    <a href="#" title="Удалить">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 426.67 512"
@@ -257,13 +255,13 @@ export default function Calculator() {
                         <path d="M170.67,384c11.78,0,21.33-9.55,21.33-21.33V234.67c0-11.78-9.55-21.33-21.33-21.33s-21.33,9.55-21.33,21.33v128c0,11.78,9.55,21.33,21.33,21.33Z" />
                         <path d="M256,384c11.78,0,21.33-9.55,21.33-21.33V234.67c0-11.78-9.55-21.33-21.33-21.33s-21.33,9.55-21.33,21.33v128c0,11.78,9.55,21.33,21.33,21.33Z" />
                       </svg>
-                    </Link>
+                    </a>
                   </td>
                 </tr>
 
                 <tr className="calc-item">
                   <td className="calc-item__name fs-10">
-                    <Link href="analyse.html">Липидный профиль: расширенный</Link>
+                    <a href="analyse.html">Липидный профиль: расширенный</a>
                   </td>
 
                   <td className="calc-item__price fs-8 text-nowrap fw-extrabold">
@@ -271,7 +269,7 @@ export default function Calculator() {
                   </td>
 
                   <td className="calc-item__remove">
-                    <Link href="#" title="Удалить">
+                    <a href="#" title="Удалить">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 426.67 512"
@@ -282,16 +280,16 @@ export default function Calculator() {
                         <path d="M170.67,384c11.78,0,21.33-9.55,21.33-21.33V234.67c0-11.78-9.55-21.33-21.33-21.33s-21.33,9.55-21.33,21.33v128c0,11.78,9.55,21.33,21.33,21.33Z" />
                         <path d="M256,384c11.78,0,21.33-9.55,21.33-21.33V234.67c0-11.78-9.55-21.33-21.33-21.33s-21.33,9.55-21.33,21.33v128c0,11.78,9.55,21.33,21.33,21.33Z" />
                       </svg>
-                    </Link>
+                    </a>
                   </td>
                 </tr>
 
                 <tr className="calc-item">
                   <td className="calc-item__name fs-10">
-                    <Link href="analyse.html">
+                    <a href="analyse.html">
                       Не-ЛПВП холестерин натощак, мини-профиль (Non-HDL Cholesterol Profile,
                       fasting)
-                    </Link>
+                    </a>
                   </td>
 
                   <td className="calc-item__price fs-8 text-nowrap fw-extrabold">
@@ -299,7 +297,7 @@ export default function Calculator() {
                   </td>
 
                   <td className="calc-item__remove">
-                    <Link href="#" title="Удалить">
+                    <a href="#" title="Удалить">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 426.67 512"
@@ -310,13 +308,13 @@ export default function Calculator() {
                         <path d="M170.67,384c11.78,0,21.33-9.55,21.33-21.33V234.67c0-11.78-9.55-21.33-21.33-21.33s-21.33,9.55-21.33,21.33v128c0,11.78,9.55,21.33,21.33,21.33Z" />
                         <path d="M256,384c11.78,0,21.33-9.55,21.33-21.33V234.67c0-11.78-9.55-21.33-21.33-21.33s-21.33,9.55-21.33,21.33v128c0,11.78,9.55,21.33,21.33,21.33Z" />
                       </svg>
-                    </Link>
+                    </a>
                   </td>
                 </tr>
 
                 <tr className="calc-item">
                   <td className="calc-item__name fs-10">
-                    <Link href="analyse.html">ПУльтразвуковая диагностика беременности</Link>
+                    <a href="analyse.html">ПУльтразвуковая диагностика беременности</a>
                   </td>
 
                   <td className="calc-item__price fs-8 text-nowrap fw-extrabold">
@@ -324,7 +322,7 @@ export default function Calculator() {
                   </td>
 
                   <td className="calc-item__remove">
-                    <Link href="#" title="Удалить">
+                    <a href="#" title="Удалить">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 426.67 512"
@@ -335,16 +333,16 @@ export default function Calculator() {
                         <path d="M170.67,384c11.78,0,21.33-9.55,21.33-21.33V234.67c0-11.78-9.55-21.33-21.33-21.33s-21.33,9.55-21.33,21.33v128c0,11.78,9.55,21.33,21.33,21.33Z" />
                         <path d="M256,384c11.78,0,21.33-9.55,21.33-21.33V234.67c0-11.78-9.55-21.33-21.33-21.33s-21.33,9.55-21.33,21.33v128c0,11.78,9.55,21.33,21.33,21.33Z" />
                       </svg>
-                    </Link>
+                    </a>
                   </td>
                 </tr>
 
                 <tr className="calc-item">
                   <td className="calc-item__name fs-10">
-                    <Link href="analyse.html">
+                    <a href="analyse.html">
                       Скрининговое УЗИ 1-го триместра беременности и расчет риска в программе
                       Астрайя (11 - 13 недель 6 дней)
-                    </Link>
+                    </a>
                   </td>
 
                   <td className="calc-item__price fs-8 text-nowrap fw-extrabold">
@@ -352,7 +350,7 @@ export default function Calculator() {
                   </td>
 
                   <td className="calc-item__remove">
-                    <Link href="#" title="Удалить">
+                    <a href="#" title="Удалить">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 426.67 512"
@@ -363,15 +361,15 @@ export default function Calculator() {
                         <path d="M170.67,384c11.78,0,21.33-9.55,21.33-21.33V234.67c0-11.78-9.55-21.33-21.33-21.33s-21.33,9.55-21.33,21.33v128c0,11.78,9.55,21.33,21.33,21.33Z" />
                         <path d="M256,384c11.78,0,21.33-9.55,21.33-21.33V234.67c0-11.78-9.55-21.33-21.33-21.33s-21.33,9.55-21.33,21.33v128c0,11.78,9.55,21.33,21.33,21.33Z" />
                       </svg>
-                    </Link>
+                    </a>
                   </td>
                 </tr>
 
                 <tr className="calc-item">
                   <td className="calc-item__name fs-10">
-                    <Link href="analyse.html">
+                    <a href="analyse.html">
                       Профилактика заболеваний сердца и сосудов и их осложнений
-                    </Link>
+                    </a>
                   </td>
 
                   <td className="calc-item__price fs-8 text-nowrap fw-extrabold">
@@ -379,7 +377,7 @@ export default function Calculator() {
                   </td>
 
                   <td className="calc-item__remove">
-                    <Link href="#" title="Удалить">
+                    <a href="#" title="Удалить">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 426.67 512"
@@ -390,15 +388,15 @@ export default function Calculator() {
                         <path d="M170.67,384c11.78,0,21.33-9.55,21.33-21.33V234.67c0-11.78-9.55-21.33-21.33-21.33s-21.33,9.55-21.33,21.33v128c0,11.78,9.55,21.33,21.33,21.33Z" />
                         <path d="M256,384c11.78,0,21.33-9.55,21.33-21.33V234.67c0-11.78-9.55-21.33-21.33-21.33s-21.33,9.55-21.33,21.33v128c0,11.78,9.55,21.33,21.33,21.33Z" />
                       </svg>
-                    </Link>
+                    </a>
                   </td>
                 </tr>
 
                 <tr className="calc-item">
                   <td className="calc-item__name fs-10">
-                    <Link href="analyse.html">
+                    <a href="analyse.html">
                       Скрининговое УЗИ 1-го триместра беременности (11-13 недель 6 дней)
-                    </Link>
+                    </a>
                   </td>
 
                   <td className="calc-item__price fs-8 text-nowrap fw-extrabold">
@@ -406,7 +404,7 @@ export default function Calculator() {
                   </td>
 
                   <td className="calc-item__remove">
-                    <Link href="#" title="Удалить">
+                    <a href="#" title="Удалить">
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 426.67 512"
@@ -417,7 +415,7 @@ export default function Calculator() {
                         <path d="M170.67,384c11.78,0,21.33-9.55,21.33-21.33V234.67c0-11.78-9.55-21.33-21.33-21.33s-21.33,9.55-21.33,21.33v128c0,11.78,9.55,21.33,21.33,21.33Z" />
                         <path d="M256,384c11.78,0,21.33-9.55,21.33-21.33V234.67c0-11.78-9.55-21.33-21.33-21.33s-21.33,9.55-21.33,21.33v128c0,11.78,9.55,21.33,21.33,21.33Z" />
                       </svg>
-                    </Link>
+                    </a>
                   </td>
                 </tr>
               </tbody>

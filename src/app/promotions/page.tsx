@@ -1,6 +1,5 @@
 import { getPromotions } from "@/requests/server";
 import CommonPromotion from "@/app/components/common/CommonPromotion";
-import Link from "next/link";
 
 export const metadata = {
   title: "Спецпредложения - Поликлиника УЗИ 4Д",
@@ -15,7 +14,7 @@ export default async function Promotions() {
         <div className="container pt-4 pt-lg-5">
           <ol className="breadcrumb">
             <li className="breadcrumb-item">
-              <Link href="/">Главная</Link>
+              <a href="/">Главная</a>
             </li>
             <li className="breadcrumb-item active">Спецпредложения</li>
           </ol>

@@ -4,7 +4,7 @@ import Image from "next/image";
 import CommonContacts from "@/app/components/common/CommonContacts";
 import HomePromotions from "@/app/components/home/HomePromotions";
 import HomeRates from "@/app/components/home/HomeRates";
-import Link from "next/link";
+
 import AboutBgImg from "@/assets/about-bg.png";
 import StatBgImg1 from "@/assets/stat-bg_1.svg";
 import StatBgImg2 from "@/assets/stat-bg_2.svg";
@@ -62,9 +62,9 @@ export default async function Home() {
                   <p className="main-banner-text text-muted mb-3 mb-lg-4">
                     Общайтесь с доктором не выходя из дома
                   </p>
-                  <Link href="https://online.yzi4d.ru/" target="_blank" className="btn btn-danger">
+                  <a href="https://online.yzi4d.ru/" target="_blank" className="btn btn-danger">
                     Попробовать
-                  </Link>
+                  </a>
                 </div>
               </div>
             </div>
@@ -76,7 +76,7 @@ export default async function Home() {
             <div className="d-flex flex-wrap align-items-baseline justify-content-between mb-lg-3">
               <h2 className="mb-2 me-5">Услуги</h2>
 
-              <Link
+              <a
                 href="/catalog/services/categories"
                 className="link-more spaced-link fw-semibold d-flex align-items-center flex-nowrap mb-2"
               >
@@ -86,7 +86,7 @@ export default async function Home() {
                     <path d="M289.3,85.87L212.8,9.37c-12.5-12.49-32.76-12.49-45.26,.01s-12.49,32.76,.01,45.26h0l52.03,52.03H32C14.33,106.67,0,121,0,138.67s14.33,32,32,32H219.58l-52.03,52.03c-12.5,12.49-12.51,32.76-.01,45.26,12.49,12.5,32.76,12.51,45.26,.01l76.5-76.5c29.1-29.18,29.1-76.42,0-105.6Z" />
                   </svg>
                 </span>
-              </Link>
+              </a>
             </div>
             <HomeServices />
           </div>
@@ -98,7 +98,7 @@ export default async function Home() {
               <div className="d-flex flex-wrap align-items-baseline flex-grow-1">
                 <h2 className="mb-2 me-auto me-lg-5">Наши специалисты</h2>
 
-                <Link
+                <a
                   href="/specialists"
                   className="link-more spaced-link fw-semibold d-flex align-items-center flex-nowrap mb-2"
                 >
@@ -108,7 +108,7 @@ export default async function Home() {
                       <path d="M289.3,85.87L212.8,9.37c-12.5-12.49-32.76-12.49-45.26,.01s-12.49,32.76,.01,45.26h0l52.03,52.03H32C14.33,106.67,0,121,0,138.67s14.33,32,32,32H219.58l-52.03,52.03c-12.5,12.49-12.51,32.76-.01,45.26,12.49,12.5,32.76,12.51,45.26,.01l76.5-76.5c29.1-29.18,29.1-76.42,0-105.6Z" />
                     </svg>
                   </span>
-                </Link>
+                </a>
               </div>
 
               <div className="d-none d-lg-flex ms-auto">

@@ -46,9 +46,9 @@ export default function SpecialistServices({ specialist_id }: { specialist_id: s
         </div>
 
         {/* <div className="text-center pt-5">
-          <Link href="#" className="btn btn-outline-secondary">
+          <a href="#" className="btn btn-outline-secondary">
             Показать ещё
-          </Link>
+          </a>
         </div> */}
       </div>
     </div>

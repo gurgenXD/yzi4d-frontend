@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import HeaderOffices from "@/app/components/global/HeaderOffices";
-import Link from "next/link";
+
 import LogoFooterImg from "@/assets/logo-footer.svg";
 import SearchWrapper from "@/app/components/global/search/SearchWrapper";
 
@@ -14,9 +14,9 @@ export default async function OffCanvas() {
       aria-labelledby="OffcanvasLabel"
     >
       <div className="offcanvas-header pb-1">
-        <Link className="offcanvas-title" id="OffcanvasLabel" href="/">
-          <Image src={LogoFooterImg} alt="Логотип футера" />
-        </Link>
+        <a className="offcanvas-title" id="OffcanvasLabel" href="/">
+          <Image src={LogoFooterImg} alt="Логотип" />
+        </a>
         <button
           type="button"
           className="btn-close"
@@ -30,7 +30,7 @@ export default async function OffCanvas() {
         <div className="sidebar mt-3">
           <ul className="nav">
             {/* <li className="nav-item">
-              <Link className="nav-link fw-semibold" href="profile.html">
+              <a className="nav-link fw-semibold" href="profile.html">
                 <span className="icon">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 14">
                     <path d="M5.5,7c2.02,0,3.67-1.57,3.67-3.5S7.52,0,5.5,0,1.83,1.57,1.83,3.5s1.64,3.5,3.67,3.5Zm0-5.83c1.35,0,2.44,1.04,2.44,2.33s-1.1,2.33-2.44,2.33-2.44-1.04-2.44-2.33,1.1-2.33,2.44-2.33Zm0,7c-3.04,0-5.5,2.35-5.5,5.25,0,.32,.27,.58,.61,.58s.61-.26,.61-.58c0-2.26,1.92-4.08,4.28-4.08s4.28,1.83,4.28,4.08c0,.32,.28,.58,.61,.58s.61-.26,.61-.58c0-2.9-2.46-5.25-5.5-5.25Z" />
@@ -38,44 +38,44 @@ export default async function OffCanvas() {
                 </span>
 
                 <span className="text-truncate">Александр Сергеевич Ю.</span>
-              </Link>
+              </a>
             </li> */}
 
             <li className="nav-item">
-              <Link className="nav-link" href="https://lk.yzi4d.ru/">
+              <a className="nav-link" href="https://lk.yzi4d.ru/" target="_blank">
                 <span className="icon">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 14">
                     <path d="M5.5,7c2.02,0,3.67-1.57,3.67-3.5S7.52,0,5.5,0,1.83,1.57,1.83,3.5s1.64,3.5,3.67,3.5Zm0-5.83c1.35,0,2.44,1.04,2.44,2.33s-1.1,2.33-2.44,2.33-2.44-1.04-2.44-2.33,1.1-2.33,2.44-2.33Zm0,7c-3.04,0-5.5,2.35-5.5,5.25,0,.32,.27,.58,.61,.58s.61-.26,.61-.58c0-2.26,1.92-4.08,4.28-4.08s4.28,1.83,4.28,4.08c0,.32,.28,.58,.61,.58s.61-.26,.61-.58c0-2.9-2.46-5.25-5.5-5.25Z" />
                   </svg>
                 </span>
                 Войти
-              </Link>
+              </a>
             </li>
 
             {/* <li className="nav-item">
-              <Link className="nav-link" href="#">
+              <a className="nav-link" href="#">
                 <span className="icon">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 14 14">
                     <path d="M11.08,1.17h-.58V.58c0-.32-.26-.58-.58-.58s-.58,.26-.58,.58v.58H4.67V.58c0-.32-.26-.58-.58-.58s-.58,.26-.58,.58v.58h-.58c-1.61,0-2.92,1.31-2.92,2.92v7c0,1.61,1.31,2.92,2.92,2.92h2.33c.32,0,.58-.26,.58-.58s-.26-.58-.58-.58H2.92c-.96,0-1.75-.79-1.75-1.75V5.83H13.42c.32,0,.58-.26,.58-.58v-1.17c0-1.61-1.31-2.92-2.92-2.92h0Zm1.75,3.5H1.17v-.58c0-.96,.79-1.75,1.75-1.75H11.08c.96,0,1.75,.79,1.75,1.75v.58Zm-1.82,2.85l-3.33,3.33c-.44,.44-.68,1.03-.68,1.65v.93c0,.32,.26,.58,.58,.58h.93c.62,0,1.21-.24,1.65-.68l3.33-3.33c.33-.33,.51-.77,.51-1.24s-.18-.91-.51-1.24c-.66-.66-1.81-.66-2.48,0h0Zm1.65,1.65l-3.33,3.33c-.22,.22-.51,.34-.82,.34h-.34v-.34c0-.31,.12-.6,.34-.82l3.33-3.33c.22-.22,.6-.22,.82,0,.11,.11,.17,.26,.17,.41s-.06,.3-.17,.41h0Zm-9.75-1c0-.32,.26-.58,.58-.58H7.58c.32,0,.58,.26,.58,.58s-.26,.58-.58,.58H3.5c-.32,0-.58-.26-.58-.58h0Zm3.5,2.33c0,.32-.26,.58-.58,.58H3.5c-.32,0-.58-.26-.58-.58s.26-.58,.58-.58h2.33c.32,0,.58,.26,.58,.58Z" />
                   </svg>
                 </span>
                 Записаться
-              </Link>
+              </a>
             </li>
 
             <li className="nav-item">
-              <Link className="nav-link" href="profile-visits.html">
+              <a className="nav-link" href="profile-visits.html">
                 <span className="icon">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <path d="M512,192c.15-35.35-28.39-64.12-63.73-64.26s-64.12,28.39-64.26,63.73c-.11,27.22,17,51.53,42.67,60.6v89.26c0,70.69-57.31,128-128,128s-128-57.31-128-128v-1.71c73.38-10.65,127.86-73.48,128-147.63V106.67C298.6,47.79,250.88,.07,192,0c-11.78,0-21.33,9.55-21.33,21.33s9.55,21.33,21.33,21.33c35.35,0,64,28.65,64,64v85.33c0,58.91-47.76,106.67-106.67,106.67s-106.67-47.76-106.67-106.67V106.67c0-35.35,28.65-64,64-64,11.78,0,21.33-9.55,21.33-21.33S118.45,0,106.67,0C47.79,.07,.07,47.79,0,106.67v85.33c.14,74.15,54.62,136.98,128,147.63v1.71c0,94.26,76.41,170.67,170.67,170.67s170.67-76.41,170.67-170.67v-89.26c25.48-9.01,42.55-33.05,42.67-60.07Z" />
                   </svg>
                 </span>
                 Посещения
-              </Link>
+              </a>
             </li>
 
             <li className="nav-item">
-              <Link className="nav-link" href="profile-analyses.html">
+              <a className="nav-link" href="profile-analyses.html">
                 <span className="icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -85,11 +85,11 @@ export default async function OffCanvas() {
                   </svg>
                 </span>
                 Анализы
-              </Link>
+              </a>
             </li>
 
             <li className="nav-item">
-              <Link className="nav-link" href="profile-settings.html">
+              <a className="nav-link" href="profile-settings.html">
                 <span className="icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -99,11 +99,11 @@ export default async function OffCanvas() {
                   </svg>
                 </span>
                 Сменить пароль
-              </Link>
+              </a>
             </li>
 
             <li className="nav-item">
-              <Link className="nav-link" href="#">
+              <a className="nav-link" href="#">
                 <span className="icon">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -114,7 +114,7 @@ export default async function OffCanvas() {
                   </svg>
                 </span>
                 Выход
-              </Link>
+              </a>
             </li> */}
           </ul>
         </div>
@@ -124,31 +124,31 @@ export default async function OffCanvas() {
         <div className="sidebar">
           <ul className="nav">
             <li className="nav-item">
-              <Link className="nav-link" href="/specialists">
+              <a className="nav-link" href="/specialists">
                 Специалисты
-              </Link>
+              </a>
             </li>
 
             <li className="nav-item">
-              <Link className="nav-link" href="/catalog/services/categories">
+              <a className="nav-link" href="/catalog/services/categories">
                 Услуги
-              </Link>
+              </a>
             </li>
 
             <li className="nav-item">
-              <Link className="nav-link" href="/catalog/analyzes/categories">
+              <a className="nav-link" href="/catalog/analyzes/categories">
                 Анализы
-              </Link>
+              </a>
             </li>
 
             <li className="nav-item">
-              <Link className="nav-link" href="/promotions">
+              <a className="nav-link" href="/promotions">
                 Спецпредложения
-              </Link>
+              </a>
             </li>
 
             {/* <li className="nav-item has-submenu">
-              <Link className="nav-link" href="#">
+              <a className="nav-link" href="#">
                 Отделения и центры
                 <span className="caret">
                   <svg
@@ -158,21 +158,21 @@ export default async function OffCanvas() {
                     <path d="M49.75,49.82c-3.29,3.25-8.58,3.24-11.85-.03L2.46,14.34C-.82,11.06-.82,5.74,2.46,2.46,5.74-.82,11.06-.82,14.34,2.46l29.7,29.7L73.73,2.46c3.28-3.28,8.6-3.28,11.88,0,3.28,3.28,3.28,8.6,0,11.88,0,0-24.32,24.07-35.86,35.48h0Z" />
                   </svg>
                 </span>
-              </Link>
+              </a>
 
               <ul className="submenu collapse">
                 <li>
-                  <Link className="nav-link" href="department.html">
+                  <a className="nav-link" href="department.html">
                     Центр кардионефрологии
-                  </Link>
+                  </a>
                 </li>
               </ul>
             </li> */}
 
             <li className="nav-item">
-              <Link className="nav-link" href="/contacts">
+              <a className="nav-link" href="/contacts">
                 Контакты
-              </Link>
+              </a>
             </li>
           </ul>
         </div>
@@ -182,7 +182,7 @@ export default async function OffCanvas() {
         <div className="sidebar">
           <ul className="nav">
             <li className="nav-item has-submenu">
-              <Link className="nav-link" href="#">
+              <a className="nav-link" href="#">
                 <span className="icon">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 11">
                     <path d="M5,2.75c-1.1,0-1.99,.82-1.99,1.83s.89,1.83,1.99,1.83,1.99-.82,1.99-1.83-.89-1.83-1.99-1.83Zm0,2.75c-.55,0-1-.41-1-.92s.45-.92,1-.92,1,.41,1,.92-.44,.92-1,.92Z" />
@@ -190,7 +190,7 @@ export default async function OffCanvas() {
                   </svg>
                 </span>
                 Адреса клиник
-              </Link>
+              </a>
               <ul className="submenu collapse show">
                 <HeaderOffices />
               </ul>

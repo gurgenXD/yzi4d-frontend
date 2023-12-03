@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+
 import YtImg from "@/assets/yt-icon.svg";
 import VkImg from "@/assets/vk-icon.svg";
 import OdnImg from "@/assets/odn-icon.svg";
@@ -12,14 +12,14 @@ export default function Footer() {
       <div className="container">
         <div className="row align-items-center mb-2">
           <div className="col-md mb-3">
-            <Link href="#" className="d-inline-block">
+            <a href="#" className="d-inline-block">
               <Image src={LogoFooterImg} alt="Логотип футера" className="logo-footer" />
-            </Link>
+            </a>
           </div>
 
           <div className="col-md-auto mb-3">
             <div className="d-flex flex-wrap align-items-center">
-              <Link
+              <a
                 className="profile-link link-secondary text-nowrap spaced-link fs-7 me-4"
                 href="https://lk.yzi4d.ru"
                 target="_blank"
@@ -30,11 +30,11 @@ export default function Footer() {
                   </svg>
                 </span>
                 Личный кабинет
-              </Link>
+              </a>
 
-              {/* <Link href="" className="btn btn-danger btn-sm">
+              {/* <a href="" className="btn btn-danger btn-sm">
                 Записаться
-              </Link> */}
+              </a> */}
             </div>
           </div>
         </div>
@@ -43,13 +43,13 @@ export default function Footer() {
           <div className="col-lg-auto">
             <div className="d-sm-flex flex-lg-column align-items-center align-items-lg-start mb-2 mb-lg-0">
               <div className="me-5 me-lg-0 mb-3 mb-lg-4">
-                <Link
+                <a
                   href="tel:+79288284001"
                   title=""
                   className="phone-footer link-secondary fw-extrabold d-flex mb-1"
                 >
                   +7 (928) 828-40-01
-                </Link>
+                </a>
 
                 <div className="schedule d-flex">
                   <span className="text-white bg-danger px-1 me-1">без выходных</span>с 7:00 до
@@ -58,29 +58,29 @@ export default function Footer() {
               </div>
 
               <div className="d-flex mb-3 mb-lg-0">
-                <Link href="https://t.me/tg4dpolyclinic" target="_blank" className="social-link">
+                <a href="https://t.me/tg4dpolyclinic" target="_blank" className="social-link">
                   <Image src={TgImg} alt="Телеграм" />
-                </Link>
+                </a>
 
-                <Link href="https://vk.com/4dpolyclinic" target="_blank" className="social-link">
+                <a href="https://vk.com/4dpolyclinic" target="_blank" className="social-link">
                   <Image src={VkImg} alt="Вконтакте" />
-                </Link>
+                </a>
 
-                <Link
+                <a
                   href="https://www.youtube.com/@4dpolyclinic"
                   target="_blank"
                   className="social-link"
                 >
                   <Image src={YtImg} alt="Ютуб" />
-                </Link>
+                </a>
 
-                <Link
+                <a
                   href="https://ok.ru/group/52475215151320"
                   target="_blank"
                   className="social-link"
                 >
                   <Image src={OdnImg} alt="Однокласники" />
-                </Link>
+                </a>
               </div>
             </div>
           </div>
@@ -88,53 +88,53 @@ export default function Footer() {
           <div className="col-lg">
             <ul className="list-unstyled d-flex flex-wrap footer-links pb-2 mb-3">
               <li className="me-4 mb-1">
-                <Link href="/specialists" className="link-secondary spaced-link">
+                <a href="/specialists" className="link-secondary spaced-link">
                   Специалисты
-                </Link>
+                </a>
               </li>
               <li className="me-4 mb-1">
-                <Link href="/catalog/services/categories" className="link-secondary spaced-link">
+                <a href="/catalog/services/categories" className="link-secondary spaced-link">
                   Услуги
-                </Link>
+                </a>
               </li>
               <li className="me-4 mb-1">
-                <Link href="/catalog/analyzes/categories" className="link-secondary spaced-link">
+                <a href="/catalog/analyzes/categories" className="link-secondary spaced-link">
                   Анализы
-                </Link>
+                </a>
               </li>
               <li className="me-4 mb-1">
-                <Link href="/promotions" className="link-secondary spaced-link">
+                <a href="/promotions" className="link-secondary spaced-link">
                   Спецпредложения
-                </Link>
+                </a>
               </li>
               {/* <li className="me-4 mb-1">
-                <Link
+                <a
                   href="content.html"
                   className="link-secondary spaced-link"
                 >
                   Пациентам
-                </Link>
+                </a>
               </li>
               <li className="me-4 mb-1">
-                <Link
+                <a
                   href="content.html"
                   className="link-secondary spaced-link"
                 >
                   О нас
-                </Link>
+                </a>
               </li> */}
               <li className="me-4 mb-1">
-                <Link href="/contacts" className="link-secondary spaced-link">
+                <a href="/contacts" className="link-secondary spaced-link">
                   Контакты
-                </Link>
+                </a>
               </li>
             </ul>
 
             <ul className="list-unstyled footer-text mb-0">
               <li className="mb-1">
-                <Link href="/documents" className="link-secondary">
+                <a href="/documents" className="link-secondary">
                   Документы и лицензии
-                </Link>
+                </a>
               </li>
               <li className="text-muted">
                 Имеются противопоказания. Необходима консультация специалиста

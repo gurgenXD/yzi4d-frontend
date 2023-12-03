@@ -2,7 +2,6 @@
 
 import { useGetOffices } from "@/requests/client";
 import { PlaceholderLoading, PlaceholderError } from "@/app/components/common/Placeholder";
-import Link from "next/link";
 
 export default function HeaderOffices() {
   const { offices, isLoading, isError } = useGetOffices();
@@ -14,9 +13,9 @@ export default function HeaderOffices() {
     <>
       {offices.map((office: string) => (
         <li key={office}>
-          <Link className="dropdown-item fs-8" href="#">
+          <a className="dropdown-item fs-8" href="#">
             {office}
-          </Link>
+          </a>
         </li>
       ))}
     </>

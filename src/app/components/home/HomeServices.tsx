@@ -2,7 +2,7 @@
 
 import { useGetMainCategories } from "@/requests/client";
 import { PlaceholderLoading, PlaceholderError } from "@/app/components/common/Placeholder";
-import Link from "next/link";
+
 import ServiceBgImg1 from "@/assets/service-bg-icon_1.svg";
 
 export default function HomeServices() {
@@ -19,7 +19,7 @@ export default function HomeServices() {
             <ul className="nav" id="services-tab" role="tablist" aria-orientation="vertical">
               {categories.map((category: any) => (
                 <li className="nav-item" key={category.id}>
-                  <Link
+                  <a
                     className={`nav-link ${category.id == categories[0].id ? "active" : ""}`}
                     href="#"
                     id={`services-${category.id}-tab`}
@@ -30,7 +30,7 @@ export default function HomeServices() {
                     aria-selected="true"
                   >
                     {category.name}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -56,12 +56,12 @@ export default function HomeServices() {
                       className="card h-100 d-flex flex-column position-relative rounded-3 pt-3 pt-sm-4 pb-sm-2 px-3 px-sm-4"
                       style={{ backgroundImage: `url('${ServiceBgImg1.src}')` }}
                     >
-                      <Link
+                      <a
                         href={`/catalog/services/categories/items/${service.id}`}
                         className="card-title stretched-link d-block text-secondary fw-bold mb-2"
                       >
                         {service.name}
-                      </Link>
+                      </a>
 
                       <p className="card-text mb-3">{service.short_description}</p>
                       <div className="card-price text-secondary fw-extrabold mt-auto mb-3">

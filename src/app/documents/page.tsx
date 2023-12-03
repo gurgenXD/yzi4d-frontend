@@ -1,5 +1,5 @@
 import { getDocumentsCategories } from "@/requests/server";
-import Link from "next/link";
+
 import DocumentBgImg from "@/assets/document-bg-icon.svg";
 
 export const metadata = {
@@ -15,7 +15,7 @@ export default async function Documents() {
         <div className="container pt-4 pt-lg-5">
           <ol className="breadcrumb">
             <li className="breadcrumb-item">
-              <Link href="/">Главная</Link>
+              <a href="/">Главная</a>
             </li>
             <li className="breadcrumb-item active">Документы и лицензии</li>
           </ol>
@@ -30,13 +30,13 @@ export default async function Documents() {
                     className="card h-100 d-flex flex-column position-relative rounded-3 pt-3 pt-sm-4 pb-sm-2 px-3 px-sm-4"
                     style={{ backgroundImage: `url('${DocumentBgImg.src}')` }}
                   >
-                    <Link
+                    <a
                       href={document.link}
                       target="_blank"
                       className="card-title stretched-link d-block text-secondary fw-bold mb-2"
                     >
                       {document.name}
-                    </Link>
+                    </a>
                     {/* <p className="card-text mb-3">№Л041-01126-23/00343065 от 21.08.2020г.</p> */}
                   </div>
                 </div>
@@ -52,9 +52,9 @@ export default async function Documents() {
                 <ul>
                   {category.documents.map((document: any) => (
                     <li key={document.name}>
-                      <Link href={document.link} target="_blank">
+                      <a href={document.link} target="_blank">
                         {document.name}
-                      </Link>
+                      </a>
                     </li>
                   ))}
                 </ul>

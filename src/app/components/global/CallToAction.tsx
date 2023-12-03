@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+
 import CtaImg from "@/assets/cta-img.png";
 
 export default function CallToAction() {
@@ -47,9 +47,9 @@ export default function CallToAction() {
 
                 <div className="fs-10 text-secondary">
                   Нажимая на кнопку «Отправить», вы даёте своё согласие на{" "}
-                  <Link href="/documents" title="" target="_blank">
+                  <a href="/documents" title="" target="_blank">
                     обработку персональных данных
-                  </Link>
+                  </a>
                   .
                 </div>
               </div>
