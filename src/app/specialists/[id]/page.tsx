@@ -5,6 +5,7 @@ import SpecialistServices from "@/app/components/specialists/SpecialistServices"
 
 import ChildImg from "@/assets/child-icon.svg";
 import DoctorNoImg from "@/assets/doctor-no-photo.jpg";
+import SpecialistConsultationModal from "@/app/components/specialists/SpecialistConsultationModal";
 
 export async function generateMetadata({ params }: { params: { id: string } }) {
   const { errorCodeSpec, specialist } = await getSpecialist(params.id);
@@ -108,23 +109,25 @@ export default async function Specialist({ params }: { params: { id: string } })
                   </div>
                 ) : null}
 
-                {/* <div className="row g-3 align-items-center pt-3">
-                  <div className="col-sm-auto">
+                <div className="row g-3 align-items-center pt-3">
+                  {/* <div className="col-sm-auto">
                     <a href="#" className="btn btn-danger w-100">
                       Записаться к врачу
                     </a>
-                  </div>
+                  </div> */}
 
-                  <div className="col-sm-auto">
-                    <a
-                      href="#ConsultModal"
-                      data-bs-toggle="modal"
-                      className="btn btn-primary w-100"
-                    >
-                      Онлайн консультация
-                    </a>
-                  </div>
-                </div> */}
+                  {specialist.can_online ? (
+                    <div className="col-sm-auto">
+                      <a
+                        href="#ConsultModal"
+                        data-bs-toggle="modal"
+                        className="btn btn-primary w-100"
+                      >
+                        Онлайн консультация
+                      </a>
+                    </div>
+                  ) : null}
+                </div>
               </div>
             </div>
           </div>
@@ -695,6 +698,8 @@ export default async function Specialist({ params }: { params: { id: string } })
           </div> */}
         </section>
       </div>
+
+      <SpecialistConsultationModal />
     </main>
   );
 }

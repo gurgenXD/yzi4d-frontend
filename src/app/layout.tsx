@@ -37,6 +37,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Script src="/js/bootstrap.js" type="text/javascript" />
         <Script src="/js/app.js" type="text/javascript" />
         <Script src="/blind/js/bvi.js" type="text/javascript" />
+        {/* <Script src="https://unpkg.com/react-input-mask/dist/react-input-mask.min.js" /> */}
       </body>
     </html>
   );
