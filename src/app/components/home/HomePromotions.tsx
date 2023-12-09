@@ -40,7 +40,7 @@ export default function HomePromotions() {
         observer={true}
         autoHeight={true}
         autoplay={{
-          delay: 6000,
+          delay: 15000,
           pauseOnMouseEnter: true,
           disableOnInteraction: false,
         }}
