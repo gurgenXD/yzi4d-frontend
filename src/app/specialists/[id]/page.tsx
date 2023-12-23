@@ -699,7 +699,9 @@ export default async function Specialist({ params }: { params: { id: string } })
         </section>
       </div>
 
-      <SpecialistConsultationModal />
+      <SpecialistConsultationModal
+        specialist={`${specialist.surname} ${specialist.name} ${specialist.patronymic}`}
+      />
     </main>
   );
 }

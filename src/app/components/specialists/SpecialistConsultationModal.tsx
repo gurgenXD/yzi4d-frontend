@@ -3,18 +3,27 @@
 import { useState } from "react";
 import { IMaskInput } from "react-imask";
 import FormSuccessImg from "@/assets/form-success-icon.svg";
+import FormErrorImg from "@/assets/form-error-icon.svg";
 import Image from "next/image";
+import { createConsultation } from "@/services/consultations";
 
-export default function SpecialistConsultationModal() {
-  const [formSuccess, setFormSuccess] = useState(false);
+export default function SpecialistConsultationModal({ specialist }: { specialist: string }) {
+  const [formSent, setFormSent] = useState(0);
 
-  const onSubmitHander = (event: any) => {
-    // TODO: доделать
+  const onSubmitHander = async (event: any) => {
     event.preventDefault();
-    console.log(event.target.name.value);
-    console.log(event.target.phone.value);
 
-    setFormSuccess(true);
+    const response = await createConsultation(
+      event.target.name.value,
+      event.target.phone.value,
+      specialist
+    );
+
+    if (response.status == 200) {
+      setFormSent(1);
+    } else {
+      setFormSent(2);
+    }
   };
 
   return (
@@ -78,7 +87,7 @@ export default function SpecialistConsultationModal() {
               </div>
             </form>
 
-            {formSuccess ? (
+            {formSent == 1 ? (
               <div className="form-success p-4">
                 <div className="d-flex align-items-center mb-3">
                   <Image src={FormSuccessImg} alt="Успешно" className="me-3" />
@@ -92,6 +101,21 @@ export default function SpecialistConsultationModal() {
                   Менеджер обработает Вашу заявку в ближайшее время и перезвонит.
                 </p>
                 <a href="#" className="btn btn-primary w-100" data-bs-dismiss="modal">
+                  Хорошо
+                </a>
+              </div>
+            ) : null}
+
+            {formSent == 2 ? (
+              <div className="form-success p-4">
+                <div className="d-flex align-items-center mb-3">
+                  <Image src={FormErrorImg} alt="Ошибка" className="me-3" />
+                  <h3 className="fs-5 fw-bold text-secondary mb-0">Ошибка!</h3>
+                </div>
+                <p className="fs-8 mb-2">
+                  При создании заявки возникла ошибка. Попробуйте перезагрузить страницу.
+                </p>
+                <a href="#" className="btn btn-danger w-100" data-bs-dismiss="modal">
                   Хорошо
                 </a>
               </div>
