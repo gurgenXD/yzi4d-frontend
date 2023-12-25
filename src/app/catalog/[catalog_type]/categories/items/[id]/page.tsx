@@ -1,6 +1,6 @@
 import NotFound from "@/app/not-found";
 import { getService } from "@/requests/server";
-
+import {SEO_TITLE_FOR_FAIVOR} from "@/app/seo"
 export async function generateMetadata({
   params,
 }: {
