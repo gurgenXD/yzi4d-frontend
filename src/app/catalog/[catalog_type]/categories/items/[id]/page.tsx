@@ -11,8 +11,14 @@ export async function generateMetadata({
     return <NotFound />;
   }
 
+  // @ts-ignore
+  const titleAndDesctiption = SEO_TITLE_FOR_FAIVOR[service.name] ?? 
+  {title: service.name, description: service.description}
+
+
   return {
-    title: `${service.name} - Поликлиника УЗИ 4Д`,
+    title: `${titleAndDesctiption.title} - Поликлиника УЗИ 4Д`,
+    description: titleAndDesctiption.description
   };
 }
 
@@ -33,13 +39,10 @@ export default async function Service({
           <ol className="breadcrumb">
             <li className="breadcrumb-item">
               <a href="/">Главная</a>
-              <a href="/">Главная</a>
             </li>
             <li className="breadcrumb-item">
               <a href={`/catalog/${params.catalog_type}/categories`}>
-              <a href={`/catalog/${params.catalog_type}/categories`}>
                 {params.catalog_type == "services" ? "Услуги" : "Анализы"}
-              </a>
               </a>
             </li>
             <li className="breadcrumb-item">{service.category_name}</li>
@@ -60,7 +63,6 @@ export default async function Service({
                 <path d="M489.74,311.65H22.26c-12.29,0-22.26,9.97-22.26,22.26s9.97,22.26,22.26,22.26H489.74c12.29,0,22.26-9.97,22.26-22.26,0-12.29-9.97-22.26-22.26-22.26Z" />
               </svg>
             </span>
-            {`Каталог ${params.catalog_type == "services" ? "услуг" : "анализов"}`}
             {`Каталог ${params.catalog_type == "services" ? "услуг" : "анализов"}`}
           </button>
 
@@ -101,9 +103,7 @@ export default async function Service({
                   </div>
 
                   {/* <a href="#" className="btn btn-danger">
-                  {/* <a href="#" className="btn btn-danger">
                     Записаться
-                  </a> */}
                   </a> */}
                 </div>
               </div>
@@ -137,12 +137,10 @@ export default async function Service({
                   <div className="swiper-slide">
                     <div className="card h-100 d-flex flex-column position-relative rounded-3 pt-3 pt-sm-4 pb-sm-2 px-3 px-sm-4">
                       <a
-                      <a
                         href="#"
                         className="card-title stretched-link d-block text-danger fw-bold mb-2"
                       >
                         Блефаропластика под ключ
-                      </a>
                       </a>
 
                       <p className="card-text mb-3">Верните красоту своим глазам</p>
@@ -157,12 +155,10 @@ export default async function Service({
                   <div className="swiper-slide">
                     <div className="card h-100 d-flex flex-column position-relative rounded-3 pt-3 pt-sm-4 pb-sm-2 px-3 px-sm-4">
                       <a
-                      <a
                         href="#"
                         className="card-title stretched-link d-block text-danger fw-bold mb-2"
                       >
                         Консультация в октябре
-                      </a>
                       </a>
 
                       <div className="card-price text-secondary fw-extrabold mt-auto mb-3">
@@ -176,12 +172,10 @@ export default async function Service({
                   <div className="swiper-slide">
                     <div className="card h-100 d-flex flex-column position-relative rounded-3 pt-3 pt-sm-4 pb-sm-2 px-3 px-sm-4">
                       <a
-                      <a
                         href="#"
                         className="card-title stretched-link d-block text-danger fw-bold mb-2"
                       >
                         Скидка 10% на повторный приём
-                      </a>
                       </a>
 
                       <div className="sale-badge"></div>
@@ -191,12 +185,10 @@ export default async function Service({
                   <div className="swiper-slide">
                     <div className="card h-100 d-flex flex-column position-relative rounded-3 pt-3 pt-sm-4 pb-sm-2 px-3 px-sm-4">
                       <a
-                      <a
                         href="#"
                         className="card-title stretched-link d-block text-danger fw-bold mb-2"
                       >
                         Первый приём
-                      </a>
                       </a>
 
                       <div className="card-price text-secondary fw-extrabold mt-auto mb-3">
@@ -210,12 +202,10 @@ export default async function Service({
                   <div className="swiper-slide">
                     <div className="card h-100 d-flex flex-column position-relative rounded-3 pt-3 pt-sm-4 pb-sm-2 px-3 px-sm-4">
                       <a
-                      <a
                         href="#"
                         className="card-title stretched-link d-block text-danger fw-bold mb-2"
                       >
                         Скидка пенсионерам 10%
-                      </a>
                       </a>
                       <p className="card-text mb-3">
                         При записи предъявите пенсионное удостоверение
@@ -239,7 +229,6 @@ export default async function Service({
                     <ul className="nav">
                       <li className="nav-item">
                         <a
-                        <a
                           className="nav-link active"
                           href="#"
                           id="service-1-tab"
@@ -251,10 +240,8 @@ export default async function Service({
                         >
                           Описание
                         </a>
-                        </a>
                       </li>
                       {/* <li className="nav-item">
-                        <a
                         <a
                           className="nav-link"
                           href="#"
@@ -267,10 +254,8 @@ export default async function Service({
                         >
                           Показания
                         </a>
-                        </a>
                       </li> */}
                       {/* <li className="nav-item">
-                        <a
                         <a
                           className="nav-link"
                           href="#"
@@ -283,10 +268,8 @@ export default async function Service({
                         >
                           Противопоказания
                         </a>
-                        </a>
                       </li> */}
                       <li className="nav-item">
-                        <a
                         <a
                           className="nav-link"
                           href="#"
@@ -298,7 +281,6 @@ export default async function Service({
                           aria-selected="false"
                         >
                           Подготовка
-                        </a>
                         </a>
                       </li>
                     </ul>
@@ -415,12 +397,10 @@ export default async function Service({
                           style={{ backgroundImage: "url('/img/service-bg-icon_1.svg')" }}
                         >
                           <a
-                          <a
                             href="#"
                             className="card-title stretched-link d-block text-secondary fw-bold mb-2"
                           >
                             УЗИ брюшной полости
-                          </a>
                           </a>
 
                           <p className="card-text mb-3">
@@ -439,12 +419,10 @@ export default async function Service({
                           style={{ backgroundImage: "url('/img/service-bg-icon_1.svg')" }}
                         >
                           <a
-                          <a
                             href="#"
                             className="card-title stretched-link d-block text-secondary fw-bold mb-2"
                           >
                             УЗИ сердца
-                          </a>
                           </a>
 
                           <p className="card-text mb-3">
@@ -463,12 +441,10 @@ export default async function Service({
                           style={{ backgroundImage: "url('/img/service-bg-icon_1.svg')" }}
                         >
                           <a
-                          <a
                             href="#"
                             className="card-title stretched-link d-block text-secondary fw-bold mb-2"
                           >
                             УЗИ почек
-                          </a>
                           </a>
 
                           <p className="card-text mb-3">
@@ -486,12 +462,10 @@ export default async function Service({
                           style={{ backgroundImage: "url('/img/service-bg-icon_1.svg')" }}
                         >
                           <a
-                          <a
                             href="#"
                             className="card-title stretched-link d-block text-secondary fw-bold mb-2"
                           >
                             УЗИ плода 4D
-                          </a>
                           </a>
 
                           <p className="card-text mb-3">
@@ -510,12 +484,10 @@ export default async function Service({
                           style={{ backgroundImage: "url('/img/service-bg-icon_2.svg')" }}
                         >
                           <a
-                          <a
                             href="#"
                             className="card-title stretched-link d-block text-secondary fw-bold mb-2"
                           >
                             Гастроэнтеролог
-                          </a>
                           </a>
 
                           <p className="card-text mb-3">
