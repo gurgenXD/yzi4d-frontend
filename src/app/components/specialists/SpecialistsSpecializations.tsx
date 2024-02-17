@@ -1,5 +1,5 @@
 import useSWR from "swr";
-import { getSpecializations } from "@/services/specialists";
+import { getSpecializations } from "@/services/specializations";
 
 export default function SpecialistSpecializations() {
   const {

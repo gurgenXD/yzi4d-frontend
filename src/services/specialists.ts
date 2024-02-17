@@ -16,14 +16,6 @@ export async function getSpecialistServices(id: string, page: number) {
   return response.json();
 }
 
-export async function getSpecializations() {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_YZI4D_API}/specialists/specializations`, {
-    cache: "no-store",
-  });
-
-  return response.json();
-}
-
 export async function getSpecialists(
   pageIndex: number,
   canOnline: boolean,
