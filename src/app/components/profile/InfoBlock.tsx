@@ -27,8 +27,8 @@ export default function InfoBlock({ patient, isLoading, error }: { patient: any,
                             <div
                                 className="progress-bar progress-bar-striped progress-bar-animated rounded-pill"
                                 role="progressbar"
-                                style={{ width: "25%" }}
-                                aria-valuenow={25}
+                                style={{ width: `${discount.current_spent / discount.next_spent * 100}%` }}
+                                aria-valuenow={discount.current_spent / discount.next_spent * 100}
                                 aria-valuemin={0}
                                 aria-valuemax={100}></div>
                         </div>
