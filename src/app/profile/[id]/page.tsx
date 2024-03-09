@@ -1,4 +1,4 @@
-import ProfileWrapper from "@/app/components/profile/ProfileWrapper";
+import ProfileWrapper from "@/app/profile/components/ProfileWrapper";
 
 export const metadata = {
   title: "Личный кабинет - Поликлиника УЗИ 4Д",

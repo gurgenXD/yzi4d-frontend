@@ -1,5 +1,5 @@
 import NotFound from "@/app/not-found";
-import { getService } from "@/requests/server";
+import { getService } from "@/services/catalog";
 
 export async function generateMetadata({
   params,

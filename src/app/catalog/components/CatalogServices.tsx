@@ -1,6 +1,6 @@
 "use client";
 
-import CatalogSidebar from "@/app/components/catalog/CatalogSidebar";
+import CatalogSidebar from "@/app/catalog/components/CatalogSidebar";
 import { useGetServices, useGetCategories } from "@/requests/client";
 import {
   PlaceholderLoading,

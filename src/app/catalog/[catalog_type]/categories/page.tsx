@@ -1,4 +1,4 @@
-import CatalogServicesWrapper from "@/app/components/catalog/CatalogServiceWrapper";
+import CatalogServicesWrapper from "@/app/catalog/components/CatalogServiceWrapper";
 
 export function generateMetadata({ params }: { params: { catalog_type: string } }) {
   return {

@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import SpecialistSpecializations from "@/app/components/specialists/SpecialistsSpecializations";
-import SpecialistsList from "@/app/components/specialists/SpecialistsList";
+import SpecialistSpecializations from "@/app/specialists/components/SpecialistsSpecializations";
+import SpecialistsList from "@/app/specialists/components/SpecialistsList";
 
 export default function SpecialistsWrapper() {
   const [canOnline, setCanOnline] = useState(false);

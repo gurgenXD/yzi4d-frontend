@@ -1,4 +1,4 @@
-import SpecialistsWrapper from "@/app/components/specialists/SpecialistsWrapper";
+import SpecialistsWrapper from "@/app/specialists/components/SpecialistsWrapper";
 
 export const metadata = {
   title: "Специалисты - Поликлиника УЗИ 4Д",

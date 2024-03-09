@@ -1,11 +1,11 @@
 import NotFound from "@/app/not-found";
 import Image from "next/image";
 import { getSpecialist } from "@/services/specialists";
-import SpecialistServices from "@/app/components/specialists/SpecialistServices";
+import SpecialistServices from "@/app/specialists/components/SpecialistServices";
 
 import ChildImg from "@/assets/child-icon.svg";
 import DoctorNoImg from "@/assets/doctor-no-photo.jpg";
-import SpecialistConsultationModal from "@/app/components/specialists/SpecialistConsultationModal";
+import SpecialistConsultationModal from "@/app/specialists/components/SpecialistConsultationModal";
 
 export async function generateMetadata({ params }: { params: { id: string } }) {
   const { errorCodeSpec, specialist } = await getSpecialist(params.id);

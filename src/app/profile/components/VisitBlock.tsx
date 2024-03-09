@@ -1,7 +1,7 @@
 "use client";
 
-import PlannedVisitBlock from "@/app/components/profile/PlannedVisitBlock";
-import FinishedVisitBlock from "@/app/components/profile/FinishedVisitBlock";
+import PlannedVisitBlock from "@/app/profile/components/PlannedVisitBlock";
+import FinishedVisitBlock from "@/app/profile/components/FinishedVisitBlock";
 import { useState } from "react";
 
 export default function VisitBlock({ patientID }: { patientID: string }) {

@@ -34,7 +34,10 @@ export default function PlannedVisitBlock({ patientID }: { patientID: string }) 
   return (
     <div className="pt-lg-1">
       {planned_visits.map((visit: any) => (
-        <div className="profile-item position-relative bg-white rounded-3 shadow py-3 px-3 px-sm-4 mb-3 mb-sm-4">
+        <div
+          key={visit.file_path}
+          className="profile-item position-relative bg-white rounded-3 shadow py-3 px-3 px-sm-4 mb-3 mb-sm-4"
+        >
           <div className="row">
             <div className="col-md-3">
               <div className="pt-md-1 mb-3 mb-md-0">
@@ -48,7 +51,7 @@ export default function PlannedVisitBlock({ patientID }: { patientID: string }) 
               <div className="row">
                 <div className="col">
                   {visit.services.map((service: any) => (
-                    <div className="row gx-sm-6 mb-3">
+                    <div key={service.name} className="row gx-sm-6 mb-3">
                       <div className="col mb-3 mb-sm-0">
                         <p className="fs-8 mb-0">{service.name}</p>
                       </div>

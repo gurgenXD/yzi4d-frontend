@@ -1,4 +1,4 @@
-import PromotionsWrapper from "@/app/components/promotions/PromotionsWrapper";
+import PromotionsWrapper from "@/app/promotions/components/PromotionsWrapper";
 
 export const metadata = {
   title: "Спецпредложения - Поликлиника УЗИ 4Д",

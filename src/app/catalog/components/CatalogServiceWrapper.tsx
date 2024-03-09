@@ -1,6 +1,6 @@
 "use client";
 
-import CatalogServices from "@/app/components/catalog/CatalogServices";
+import CatalogServices from "@/app/catalog/components/CatalogServices";
 import { useState } from "react";
 
 export default function CatalogServicesWrapper({ catalogType }: { catalogType: string }) {

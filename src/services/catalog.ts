@@ -7,11 +7,3 @@ export async function getService(id: string, catalog_type: string) {
   const errorCode = res.ok ? false : res.status;
   return { errorCode, service: await res.json() };
 }
-
-export async function getDocumentsCategories() {
-  const categories = await fetch(`${process.env.NEXT_PUBLIC_YZI4D_API}/documents`, {
-    cache: "no-store",
-  }).then((res) => res.json());
-
-  return categories;
-}

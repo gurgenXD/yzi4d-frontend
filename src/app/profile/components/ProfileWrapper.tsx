@@ -1,9 +1,9 @@
 "use client";
 
 import { getPatient } from "@/services/profile";
-import InfoBlock from "@/app/components/profile/InfoBlock";
-import VisitBlock from "@/app/components/profile/VisitBlock";
-import PatientBlock from "@/app/components/profile/PatientBlock";
+import InfoBlock from "@/app/profile/components/InfoBlock";
+import VisitBlock from "@/app/profile/components/VisitBlock";
+import PatientBlock from "@/app/profile/components/PatientBlock";
 import NotFound from "@/app/not-found";
 import { PlaceholderLoading, PlaceholderError } from "@/app/components/common/Placeholder";
 
