@@ -1,7 +1,5 @@
 "use client";
 
-import { PlaceholderLoading, PlaceholderError } from "@/app/components/common/Placeholder";
-
 function formatPatientName(patient: any) {
   return `${patient.surname} ${patient.name} ${
     patient.patronymic ? `${patient.patronymic[0]}.` : null
@@ -13,18 +11,7 @@ function formatMemberName(member: string) {
   return `${surname} ${name} ${patronymic ? `${patronymic[0]}.` : null}`;
 }
 
-export default function PatientBlock({
-  patient,
-  isLoading,
-  error,
-}: {
-  patient: any;
-  isLoading: boolean;
-  error: boolean;
-}) {
-  if (isLoading) return <PlaceholderLoading height={200} />;
-  if (error) return <PlaceholderError height={200} />;
-
+export default function PatientBlock({ patient }: { patient: any }) {
   return (
     <ul className="nav">
       {patient.members.length ? (

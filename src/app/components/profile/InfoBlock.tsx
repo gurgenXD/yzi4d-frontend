@@ -1,29 +1,6 @@
 "use client";
 
-import { PlaceholderLoading, PlaceholderError } from "@/app/components/common/Placeholder";
-
-export default function InfoBlock({
-  patient,
-  isLoading,
-  error,
-}: {
-  patient: any;
-  isLoading: boolean;
-  error: boolean;
-}) {
-  if (isLoading)
-    return (
-      <div className="col">
-        <PlaceholderLoading height={200} />
-      </div>
-    );
-  if (error)
-    return (
-      <div className="col">
-        <PlaceholderError height={200} />
-      </div>
-    );
-
+export default function InfoBlock({ patient }: { patient: any }) {
   const discount = patient.discount;
 
   return (

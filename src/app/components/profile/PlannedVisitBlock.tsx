@@ -9,15 +9,7 @@ function formatSpecialistName(full_name: string) {
   return `${surname} ${name[0]}. ${patronymic ? `${patronymic[0]}.` : null}`;
 }
 
-export default function PlannedVisitBlock({
-  patientID,
-  isLoading,
-  error,
-}: {
-  patientID: string;
-  isLoading: boolean;
-  error: boolean;
-}) {
+export default function PlannedVisitBlock({ patientID }: { patientID: string }) {
   const {
     data: planned_visits,
     isLoading: curIsLoading,
@@ -26,13 +18,13 @@ export default function PlannedVisitBlock({
     return await getPatientPlannedVisits(patientID);
   });
 
-  if (isLoading || curIsLoading)
+  if (curIsLoading)
     return (
       <div className="col">
         <PlaceholderLoading height={200} />
       </div>
     );
-  if (error || curError)
+  if (curError)
     return (
       <div className="col">
         <PlaceholderError height={200} />

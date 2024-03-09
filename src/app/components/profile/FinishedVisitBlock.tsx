@@ -4,15 +4,7 @@ import { PlaceholderLoading, PlaceholderError } from "@/app/components/common/Pl
 import { getPatientFinishedVisits, getVisitFile } from "@/services/profile";
 import useSWR from "swr";
 
-export default function FinishedVisitBlock({
-  patientID,
-  isLoading,
-  error,
-}: {
-  patientID: string;
-  isLoading: boolean;
-  error: boolean;
-}) {
+export default function FinishedVisitBlock({ patientID }: { patientID: string }) {
   const {
     data: finished_visits,
     isLoading: curIsLoading,
@@ -31,13 +23,13 @@ export default function FinishedVisitBlock({
     a.click();
   };
 
-  if (isLoading || curIsLoading)
+  if (curIsLoading)
     return (
       <div className="col">
         <PlaceholderLoading height={200} />
       </div>
     );
-  if (error || curError)
+  if (curError)
     return (
       <div className="col">
         <PlaceholderError height={200} />

@@ -4,6 +4,8 @@ import { getPatient } from "@/services/profile";
 import InfoBlock from "@/app/components/profile/InfoBlock";
 import VisitBlock from "@/app/components/profile/VisitBlock";
 import PatientBlock from "@/app/components/profile/PatientBlock";
+import NotFound from "@/app/not-found";
+import { PlaceholderLoading, PlaceholderError } from "@/app/components/common/Placeholder";
 
 import useSWR from "swr";
 import { useCallback } from "react";
@@ -33,12 +35,30 @@ export default function ProfileWrapper({ params }: { params: { id: string } }) {
     return await getPatient(params.id);
   });
 
+  if (isLoading)
+    return (
+      <div className="col">
+        <PlaceholderLoading height={200} />
+      </div>
+    );
+
+  if (error) {
+    if (error.status == 404) {
+      return <NotFound />;
+    }
+    return (
+      <div className="col">
+        <PlaceholderError height={200} />
+      </div>
+    );
+  }
+
   function renderSwitch() {
     switch (category) {
       case "info":
-        return <InfoBlock patient={patient} isLoading={isLoading} error={error} />;
+        return <InfoBlock patient={patient} />;
       case "visits":
-        return <VisitBlock patientID={params.id} isLoading={isLoading} error={error} />;
+        return <VisitBlock patientID={params.id} />;
       default:
         return null;
     }
@@ -49,7 +69,7 @@ export default function ProfileWrapper({ params }: { params: { id: string } }) {
       <div className="col-lg-4 col-xl-3">
         <div className="bg-white shadow rounded-3 px-3 px-sm-4 py-1 py-sm-3 mb-4">
           <nav className="sidebar">
-            <PatientBlock patient={patient} isLoading={isLoading} error={error} />
+            <PatientBlock patient={patient} />
           </nav>
         </div>
 

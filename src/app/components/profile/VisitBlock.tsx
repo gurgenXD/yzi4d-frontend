@@ -4,15 +4,7 @@ import PlannedVisitBlock from "@/app/components/profile/PlannedVisitBlock";
 import FinishedVisitBlock from "@/app/components/profile/FinishedVisitBlock";
 import { useState } from "react";
 
-export default function VisitBlock({
-  patientID,
-  isLoading,
-  error,
-}: {
-  patientID: string;
-  isLoading: boolean;
-  error: boolean;
-}) {
+export default function VisitBlock({ patientID }: { patientID: string }) {
   const [visitType, setVisitType] = useState("planned");
 
   return (
@@ -49,9 +41,9 @@ export default function VisitBlock({
       </div>
 
       {visitType == "planned" ? (
-        <PlannedVisitBlock patientID={patientID} isLoading={isLoading} error={error} />
+        <PlannedVisitBlock patientID={patientID} />
       ) : (
-        <FinishedVisitBlock patientID={patientID} isLoading={isLoading} error={error} />
+        <FinishedVisitBlock patientID={patientID} />
       )}
     </div>
   );
