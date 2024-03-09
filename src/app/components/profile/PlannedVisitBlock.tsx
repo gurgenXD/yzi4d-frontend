@@ -5,11 +5,19 @@ import { getPatientPlannedVisits } from "@/services/profile";
 import useSWR from "swr";
 
 function formatSpecialistName(full_name: string) {
-  const [surname, name, patronymic] = full_name.split(" ")
-  return `${surname} ${name[0]}. ${patronymic ? `${patronymic[0]}.` : null}`
+  const [surname, name, patronymic] = full_name.split(" ");
+  return `${surname} ${name[0]}. ${patronymic ? `${patronymic[0]}.` : null}`;
 }
 
-export default function PlannedVisitBlock({ patientID, isLoading, error }: { patientID: string, isLoading: boolean, error: boolean }) {
+export default function PlannedVisitBlock({
+  patientID,
+  isLoading,
+  error,
+}: {
+  patientID: string;
+  isLoading: boolean;
+  error: boolean;
+}) {
   const {
     data: planned_visits,
     isLoading: curIsLoading,
@@ -18,8 +26,18 @@ export default function PlannedVisitBlock({ patientID, isLoading, error }: { pat
     return await getPatientPlannedVisits(patientID);
   });
 
-  if (isLoading || curIsLoading) return <div className="col"><PlaceholderLoading height={200} /></div >;
-  if (error || curError) return <div className="col"><PlaceholderError height={200} /></div>;
+  if (isLoading || curIsLoading)
+    return (
+      <div className="col">
+        <PlaceholderLoading height={200} />
+      </div>
+    );
+  if (error || curError)
+    return (
+      <div className="col">
+        <PlaceholderError height={200} />
+      </div>
+    );
 
   return (
     <div className="pt-lg-1">
@@ -39,13 +57,14 @@ export default function PlannedVisitBlock({ patientID, isLoading, error }: { pat
                 <div className="col">
                   {visit.services.map((service: any) => (
                     <div className="row gx-sm-6 mb-3">
-
                       <div className="col mb-3 mb-sm-0">
                         <p className="fs-8 mb-0">{service.name}</p>
                       </div>
 
                       <div className="col-sm-auto">
-                        <div className="fs-6 lh-1 text-muted text-sm-end mt-1">{service.price.toLocaleString("ru")}₽</div>
+                        <div className="fs-6 lh-1 text-muted text-sm-end mt-1">
+                          {service.price.toLocaleString("ru")}₽
+                        </div>
                         {/* <div className="fs-8 lh-1 text-muted text-sm-end">Оплата на приёме</div> */}
                       </div>
                     </div>
@@ -57,8 +76,7 @@ export default function PlannedVisitBlock({ patientID, isLoading, error }: { pat
                 <div className="col mb-3 mb-sm-0"></div>
                 <div className="col-sm-auto">
                   <div className="f-2 fs-4 lh-1 fw-black text-sm-end mb-2">
-                    <span className="number">{visit.total_price.toLocaleString("ru")}</span>
-                    ₽
+                    <span className="number">{visit.total_price.toLocaleString("ru")}</span>₽
                   </div>
                 </div>
               </div>

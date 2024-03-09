@@ -4,9 +4,15 @@ import { PlaceholderLoading, PlaceholderError } from "@/app/components/common/Pl
 import { getPatientFinishedVisits, getVisitFile } from "@/services/profile";
 import useSWR from "swr";
 
-
-
-export default function FinishedVisitBlock({ patientID, isLoading, error }: { patientID: string, isLoading: boolean, error: boolean }) {
+export default function FinishedVisitBlock({
+  patientID,
+  isLoading,
+  error,
+}: {
+  patientID: string;
+  isLoading: boolean;
+  error: boolean;
+}) {
   const {
     data: finished_visits,
     isLoading: curIsLoading,
@@ -18,15 +24,25 @@ export default function FinishedVisitBlock({ patientID, isLoading, error }: { pa
   const downloadFile = async (patientID: string, filePath: string) => {
     const data = await getVisitFile(patientID, filePath);
 
-    const newFileName = filePath.split(/[\/\\]+/).at(-1)
+    const newFileName = filePath.split(/[\/\\]+/).at(-1);
     var a = document.createElement("a");
     a.href = "data:application/octet-stream;base64," + data;
     a.download = newFileName ? newFileName : filePath;
     a.click();
-  }
+  };
 
-  if (isLoading || curIsLoading) return <div className="col"><PlaceholderLoading height={200} /></div >;
-  if (error || curError) return <div className="col"><PlaceholderError height={200} /></div>;
+  if (isLoading || curIsLoading)
+    return (
+      <div className="col">
+        <PlaceholderLoading height={200} />
+      </div>
+    );
+  if (error || curError)
+    return (
+      <div className="col">
+        <PlaceholderError height={200} />
+      </div>
+    );
 
   return (
     <div className="pt-lg-1">
@@ -42,9 +58,7 @@ export default function FinishedVisitBlock({ patientID, isLoading, error }: { pa
             <div className="col">
               <div className="row gx-sm-6 mb-3">
                 <div className="col mb-3 mb-sm-0">
-                  <p className="fs-7 mb-0">
-                    {visit.service ? visit.service : visit.header}
-                  </p>
+                  <p className="fs-7 mb-0">{visit.service ? visit.service : visit.header}</p>
                 </div>
 
                 <div className="col-sm-auto">
@@ -53,7 +67,13 @@ export default function FinishedVisitBlock({ patientID, isLoading, error }: { pa
               </div>
             </div>
           </div>
-          <a onClick={() => { downloadFile(patientID, visit.file_path) }} role="button" className="stretched-link"></a>
+          <a
+            onClick={() => {
+              downloadFile(patientID, visit.file_path);
+            }}
+            role="button"
+            className="stretched-link"
+          ></a>
         </div>
       ))}
     </div>
