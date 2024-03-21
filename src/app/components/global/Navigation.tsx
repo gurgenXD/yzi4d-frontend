@@ -29,11 +29,7 @@ export default async function Navigation() {
 
           <div className="row align-items-center d-none d-lg-flex ms-auto">
             <div className="col-auto">
-              <a
-                className="profile-link link-secondary text-nowrap spaced-link fs-7"
-                href="https://lk.yzi4d.ru"
-                target="_blank"
-              >
+              <a className="profile-link link-secondary text-nowrap spaced-link fs-7" href="/login">
                 <span className="icon me-2">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 14">
                     <path d="M5.5,7c2.02,0,3.67-1.57,3.67-3.5S7.52,0,5.5,0,1.83,1.57,1.83,3.5s1.64,3.5,3.67,3.5Zm0-5.83c1.35,0,2.44,1.04,2.44,2.33s-1.1,2.33-2.44,2.33-2.44-1.04-2.44-2.33,1.1-2.33,2.44-2.33Zm0,7c-3.04,0-5.5,2.35-5.5,5.25,0,.32,.27,.58,.61,.58s.61-.26,.61-.58c0-2.26,1.92-4.08,4.28-4.08s4.28,1.83,4.28,4.08c0,.32,.28,.58,.61,.58s.61-.26,.61-.58c0-2.9-2.46-5.25-5.5-5.25Z" />

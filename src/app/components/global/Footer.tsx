@@ -21,8 +21,7 @@ export default function Footer() {
             <div className="d-flex flex-wrap align-items-center">
               <a
                 className="profile-link link-secondary text-nowrap spaced-link fs-7 me-4"
-                href="https://lk.yzi4d.ru"
-                target="_blank"
+                href="/login"
               >
                 <span className="icon me-2">
                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 14">

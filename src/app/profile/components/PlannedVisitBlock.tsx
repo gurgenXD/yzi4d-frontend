@@ -3,6 +3,7 @@
 import { PlaceholderLoading, PlaceholderError } from "@/app/components/common/Placeholder";
 import { getPatientPlannedVisits } from "@/services/profile";
 import useSWR from "swr";
+import { useCookies } from "react-cookie";
 
 function formatSpecialistName(full_name: string) {
   const [surname, name, patronymic] = full_name.split(" ");
@@ -10,12 +11,13 @@ function formatSpecialistName(full_name: string) {
 }
 
 export default function PlannedVisitBlock({ patientID }: { patientID: string }) {
+  const [cookies, _] = useCookies(["accessToken"]);
   const {
     data: planned_visits,
     isLoading: curIsLoading,
     error: curError,
   } = useSWR("planned_visits", async (_) => {
-    return await getPatientPlannedVisits(patientID);
+    return await getPatientPlannedVisits(cookies.accessToken, patientID);
   });
 
   if (curIsLoading)

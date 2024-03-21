@@ -3,18 +3,20 @@
 import { PlaceholderLoading, PlaceholderError } from "@/app/components/common/Placeholder";
 import { getPatientFinishedVisits, getVisitFile } from "@/services/profile";
 import useSWR from "swr";
+import { useCookies } from "react-cookie";
 
 export default function FinishedVisitBlock({ patientID }: { patientID: string }) {
+  const [cookies, _] = useCookies(["accessToken"]);
   const {
     data: finished_visits,
     isLoading: curIsLoading,
     error: curError,
   } = useSWR("finished_visits", async (_) => {
-    return await getPatientFinishedVisits(patientID, "finished");
+    return await getPatientFinishedVisits(cookies.accessToken, patientID, "finished");
   });
 
   const downloadFile = async (patientID: string, filePath: string) => {
-    const data = await getVisitFile(patientID, filePath);
+    const data = await getVisitFile(cookies.accessToken, patientID, filePath);
 
     const newFileName = filePath.split(/[\/\\]+/).at(-1);
     var a = document.createElement("a");

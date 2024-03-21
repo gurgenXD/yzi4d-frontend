@@ -15,8 +15,6 @@ export default async function Profile({ params }: { params: { id: string } }) {
           <li className="breadcrumb-item active">Профиль</li>
         </ol>
 
-        <h1 className="mb-4">Личный кабинет</h1>
-
         <ProfileWrapper params={params} />
       </div>
     </main>

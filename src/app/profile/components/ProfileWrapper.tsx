@@ -6,16 +6,19 @@ import VisitBlock from "@/app/profile/components/VisitBlock";
 import PatientBlock from "@/app/profile/components/PatientBlock";
 import NotFound from "@/app/not-found";
 import { PlaceholderLoading, PlaceholderError } from "@/app/components/common/Placeholder";
+import { useCookies } from "react-cookie";
 
 import useSWR from "swr";
 import { useCallback } from "react";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 
 export default function ProfileWrapper({ params }: { params: { id: string } }) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const category = searchParams.has("category") ? searchParams.get("category") : "info";
+  const [cookies, _, removeCookie] = useCookies(["accessToken", "userId"]);
+  const router = useRouter();
 
   const createQueryString = useCallback(
     (name: string, value: string) => {
@@ -32,7 +35,7 @@ export default function ProfileWrapper({ params }: { params: { id: string } }) {
     isLoading,
     error,
   } = useSWR("patient", async (_) => {
-    return await getPatient(params.id);
+    return await getPatient(cookies.accessToken, params.id);
   });
 
   if (isLoading)
@@ -42,21 +45,19 @@ export default function ProfileWrapper({ params }: { params: { id: string } }) {
       </div>
     );
 
-  if (error) {
-    if (error.status == 404) {
-      return <NotFound />;
-    }
+  if (error)
     return (
       <div className="col">
         <PlaceholderError height={200} />
       </div>
     );
-  }
+
+  if (patient?.status != 200) return <NotFound />;
 
   function renderSwitch() {
     switch (category) {
       case "info":
-        return <InfoBlock patient={patient} />;
+        return <InfoBlock patient={patient?.data} />;
       case "visits":
         return <VisitBlock patientID={params.id} />;
       default:
@@ -66,10 +67,12 @@ export default function ProfileWrapper({ params }: { params: { id: string } }) {
 
   return (
     <div className="row">
+      <h1 className="mb-4">Личный кабинет</h1>
+
       <div className="col-lg-4 col-xl-3">
         <div className="bg-white shadow rounded-3 px-3 px-sm-4 py-1 py-sm-3 mb-4">
           <nav className="sidebar">
-            <PatientBlock patient={patient} />
+            <PatientBlock patient={patient?.data} />
           </nav>
         </div>
 
@@ -130,6 +133,30 @@ export default function ProfileWrapper({ params }: { params: { id: string } }) {
                   </span>
                   Сменить пароль
                 </Link>
+              </li>
+              <li className="nav-item">
+                <a
+                  className="nav-link"
+                  onClick={() => {
+                    removeCookie("accessToken", { path: "/" });
+                    removeCookie("userId", { path: "/" });
+                    router.push("/login");
+                  }}
+                >
+                  <span className="icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                      <path
+                        fill="#000"
+                        d="M6 2a4 4 0 0 0-4 4v3h2V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-3H2v3a4 4 0 0 0 4 4h12a4 4 0 0 0 4-4V6a4 4 0 0 0-4-4H6Z"
+                      ></path>
+                      <path
+                        fill="#000"
+                        d="M3 11a1 1 0 1 0 0 2h9.582l-2.535 2.536a1 1 0 0 0 1.414 1.414l4.196-4.196a.998.998 0 0 0 0-1.508L11.46 7.05a1 1 0 1 0-1.414 1.414L12.582 11H3Z"
+                      ></path>
+                    </svg>
+                  </span>
+                  Выйти
+                </a>
               </li>
             </ul>
           </nav>
