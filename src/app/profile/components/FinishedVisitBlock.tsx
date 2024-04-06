@@ -5,14 +5,20 @@ import { getPatientFinishedVisits, getVisitFile } from "@/services/profile";
 import useSWR from "swr";
 import { useCookies } from "react-cookie";
 
-export default function FinishedVisitBlock({ patientID }: { patientID: string }) {
+export default function FinishedVisitBlock({
+  patientID,
+  visitType,
+}: {
+  patientID: string;
+  visitType: string;
+}) {
   const [cookies, _] = useCookies(["accessToken"]);
   const {
     data: finished_visits,
     isLoading: curIsLoading,
     error: curError,
   } = useSWR("finished_visits", async (_) => {
-    return await getPatientFinishedVisits(cookies.accessToken, patientID, "finished");
+    return await getPatientFinishedVisits(cookies.accessToken, patientID, visitType);
   });
 
   const downloadFile = async (patientID: string, filePath: string) => {

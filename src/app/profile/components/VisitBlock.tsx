@@ -43,7 +43,7 @@ export default function VisitBlock({ patientID }: { patientID: string }) {
       {visitType == "planned" ? (
         <PlannedVisitBlock patientID={patientID} />
       ) : (
-        <FinishedVisitBlock patientID={patientID} />
+        <FinishedVisitBlock patientID={patientID} visitType="services" />
       )}
     </div>
   );

@@ -4,6 +4,8 @@ import { getPatient } from "@/services/profile";
 import InfoBlock from "@/app/profile/components/InfoBlock";
 import VisitBlock from "@/app/profile/components/VisitBlock";
 import PatientBlock from "@/app/profile/components/PatientBlock";
+import AnalyzesBlock from "@/app/profile/components/AnalyzesBlock";
+
 import NotFound from "@/app/not-found";
 import { PlaceholderLoading, PlaceholderError } from "@/app/components/common/Placeholder";
 import { useCookies } from "react-cookie";
@@ -60,6 +62,8 @@ export default function ProfileWrapper({ params }: { params: { id: string } }) {
         return <InfoBlock patient={patient?.data} />;
       case "visits":
         return <VisitBlock patientID={params.id} />;
+      case "analyzes":
+        return <AnalyzesBlock patientID={params.id} />;
       default:
         return null;
     }
