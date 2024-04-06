@@ -120,8 +120,7 @@ export default function ProfileWrapper({ params }: { params: { id: string } }) {
                   Анализы
                 </Link>
               </li>
-
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <Link
                   className={`nav-link ${category == "settings" ? "active" : null}`}
                   href={`${pathname}?${createQueryString("category", "settings")}`}
@@ -133,7 +132,7 @@ export default function ProfileWrapper({ params }: { params: { id: string } }) {
                   </span>
                   Сменить пароль
                 </Link>
-              </li>
+              </li> */}
               <li className="nav-item">
                 <a
                   className="nav-link"
@@ -143,19 +142,13 @@ export default function ProfileWrapper({ params }: { params: { id: string } }) {
                     router.push("/login");
                   }}
                 >
-                  <span className="icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                      <path
-                        fill="#000"
-                        d="M6 2a4 4 0 0 0-4 4v3h2V6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-3H2v3a4 4 0 0 0 4 4h12a4 4 0 0 0 4-4V6a4 4 0 0 0-4-4H6Z"
-                      ></path>
-                      <path
-                        fill="#000"
-                        d="M3 11a1 1 0 1 0 0 2h9.582l-2.535 2.536a1 1 0 0 0 1.414 1.414l4.196-4.196a.998.998 0 0 0 0-1.508L11.46 7.05a1 1 0 1 0-1.414 1.414L12.582 11H3Z"
-                      ></path>
+                  <span className="icon me-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 511.92 512">
+                      <path d="M487.02,195.67l-82.75-82.75c-8.48-8.18-21.98-7.95-30.17,.53-7.98,8.27-7.98,21.37,0,29.64l82.75,82.75c2.46,2.51,4.61,5.3,6.4,8.32-.32,0-.58-.17-.9-.17h0l-334.59,.68c-11.78,0-21.33,9.55-21.33,21.33s9.55,21.33,21.33,21.33h0l334.46-.68c.6,0,1.09-.3,1.66-.34-1.89,3.61-4.29,6.93-7.12,9.86l-82.75,82.75c-8.48,8.18-8.71,21.69-.52,30.17s21.69,8.71,30.17,.52c.18-.17,.35-.35,.52-.52l82.75-82.75c33.31-33.32,33.31-87.34,0-120.66h.09Z" />
+                      <path d="M149.33,469.33h-42.67c-35.35,0-64-28.65-64-64V106.67c0-35.35,28.65-64,64-64h42.67c11.78,0,21.33-9.55,21.33-21.33S161.12,0,149.33,0h-42.67C47.79,.07,.07,47.79,0,106.67V405.33c.07,58.88,47.79,106.6,106.67,106.67h42.67c11.78,0,21.33-9.55,21.33-21.33,0-11.78-9.55-21.33-21.33-21.33Z" />
                     </svg>
                   </span>
-                  Выйти
+                  Выход
                 </a>
               </li>
             </ul>
