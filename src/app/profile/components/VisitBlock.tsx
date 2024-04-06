@@ -5,7 +5,7 @@ import FinishedVisitBlock from "@/app/profile/components/FinishedVisitBlock";
 import { useState } from "react";
 
 export default function VisitBlock({ patientID }: { patientID: string }) {
-  const [visitType, setVisitType] = useState("planned");
+  const [visitStatus, setVisitStatus] = useState("planned");
 
   return (
     <div className="col">
@@ -16,10 +16,10 @@ export default function VisitBlock({ patientID }: { patientID: string }) {
           <ul className="nav">
             <li className="nav-item">
               <a
-                className={`nav-link ${visitType == "planned" ? "active" : null}`}
+                className={`nav-link ${visitStatus == "planned" ? "active" : null}`}
                 role="button"
                 onClick={() => {
-                  setVisitType("planned");
+                  setVisitStatus("planned");
                 }}
               >
                 Запланированные
@@ -27,10 +27,10 @@ export default function VisitBlock({ patientID }: { patientID: string }) {
             </li>
             <li className="nav-item">
               <a
-                className={`nav-link ${visitType == "finished" ? "active" : null}`}
+                className={`nav-link ${visitStatus == "finished" ? "active" : null}`}
                 role="button"
                 onClick={() => {
-                  setVisitType("finished");
+                  setVisitStatus("finished");
                 }}
               >
                 Завершённые
@@ -40,7 +40,7 @@ export default function VisitBlock({ patientID }: { patientID: string }) {
         </nav>
       </div>
 
-      {visitType == "planned" ? (
+      {visitStatus == "planned" ? (
         <PlannedVisitBlock patientID={patientID} />
       ) : (
         <FinishedVisitBlock patientID={patientID} visitType="services" />

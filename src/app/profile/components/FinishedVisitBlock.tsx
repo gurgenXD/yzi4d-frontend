@@ -17,7 +17,7 @@ export default function FinishedVisitBlock({
     data: finished_visits,
     isLoading: curIsLoading,
     error: curError,
-  } = useSWR("finished_visits", async (_) => {
+  } = useSWR(`finished_visits_${visitType}`, async (_) => {
     return await getPatientFinishedVisits(cookies.accessToken, patientID, visitType);
   });
 
