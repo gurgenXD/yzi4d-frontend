@@ -11,7 +11,7 @@ export default async function OffCanvas() {
   const cookieStore = cookies();
   const accessToken = cookieStore.get("accessToken");
   const userId = cookieStore.get("userId");
-  const userName = getClaims(accessToken?.value).user_name;
+  const userName = getClaims(accessToken?.value)?.user_name;
 
   return (
     <div
