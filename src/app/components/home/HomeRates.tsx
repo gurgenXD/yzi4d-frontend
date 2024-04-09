@@ -88,7 +88,7 @@ export default function HomeRates() {
                       Яндекс
                     </a>
 
-                    <div className="rate-item-count text-muted">881 отзыв</div>
+                    <div className="rate-item-count text-muted">971 отзыв</div>
                   </div>
                 </div>
               </SwiperSlide>
@@ -99,7 +99,7 @@ export default function HomeRates() {
                     <Image src={TwoGisImg} alt="2GIS" />
                   </div>
 
-                  <div className="rate-item-score fw-bold text-danger me-3">4.4</div>
+                  <div className="rate-item-score fw-bold text-danger me-3">4.3</div>
 
                   <div>
                     <a
@@ -110,7 +110,7 @@ export default function HomeRates() {
                       2ГИС
                     </a>
 
-                    <div className="rate-item-count text-muted">162 отзыва</div>
+                    <div className="rate-item-count text-muted">174 отзыва</div>
                   </div>
                 </div>
               </SwiperSlide>
@@ -132,7 +132,7 @@ export default function HomeRates() {
                       ПроДокторов
                     </a>
 
-                    <div className="rate-item-count text-muted">291 отзыв</div>
+                    <div className="rate-item-count text-muted">305 отзывов</div>
                   </div>
                 </div>
               </SwiperSlide>
@@ -154,7 +154,7 @@ export default function HomeRates() {
                       Докту
                     </a>
 
-                    <div className="rate-item-count text-muted">110 отзывов</div>
+                    <div className="rate-item-count text-muted">136 отзывов</div>
                   </div>
                 </div>
               </SwiperSlide>
@@ -176,7 +176,7 @@ export default function HomeRates() {
                       НаПоправку
                     </a>
 
-                    <div className="rate-item-count text-muted">28 отзывов</div>
+                    <div className="rate-item-count text-muted">38 отзывов</div>
                   </div>
                 </div>
               </SwiperSlide>
