@@ -5,6 +5,7 @@ import InfoBlock from "@/app/profile/components/InfoBlock";
 import VisitBlock from "@/app/profile/components/VisitBlock";
 import PatientBlock from "@/app/profile/components/PatientBlock";
 import AnalyzesBlock from "@/app/profile/components/AnalyzesBlock";
+import SettingsBlock from "@/app/profile/components/SettingsBlock";
 
 import NotFound from "@/app/not-found";
 import { PlaceholderLoading, PlaceholderError } from "@/app/components/common/Placeholder";
@@ -64,6 +65,8 @@ export default function ProfileWrapper({ params }: { params: { id: string } }) {
         return <VisitBlock patientID={params.id} />;
       case "analyzes":
         return <AnalyzesBlock patientID={params.id} />;
+      case "settings":
+        return <SettingsBlock />;
       default:
         return null;
     }
@@ -124,7 +127,7 @@ export default function ProfileWrapper({ params }: { params: { id: string } }) {
                   Анализы
                 </Link>
               </li>
-              {/* <li className="nav-item">
+              <li className="nav-item">
                 <Link
                   className={`nav-link ${category == "settings" ? "active" : null}`}
                   href={`${pathname}?${createQueryString("category", "settings")}`}
@@ -136,7 +139,7 @@ export default function ProfileWrapper({ params }: { params: { id: string } }) {
                   </span>
                   Сменить пароль
                 </Link>
-              </li> */}
+              </li>
               <li className="nav-item">
                 <a
                   className="nav-link"

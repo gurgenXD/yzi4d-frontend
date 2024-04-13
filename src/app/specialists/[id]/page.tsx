@@ -1,5 +1,6 @@
 import NotFound from "@/app/not-found";
 import Image from "next/image";
+import type { Metadata } from "next";
 import { getSpecialist } from "@/services/specialists";
 import SpecialistServices from "@/app/specialists/components/SpecialistServices";
 
@@ -15,6 +16,7 @@ export async function generateMetadata({ params }: { params: { id: string } }) {
 
   return {
     title: `${specialist.surname} ${specialist.name} ${specialist.patronymic} - Поликлиника УЗИ 4Д`,
+    description: specialist.seo_description,
   };
 }
 

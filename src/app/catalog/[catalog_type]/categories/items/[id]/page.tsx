@@ -13,6 +13,7 @@ export async function generateMetadata({
 
   return {
     title: `${service.name} - Поликлиника УЗИ 4Д`,
+    description: service.seo_description,
   };
 }
 

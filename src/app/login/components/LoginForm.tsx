@@ -5,11 +5,13 @@ import { IMaskInput } from "react-imask";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { useCookies } from "react-cookie";
+import { ShowPassword } from "@/app/components/common/ShowPassword";
 
 export default function LoginForm() {
   const [formSent, setFormSent] = useState("");
   const [_, setCookie] = useCookies(["accessToken", "userId"]);
   const router = useRouter();
+  const [showPassword, setShowPassword] = useState(false);
 
   const onSubmitHander = async (event: any) => {
     event.preventDefault();
@@ -49,16 +51,25 @@ export default function LoginForm() {
         <label htmlFor="loginPhone">Ваш телефон</label>
       </div>
 
-      <div className="form-floating mb-3 mb-sm-4">
-        <input
-          type="password"
-          className="form-control form-control__gra"
-          id="loginPassword"
-          placeholder="Пароль"
-          name="password"
-          required
-        />
-        <label htmlFor="loginPhone">Пароль</label>
+      <div className="input-group mb-3 mb-sm-4">
+        <div className="form-floating">
+          <input
+            type={showPassword ? "text" : "password"}
+            className="form-control form-control__gra"
+            id="loginPassword"
+            placeholder="Пароль"
+            name="password"
+            required
+          />
+          <label htmlFor="loginPhone">Пароль</label>
+        </div>
+        <span
+          className="input-group-text"
+          style={{ cursor: "pointer" }}
+          onClick={(_) => setShowPassword(!showPassword)}
+        >
+          <ShowPassword show={showPassword} />
+        </span>
       </div>
 
       {/* <div className="form-check mb-3 mb-sm-4">
