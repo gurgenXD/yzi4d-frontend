@@ -9,8 +9,9 @@ export const metadata = {
 export default async function Login() {
   const cookieStore = cookies();
   const userId = cookieStore.get("userId");
+  const accessToken = cookieStore.get("accessToken");
 
-  if (userId) {
+  if (userId && accessToken) {
     redirect(`/profile/${userId.value}`);
   }
 

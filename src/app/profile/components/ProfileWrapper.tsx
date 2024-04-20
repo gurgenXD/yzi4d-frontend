@@ -7,7 +7,7 @@ import PatientBlock from "@/app/profile/components/PatientBlock";
 import AnalyzesBlock from "@/app/profile/components/AnalyzesBlock";
 import SettingsBlock from "@/app/profile/components/SettingsBlock";
 
-import NotFound from "@/app/not-found";
+import { redirect } from "next/navigation";
 import { PlaceholderLoading, PlaceholderError } from "@/app/components/common/Placeholder";
 import { useCookies } from "react-cookie";
 
@@ -55,7 +55,11 @@ export default function ProfileWrapper({ params }: { params: { id: string } }) {
       </div>
     );
 
-  if (patient?.status != 200) return <NotFound />;
+  if (patient?.status != 200) {
+    removeCookie("accessToken", { path: "/" });
+    removeCookie("userId", { path: "/" });
+    redirect("/login");
+  }
 
   function renderSwitch() {
     switch (category) {
