@@ -131,7 +131,7 @@ export default function ProfileWrapper({ params }: { params: { id: string } }) {
                   Анализы
                 </Link>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <Link
                   className={`nav-link ${category == "settings" ? "active" : null}`}
                   href={`${pathname}?${createQueryString("category", "settings")}`}
@@ -143,7 +143,7 @@ export default function ProfileWrapper({ params }: { params: { id: string } }) {
                   </span>
                   Сменить пароль
                 </Link>
-              </li>
+              </li> */}
               <li className="nav-item">
                 <a
                   className="nav-link"
