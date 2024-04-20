@@ -1,10 +1,8 @@
 "use client";
 
-import { useCookies } from "react-cookie";
+import { setCookie } from "cookies-next";
 
 export default function CookiesAccept() {
-  const [_, setCookie] = useCookies(["hideCookiesAlert"]);
-
   return (
     <div className="col-auto">
       <button

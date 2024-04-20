@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import HeaderOffices from "@/app/components/global/HeaderOffices";
+import { getCookie } from "cookies-next";
 import { cookies } from "next/headers";
 
 import LogoFooterImg from "@/assets/logo-footer.svg";
@@ -8,10 +9,9 @@ import SearchWrapper from "@/app/components/global/search/SearchWrapper";
 import { getClaims } from "@/utils/jwt";
 
 export default async function OffCanvas() {
-  const cookieStore = cookies();
-  const accessToken = cookieStore.get("accessToken");
-  const userId = cookieStore.get("userId");
-  const userName = getClaims(accessToken?.value)?.user_name;
+  const accessToken = getCookie("accessToken", { cookies });
+  const userId = getCookie("userId", { cookies });
+  const userName = getClaims(accessToken)?.user_name;
 
   return (
     <div
@@ -39,10 +39,7 @@ export default async function OffCanvas() {
             {accessToken ? (
               <>
                 <li className="nav-item">
-                  <a
-                    className="nav-link fw-semibold"
-                    href={`/profile/${userId?.value}?category=info`}
-                  >
+                  <a className="nav-link fw-semibold" href={`/profile/${userId}?category=info`}>
                     <span className="icon">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 14">
                         <path d="M5.5,7c2.02,0,3.67-1.57,3.67-3.5S7.52,0,5.5,0,1.83,1.57,1.83,3.5s1.64,3.5,3.67,3.5Zm0-5.83c1.35,0,2.44,1.04,2.44,2.33s-1.1,2.33-2.44,2.33-2.44-1.04-2.44-2.33,1.1-2.33,2.44-2.33Zm0,7c-3.04,0-5.5,2.35-5.5,5.25,0,.32,.27,.58,.61,.58s.61-.26,.61-.58c0-2.26,1.92-4.08,4.28-4.08s4.28,1.83,4.28,4.08c0,.32,.28,.58,.61,.58s.61-.26,.61-.58c0-2.9-2.46-5.25-5.5-5.25Z" />
@@ -65,7 +62,7 @@ export default async function OffCanvas() {
                 </li> */}
 
                 <li className="nav-item">
-                  <a className="nav-link" href={`/profile/${userId?.value}?category=visits`}>
+                  <a className="nav-link" href={`/profile/${userId}?category=visits`}>
                     <span className="icon">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                         <path d="M512,192c.15-35.35-28.39-64.12-63.73-64.26s-64.12,28.39-64.26,63.73c-.11,27.22,17,51.53,42.67,60.6v89.26c0,70.69-57.31,128-128,128s-128-57.31-128-128v-1.71c73.38-10.65,127.86-73.48,128-147.63V106.67C298.6,47.79,250.88,.07,192,0c-11.78,0-21.33,9.55-21.33,21.33s9.55,21.33,21.33,21.33c35.35,0,64,28.65,64,64v85.33c0,58.91-47.76,106.67-106.67,106.67s-106.67-47.76-106.67-106.67V106.67c0-35.35,28.65-64,64-64,11.78,0,21.33-9.55,21.33-21.33S118.45,0,106.67,0C47.79,.07,.07,47.79,0,106.67v85.33c.14,74.15,54.62,136.98,128,147.63v1.71c0,94.26,76.41,170.67,170.67,170.67s170.67-76.41,170.67-170.67v-89.26c25.48-9.01,42.55-33.05,42.67-60.07Z" />
@@ -76,7 +73,7 @@ export default async function OffCanvas() {
                 </li>
 
                 <li className="nav-item">
-                  <a className="nav-link" href={`/profile/${userId?.value}?category=analyzes`}>
+                  <a className="nav-link" href={`/profile/${userId}?category=analyzes`}>
                     <span className="icon">
                       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 298.67 512">
                         <path d="M277.33,0H21.33C9.55,0,0,9.55,0,21.33s9.55,21.33,21.33,21.33h21.33V405.33c0,58.91,47.76,106.67,106.67,106.67s106.67-47.76,106.67-106.67V42.67h21.33c11.78,0,21.33-9.55,21.33-21.33S289.12,0,277.33,0ZM149.33,469.33c-35.35,0-64-28.65-64-64V192H213.33v213.33c0,35.35-28.65,64-64,64ZM213.33,149.33H85.33V42.67H213.33v106.67Z" />

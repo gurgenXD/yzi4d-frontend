@@ -1,9 +1,10 @@
 import { cookies } from "next/headers";
+import { getCookie } from "cookies-next";
+
 import CookiesAccept from "@/app/components/global/cookies/CookiesAccept";
 
 export default function Cookies() {
-  const cookieStore = cookies();
-  const hideCookiesAlert = cookieStore.get("hideCookiesAlert");
+  const hideCookiesAlert = getCookie("hideCookiesAlert", { cookies });
 
   return !Boolean(hideCookiesAlert) ? (
     <div

@@ -1,4 +1,5 @@
 import LoginForm from "@/app/login/components/LoginForm";
+import { getCookie } from "cookies-next";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 
@@ -7,12 +8,11 @@ export const metadata = {
 };
 
 export default async function Login() {
-  const cookieStore = cookies();
-  const userId = cookieStore.get("userId");
-  const accessToken = cookieStore.get("accessToken");
+  const userId = getCookie("userId", { cookies });
+  const accessToken = getCookie("accessToken", { cookies });
 
   if (userId && accessToken) {
-    redirect(`/profile/${userId.value}`);
+    redirect(`/profile/${userId}`);
   }
 
   return (

@@ -4,12 +4,11 @@ import { authPatient } from "@/services/auth";
 import { IMaskInput } from "react-imask";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import { useCookies } from "react-cookie";
+import { setCookie } from "cookies-next";
 import { ShowPassword } from "@/app/components/common/ShowPassword";
 
 export default function LoginForm() {
   const [formSent, setFormSent] = useState("");
-  const [_, setCookie] = useCookies(["accessToken", "userId"]);
   const router = useRouter();
   const [showPassword, setShowPassword] = useState(false);
 
@@ -21,19 +20,19 @@ export default function LoginForm() {
       event.target.password.value
     );
 
-    if (status == 200) {
-      setCookie("accessToken", data.access_token, {
-        expires: new Date(data.expires_in),
-        path: "/",
-      });
-      setCookie("userId", data.user_id, {
-        path: "/",
-      });
-
-      router.push(`/profile/${data.user_id}`);
-    } else {
+    if (status != 200) {
       setFormSent("wrong_password");
+      return;
     }
+
+    setCookie("accessToken", data.access_token, {
+      expires: new Date(data.expires_in),
+      path: "/",
+    });
+
+    setCookie("userId", data.user_id, { path: "/" });
+
+    router.push(`/profile/${data.user_id}`);
   };
 
   return (

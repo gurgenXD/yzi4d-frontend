@@ -9,7 +9,7 @@ import SettingsBlock from "@/app/profile/components/SettingsBlock";
 
 import { redirect } from "next/navigation";
 import { PlaceholderLoading, PlaceholderError } from "@/app/components/common/Placeholder";
-import { useCookies } from "react-cookie";
+import { getCookie, deleteCookie } from "cookies-next";
 
 import useSWR from "swr";
 import { useCallback } from "react";
@@ -20,7 +20,6 @@ export default function ProfileWrapper({ params }: { params: { id: string } }) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const category = searchParams.has("category") ? searchParams.get("category") : "info";
-  const [cookies, _, removeCookie] = useCookies(["accessToken", "userId"]);
   const router = useRouter();
 
   const createQueryString = useCallback(
@@ -38,7 +37,7 @@ export default function ProfileWrapper({ params }: { params: { id: string } }) {
     isLoading,
     error,
   } = useSWR("patient", async (_) => {
-    return await getPatient(cookies.accessToken, params.id);
+    return await getPatient(String(getCookie("accessToken")), params.id);
   });
 
   if (isLoading)
@@ -56,8 +55,7 @@ export default function ProfileWrapper({ params }: { params: { id: string } }) {
     );
 
   if (patient?.status != 200) {
-    removeCookie("accessToken", { path: "/" });
-    removeCookie("userId", { path: "/" });
+    deleteCookie("accessToken", { path: "/" });
     redirect("/login");
   }
 
@@ -148,8 +146,7 @@ export default function ProfileWrapper({ params }: { params: { id: string } }) {
                 <a
                   className="nav-link"
                   onClick={() => {
-                    removeCookie("accessToken", { path: "/" });
-                    removeCookie("userId", { path: "/" });
+                    deleteCookie("accessToken", { path: "/" });
                     router.push("/login");
                   }}
                 >

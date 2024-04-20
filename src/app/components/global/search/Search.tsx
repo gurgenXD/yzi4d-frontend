@@ -31,7 +31,7 @@ export default function Search({ searchQuery }: { searchQuery: string }) {
   if (isServicesLoading || isAnalyzesLoading || isSpecialistsLoading)
     return (
       <ul>
-        <li>
+        <li className="pb-3">
           <PlaceholderLoading height={30} />
         </li>
       </ul>

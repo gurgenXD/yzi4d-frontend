@@ -18,7 +18,6 @@ export default function SearchWrapper() {
           type="search"
           name="search_query"
           className="form-control search-form-input"
-          id="autoComplete"
           placeholder="Введите запрос"
         />
         <Search searchQuery={searchQuery} />
