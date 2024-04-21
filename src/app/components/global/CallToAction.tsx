@@ -1,8 +1,28 @@
+"use client";
+
+import { useState } from "react";
+import { IMaskInput } from "react-imask";
+import { createCallback } from "@/services/callbacks";
 import Image from "next/image";
 
 import CtaImg from "@/assets/cta-img.png";
 
 export default function CallToAction() {
+  const [formSent, setFormSent] = useState(0);
+
+  const onSubmitHander = async (event: any) => {
+    event.preventDefault();
+
+    const response = await createCallback(
+      event.target.phone.value,
+    );
+
+    if (response.status == 200) {
+      setFormSent(1);
+    } else {
+      setFormSent(2);
+    }
+  };
   return (
     <section className="py-lg-6 py-5 d-none">
       <div className="container">
@@ -27,14 +47,14 @@ export default function CallToAction() {
 
             <div className="col-md-6 col-lg-5 col-xl-4 align-self-center">
               <div className="pe-lg-5 pe-xl-6 py-lg-5 py-xl-6">
-                <form className="mb-4">
+                <form onSubmit={onSubmitHander} className="mb-4">
                   <div className="form-floating mb-3">
-                    <input
-                      type="text"
+                    <IMaskInput
+                      mask="+{7} (000) 000-00-00"
                       className="form-control form-control__no-border input-phone"
                       id="ctaPhone"
                       placeholder="Ваш телефон"
-                      pattern=".{16}"
+                      name="phone"
                       required
                     />
                     <label htmlFor="ctaPhone">Ваш телефон</label>
