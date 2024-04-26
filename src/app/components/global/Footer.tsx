@@ -107,6 +107,11 @@ export default function Footer() {
                   Контакты
                 </a>
               </li>
+              <li className="nav-item">
+              <a href="/vacancies" className="link-secondary spaced-link">
+                  Вакансии
+                </a>
+              </li>
             </ul>
 
             <ul className="list-unstyled footer-text mb-0">
@@ -116,7 +121,7 @@ export default function Footer() {
                 </a>
               </li>
               <li className="text-muted">
-                Имеются противопоказания. Необходима консультация специалиста
+                Имеются противопоказания. Необходима консультация специалиста.
               </li>
               <li className="text-muted">© {new Date().getFullYear()} 4Д Поликлиника</li>
             </ul>

@@ -110,6 +110,12 @@ export default async function Navigation() {
                   Контакты
                 </a>
               </li>
+
+              <li className="nav-item">
+                <a className="nav-link" href="/vacancies">
+                  Вакансии
+                </a>
+              </li>
             </ul>
 
             <div className="search">
