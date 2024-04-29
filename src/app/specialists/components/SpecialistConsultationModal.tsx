@@ -38,7 +38,7 @@ export default function SpecialistConsultationModal({ specialist }: { specialist
         <div className="modal-content overflow-hidden">
           <div className="modal-header border-0 pt-3 pt-sm-4 px-3 px-sm-4 pb-0">
             <h5 className="modal-title" id="ConsultModalLabel">
-              Записаться на онлайн консультацию
+              Записаться на онлайн-консультацию
             </h5>
             <button
               type="button"

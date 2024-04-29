@@ -16,26 +16,6 @@ export default function Footer() {
               <Image src={LogoFooterImg} alt="Логотип футера" className="logo-footer" />
             </a>
           </div>
-
-          <div className="col-md-auto mb-3">
-            <div className="d-flex flex-wrap align-items-center">
-              <a
-                className="profile-link link-secondary text-nowrap spaced-link fs-7 me-4"
-                href="/login"
-              >
-                <span className="icon me-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 14">
-                    <path d="M5.5,7c2.02,0,3.67-1.57,3.67-3.5S7.52,0,5.5,0,1.83,1.57,1.83,3.5s1.64,3.5,3.67,3.5Zm0-5.83c1.35,0,2.44,1.04,2.44,2.33s-1.1,2.33-2.44,2.33-2.44-1.04-2.44-2.33,1.1-2.33,2.44-2.33Zm0,7c-3.04,0-5.5,2.35-5.5,5.25,0,.32,.27,.58,.61,.58s.61-.26,.61-.58c0-2.26,1.92-4.08,4.28-4.08s4.28,1.83,4.28,4.08c0,.32,.28,.58,.61,.58s.61-.26,.61-.58c0-2.9-2.46-5.25-5.5-5.25Z" />
-                  </svg>
-                </span>
-                Личный кабинет
-              </a>
-
-              {/* <a href="" className="btn btn-danger btn-sm">
-                Записаться
-              </a> */}
-            </div>
-          </div>
         </div>
 
         <div className="row gx-lg-6">
@@ -127,6 +107,11 @@ export default function Footer() {
                   Контакты
                 </a>
               </li>
+              <li className="nav-item">
+              <a href="/vacancies" className="link-secondary spaced-link">
+                  Вакансии
+                </a>
+              </li>
             </ul>
 
             <ul className="list-unstyled footer-text mb-0">
@@ -136,7 +121,7 @@ export default function Footer() {
                 </a>
               </li>
               <li className="text-muted">
-                Имеются противопоказания. Необходима консультация специалиста
+                Имеются противопоказания. Необходима консультация специалиста.
               </li>
               <li className="text-muted">© {new Date().getFullYear()} 4Д Поликлиника</li>
             </ul>

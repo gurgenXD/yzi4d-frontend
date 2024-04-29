@@ -125,7 +125,7 @@ export default async function Specialist({ params }: { params: { id: string } })
                         data-bs-toggle="modal"
                         className="btn btn-primary w-100"
                       >
-                        Онлайн консультация
+                        Онлайн-консультация
                       </a>
                     </div>
                   ) : null}

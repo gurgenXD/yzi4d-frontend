@@ -49,7 +49,7 @@ export default async function Home() {
                   <Image
                     className="main-banner-img h-100 bg-img"
                     src={MainOnlineImg}
-                    alt="Онлайн консультация"
+                    alt="Онлайн-консультация"
                     width={300}
                     height={260}
                     style={{ objectFit: "cover" }}
