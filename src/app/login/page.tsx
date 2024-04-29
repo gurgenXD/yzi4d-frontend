@@ -8,11 +8,11 @@ export const metadata = {
 };
 
 export default async function Login() {
-  const session = cookies().get("session");
-  const claims = getClaims(session?.value);
+  const accessToken = cookies().get("accessToken");
+  const claims = getClaims(accessToken?.value);
   const userId = claims?.user_id;
 
-  if (session) {
+  if (accessToken) {
     redirect(`/profile/${userId}`);
   }
 

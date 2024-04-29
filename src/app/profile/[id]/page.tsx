@@ -6,7 +6,7 @@ export const metadata = {
 };
 
 export default async function Profile({ params }: { params: { id: string } }) {
-  const session = cookies().get("session");
+  const accessToken = cookies().get("accessToken");
 
   return (
     <main role="main" className="flex-shrink-0">
@@ -18,7 +18,7 @@ export default async function Profile({ params }: { params: { id: string } }) {
           <li className="breadcrumb-item active">Профиль</li>
         </ol>
 
-        <ProfileWrapper params={params} session={session?.value} />
+        <ProfileWrapper params={params} accessToken={accessToken?.value} />
       </div>
     </main>
   );

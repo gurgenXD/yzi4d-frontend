@@ -1,7 +1,6 @@
 import Image from "next/image";
 
 import HeaderOffices from "@/app/components/global/HeaderOffices";
-import { getCookie } from "cookies-next";
 import { cookies } from "next/headers";
 
 import LogoFooterImg from "@/assets/logo-footer.svg";
@@ -9,8 +8,8 @@ import SearchWrapper from "@/app/components/global/search/SearchWrapper";
 import { getClaims } from "@/utils/jwt";
 
 export default async function OffCanvas() {
-  const session = cookies().get("session");
-  const claims = getClaims(session?.value);
+  const accessToken = cookies().get("accessToken");
+  const claims = getClaims(accessToken?.value);
   const userId = claims?.user_id;
   const userName = claims?.user_name;
 
@@ -37,7 +36,7 @@ export default async function OffCanvas() {
 
         <div className="sidebar mt-3">
           <ul className="nav">
-            {session ? (
+            {accessToken ? (
               <>
                 <li className="nav-item">
                   <a className="nav-link fw-semibold" href={`/profile/${userId}?category=info`}>

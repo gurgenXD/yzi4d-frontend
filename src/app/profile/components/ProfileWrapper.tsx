@@ -19,16 +19,16 @@ import Link from "next/link";
 
 export default function ProfileWrapper({
   params,
-  session,
+  accessToken,
 }: {
   params: { id: string };
-  session: string | undefined;
+  accessToken: string | undefined;
 }) {
-  if (session == undefined) {
+  if (accessToken == undefined) {
     redirect("/login");
   }
 
-  const claims = getClaims(session);
+  const claims = getClaims(accessToken);
   const userId = claims?.user_id;
   const pathname = usePathname();
   const searchParams = useSearchParams();

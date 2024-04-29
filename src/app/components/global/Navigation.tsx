@@ -6,7 +6,7 @@ import LogoImg from "@/assets/logo.svg";
 import NavigationProfile from "@/app/components/global/NavigationProfile";
 
 export default async function Navigation() {
-  const session = cookies().get("session");
+  const accessToken = cookies().get("accessToken");
 
   return (
     <div className="bg-white shadow-sm">
@@ -32,7 +32,7 @@ export default async function Navigation() {
           </div>
 
           <div className="row align-items-center d-none d-lg-flex ms-auto">
-            <NavigationProfile session={session?.value} />
+            <NavigationProfile accessToken={accessToken?.value} />
 
             {/* <div className="col-auto">
               <a href="appointment.html" className="btn btn-danger">

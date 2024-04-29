@@ -4,15 +4,15 @@ import { getClaims } from "@/utils/jwt";
 import { useRouter } from "next/navigation";
 import { logout } from "@/services/auth";
 
-export default function NavigationProfile({ session }: { session: string | undefined }) {
-  const claims = getClaims(session);
+export default function NavigationProfile({ accessToken }: { accessToken: string | undefined }) {
+  const claims = getClaims(accessToken);
   const userName = claims?.user_name;
   const userId = claims?.user_id;
   const router = useRouter();
 
   return (
     <div className="col-auto">
-      {session ? (
+      {accessToken ? (
         <div className="dropdown">
           <a
             className="dropdown-toggle profile-link link-secondary fs-7 py-2"
