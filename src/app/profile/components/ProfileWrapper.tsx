@@ -1,6 +1,8 @@
 "use client";
 
 import { getPatient } from "@/services/profile";
+import { logout } from "@/services/auth";
+import { getClaims } from "@/utils/jwt";
 import InfoBlock from "@/app/profile/components/InfoBlock";
 import VisitBlock from "@/app/profile/components/VisitBlock";
 import PatientBlock from "@/app/profile/components/PatientBlock";
@@ -9,14 +11,25 @@ import SettingsBlock from "@/app/profile/components/SettingsBlock";
 
 import { redirect } from "next/navigation";
 import { PlaceholderLoading, PlaceholderError } from "@/app/components/common/Placeholder";
-import { getCookie, deleteCookie } from "cookies-next";
 
 import useSWR from "swr";
 import { useCallback } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 
-export default function ProfileWrapper({ params }: { params: { id: string } }) {
+export default function ProfileWrapper({
+  params,
+  session,
+}: {
+  params: { id: string };
+  session: string | undefined;
+}) {
+  if (session == undefined) {
+    redirect("/login");
+  }
+
+  const claims = getClaims(session);
+  const userId = claims?.user_id;
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const category = searchParams.has("category") ? searchParams.get("category") : "info";
@@ -37,7 +50,7 @@ export default function ProfileWrapper({ params }: { params: { id: string } }) {
     isLoading,
     error,
   } = useSWR("patient", async (_) => {
-    return await getPatient(String(getCookie("accessToken")), params.id);
+    return await getPatient(params.id);
   });
 
   if (isLoading)
@@ -55,18 +68,17 @@ export default function ProfileWrapper({ params }: { params: { id: string } }) {
     );
 
   if (patient?.status != 200) {
-    deleteCookie("accessToken", { path: "/" });
-    redirect("/login");
+    logout(userId);
   }
 
-  function renderSwitch() {
+  function renderSwitch(patientID: string, data: any) {
     switch (category) {
       case "info":
-        return <InfoBlock patient={patient?.data} />;
+        return <InfoBlock patient={data} />;
       case "visits":
-        return <VisitBlock patientID={params.id} />;
+        return <VisitBlock patientID={patientID} />;
       case "analyzes":
-        return <AnalyzesBlock patientID={params.id} />;
+        return <AnalyzesBlock patientID={patientID} />;
       case "settings":
         return <SettingsBlock />;
       default:
@@ -145,8 +157,8 @@ export default function ProfileWrapper({ params }: { params: { id: string } }) {
               <li className="nav-item">
                 <a
                   className="nav-link"
-                  onClick={() => {
-                    deleteCookie("accessToken", { path: "/" });
+                  onClick={async () => {
+                    logout(userId);
                     router.push("/login");
                   }}
                 >
@@ -164,7 +176,7 @@ export default function ProfileWrapper({ params }: { params: { id: string } }) {
         </div>
       </div>
 
-      {renderSwitch()}
+      {renderSwitch(params.id, patient?.data)}
     </div>
   );
 }

@@ -1,12 +1,17 @@
-import { cookies } from "next/headers";
-import { getCookie } from "cookies-next";
+"use client";
 
-import CookiesAccept from "@/app/components/global/cookies/CookiesAccept";
+import { useEffect, useState } from "react";
 
 export default function Cookies() {
-  const hideCookiesAlert = getCookie("hideCookiesAlert", { cookies });
+  let hideCookiesAlert = true;
+  const [showCookiesAlert, setShowCookiesAlert] = useState(!hideCookiesAlert);
 
-  return !Boolean(hideCookiesAlert) ? (
+  useEffect(() => {
+    hideCookiesAlert = Boolean(localStorage.getItem("hideCookiesAlert"));
+    setShowCookiesAlert(!hideCookiesAlert);
+  });
+
+  return showCookiesAlert ? (
     <div
       className="cookie-alert alert alert-light alert-dismissible shadow-lg rounded-3 p-3 p-sm-4 fade show"
       role="alert"
@@ -20,7 +25,17 @@ export default function Cookies() {
           </div>
         </div>
 
-        <CookiesAccept />
+        <div className="col-auto">
+          <button
+            type="button"
+            onClick={() => localStorage.setItem("hideCookiesAlert", String(true))}
+            className="btn btn-danger py-2 px-3"
+            data-bs-dismiss="alert"
+            aria-label="Close"
+          >
+            Хорошо
+          </button>
+        </div>
       </div>
     </div>
   ) : null;

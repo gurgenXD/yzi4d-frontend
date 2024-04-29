@@ -9,9 +9,10 @@ import SearchWrapper from "@/app/components/global/search/SearchWrapper";
 import { getClaims } from "@/utils/jwt";
 
 export default async function OffCanvas() {
-  const accessToken = getCookie("accessToken", { cookies });
-  const userId = getCookie("userId", { cookies });
-  const userName = getClaims(accessToken)?.user_name;
+  const session = cookies().get("session");
+  const claims = getClaims(session?.value);
+  const userId = claims?.user_id;
+  const userName = claims?.user_name;
 
   return (
     <div
@@ -36,7 +37,7 @@ export default async function OffCanvas() {
 
         <div className="sidebar mt-3">
           <ul className="nav">
-            {accessToken ? (
+            {session ? (
               <>
                 <li className="nav-item">
                   <a className="nav-link fw-semibold" href={`/profile/${userId}?category=info`}>

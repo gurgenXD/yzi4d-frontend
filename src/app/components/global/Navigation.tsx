@@ -1,10 +1,13 @@
 import Image from "next/image";
 import SearchWrapper from "@/app/components/global/search/SearchWrapper";
+import { cookies } from "next/headers";
 
 import LogoImg from "@/assets/logo.svg";
 import NavigationProfile from "@/app/components/global/NavigationProfile";
 
 export default async function Navigation() {
+  const session = cookies().get("session");
+
   return (
     <div className="bg-white shadow-sm">
       <div className="container">
@@ -29,7 +32,7 @@ export default async function Navigation() {
           </div>
 
           <div className="row align-items-center d-none d-lg-flex ms-auto">
-            <NavigationProfile />
+            <NavigationProfile session={session?.value} />
 
             {/* <div className="col-auto">
               <a href="appointment.html" className="btn btn-danger">

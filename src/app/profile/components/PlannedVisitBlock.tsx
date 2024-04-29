@@ -3,7 +3,6 @@
 import { PlaceholderLoading, PlaceholderError } from "@/app/components/common/Placeholder";
 import { getPatientPlannedVisits } from "@/services/profile";
 import useSWR from "swr";
-import { getCookie } from "cookies-next";
 
 function formatSpecialistName(full_name: string) {
   const [surname, name, patronymic] = full_name.split(" ");
@@ -13,24 +12,28 @@ function formatSpecialistName(full_name: string) {
 export default function PlannedVisitBlock({ patientID }: { patientID: string }) {
   const {
     data: planned_visits,
-    isLoading: curIsLoading,
-    error: curError,
+    isLoading,
+    error,
   } = useSWR("planned_visits", async (_) => {
-    return await getPatientPlannedVisits(String(getCookie("accessToken")), patientID);
+    return await getPatientPlannedVisits(patientID);
   });
 
-  if (curIsLoading)
+  if (isLoading)
     return (
       <div className="col">
         <PlaceholderLoading height={200} />
       </div>
     );
-  if (curError)
+  if (error)
     return (
       <div className="col">
         <PlaceholderError height={200} />
       </div>
     );
+
+  if (!planned_visits.length) {
+    return <div className="pt-lg-1 text-secondary">Нет запланированных услуг</div>;
+  }
 
   return (
     <div className="pt-lg-1">

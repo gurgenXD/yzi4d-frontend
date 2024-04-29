@@ -1,17 +1,18 @@
 import LoginForm from "@/app/login/components/LoginForm";
-import { getCookie } from "cookies-next";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
+import { getClaims } from "@/utils/jwt";
 
 export const metadata = {
   title: "Войти в личный кабинет - Поликлиника УЗИ 4Д",
 };
 
 export default async function Login() {
-  const userId = getCookie("userId", { cookies });
-  const accessToken = getCookie("accessToken", { cookies });
+  const session = cookies().get("session");
+  const claims = getClaims(session?.value);
+  const userId = claims?.user_id;
 
-  if (userId && accessToken) {
+  if (session) {
     redirect(`/profile/${userId}`);
   }
 

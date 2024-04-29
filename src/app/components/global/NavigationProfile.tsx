@@ -1,18 +1,18 @@
 "use client";
 
-import { getCookie, deleteCookie } from "cookies-next";
 import { getClaims } from "@/utils/jwt";
 import { useRouter } from "next/navigation";
+import { logout } from "@/services/auth";
 
-export default function NavigationProfile() {
-  const accessToken = getCookie("accessToken");
-  const userId = getCookie("userId");
-  const userName = getClaims(accessToken)?.user_name;
+export default function NavigationProfile({ session }: { session: string | undefined }) {
+  const claims = getClaims(session);
+  const userName = claims?.user_name;
+  const userId = claims?.user_id;
   const router = useRouter();
 
   return (
     <div className="col-auto">
-      {accessToken ? (
+      {session ? (
         <div className="dropdown">
           <a
             className="dropdown-toggle profile-link link-secondary fs-7 py-2"
@@ -74,8 +74,8 @@ export default function NavigationProfile() {
                 className="dropdown-item"
                 role="button"
                 href=""
-                onClick={() => {
-                  deleteCookie("accessToken", { path: "/" });
+                onClick={async () => {
+                  await logout(userId);
                   router.push("/login");
                 }}
               >
