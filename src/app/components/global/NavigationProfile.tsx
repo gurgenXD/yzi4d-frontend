@@ -74,9 +74,10 @@ export default function NavigationProfile({ accessToken }: { accessToken: string
                 className="dropdown-item"
                 role="button"
                 href=""
-                onClick={() => {
-                  logout(userId);
+                onClick={async () => {
+                  await logout(userId);
                   router.push("/login");
+                  router.refresh();
                 }}
               >
                 <span className="icon me-2">

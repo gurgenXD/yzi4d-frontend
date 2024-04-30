@@ -158,7 +158,7 @@ export default function ProfileWrapper({
                 <a
                   className="nav-link"
                   onClick={async () => {
-                    logout(userId);
+                    await logout(userId);
                     router.push("/login");
                     router.refresh();
                   }}
