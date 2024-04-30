@@ -90,6 +90,11 @@ export default async function OffCanvas() {
                 Контакты
               </a>
             </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/vacancies">
+                Вакансии
+              </a>
+            </li>
           </ul>
         </div>
 
