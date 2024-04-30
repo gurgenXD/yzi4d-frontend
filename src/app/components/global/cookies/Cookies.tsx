@@ -7,9 +7,9 @@ export default function Cookies() {
   const [showCookiesAlert, setShowCookiesAlert] = useState(!hideCookiesAlert);
 
   useEffect(() => {
-    hideCookiesAlert = Boolean(localStorage.getItem("hideCookiesAlert"));
+    var hideCookiesAlert = Boolean(localStorage.getItem("hideCookiesAlert"));
     setShowCookiesAlert(!hideCookiesAlert);
-  });
+  }, []);
 
   return showCookiesAlert ? (
     <div

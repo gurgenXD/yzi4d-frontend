@@ -22,3 +22,39 @@ export async function logout(patientID: string) {
 
   return { data: await response.json(), status: response.status };
 }
+
+export async function changePassword(patientID: string, password: string, new_password: string) {
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_YZI4D_API}/auth/change-password/${patientID}`,
+    {
+      method: "POST",
+      cache: "no-store",
+      credentials: "include",
+      headers: {
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify({
+        current_password: password,
+        new_password: new_password,
+      }),
+    }
+  );
+
+  return { data: await response.json(), status: response.status };
+}
+
+export async function generatePassword(username: string) {
+  const response = await fetch(`${process.env.NEXT_PUBLIC_YZI4D_API}/auth/generate-password`, {
+    method: "POST",
+    cache: "no-store",
+    credentials: "include",
+    headers: {
+      "Content-type": "application/json",
+    },
+    body: JSON.stringify({
+      username: username,
+    }),
+  });
+
+  return { data: await response.json(), status: response.status };
+}

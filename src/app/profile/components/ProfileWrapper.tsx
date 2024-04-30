@@ -80,7 +80,7 @@ export default function ProfileWrapper({
       case "analyzes":
         return <AnalyzesBlock patientID={patientID} />;
       case "settings":
-        return <SettingsBlock />;
+        return <SettingsBlock patientID={patientID} />;
       default:
         return null;
     }
@@ -141,7 +141,7 @@ export default function ProfileWrapper({
                   Анализы
                 </Link>
               </li>
-              {/* <li className="nav-item">
+              <li className="nav-item">
                 <Link
                   className={`nav-link ${category == "settings" ? "active" : null}`}
                   href={`${pathname}?${createQueryString("category", "settings")}`}
@@ -153,13 +153,14 @@ export default function ProfileWrapper({
                   </span>
                   Сменить пароль
                 </Link>
-              </li> */}
+              </li>
               <li className="nav-item">
                 <a
                   className="nav-link"
                   onClick={async () => {
                     logout(userId);
                     router.push("/login");
+                    router.refresh();
                   }}
                 >
                   <span className="icon me-2">

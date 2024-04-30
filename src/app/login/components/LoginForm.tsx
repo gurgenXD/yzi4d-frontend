@@ -25,6 +25,7 @@ export default function LoginForm() {
     }
 
     router.push(`/profile/${data.user_id}`);
+    router.refresh();
   };
 
   return (

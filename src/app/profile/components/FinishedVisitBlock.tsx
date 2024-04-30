@@ -68,6 +68,7 @@ export default function FinishedVisitBlock({
 
                 <div className="col-sm-auto">
                   <div className="fs-8 lh-1 text-muted text-sm-end mt-1">{visit.specialist}</div>
+                  <div className="fs-8 lh-1 text-xl-end text-danger mt-2">Скачать</div>
                 </div>
               </div>
             </div>

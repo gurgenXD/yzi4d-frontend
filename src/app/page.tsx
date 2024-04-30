@@ -62,7 +62,7 @@ export default async function Home() {
                   <p className="main-banner-text text-muted mb-3 mb-lg-4">
                     Общайтесь с доктором не выходя из дома
                   </p>
-                  <a href="https://online.yzi4d.ru/" target="_blank" className="btn btn-danger">
+                  <a href="/specialists" className="btn btn-danger">
                     Попробовать
                   </a>
                 </div>

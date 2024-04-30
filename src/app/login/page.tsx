@@ -1,4 +1,5 @@
 import LoginForm from "@/app/login/components/LoginForm";
+import RegisterForm from "@/app/login/components/RegisterForm";
 import { cookies } from "next/headers";
 import { redirect } from "next/navigation";
 import { getClaims } from "@/utils/jwt";
@@ -36,7 +37,7 @@ export default async function Login() {
                   <LoginForm />
 
                   <a href="#restorePassModal" data-bs-toggle="modal" className="">
-                    Забыли пароль?
+                    Получить пароль
                   </a>
                 </div>
               </div>
@@ -103,35 +104,19 @@ export default async function Login() {
           <div className="modal-content">
             <div className="modal-header border-0 pt-3 pt-sm-4 px-3 px-sm-4 pb-0">
               <h5 className="modal-title" id="restorePassModalLabel">
-                Как восстановить пароль
+                Получение пароля
               </h5>
               <button
                 type="button"
-                className="btn-close mt-1"
+                className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
               ></button>
             </div>
 
-            <div className="modal-body px-3 px-sm-4 pb-3 pb-sm-4">
-              <ul className="ps-4 m-0">
-                <li>
-                  <p>
-                    Обратитесь в колл-центр по номеру:
-                    <a href="tel:+79288284001" className="fw-semibold text-nowrap">
-                      <span> +7 (928) 828-40-01</span>
-                    </a>
-                  </p>
-                </li>
-
-                {/* <li>
-                  <p>
-                    Или напишите нашему боту в Telegram:
-                    <a href="#" className="fw-semibold text-nowrap">
-                      @uzi4dbot
-                    </a>
-                  </p>
-                </li> */}
+            <div className="modal-body px-3 px-sm-4 pb-3 pb-sm-4 mt-3">
+              <ul className="p-0 m-0">
+                <RegisterForm />
               </ul>
             </div>
           </div>
