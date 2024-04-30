@@ -13,6 +13,8 @@ export default async function Login() {
   const claims = getClaims(accessToken?.value);
   const userId = claims?.user_id;
 
+  console.log("Login");
+  console.log(accessToken);
   if (accessToken) {
     redirect(`/profile/${userId}`);
   }

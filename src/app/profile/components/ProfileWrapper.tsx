@@ -24,6 +24,8 @@ export default function ProfileWrapper({
   params: { id: string };
   accessToken: string | undefined;
 }) {
+  console.log("ProfileWrapper");
+  console.log(accessToken);
   if (accessToken == undefined) {
     redirect("/login");
   }
