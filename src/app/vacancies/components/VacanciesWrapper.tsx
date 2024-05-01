@@ -1,7 +1,7 @@
 "use client";
 
 import { getVacancyCategories } from "@/services/vacancies";
-
+import { VacancyCategory, Vacancy } from "@/types/vacancies";
 import { PlaceholderLoading, PlaceholderError } from "@/app/components/common/Placeholder";
 
 import useSWR from "swr";
@@ -32,17 +32,17 @@ export default function VacanciesWrapper() {
   return (
     <div className="row">
       <article className="article mb-lg-5">
-        {categories.map((category: any) => (
-          <>
+        {categories.map((category: VacancyCategory, index: number) => (
+          <div key={index}>
             <h3>{category.name}</h3>
             <ul>
-              {category.vacancies.map((vacancy: any) => (
-                <li key={vacancy.name}>
+              {category.vacancies.map((vacancy: Vacancy, index: number) => (
+                <li key={index}>
                   <a>{vacancy.name}</a>
                 </li>
               ))}
             </ul>
-          </>
+          </div>
         ))}
       </article>
     </div>

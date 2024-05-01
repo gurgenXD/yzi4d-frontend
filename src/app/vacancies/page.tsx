@@ -4,7 +4,7 @@ export const metadata = {
   title: "Вакансии - Поликлиника УЗИ 4Д",
 };
 
-export default async function vacancies() {
+export default async function Vacancies() {
   return (
     <main role="main" className="flex-shrink-0">
       <div className="overflow-hidden">
