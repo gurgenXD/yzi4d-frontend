@@ -16,6 +16,7 @@ import useSWR from "swr";
 import { useCallback } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
+import NotFound from "@/app/not-found";
 
 export default function ProfileWrapper({
   params,
@@ -68,7 +69,7 @@ export default function ProfileWrapper({
     );
 
   if (patient?.status != 200) {
-    logout(userId);
+    return <NotFound />;
   }
 
   function renderSwitch(patientID: string, data: any) {
