@@ -88,7 +88,7 @@ export default function HomeRates() {
                       Яндекс
                     </a>
 
-                    <div className="rate-item-count text-muted">971 отзыв</div>
+                    <div className="rate-item-count text-muted">1006 отзывов</div>
                   </div>
                 </div>
               </SwiperSlide>
@@ -110,7 +110,7 @@ export default function HomeRates() {
                       2ГИС
                     </a>
 
-                    <div className="rate-item-count text-muted">174 отзыва</div>
+                    <div className="rate-item-count text-muted">175 отзывов</div>
                   </div>
                 </div>
               </SwiperSlide>
@@ -132,7 +132,7 @@ export default function HomeRates() {
                       ПроДокторов
                     </a>
 
-                    <div className="rate-item-count text-muted">305 отзывов</div>
+                    <div className="rate-item-count text-muted">301 отзыв</div>
                   </div>
                 </div>
               </SwiperSlide>
@@ -154,7 +154,7 @@ export default function HomeRates() {
                       Докту
                     </a>
 
-                    <div className="rate-item-count text-muted">136 отзывов</div>
+                    <div className="rate-item-count text-muted">188 отзывов</div>
                   </div>
                 </div>
               </SwiperSlide>

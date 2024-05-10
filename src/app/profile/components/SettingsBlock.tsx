@@ -36,7 +36,7 @@ export default function SettingsBlock({ patientID }: { patientID: string }) {
     }
 
     if (status == 422) {
-      setformErrorMessage("Введите надежный пароль.");
+      setformErrorMessage("Введите надежный пароль. Пароль должен содержать не менее 6 символов, как минимум одну заглавную и одну строчную букву и одну цифру");
       return;
     }
 

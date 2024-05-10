@@ -24,9 +24,10 @@ export default function CallToAction() {
     }
   };
   return (
-    <section className="py-lg-6 py-5 d-none">
+    <section className="py-lg-6 py-5">
       <div className="container">
         <div className="cta bg-light-blue rounded-3 p-3 p-sm-5 p-lg-0">
+
           <div className="row flex-column flex-md-row gy-4 gy-sm-5 gy-md-0 gx-xl-0">
             <div className="col-md-6 col-lg-7 col-xl-4 align-self-center">
               <div className="ps-lg-5 ps-xl-6 pe-xl-1 py-lg-5 py-xl-6">
@@ -44,36 +45,47 @@ export default function CallToAction() {
                 </div>
               </div>
             </div>
+            {formSent == 0 ?
+              <div className="col-md-6 col-lg-5 col-xl-4 align-self-center">
+                <div className="pe-lg-5 pe-xl-6 py-lg-5 py-xl-6">
+                  <form onSubmit={onSubmitHander} className="mb-4">
+                    <div className="form-floating mb-3">
+                      <IMaskInput
+                        mask="+{7} (000) 000-00-00"
+                        className="form-control form-control__no-border input-phone"
+                        id="ctaPhone"
+                        placeholder="Ваш телефон"
+                        name="phone"
+                        required
+                      />
+                      <label htmlFor="ctaPhone">Ваш телефон</label>
+                    </div>
 
-            <div className="col-md-6 col-lg-5 col-xl-4 align-self-center">
-              <div className="pe-lg-5 pe-xl-6 py-lg-5 py-xl-6">
-                <form onSubmit={onSubmitHander} className="mb-4">
-                  <div className="form-floating mb-3">
-                    <IMaskInput
-                      mask="+{7} (000) 000-00-00"
-                      className="form-control form-control__no-border input-phone"
-                      id="ctaPhone"
-                      placeholder="Ваш телефон"
-                      name="phone"
-                      required
-                    />
-                    <label htmlFor="ctaPhone">Ваш телефон</label>
+                    <button className="btn btn-danger w-100" type="submit">
+                      Отправить
+                    </button>
+                  </form>
+
+                  <div className="fs-10 text-secondary">
+                    Нажимая на кнопку «Отправить», вы даёте своё согласие на{" "}
+                    <a href="/documents" title="" target="_blank">
+                      обработку персональных данных
+                    </a>
+                    .
                   </div>
-
-                  <button className="btn btn-danger w-100" type="submit">
-                    Отправить
-                  </button>
-                </form>
-
-                <div className="fs-10 text-secondary">
-                  Нажимая на кнопку «Отправить», вы даёте своё согласие на{" "}
-                  <a href="/documents" title="" target="_blank">
-                    обработку персональных данных
-                  </a>
-                  .
                 </div>
               </div>
-            </div>
+              : null}
+            {formSent == 1 ?
+              <div className="col-md-6 col-lg-5 col-xl-4 align-self-center">
+                <h3 className="cta-title mb-2 mb-sm-3 text-center">Спасибо за ваше обращение!</h3>
+              </div>
+              : null}
+            {formSent == 2 ?
+              <div className="col-md-6 col-lg-5 col-xl-4 align-self-center">
+                <p className="mb-2 mb-sm-3 text-danger">Произошла ошибка! Попробуйте позже.</p>
+              </div>
+              : null}
           </div>
         </div>
       </div>
